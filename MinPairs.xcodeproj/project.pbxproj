@@ -257,6 +257,7 @@
 		E109704419095C06000C7E11 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = E1096F5919095C06000C7E11 /* Thumbs.db */; };
 		E109704519095C06000C7E11 /* TileBack.png in Resources */ = {isa = PBXBuildFile; fileRef = E1096F5A19095C06000C7E11 /* TileBack.png */; };
 		E109704619095C06000C7E11 /* Untitled-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1096F5B19095C06000C7E11 /* Untitled-1.png */; };
+		E109704C19096027000C7E11 /* MLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704B19096027000C7E11 /* MLCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -525,6 +526,8 @@
 		E1096F5919095C06000C7E11 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		E1096F5A19095C06000C7E11 /* TileBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileBack.png; sourceTree = "<group>"; };
 		E1096F5B19095C06000C7E11 /* Untitled-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled-1.png"; sourceTree = "<group>"; };
+		E109704A19096027000C7E11 /* MLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCategory.h; sourceTree = "<group>"; };
+		E109704B19096027000C7E11 /* MLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCategory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,10 +592,9 @@
 			children = (
 				51F874A4190835BE00450DB2 /* MLAppDelegate.h */,
 				51F874A5190835BE00450DB2 /* MLAppDelegate.m */,
-				51F874A7190835BE00450DB2 /* Main_iPhone.storyboard */,
-				51F874AA190835BE00450DB2 /* Main_iPad.storyboard */,
-				51F874AD190835BE00450DB2 /* MLViewController.h */,
-				51F874AE190835BE00450DB2 /* MLViewController.m */,
+				E109704919095FAC000C7E11 /* Views */,
+				E109704719095F7E000C7E11 /* Models */,
+				E109704819095F93000C7E11 /* Controllers */,
 				51F874B0190835BE00450DB2 /* Images.xcassets */,
 				51F8749C190835BE00450DB2 /* Supporting Files */,
 			);
@@ -882,6 +884,33 @@
 				E1096F5B19095C06000C7E11 /* Untitled-1.png */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		E109704719095F7E000C7E11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E109704A19096027000C7E11 /* MLCategory.h */,
+				E109704B19096027000C7E11 /* MLCategory.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E109704819095F93000C7E11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				51F874AD190835BE00450DB2 /* MLViewController.h */,
+				51F874AE190835BE00450DB2 /* MLViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E109704919095FAC000C7E11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51F874A7190835BE00450DB2 /* Main_iPhone.storyboard */,
+				51F874AA190835BE00450DB2 /* Main_iPad.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1220,6 +1249,7 @@
 			files = (
 				51F874A2190835BE00450DB2 /* main.m in Sources */,
 				51F874AF190835BE00450DB2 /* MLViewController.m in Sources */,
+				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
