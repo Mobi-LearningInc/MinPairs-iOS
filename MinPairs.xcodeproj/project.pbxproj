@@ -258,6 +258,7 @@
 		E109704519095C06000C7E11 /* TileBack.png in Resources */ = {isa = PBXBuildFile; fileRef = E1096F5A19095C06000C7E11 /* TileBack.png */; };
 		E109704619095C06000C7E11 /* Untitled-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1096F5B19095C06000C7E11 /* Untitled-1.png */; };
 		E109704C19096027000C7E11 /* MLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704B19096027000C7E11 /* MLCategory.m */; };
+		E109704F19096AC9000C7E11 /* MLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704E19096AC9000C7E11 /* MLItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -528,6 +529,8 @@
 		E1096F5B19095C06000C7E11 /* Untitled-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled-1.png"; sourceTree = "<group>"; };
 		E109704A19096027000C7E11 /* MLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCategory.h; sourceTree = "<group>"; };
 		E109704B19096027000C7E11 /* MLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCategory.m; sourceTree = "<group>"; };
+		E109704D19096AC9000C7E11 /* MLItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLItem.h; sourceTree = "<group>"; };
+		E109704E19096AC9000C7E11 /* MLItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -891,6 +894,8 @@
 			children = (
 				E109704A19096027000C7E11 /* MLCategory.h */,
 				E109704B19096027000C7E11 /* MLCategory.m */,
+				E109704D19096AC9000C7E11 /* MLItem.h */,
+				E109704E19096AC9000C7E11 /* MLItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1251,6 +1256,7 @@
 				51F874AF190835BE00450DB2 /* MLViewController.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
+				E109704F19096AC9000C7E11 /* MLItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
