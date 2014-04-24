@@ -260,6 +260,7 @@
 		E109704C19096027000C7E11 /* MLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704B19096027000C7E11 /* MLCategory.m */; };
 		E109704F19096AC9000C7E11 /* MLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704E19096AC9000C7E11 /* MLItem.m */; };
 		E109705519096ECB000C7E11 /* MLPair.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705419096ECB000C7E11 /* MLPair.m */; };
+		E109705819097120000C7E11 /* MLDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705719097120000C7E11 /* MLDataProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -534,6 +535,8 @@
 		E109704E19096AC9000C7E11 /* MLItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLItem.m; sourceTree = "<group>"; };
 		E109705319096ECB000C7E11 /* MLPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPair.h; sourceTree = "<group>"; };
 		E109705419096ECB000C7E11 /* MLPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPair.m; sourceTree = "<group>"; };
+		E109705619097120000C7E11 /* MLDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDataProvider.h; sourceTree = "<group>"; };
+		E109705719097120000C7E11 /* MLDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDataProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -901,6 +904,8 @@
 				E109704E19096AC9000C7E11 /* MLItem.m */,
 				E109705319096ECB000C7E11 /* MLPair.h */,
 				E109705419096ECB000C7E11 /* MLPair.m */,
+				E109705619097120000C7E11 /* MLDataProvider.h */,
+				E109705719097120000C7E11 /* MLDataProvider.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1262,6 +1267,7 @@
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
+				E109705819097120000C7E11 /* MLDataProvider.m in Sources */,
 				E109704F19096AC9000C7E11 /* MLItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
