@@ -261,6 +261,8 @@
 		E109704F19096AC9000C7E11 /* MLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704E19096AC9000C7E11 /* MLItem.m */; };
 		E109705519096ECB000C7E11 /* MLPair.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705419096ECB000C7E11 /* MLPair.m */; };
 		E109705819097120000C7E11 /* MLDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705719097120000C7E11 /* MLDataProvider.m */; };
+		E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */; };
+		E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -537,6 +539,10 @@
 		E109705419096ECB000C7E11 /* MLPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPair.m; sourceTree = "<group>"; };
 		E109705619097120000C7E11 /* MLDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDataProvider.h; sourceTree = "<group>"; };
 		E109705719097120000C7E11 /* MLDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDataProvider.m; sourceTree = "<group>"; };
+		E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewCell.h; sourceTree = "<group>"; };
+		E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSoundChartCollectionViewCell.m; sourceTree = "<group>"; };
+		E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewController.h; sourceTree = "<group>"; };
+		E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSoundChartCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -915,6 +921,10 @@
 			children = (
 				51F874AD190835BE00450DB2 /* MLViewController.h */,
 				51F874AE190835BE00450DB2 /* MLViewController.m */,
+				E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */,
+				E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */,
+				E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */,
+				E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1266,6 +1276,8 @@
 				51F874AF190835BE00450DB2 /* MLViewController.m in Sources */,
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
+				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
+				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E109705819097120000C7E11 /* MLDataProvider.m in Sources */,
 				E109704F19096AC9000C7E11 /* MLItem.m in Sources */,
