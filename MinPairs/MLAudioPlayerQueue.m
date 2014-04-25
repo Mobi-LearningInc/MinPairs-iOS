@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableDictionary* players;
 @property (nonatomic, strong) NSMutableArray* queue;
 @property (nonatomic, strong) NSMutableArray* IDs;
+@property (nonatomic, assign) __unsafe_unretained Class classtype;
 @end
 
 @implementation MLAudioPlayerQueue
@@ -25,6 +26,7 @@
     {
         _currentID = 0;
         _replayAudioSet = false;
+        _classtype = cls;
         
         if (!_players)
         {
@@ -112,10 +114,9 @@
         }
     }
     
-    id<MLAudioBase> player = [[MLBasicAudioPlayer alloc] init];
+    id<MLAudioBase> player = [[[self classtype] alloc] init];
     player.delegate = self;
     [player loadFileFromResource: fileName withExtension: extension];
-    
     [[self players] setObject: player forKey: [NSNumber numberWithUnsignedInteger: fileID]];
 }
 @end
