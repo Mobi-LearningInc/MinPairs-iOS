@@ -22,7 +22,7 @@
     
     if (!_queue)
     {
-        _queue = [[MLAudioPlayerQueue alloc] initWithCapacity: 2];
+        _queue = [[MLAudioPlayerQueue alloc] initWithClass: [MLBasicAudioPlayer class] andCapacity: 2];
         [_queue addFile: 1 withFileName: @"Bank1" withExtension: @"mp3"];
         [_queue addFile: 2 withFileName: @"Broom1" withExtension: @"mp3"];
         

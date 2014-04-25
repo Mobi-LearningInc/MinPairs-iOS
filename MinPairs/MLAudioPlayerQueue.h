@@ -61,10 +61,14 @@
  *  Initialises the queue with a capacity. 
  *  Allows the queue to pre-allocate a fixed amount of memory.
  *
+ *  @param cls An audio player class that conforms to MLAudioBase.
+ *         
+ *  Example: @code [MLBasicAudioPlayer class] @endcode
+ *
  *  @param capacity Size of the queue to be allocated. 
  *         Equivalent to the amount of audio files to be added.
  *         The queue will grow in size if this capacity reached.
  */
--(MLAudioPlayerQueue*) initWithCapacity:(NSUInteger)capacity;
+-(MLAudioPlayerQueue*) initWithClass:(__unsafe_unretained Class)cls andCapacity:(NSUInteger)capacity;
 
 @end

@@ -306,7 +306,7 @@
 		CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBasicAudioPlayer.m; sourceTree = "<group>"; };
 		CAC7728B190A145600CB74A5 /* MLAudioPlayerQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueue.h; sourceTree = "<group>"; };
 		CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAudioPlayerQueue.m; sourceTree = "<group>"; };
-		CAC7728E190A194C00CB74A5 /* MLBasicAudioPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLBasicAudioPlayerDelegate.h; sourceTree = "<group>"; };
+		CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLBaseAudioPlayerDelegate.h; sourceTree = "<group>"; };
 		CAC7729C190A3CF400CB74A5 /* radio_button_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_button_default.png; sourceTree = "<group>"; };
 		CAC7729E190A3D8000CB74A5 /* radio_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_button_selected.png; sourceTree = "<group>"; };
 		CAC772A4190A496400CB74A5 /* MLButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLButtonGroup.h; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC77287190A13C100CB74A5 /* MLAudioBase.h */,
-				CAC7728E190A194C00CB74A5 /* MLBasicAudioPlayerDelegate.h */,
+				CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */,
 				CAC77288190A13C100CB74A5 /* MLBasicAudioPlayer.h */,
 				CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */,
 				CAC7728B190A145600CB74A5 /* MLAudioPlayerQueue.h */,

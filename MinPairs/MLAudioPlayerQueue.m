@@ -8,7 +8,7 @@
 
 #import "MLAudioPlayerQueue.h"
 
-@interface MLAudioPlayerQueue() <MLBasicAudioPlayerDelegate>
+@interface MLAudioPlayerQueue() <MLBaseAudioPlayerDelegate>
 @property (nonatomic, weak) NSNumber* currentID;
 @property (nonatomic, assign) bool replayAudioSet;
 @property (nonatomic, strong) NSMutableDictionary* players;
@@ -18,7 +18,7 @@
 
 @implementation MLAudioPlayerQueue
 
--(MLAudioPlayerQueue*) initWithCapacity:(NSUInteger)capacity
+-(MLAudioPlayerQueue*) initWithClass:(__unsafe_unretained Class)cls andCapacity:(NSUInteger)capacity
 {
     self = [super init];
     if (self)
@@ -36,7 +36,7 @@
     return self;
 }
 
--(void) onMLBasicAudioPlayerFinishPlaying:(MLBasicAudioPlayer*)sender
+-(void) onMLBasicAudioPlayerFinishPlaying:(id<MLAudioBase>)sender
 {
     if (![self replayAudioSet])
     {
@@ -52,7 +52,7 @@
         if ([[self queue] count])
         {
             self.currentID = [[self IDs] objectAtIndex: 0];
-            MLBasicAudioPlayer* player = [[self queue] objectAtIndex: 0];
+            id<MLAudioBase> player = [[self queue] objectAtIndex: 0];
             [player play];
         }
     }
@@ -83,14 +83,14 @@
             return;
         }
         
-        MLBasicAudioPlayer* player = [[self players] objectForKey: ID];
+        id<MLAudioBase> player = [[self players] objectForKey: ID];
         [[self queue] addObject: player];
         [[self IDs] addObject: ID];
         
         if ([[self queue] count] && ![[[self queue] objectAtIndex: 0] isPlaying] && ![[[self queue] objectAtIndex: 0] isPaused])
         {
             self.currentID = [[self IDs] objectAtIndex: 0];
-            MLBasicAudioPlayer* player = [[self queue] objectAtIndex: 0];
+            id<MLAudioBase> player = [[self queue] objectAtIndex: 0];
             [player prepareToPlay];
             [player play];
         }
@@ -112,7 +112,7 @@
         }
     }
     
-    MLBasicAudioPlayer* player = [[MLBasicAudioPlayer alloc] init];
+    id<MLAudioBase> player = [[MLBasicAudioPlayer alloc] init];
     player.delegate = self;
     [player loadFileFromResource: fileName withExtension: extension];
     

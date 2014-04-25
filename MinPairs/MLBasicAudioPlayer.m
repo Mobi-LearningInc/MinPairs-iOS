@@ -94,17 +94,13 @@
     return [[self player] prepareToPlay];
 }
 
--(bool) loadFile:(NSString*)filePath
+-(bool) loadFileFromResource:(NSString*)fileName withExtension:(NSString*)extension
 {
+    NSString* filePath = [[NSBundle mainBundle] pathForResource: fileName ofType: extension];
+    
     NSURL* fileURL = [NSURL fileURLWithPath:filePath];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
     [[self player] setDelegate: self];
     return [[NSFileManager defaultManager] fileExistsAtPath: filePath] && [self player];
-}
-
--(bool) loadFileFromResource:(NSString*)fileName withExtension:(NSString*)extension
-{
-    NSString* filePath = [[NSBundle mainBundle] pathForResource: fileName ofType: extension];
-    return [self loadFile: filePath];
 }
 @end
