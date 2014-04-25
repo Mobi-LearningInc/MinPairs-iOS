@@ -265,7 +265,8 @@
 		E109704C19096027000C7E11 /* MLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704B19096027000C7E11 /* MLCategory.m */; };
 		E109704F19096AC9000C7E11 /* MLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704E19096AC9000C7E11 /* MLItem.m */; };
 		E109705519096ECB000C7E11 /* MLPair.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705419096ECB000C7E11 /* MLPair.m */; };
-		E109705819097120000C7E11 /* MLDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705719097120000C7E11 /* MLDataProvider.m */; };
+		E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705719097120000C7E11 /* MLFileDataProvider.m */; };
+		E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */; };
 		E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */; };
 		E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */; };
 /* End PBXBuildFile section */
@@ -552,8 +553,12 @@
 		E109704E19096AC9000C7E11 /* MLItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLItem.m; sourceTree = "<group>"; };
 		E109705319096ECB000C7E11 /* MLPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPair.h; sourceTree = "<group>"; };
 		E109705419096ECB000C7E11 /* MLPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPair.m; sourceTree = "<group>"; };
-		E109705619097120000C7E11 /* MLDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDataProvider.h; sourceTree = "<group>"; };
-		E109705719097120000C7E11 /* MLDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDataProvider.m; sourceTree = "<group>"; };
+		E109705619097120000C7E11 /* MLFileDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFileDataProvider.h; sourceTree = "<group>"; };
+		E109705719097120000C7E11 /* MLFileDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFileDataProvider.m; sourceTree = "<group>"; };
+		E1C2489A190AB82B00F9E8BF /* MLDataProviderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLDataProviderBase.h; path = ../MLDataProviderBase.h; sourceTree = "<group>"; };
+		E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderEventListener.h; sourceTree = "<group>"; };
+		E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMainDataProvider.h; sourceTree = "<group>"; };
+		E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMainDataProvider.m; sourceTree = "<group>"; };
 		E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewCell.h; sourceTree = "<group>"; };
 		E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSoundChartCollectionViewCell.m; sourceTree = "<group>"; };
 		E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewController.h; sourceTree = "<group>"; };
@@ -951,8 +956,12 @@
 				E109704E19096AC9000C7E11 /* MLItem.m */,
 				E109705319096ECB000C7E11 /* MLPair.h */,
 				E109705419096ECB000C7E11 /* MLPair.m */,
-				E109705619097120000C7E11 /* MLDataProvider.h */,
-				E109705719097120000C7E11 /* MLDataProvider.m */,
+				E109705619097120000C7E11 /* MLFileDataProvider.h */,
+				E109705719097120000C7E11 /* MLFileDataProvider.m */,
+				E1C2489A190AB82B00F9E8BF /* MLDataProviderBase.h */,
+				E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */,
+				E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */,
+				E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1320,11 +1329,12 @@
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
+				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
 				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */,
-				E109705819097120000C7E11 /* MLDataProvider.m in Sources */,
+				E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */,
 				E109704F19096AC9000C7E11 /* MLItem.m in Sources */,
 				CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */,
 			);

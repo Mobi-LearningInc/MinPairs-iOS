@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *soundLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) MLCategory* category;
+
 @end
 @implementation MLSoundChartCollectionViewCell
 

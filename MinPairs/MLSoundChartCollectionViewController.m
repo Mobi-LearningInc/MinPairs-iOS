@@ -7,11 +7,13 @@
 //
 
 #import "MLSoundChartCollectionViewController.h"
-#import "MLDataProvider.h"
+#import "MLMainDataProvider.h"
 #import "MLSoundChartCollectionViewCell.h"
-#import <AudioToolbox/AudioToolbox.h>
+#import "MLAudioPlayerQueue.h"
 @interface MLSoundChartCollectionViewController ()
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property NSArray* catArr;
+@property (nonatomic, strong) MLAudioPlayerQueue* queue;
 @end
 
 @implementation MLSoundChartCollectionViewController
@@ -24,11 +26,23 @@
     }
     return self;
 }
-
+-(void)onLoadStart
+{
+    NSLog(@"started");
+    [self.loadingIndicator startAnimating];
+    [self.loadingIndicator setHidesWhenStopped:YES];
+}
+-(void)onLoadFinish
+{
+    NSLog(@"finished");
+    [self.loadingIndicator stopAnimating];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.catArr =[MLDataProvider getCategories];
+    MLMainDataProvider* dataProvider=[[MLMainDataProvider alloc]initMainProvider];
+    self.catArr =[dataProvider getCategoriesCallListener:self];
+    self.queue=[[MLAudioPlayerQueue alloc] initWithClass: [MLBasicAudioPlayer class] andCapacity: 2];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,8 +67,13 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MLCategory* selectedCategory = [self.catArr objectAtIndex:indexPath.row];
-    NSLog(@"remeber to play sound for %@",selectedCategory.categoryAudioFile);
-    //todo play sound!
+    NSLog(@"sound selected %@",selectedCategory.categoryAudioFile);
+    NSLog(@"AudioPlayerQueue needs a method to add a file to end of queue");
+    /*
+    [self.queue addFile: 1 withFileName: selectedCategory.categoryAudioFile withExtension: @"mp3"];
+    [self.queue prepareToPlay: 1];
+    [[self queue] play: 1];
+     */
 }
 /*
 #pragma mark - Navigation

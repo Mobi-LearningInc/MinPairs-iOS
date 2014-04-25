@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLDataProviderEventListener.h"
 /**
  * @class MLSoundChartCollectionViewController
  * @discussion MLSoundChartCollectionViewController class provides data for each cell and listens to taps (selections)
  */
-@interface MLSoundChartCollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MLSoundChartCollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate,MLDataProviderEventListener>
 
 @end
