@@ -29,6 +29,8 @@
         [_queue prepareToPlay: 1];
         [_queue prepareToPlay: 2];
     }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
