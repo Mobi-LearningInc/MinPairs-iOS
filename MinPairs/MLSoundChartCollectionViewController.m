@@ -9,11 +9,11 @@
 #import "MLSoundChartCollectionViewController.h"
 #import "MLMainDataProvider.h"
 #import "MLSoundChartCollectionViewCell.h"
-#import "MLAudioPlayerQueue.h"
+#import "MLBasicAudioPlayer.h"
 @interface MLSoundChartCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property NSArray* catArr;
-@property (nonatomic, strong) MLAudioPlayerQueue* queue;
+@property (nonatomic, strong) MLBasicAudioPlayer* audioPlayer;
 @end
 
 @implementation MLSoundChartCollectionViewController
@@ -42,7 +42,7 @@
     [super viewDidLoad];
     MLMainDataProvider* dataProvider=[[MLMainDataProvider alloc]initMainProvider];
     self.catArr =[dataProvider getCategoriesCallListener:self];
-    self.queue=[[MLAudioPlayerQueue alloc] initWithClass: [MLBasicAudioPlayer class] andCapacity: 2];
+    self.audioPlayer = [[MLBasicAudioPlayer alloc]init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,12 +68,10 @@
 {
     MLCategory* selectedCategory = [self.catArr objectAtIndex:indexPath.row];
     NSLog(@"sound selected %@",selectedCategory.categoryAudioFile);
-    NSLog(@"AudioPlayerQueue needs a method to add a file to end of queue");
-    /*
-    [self.queue addFile: 1 withFileName: selectedCategory.categoryAudioFile withExtension: @"mp3"];
-    [self.queue prepareToPlay: 1];
-    [[self queue] play: 1];
-     */
+    [self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension:nil];
+    //[self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension:@"mp3"]; throws an exception
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
 }
 /*
 #pragma mark - Navigation
