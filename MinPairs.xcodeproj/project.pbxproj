@@ -555,10 +555,10 @@
 		E109705419096ECB000C7E11 /* MLPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPair.m; sourceTree = "<group>"; };
 		E109705619097120000C7E11 /* MLFileDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFileDataProvider.h; sourceTree = "<group>"; };
 		E109705719097120000C7E11 /* MLFileDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFileDataProvider.m; sourceTree = "<group>"; };
-		E1C2489A190AB82B00F9E8BF /* MLDataProviderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLDataProviderBase.h; path = ../MLDataProviderBase.h; sourceTree = "<group>"; };
 		E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderEventListener.h; sourceTree = "<group>"; };
 		E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMainDataProvider.h; sourceTree = "<group>"; };
 		E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMainDataProvider.m; sourceTree = "<group>"; };
+		E1C248A0190AEC5F00F9E8BF /* MLDataProviderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderBase.h; sourceTree = "<group>"; };
 		E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewCell.h; sourceTree = "<group>"; };
 		E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSoundChartCollectionViewCell.m; sourceTree = "<group>"; };
 		E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewController.h; sourceTree = "<group>"; };
@@ -958,7 +958,7 @@
 				E109705419096ECB000C7E11 /* MLPair.m */,
 				E109705619097120000C7E11 /* MLFileDataProvider.h */,
 				E109705719097120000C7E11 /* MLFileDataProvider.m */,
-				E1C2489A190AB82B00F9E8BF /* MLDataProviderBase.h */,
+				E1C248A0190AEC5F00F9E8BF /* MLDataProviderBase.h */,
 				E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */,
 				E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */,
 				E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */,
