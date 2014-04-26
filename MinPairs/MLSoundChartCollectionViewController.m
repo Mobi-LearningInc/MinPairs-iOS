@@ -68,7 +68,7 @@
 {
     MLCategory* selectedCategory = [self.catArr objectAtIndex:indexPath.row];
     NSLog(@"sound selected %@",selectedCategory.categoryAudioFile);
-    [self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension:nil];
+    [self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension: @"mp3"];
     //[self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension:@"mp3"]; throws an exception
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];

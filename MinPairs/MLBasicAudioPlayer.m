@@ -30,7 +30,7 @@
 
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag
 {
-    [self.delegate onMLBasicAudioPlayerFinishPlaying: self];
+    [[self delegate] onMLAudioPlayerFinishPlaying: self];
 }
 
 -(void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer*)player error:(NSError*)error
@@ -96,11 +96,17 @@
 
 -(bool) loadFileFromResource:(NSString*)fileName withExtension:(NSString*)extension
 {
-    NSString* filePath = [[NSBundle mainBundle] pathForResource: fileName ofType: extension];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource: [fileName stringByDeletingPathExtension] ofType: extension];
     
-    NSURL* fileURL = [NSURL fileURLWithPath:filePath];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
-    [[self player] setDelegate: self];
-    return [[NSFileManager defaultManager] fileExistsAtPath: filePath] && [self player];
+    if ([[NSFileManager defaultManager] fileExistsAtPath: filePath])
+    {
+        NSURL* fileURL = [NSURL fileURLWithPath: filePath];
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
+        [[self player] setDelegate: self];
+        return [self player];
+    }
+    
+    self.player = nil;
+    return false;
 }
 @end

@@ -306,6 +306,7 @@
 		51F874BF190835BE00450DB2 /* MinPairsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinPairsTests-Info.plist"; sourceTree = "<group>"; };
 		51F874C1190835BE00450DB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F874C3190835BE00450DB2 /* MinPairsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinPairsTests.m; sourceTree = "<group>"; };
+		CA7ED6D1190B4192009F1BB7 /* MLAudioPlayerQueueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueueDelegate.h; sourceTree = "<group>"; };
 		CAC77287190A13C100CB74A5 /* MLAudioBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAudioBase.h; sourceTree = "<group>"; };
 		CAC77288190A13C100CB74A5 /* MLBasicAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBasicAudioPlayer.h; sourceTree = "<group>"; };
 		CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBasicAudioPlayer.m; sourceTree = "<group>"; };
@@ -686,6 +687,7 @@
 			children = (
 				CAC77287190A13C100CB74A5 /* MLAudioBase.h */,
 				CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */,
+				CA7ED6D1190B4192009F1BB7 /* MLAudioPlayerQueueDelegate.h */,
 				CAC77288190A13C100CB74A5 /* MLBasicAudioPlayer.h */,
 				CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */,
 				CAC7728B190A145600CB74A5 /* MLAudioPlayerQueue.h */,

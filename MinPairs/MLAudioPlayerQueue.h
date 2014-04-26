@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MLBasicAudioPlayer.h"
+#import "MLAudioPlayerQueueDelegate.h"
 
 
 /**
@@ -70,5 +71,10 @@
  *         The queue will grow in size if this capacity reached.
  */
 -(MLAudioPlayerQueue*) initWithClass:(__unsafe_unretained Class)cls andCapacity:(NSUInteger)capacity;
+
+/**
+ *  Calls implemented delegate methods when an event occurs.
+ */
+@property (nonatomic, weak) id<MLAudioPlayerQueueDelegate> delegate;
 
 @end

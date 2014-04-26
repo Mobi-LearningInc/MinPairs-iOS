@@ -38,14 +38,17 @@
     return self;
 }
 
--(void) onMLBasicAudioPlayerFinishPlaying:(id<MLAudioBase>)sender
+-(void) onMLAudioPlayerFinishPlaying:(id<MLAudioBase>)sender
 {
+    NSUInteger ID = 0;
+    
     if (![self replayAudioSet])
     {
         @synchronized([self queue])
         {
             if ([[self queue] count])
             {
+                ID = [[[self IDs] objectAtIndex: 0] unsignedIntegerValue];
                 [[self queue] removeObjectAtIndex: 0];
                 [[self IDs] removeObjectAtIndex: 0];
             }
@@ -60,8 +63,16 @@
     }
     else
     {
+        ID = [self.currentID unsignedIntegerValue];
         [sender play];
         self.replayAudioSet = false;
+    }
+    
+    [[self delegate] onMLAudioPlayerQueueFinishPlaying: ID];
+    
+    if (![[self queue] count])
+    {
+        [[self delegate] onMLAudioPlayerQueueComplete];
     }
 }
 

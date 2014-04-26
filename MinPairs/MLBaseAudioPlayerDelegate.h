@@ -19,5 +19,5 @@
  *  Called when the audio player is finished playing the current sound.
  *  @param sender The audio player that finished playing the sound.
  */
--(void) onMLBasicAudioPlayerFinishPlaying:(id<MLAudioBase>)sender;
+-(void) onMLAudioPlayerFinishPlaying:(id<MLAudioBase>)sender;
 @end
