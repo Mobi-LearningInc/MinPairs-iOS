@@ -83,7 +83,7 @@
     float x = self.bounds.origin.x;
     float y = self.bounds.origin.y;
     float w = self.bounds.size.width;
-    float h = self.bounds.size.height;
+    //float h = self.bounds.size.height;
     
     float titlex = x + 20;
     float titley = y + 5;
