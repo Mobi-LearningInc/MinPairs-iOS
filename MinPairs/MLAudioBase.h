@@ -15,6 +15,18 @@
  */
 @protocol MLAudioBase <NSObject>
 
+/**
+ *  Determines whether or not the audio player is playing.
+ *  @return True if the audio player is playing a sound. False otherwise.
+ */
+-(bool) isPlaying;
+
+/**
+ *  Determines whether or not the audio player is paused.
+ *  @return True if the audio player is paused. False otherwise.
+ */
+-(bool) isPaused;
+
 /** 
  *  Plays the audio file set by @see setAudioFile.
  */

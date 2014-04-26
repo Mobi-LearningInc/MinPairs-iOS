@@ -28,13 +28,11 @@
 }
 -(void)onLoadStart
 {
-    NSLog(@"started");
     [self.loadingIndicator startAnimating];
     [self.loadingIndicator setHidesWhenStopped:YES];
 }
 -(void)onLoadFinish
 {
-    NSLog(@"finished");
     [self.loadingIndicator stopAnimating];
 }
 - (void)viewDidLoad
@@ -67,9 +65,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MLCategory* selectedCategory = [self.catArr objectAtIndex:indexPath.row];
-    NSLog(@"sound selected %@",selectedCategory.categoryAudioFile);
     [self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension: @"mp3"];
-    //[self.audioPlayer loadFileFromResource:selectedCategory.categoryAudioFile withExtension:@"mp3"]; throws an exception
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
 }
