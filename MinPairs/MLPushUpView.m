@@ -64,7 +64,7 @@
     [self animate: 0.0f];
 }
 
--(void) animate:(float) offset
+-(void)animate:(float)offset
 {
     [UIView animateWithDuration: 0.5f animations: ^{
         CGRect rect = [self frame];

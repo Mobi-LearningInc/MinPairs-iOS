@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MLSynchronousFilter.h"
+#import "MLPair.h"
 
 @interface MLFilterViewController : UIViewController
 

@@ -10,8 +10,8 @@
 #import "MLPair.h"
 
 @interface MLSynchronousFilter()
-@property (nonatomic, strong) NSMutableArray* leftSide;
-@property (nonatomic, strong) NSMutableArray* rightSide;
+@property (nonatomic, strong) NSArray* categories;
+@property (nonatomic, strong) NSMutableArray* mappedSounds;
 @property (nonatomic, strong) MLMainDataProvider* provider;
 @end
 
@@ -25,29 +25,9 @@
     dispatch_once(&onceToken, ^{
         instance = [[super allocWithZone: nil] init];
         
+        instance->_mappedSounds = nil;
         instance->_provider = [[MLMainDataProvider alloc] initMainProvider];
-        instance->_leftSide = [[NSMutableArray alloc] init];
-        instance->_rightSide = [[NSMutableArray alloc] init];
-        
-        
-        NSArray* pairs = [[instance provider] getCategoryPairs];
-        NSArray* categories = [[instance provider] getCategories];
-        NSMutableArray* temp = [[NSMutableArray alloc] init];
-        
-        for (MLCategory* category in categories)
-        {
-            for (MLPair* pair in pairs)
-            {
-                if ([category categoryId] == [[pair first] categoryId])
-                {
-                    [temp addObject: [pair second]];
-                }
-            }
-            
-            [[instance leftSide] addObject: category];
-            [[instance rightSide] addObject: temp];
-            temp = [[NSMutableArray alloc] init];
-        }
+        instance->_categories = [instance->_provider getCategories];
     });
     
     return instance;
@@ -63,23 +43,30 @@
     return self;
 }
 
-+(NSMutableArray*)getCategoriesLeft
++(NSArray*)getLeft
 {
-    return [[MLSynchronousFilter sharedInstance] leftSide];
+    return [[MLSynchronousFilter sharedInstance] categories];
 }
 
-+(NSMutableArray*)getCorrespondingCategories:(MLCategory*) category
++(NSMutableArray*)getCategoriesRight:(MLCategory*) category
 {
-    NSMutableArray* arr = [[MLSynchronousFilter sharedInstance] leftSide];
+    bool found = false;
+    MLSynchronousFilter* filter = [MLSynchronousFilter sharedInstance];
     
-    for (int i = 0; i < [arr count]; ++i)
+    NSArray* pairs = [[filter provider] getCategoryPairs];
+    filter.mappedSounds = [[NSMutableArray alloc] init];
+    
+    for (MLPair* pair in pairs)
     {
-        if ([arr objectAtIndex: i] == category)
+        MLCategory* cat = [pair first];
+        
+        if ([cat categoryId] == [category categoryId])
         {
-            return [[[MLSynchronousFilter sharedInstance] rightSide] objectAtIndex: i];
+            [[filter mappedSounds] addObject: [pair second]];
+            found = true;
         }
     }
-    return nil;
+    return found ? [filter mappedSounds] : nil;
 }
 
 @end

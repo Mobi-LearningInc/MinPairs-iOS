@@ -13,8 +13,8 @@
 
 +(MLSynchronousFilter*) sharedInstance;
 
-+(NSMutableArray*)getCategoriesLeft;
++(NSMutableArray*)getLeft;
 
-+(NSMutableArray*)getCorrespondingCategories:(MLCategory*) category;
++(NSMutableArray*)getCategoriesRight:(MLCategory*) category;
 
 @end

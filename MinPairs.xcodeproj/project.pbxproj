@@ -13,7 +13,6 @@
 		51F874A0190835BE00450DB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51F8749E190835BE00450DB2 /* InfoPlist.strings */; };
 		51F874A2190835BE00450DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874A1190835BE00450DB2 /* main.m */; };
 		51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874A5190835BE00450DB2 /* MLAppDelegate.m */; };
-		51F874A9190835BE00450DB2 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F874A7190835BE00450DB2 /* Main_iPhone.storyboard */; };
 		51F874AC190835BE00450DB2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F874AA190835BE00450DB2 /* Main_iPad.storyboard */; };
 		51F874AF190835BE00450DB2 /* MLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874AE190835BE00450DB2 /* MLViewController.m */; };
 		51F874B1190835BE00450DB2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51F874B0190835BE00450DB2 /* Images.xcassets */; };
@@ -25,7 +24,7 @@
 		CA1C0237190BBACC003C5F90 /* MLAllvsAllControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0236190BBACC003C5F90 /* MLAllvsAllControllerViewController.m */; };
 		CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0239190BC38B003C5F90 /* MLSynchronousFilter.m */; };
 		CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0245190BDB99003C5F90 /* MLFilterViewController.m */; };
-		CA1C0249190BDF4F003C5F90 /* MLPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0248190BDF4F003C5F90 /* MLPickerView.m */; };
+		CA1C024B190C0477003C5F90 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1C024A190C0477003C5F90 /* Main_iPhone.storyboard */; };
 		CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */; };
 		CA7ED6DA190B46C1009F1BB7 /* MLGraphicsLegend.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6D6190B46C1009F1BB7 /* MLGraphicsLegend.m */; };
 		CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6D8190B46C1009F1BB7 /* MLLineGraphView.m */; };
@@ -308,7 +307,6 @@
 		51F874A3190835BE00450DB2 /* MinPairs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinPairs-Prefix.pch"; sourceTree = "<group>"; };
 		51F874A4190835BE00450DB2 /* MLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAppDelegate.h; sourceTree = "<group>"; };
 		51F874A5190835BE00450DB2 /* MLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLAppDelegate.m; sourceTree = "<group>"; };
-		51F874A8190835BE00450DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		51F874AB190835BE00450DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		51F874AD190835BE00450DB2 /* MLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLViewController.h; sourceTree = "<group>"; };
 		51F874AE190835BE00450DB2 /* MLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLViewController.m; sourceTree = "<group>"; };
@@ -324,8 +322,7 @@
 		CA1C0239190BC38B003C5F90 /* MLSynchronousFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSynchronousFilter.m; sourceTree = "<group>"; };
 		CA1C0244190BDB99003C5F90 /* MLFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFilterViewController.h; sourceTree = "<group>"; };
 		CA1C0245190BDB99003C5F90 /* MLFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFilterViewController.m; sourceTree = "<group>"; };
-		CA1C0247190BDF4F003C5F90 /* MLPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPickerView.h; sourceTree = "<group>"; };
-		CA1C0248190BDF4F003C5F90 /* MLPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPickerView.m; sourceTree = "<group>"; };
+		CA1C024A190C0477003C5F90 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CA7ED6D1190B4192009F1BB7 /* MLAudioPlayerQueueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueueDelegate.h; sourceTree = "<group>"; };
 		CA7ED6D3190B46C1009F1BB7 /* MLGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLGraphics.h; sourceTree = "<group>"; };
 		CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLGraphics.m; sourceTree = "<group>"; };
@@ -751,8 +748,6 @@
 				CAC772A5190A496400CB74A5 /* MLButtonGroup.m */,
 				CA7ED6E2190B8ADC009F1BB7 /* MLPushUpView.h */,
 				CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */,
-				CA1C0247190BDF4F003C5F90 /* MLPickerView.h */,
-				CA1C0248190BDF4F003C5F90 /* MLPickerView.m */,
 			);
 			name = CustomControls;
 			sourceTree = "<group>";
@@ -1060,7 +1055,7 @@
 		E109704919095FAC000C7E11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				51F874A7190835BE00450DB2 /* Main_iPhone.storyboard */,
+				CA1C024A190C0477003C5F90 /* Main_iPhone.storyboard */,
 				51F874AA190835BE00450DB2 /* Main_iPad.storyboard */,
 			);
 			name = Views;
@@ -1208,6 +1203,7 @@
 				CA7ED6E7190BB57D009F1BB7 /* Play5.png in Resources */,
 				E1096FC919095C06000C7E11 /* Pill1.mp3 in Resources */,
 				E109700219095C06000C7E11 /* There1.mp3 in Resources */,
+				CA1C024B190C0477003C5F90 /* Main_iPhone.storyboard in Resources */,
 				E1096F9E19095C06000C7E11 /* Fool1.mp3 in Resources */,
 				E1096FDA19095C06000C7E11 /* Rise1.mp3 in Resources */,
 				E1096FAC19095C06000C7E11 /* Ice1.mp3 in Resources */,
@@ -1305,7 +1301,6 @@
 				E109703F19095C06000C7E11 /* question.png in Resources */,
 				E1096FA619095C06000C7E11 /* Heat1.mp3 in Resources */,
 				E1096FF319095C06000C7E11 /* Slip1.mp3 in Resources */,
-				51F874A9190835BE00450DB2 /* Main_iPhone.storyboard in Resources */,
 				E1096F7F19095C06000C7E11 /* Cape1.mp3 in Resources */,
 				E1096F6719095C06000C7E11 /* Bake1.mp3 in Resources */,
 				E1096FFC19095C06000C7E11 /* Ten1.mp3 in Resources */,
@@ -1430,7 +1425,6 @@
 				CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */,
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
-				CA1C0249190BDF4F003C5F90 /* MLPickerView.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
 				CA1C0237190BBACC003C5F90 /* MLAllvsAllControllerViewController.m in Sources */,
 				CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */,
@@ -1473,14 +1467,6 @@
 				51F8749F190835BE00450DB2 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		51F874A7190835BE00450DB2 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51F874A8190835BE00450DB2 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		51F874AA190835BE00450DB2 /* Main_iPad.storyboard */ = {
