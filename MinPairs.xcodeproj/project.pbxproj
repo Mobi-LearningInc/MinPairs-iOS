@@ -280,10 +280,12 @@
 		E109704F19096AC9000C7E11 /* MLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E109704E19096AC9000C7E11 /* MLItem.m */; };
 		E109705519096ECB000C7E11 /* MLPair.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705419096ECB000C7E11 /* MLPair.m */; };
 		E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705719097120000C7E11 /* MLFileDataProvider.m */; };
+		E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E40CB190C839E0002D88C /* MLSettingsData.m */; };
+		E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E40CE190C878D0002D88C /* MLSettingDatabase.m */; };
 		E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */; };
 		E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248A3190AEDC300F9E8BF /* MLDatabase.m */; };
 		E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */; };
-		E1C248A9190AF67C00F9E8BF /* MLMinPairDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248A8190AF67C00F9E8BF /* MLMinPairDatabase.m */; };
+		E1C248A9190AF67C00F9E8BF /* MLTestResultDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248A8190AF67C00F9E8BF /* MLTestResultDatabase.m */; };
 		E1C248AC190AFAC100F9E8BF /* MLTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248AB190AFAC100F9E8BF /* MLTestResult.m */; };
 		E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */; };
 		E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */; };
@@ -600,6 +602,10 @@
 		E109705419096ECB000C7E11 /* MLPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPair.m; sourceTree = "<group>"; };
 		E109705619097120000C7E11 /* MLFileDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFileDataProvider.h; sourceTree = "<group>"; };
 		E109705719097120000C7E11 /* MLFileDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFileDataProvider.m; sourceTree = "<group>"; };
+		E12E40CA190C839D0002D88C /* MLSettingsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingsData.h; sourceTree = "<group>"; };
+		E12E40CB190C839E0002D88C /* MLSettingsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingsData.m; sourceTree = "<group>"; };
+		E12E40CD190C878D0002D88C /* MLSettingDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingDatabase.h; sourceTree = "<group>"; };
+		E12E40CE190C878D0002D88C /* MLSettingDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingDatabase.m; sourceTree = "<group>"; };
 		E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderEventListener.h; sourceTree = "<group>"; };
 		E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMainDataProvider.h; sourceTree = "<group>"; };
 		E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMainDataProvider.m; sourceTree = "<group>"; };
@@ -607,8 +613,8 @@
 		E1C248A2190AEDC200F9E8BF /* MLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDatabase.h; sourceTree = "<group>"; };
 		E1C248A3190AEDC300F9E8BF /* MLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDatabase.m; sourceTree = "<group>"; };
 		E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		E1C248A7190AF67C00F9E8BF /* MLMinPairDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMinPairDatabase.h; sourceTree = "<group>"; };
-		E1C248A8190AF67C00F9E8BF /* MLMinPairDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMinPairDatabase.m; sourceTree = "<group>"; };
+		E1C248A7190AF67C00F9E8BF /* MLTestResultDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTestResultDatabase.h; sourceTree = "<group>"; };
+		E1C248A8190AF67C00F9E8BF /* MLTestResultDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTestResultDatabase.m; sourceTree = "<group>"; };
 		E1C248AA190AFAC100F9E8BF /* MLTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTestResult.h; sourceTree = "<group>"; };
 		E1C248AB190AFAC100F9E8BF /* MLTestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTestResult.m; sourceTree = "<group>"; };
 		E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1038,6 +1044,8 @@
 				E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */,
 				E1C248AA190AFAC100F9E8BF /* MLTestResult.h */,
 				E1C248AB190AFAC100F9E8BF /* MLTestResult.m */,
+				E12E40CA190C839D0002D88C /* MLSettingsData.h */,
+				E12E40CB190C839E0002D88C /* MLSettingsData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1081,12 +1089,14 @@
 			children = (
 				E1C248A2190AEDC200F9E8BF /* MLDatabase.h */,
 				E1C248A3190AEDC300F9E8BF /* MLDatabase.m */,
-				E1C248A7190AF67C00F9E8BF /* MLMinPairDatabase.h */,
-				E1C248A8190AF67C00F9E8BF /* MLMinPairDatabase.m */,
+				E1C248A7190AF67C00F9E8BF /* MLTestResultDatabase.h */,
+				E1C248A8190AF67C00F9E8BF /* MLTestResultDatabase.m */,
 				CA7ED6DC190B70D7009F1BB7 /* MLSettings.h */,
 				CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */,
 				CA1C0238190BC38B003C5F90 /* MLSynchronousFilter.h */,
 				CA1C0239190BC38B003C5F90 /* MLSynchronousFilter.m */,
+				E12E40CD190C878D0002D88C /* MLSettingDatabase.h */,
+				E12E40CE190C878D0002D88C /* MLSettingDatabase.m */,
 			);
 			name = DataBase;
 			sourceTree = "<group>";
@@ -1430,6 +1440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA7ED6DE190B70D7009F1BB7 /* MLSettings.m in Sources */,
+				E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */,
 				51F874A2190835BE00450DB2 /* main.m in Sources */,
 				CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */,
 				E1C248AC190AFAC100F9E8BF /* MLTestResult.m in Sources */,
@@ -1446,13 +1457,14 @@
 				CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */,
 				CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */,
 				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
+				E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */,
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,
 				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,
 				CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */,
 				CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */,
-				E1C248A9190AF67C00F9E8BF /* MLMinPairDatabase.m in Sources */,
+				E1C248A9190AF67C00F9E8BF /* MLTestResultDatabase.m in Sources */,
 				CA7ED6DA190B46C1009F1BB7 /* MLGraphicsLegend.m in Sources */,
 				E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */,
 				E109704F19096AC9000C7E11 /* MLItem.m in Sources */,
