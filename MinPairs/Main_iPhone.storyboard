@@ -324,19 +324,46 @@
             <objects>
                 <viewController id="DGo-Or-WGG" customClass="MLStatisticsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OKR-Jg-V30"/>
-                        <viewControllerLayoutGuide type="bottom" id="2GK-jF-hWQ"/>
+                        <viewControllerLayoutGuide type="top" id="TzX-C1-BOH"/>
+                        <viewControllerLayoutGuide type="bottom" id="2du-YB-8Tz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DyR-Lo-4TG" customClass="MLLineGraphView">
+                    <view key="view" contentMode="scaleToFill" id="qep-pS-r2K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" backgroundImage="statisticsbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="X9U-SZ-M2C">
+                                <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <tabBarItem title="Bar Graph" id="SX5-Gb-XGI"/>
+                                    <tabBarItem title="Scatter Plot" id="dMg-zH-JVG"/>
+                                </items>
+                            </tabBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-qx-ENd" customClass="MLLineGraphView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.1586064878" green="0.1586064878" blue="0.1586064878" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X9U-SZ-M2C" firstAttribute="leading" secondItem="7MX-qx-ENd" secondAttribute="leading" id="2MP-2k-Dt1"/>
+                            <constraint firstItem="X9U-SZ-M2C" firstAttribute="leading" secondItem="qep-pS-r2K" secondAttribute="leading" id="8Tm-pA-fyY"/>
+                            <constraint firstItem="7MX-qx-ENd" firstAttribute="top" secondItem="qep-pS-r2K" secondAttribute="top" id="Bqd-68-LpB"/>
+                            <constraint firstAttribute="trailing" secondItem="X9U-SZ-M2C" secondAttribute="trailing" id="RuW-eQ-ybX"/>
+                            <constraint firstItem="X9U-SZ-M2C" firstAttribute="trailing" secondItem="7MX-qx-ENd" secondAttribute="trailing" id="YpE-jx-kqM"/>
+                            <constraint firstAttribute="bottom" secondItem="X9U-SZ-M2C" secondAttribute="bottom" id="dXE-AK-NBe"/>
+                            <constraint firstItem="X9U-SZ-M2C" firstAttribute="top" secondItem="7MX-qx-ENd" secondAttribute="bottom" id="wZw-uD-xKG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IeQ-YF-gDt"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9u-b2-uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="749"/>
+            <point key="canvasLocation" x="1070" y="766"/>
         </scene>
         <!--PQThree View Controller-->
         <scene sceneID="Dae-kw-hTA">
@@ -597,6 +624,7 @@
         <image name="na1.png" width="147" height="147"/>
         <image name="radio_button_default.png" width="14" height="15"/>
         <image name="radio_button_selected.png" width="14" height="15"/>
+        <image name="statisticsbg.png" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

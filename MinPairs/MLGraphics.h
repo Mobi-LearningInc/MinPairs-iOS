@@ -62,27 +62,29 @@ typedef CGBlendMode BlendMode;
 
 -(void) LineTo:(float)X withY:(float)Y;
 
--(void) SetLineThickness:(float)Thickness;
+-(void) SetLineEnds:(bool)round;
+
+-(void) SetLineWidth:(float)width;
 
 -(void) DrawLine:(float)X1 withY1:(float)Y1 withX2:(float)X2 withY2:(float)Y2;
 
--(void) DrawBox:(CGRect)rect;
+-(void) DrawRect:(CGRect)rect withStyle:(bool)fill;
 
--(void) DrawBox:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height;
+-(void) DrawRect:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height withStyle:(bool)fill;
 
--(void) DrawRoundedRect:(float)radius withRect:(CGRect)rect;
+-(void) DrawRoundedRect:(float)radius withRect:(CGRect)rect withStyle:(bool)fill;
 
--(void) DrawRoundedRect:(float)radius withX1:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height;
+-(void) DrawRoundedRect:(float)radius withX1:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height withStyle:(bool)fill;
 
--(void) DrawCircle:(float)X withY:(float)Y withRadius:(float)Radius;
+-(void) DrawCircle:(float)X withY:(float)Y withRadius:(float)Radius withStyle:(bool)fill;
 
--(void) DrawEllipse:(CGRect)rect;
+-(void) DrawEllipse:(CGRect)rect withStyle:(bool)fill;
 
--(void) DrawEllipse:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height;
+-(void) DrawEllipse:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height withStyle:(bool)fill;
 
--(void) ClearBox:(CGRect)rect;
+-(void) ClearRect:(CGRect)rect;
 
--(void) ClearBox:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height;
+-(void) ClearRect:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height;
 
 -(NSArray*) GetAllFonts;
 
@@ -90,7 +92,9 @@ typedef CGBlendMode BlendMode;
 
 -(void) SetTextDrawingMode:(TextDrawMode) mode;
 
--(void) DrawText:(Font) font withText:(NSString*)text withX:(float)X withY:(float)Y;
+-(void) DrawText:(Font)font withColour:(Colour)colour withText:(NSString*)text withX:(float)X withY:(float)Y;
+
+-(void) DrawAngledText:(Font)font withColour:(Colour)colour withText:(NSString*)text withAngle:(float)Degrees withX:(float)X withY:(float)Y;
 
 -(Image) LoadImage:(NSString*)imagename;
 
@@ -104,6 +108,24 @@ typedef CGBlendMode BlendMode;
 
 -(void) RefreshView:(UIView*)view;
 
--(CGRect) RectFromString:(NSString*)text;
+-(void) SetAntiAliasing:(bool)on;
+
+-(void) SetFontSubPixelPositioning:(bool)on;
+
+-(void) SetFontSmoothing:(bool)on;
+
+-(CGSize) SizeFromString:(NSString*)text withFont:(Font)font;
+
+-(void) RotateSurface:(float)degrees;
+
+-(void) RotateSurfaceAroundPoint:(float)degrees withPoint:(CGPoint)point;
+
+-(void) RotateSurfaceAroundPoint:(float)degrees withX:(float)X withY:(float)Y;
+
+-(void) PushSurface;
+
+-(void) PopSurface;
+
+-(void) Flush;
 
 @end

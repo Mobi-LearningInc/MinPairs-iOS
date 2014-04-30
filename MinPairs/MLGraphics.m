@@ -15,7 +15,7 @@
 @implementation MLGraphics
 
 
--(MLGraphics*) init
+-(MLGraphics*) init	
 {
     self = [super init];
     if (self)
@@ -98,7 +98,7 @@
 
 -(void) SetFillColour:(Colour)colour
 {
-    float R = 0, G = 0, B = 0, A = 0;
+    CGFloat R = 0, G = 0, B = 0, A = 0;
     [colour getRed: &R green: &G blue: &B alpha: &A];
     CGContextSetRGBFillColor([self surface], R, G, B, A);
 }
@@ -110,7 +110,7 @@
 
 -(void) SetStrokeColour:(Colour)colour
 {
-    float R = 0, G = 0, B = 0, A = 0;
+    CGFloat R = 0, G = 0, B = 0, A = 0;
     [colour getRed: &R green: &G blue: &B alpha: &A];
     CGContextSetRGBStrokeColor([self surface], R, G, B, A);
 }
@@ -130,9 +130,14 @@
     CGContextAddLineToPoint([self surface], X, Y);
 }
 
--(void) SetLineThickness:(float)Thickness
+-(void) SetLineEnds:(bool)round
 {
-    CGContextSetLineWidth([self surface], Thickness);
+    CGContextSetLineCap([self surface], round ? kCGLineCapRound : kCGLineCapSquare);
+}
+
+-(void) SetLineWidth:(float)width
+{
+    CGContextSetLineWidth([self surface], width);
 }
 
 -(void) DrawLine:(float)X1 withY1:(float)Y1 withX2:(float)X2 withY2:(float)Y2
@@ -141,60 +146,72 @@
     CGContextAddLineToPoint([self surface], X2, Y2);
 }
 
--(void) DrawBox:(CGRect) rect
+-(void) DrawRect:(CGRect)rect withStyle:(bool)fill
 {
-    [self DrawBox: rect.origin.x withY1: rect.origin.y withWidth: rect.size.width withHeight: rect.size.height];
+    if (fill)
+    {
+        CGContextFillRect([self surface], rect);
+    }
+    else
+    {
+        CGContextStrokeRect([self surface], rect);
+    }
 }
 
--(void) DrawBox:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height;
+-(void) DrawRect:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height withStyle:(bool)fill;
 {
-    CGContextMoveToPoint([self surface], X1, Y1);
-    CGContextAddLineToPoint([self surface], X1 + Width, Y1);
-    CGContextAddLineToPoint([self surface], X1 + Width, Y1 + Height);
-    CGContextAddLineToPoint([self surface], X1, Y1 + Height);
-    CGContextAddLineToPoint([self surface], X1, Y1);
+    [self DrawRect: CGRectMake(X1, Y1, Width, Height) withStyle: fill];
 }
 
--(void) DrawRoundedRect:(float)radius withRect:(CGRect)rect
+-(void) DrawRoundedRect:(float)radius withRect:(CGRect)rect withStyle:(bool)fill
 {
-    UIBezierPath* path = [UIBezierPath bezierPathWithRoundedRect: rect cornerRadius: radius];
-    [path fill];
-    [path stroke];
+    if (fill)
+    {
+        [[UIBezierPath bezierPathWithRoundedRect: rect cornerRadius: radius] fill];
+    }
+    else
+    {
+        [[UIBezierPath bezierPathWithRoundedRect: rect cornerRadius: radius] stroke];
+    }
 }
 
--(void) DrawRoundedRect:(float)radius withX1:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height
+-(void) DrawRoundedRect:(float)radius withX1:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height withStyle:(bool)fill
 {
-    [self DrawRoundedRect: radius withRect: CGRectMake(X1, Y1, Width, Height)];
+    [self DrawRoundedRect: radius withRect: CGRectMake(X1, Y1, Width, Height) withStyle: fill];
 }
 
--(void) DrawCircle:(float)X withY:(float)Y withRadius:(float)Radius
+-(void) DrawCircle:(float)X withY:(float)Y withRadius:(float)Radius withStyle:(bool)fill
 {
     float X1  = X - Radius;
     float Y1 = Y - Radius;
     float X2 = X + Radius;
     float Y2 = Y + Radius;
-    
-    CGRect bounds = CGRectMake(X1, Y1, X2 - X1, Y2 - Y1);
-    //bounds = CGRectInset(bounds, Radius / 2, Radius / 2);
-    CGContextAddEllipseInRect([self surface], bounds);
+    [self DrawEllipse:CGRectMake(X1, Y1, X2 - X1, Y2 - Y1) withStyle: fill];
 }
 
--(void) DrawEllipse:(CGRect)rect
+-(void) DrawEllipse:(CGRect)rect withStyle:(bool)fill
 {
-    [self DrawEllipse: rect.origin.x withY1:rect.origin.y withWidth: rect.size.width withHeight: rect.size.height];
+    [self DrawEllipse: rect.origin.x withY1:rect.origin.y withWidth: rect.size.width withHeight: rect.size.height withStyle: fill];
 }
 
--(void) DrawEllipse:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height
+-(void) DrawEllipse:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height withStyle:(bool)fill
 {
-    CGContextAddEllipseInRect([self surface], CGRectMake(X1, Y1, Width, Height));
+    if (fill)
+    {
+        CGContextFillEllipseInRect([self surface], CGRectMake(X1, Y1, Width, Height));
+    }
+    else
+    {
+        CGContextStrokeEllipseInRect([self surface], CGRectMake(X1, Y1, Width, Height));
+    }
 }
 
--(void) ClearBox:(CGRect)rect
+-(void) ClearRect:(CGRect)rect
 {
     CGContextClearRect([self surface], rect);
 }
 
--(void) ClearBox:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height
+-(void) ClearRect:(float)X1 withY1:(float)Y1 withWidth:(float)Width withHeight:(float)Height
 {
     CGContextClearRect([self surface], CGRectMake(X1, Y1, Width, Height));
 }
@@ -214,9 +231,15 @@
     CGContextSetTextDrawingMode([self surface], mode);
 }
 
--(void) DrawText:(Font) font withText:(NSString*)text withX:(float)X withY:(float)Y
+-(void) DrawText:(Font)font withColour:(Colour)colour withText:(NSString*)text withX:(float)X withY:(float)Y
 {
-    [text drawAtPoint: CGPointMake(X, Y) withFont: font];
+    [text drawAtPoint: CGPointMake(X, Y) withAttributes: @{NSFontAttributeName: font, NSForegroundColorAttributeName: colour}];
+}
+
+-(void) DrawAngledText:(Font)font withColour:(Colour)colour withText:(NSString*)text withAngle:(float)Degrees withX:(float)X withY:(float)Y
+{
+    [self RotateSurfaceAroundPoint:Degrees withX: X withY: Y];
+    [self DrawText: font withColour: colour withText: text withX: X withY: Y];
 }
 
 -(Image) LoadImage:(NSString*)imagename
@@ -249,9 +272,57 @@
     [view setNeedsDisplay];
 }
 
--(CGRect) RectFromString:(NSString*)text
+-(void) SetAntiAliasing:(bool)on
 {
-    return CGRectFromString(text);
+    CGContextSetShouldAntialias([self surface], on);
+}
+
+-(void) SetFontSubPixelPositioning:(bool)on
+{
+    CGContextSetShouldSubpixelPositionFonts([self surface], on);
+}
+
+-(void) SetFontSmoothing:(bool)on
+{
+    CGContextSetShouldSmoothFonts([self surface], on);
+}
+
+-(CGSize) SizeFromString:(NSString*)text withFont:(Font)font
+{
+    return [text sizeWithAttributes: @{NSFontAttributeName: font}];
+}
+
+-(void) RotateSurface:(float)degrees
+{
+    CGContextRotateCTM([self surface], degrees * M_PI / 180.0f);
+}
+
+-(void) RotateSurfaceAroundPoint:(float)degrees withPoint:(CGPoint)point
+{
+    CGContextTranslateCTM([self surface], point.x, point.y);
+    CGAffineTransform transform = CGAffineTransformMakeRotation(degrees * M_PI / 180.0f);
+    CGContextConcatCTM([self surface], transform);
+    CGContextTranslateCTM([self surface], -point.x, -point.y);
+}
+
+-(void) RotateSurfaceAroundPoint:(float)degrees withX:(float)X withY:(float)Y
+{
+    [self RotateSurfaceAroundPoint: degrees withPoint: CGPointMake(X, Y)];
+}
+
+-(void) PushSurface
+{
+    CGContextSaveGState([self surface]);
+}
+
+-(void) PopSurface
+{
+    CGContextRestoreGState([self surface]);
+}
+
+-(void) Flush
+{
+    CGContextFlush([self surface]);
 }
 
 @end
