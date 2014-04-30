@@ -233,7 +233,18 @@
 
 -(void) DrawText:(Font)font withColour:(Colour)colour withText:(NSString*)text withX:(float)X withY:(float)Y
 {
-    [text drawAtPoint: CGPointMake(X, Y) withAttributes: @{NSFontAttributeName: font, NSForegroundColorAttributeName: colour}];
+    float system_version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
+    if (system_version >= 7.0)
+    {
+        [text drawAtPoint: CGPointMake(X, Y) withAttributes: @{NSFontAttributeName: font, NSForegroundColorAttributeName: colour}];
+    }
+    else
+    {
+        [self SetStrokeColour: colour];
+        [self SetFillColour: colour];
+        [text drawAtPoint: CGPointMake(X, Y) withFont: font];
+    }
 }
 
 -(void) DrawAngledText:(Font)font withColour:(Colour)colour withText:(NSString*)text withAngle:(float)Degrees withX:(float)X withY:(float)Y

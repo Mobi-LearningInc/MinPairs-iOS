@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MLGraphics.h"
+#import "MLPlatform.h"
 
 @interface MLGraphAxis : NSObject
 

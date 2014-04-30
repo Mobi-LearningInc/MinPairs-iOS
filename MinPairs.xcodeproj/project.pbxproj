@@ -37,6 +37,7 @@
 		CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */; };
 		CA7ED6E7190BB57D009F1BB7 /* Play5.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7ED6E5190BB57D009F1BB7 /* Play5.png */; };
 		CA7ED6E8190BB57D009F1BB7 /* radio_button_selected2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7ED6E6190BB57D009F1BB7 /* radio_button_selected2.png */; };
+		CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA1B2161911B17C00453852 /* MLPlatform.m */; };
 		CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */; };
 		CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */; };
 		CAC7729D190A3CF400CB74A5 /* radio_button_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC7729C190A3CF400CB74A5 /* radio_button_default.png */; };
@@ -355,6 +356,8 @@
 		CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPushUpView.m; sourceTree = "<group>"; };
 		CA7ED6E5190BB57D009F1BB7 /* Play5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play5.png; sourceTree = "<group>"; };
 		CA7ED6E6190BB57D009F1BB7 /* radio_button_selected2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_button_selected2.png; sourceTree = "<group>"; };
+		CAA1B2151911B17C00453852 /* MLPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlatform.h; sourceTree = "<group>"; };
+		CAA1B2161911B17C00453852 /* MLPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlatform.m; sourceTree = "<group>"; };
 		CAC77287190A13C100CB74A5 /* MLAudioBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAudioBase.h; sourceTree = "<group>"; };
 		CAC77288190A13C100CB74A5 /* MLBasicAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBasicAudioPlayer.h; sourceTree = "<group>"; };
 		CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBasicAudioPlayer.m; sourceTree = "<group>"; };
@@ -696,6 +699,7 @@
 		51F8749B190835BE00450DB2 /* MinPairs */ = {
 			isa = PBXGroup;
 			children = (
+				CAA1B2141911B14B00453852 /* Platform */,
 				CA01289319102E8C00CCFCBB /* iPad */,
 				CA7ED6D2190B469D009F1BB7 /* Graphics */,
 				E1C248A1190AED9200F9E8BF /* DataBase */,
@@ -765,6 +769,15 @@
 				CAC946DA190DCC380002ED3B /* MLGraphAxis.m */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		CAA1B2141911B14B00453852 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				CAA1B2151911B17C00453852 /* MLPlatform.h */,
+				CAA1B2161911B17C00453852 /* MLPlatform.m */,
+			);
+			name = Platform;
 			sourceTree = "<group>";
 		};
 		CAC77286190A134400CB74A5 /* AudioPlayers */ = {
@@ -1467,6 +1480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA7ED6DE190B70D7009F1BB7 /* MLSettings.m in Sources */,
+				CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */,
 				E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */,
 				51F874A2190835BE00450DB2 /* main.m in Sources */,
 				CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */,
@@ -1625,14 +1639,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4B7D65A4-BEBE-4CCE-8923-91AC799B13C8";
+				PROVISIONING_PROFILE = "F7C2B363-6060-4A39-9BD0-49116035CA57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1642,14 +1656,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4B7D65A4-BEBE-4CCE-8923-91AC799B13C8";
+				PROVISIONING_PROFILE = "F7C2B363-6060-4A39-9BD0-49116035CA57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
