@@ -12,9 +12,21 @@
 #import "MLPQThreeViewController.h"
 #import "MLTestResultDatabase.h"
 #import "MLSettingDatabase.h"
+#import "MLBasicAudioPlayer.h"
+#import "MLPair.h"
+
+#import "MLMainDataProvider.h"
 @interface MLPQBaseViewController ()
-
-
+@property NSTimer* timer;
+@property MLTestResult* currentResult;
+@property (weak,nonatomic)UILabel* selectTimeLabel;
+@property (weak,nonatomic)UILabel* readTimeLabel;
+@property (weak,nonatomic)UILabel* typeTimeLabel;
+@property (strong,nonatomic)MLSettingsData* setting;
+@property (copy) void (^onTypeEnd)(void);
+@property (copy) void (^onSelectEnd)(void);
+@property (copy) void (^onReadEnd)(void);
+@property BOOL pauseTimer;
 @end
 
 @implementation MLPQBaseViewController
@@ -31,47 +43,158 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(self.questionCount==0)//Show instrustion on first msg
+
+    self.pauseTimer=false;
+    if(self.questionCount==1)//Show instrustion on first msg
     {
     NSString* modeStr = [NSString stringWithFormat: @"You are currently in: %s mode.", [self practiceMode] ? "PracticeMode" : "QuizMode."];
     
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:modeStr delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:modeStr delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alert show];
+    self.pauseTimer=true;
     }
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     self.navigationItem.leftBarButtonItem=quitBtn;
     MLSettingDatabase * settingDB= [[MLSettingDatabase alloc]initSettingDatabase];
-    MLSettingsData* setting= [settingDB getSetting];
-    MLPair* pair = setting.settingFilterCatPair;
+    self.setting= [settingDB getSetting];
+    MLPair* pair = self.setting.settingFilterCatPair;
     self.catFromFilterLeft=pair.first;
     self.catFromFilterRight=pair.second;
-    NSString* titleStr = [NSString stringWithFormat:@"%@ vs %@", self.catFromFilterLeft.categoryDescription, self.catFromFilterRight.categoryDescription];
+    self.previousResult.testExtra=[NSString stringWithFormat:@"%@|%@",[pair.first categoryDescription],[pair.second categoryDescription]];
+    NSString* titleStr = [NSString stringWithFormat:@"%@ %@ vs %@", self.practiceMode?@"Practice":@"Quiz", self.catFromFilterLeft.categoryDescription, self.catFromFilterRight.categoryDescription];
     self.title =titleStr;
     self.controllerArray=[NSMutableArray arrayWithObjects:@"PQOne",@"PQTwo",@"PQThree", nil];
+    
+    self.timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTick) userInfo:nil repeats:YES];
+    
 }
+-(void)registerQuizTimeLabelsAndEventSelectLabel:(UILabel*)selectTimeLabel event:(void (^)(void))onSelectEnd readLabel: (UILabel*)readTimeLabel event:(void (^)(void))onReadEnd typeLabel: (UILabel*)typeTimeLabel event:(void (^)(void))onTypeEnd
+{
+    self.selectTimeLabel=selectTimeLabel;
+    self.readTimeLabel=readTimeLabel;
+    self.typeTimeLabel=typeTimeLabel;
+    self.onSelectEnd=onSelectEnd;
+    self.onReadEnd=onReadEnd;
+    self.onTypeEnd=onTypeEnd;
+    if (self.practiceMode)
+    {
+        if(self.selectTimeLabel)[self.selectTimeLabel setHidden:YES];
+        if(self.readTimeLabel)[self.readTimeLabel setHidden:YES];
+        if(self.typeTimeLabel)[self.typeTimeLabel setHidden:YES];
+    }
+
+}
+-(void)onTick
+{
+    if(!self.pauseTimer)
+    {
+    self.timeCount++;
+    if (!self.practiceMode)
+    {
+        int selectLimit =self.setting.settingTimeSelect;
+        int readLimit = self.setting.settingTimeRead;
+        int typeLimit=self.setting.settingTimeType;
+        int currentSelectTime = (selectLimit-self.timeCount)<0?0:selectLimit-self.timeCount;
+        int currentReadTime = (readLimit-self.timeCount)<0?0:readLimit-self.timeCount;
+        int currentTypeTime = (typeLimit-self.timeCount)<0?0:typeLimit-self.timeCount;
+        if(self.selectTimeLabel)
+        {
+            if (currentSelectTime>0)
+            {
+                self.selectTimeLabel.text=[NSString stringWithFormat:@"%i",currentSelectTime];
+            }
+            else
+            {
+                if(self.onSelectEnd)//run once
+                {
+                    self.onSelectEnd();
+                    self.onSelectEnd =nil;
+                }
+            }
+        }
+        if(self.readTimeLabel)
+        {
+            if (currentReadTime>0)
+            {
+                self.readTimeLabel.text=[NSString stringWithFormat:@"%i",currentReadTime];
+            }
+            else
+            {
+                if(self.onReadEnd)//run once
+                {
+                    self.onReadEnd();
+                    self.onReadEnd=nil;
+                }
+            }
+        }
+        if(self.typeTimeLabel)
+        {
+            if (currentTypeTime>0)
+            {
+                self.typeTimeLabel.text=[NSString stringWithFormat:@"%i",currentTypeTime];
+            }
+            else
+            {
+                if(self.onTypeEnd)//run once
+                {
+                    self.onTypeEnd();
+                    self.onTypeEnd=nil;
+                }
+                
+            }
+        }
+        
+    }
+    }
+}
+
 -(void)onQuitBtn
 {
-    NSLog(@"Quit called");
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Quit" message:@"Are you sure you want to quit? All progress will be lost." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok",@"Cancel", nil];
+    self.pauseTimer=true;
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Quit" message:@"Are you sure you want to quit? All progress will be lost." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     [alert show];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex==0)
+    if (buttonIndex == [alertView cancelButtonIndex])//'cancel' button from quit popup or 'ok' button from stat info popup
     {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        self.pauseTimer=false;
+        NSLog(@"btn index %i",buttonIndex );
     }
+    if(buttonIndex==1)//ok btn from quit popup
+    {
+        if(self.timer)
+        {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        NSLog(@"btn index %i",buttonIndex );
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }    
+    
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)onAnswer
+-(void)viewDidDisappear:(BOOL)animated
 {
-    if(self.currentResult)
+    if(self.timer)
     {
-    if (self.questionCount+1>ML_MLPQBASE_QUESTION_LIMIT)
+    [self.timer invalidate];
+    self.timer = nil;
+    }
+    [super viewDidDisappear:animated];
+}
+-(void)onAnswer:(MLTestResult*)currentResult
+{
+    NSLog(@"status : correct:%i, wrong:%i, time: %i",currentResult.testQuestionsCorrect,currentResult.testQuestionsWrong,self.timeCount);
+    [self.timer invalidate];
+    self.timer = nil;
+    self.currentResult=currentResult;
+
+    if (self.questionCount>ML_MLPQBASE_QUESTION_LIMIT)
     {
         [self saveResultAndReturnHome];
     }
@@ -79,11 +202,42 @@
     {
     [self pushSequeOnStack: [NSNumber numberWithBool: [self.previousResult.testType isEqualToString:ML_TEST_TYPE_PRACTICE]?true:false]];
     }
-    }
-    else
+
+ 
+}
+-(void)playItem:(MLItem*)item
+{
+    MLBasicAudioPlayer* audioPlayer = [[MLBasicAudioPlayer alloc]init];
+    [audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
+    [audioPlayer prepareToPlay];
+    [audioPlayer play];
+}
+-(NSMutableArray*)getItemsForCategory:(MLCategory*)selectedCategory
+{
+    MLMainDataProvider* provider=[[MLMainDataProvider alloc]initMainProvider];
+    NSArray* catItemPairs =[provider getCategoryItemPairs];
+    if (selectedCategory.categoryId==0)//if All is selcted
     {
-        NSLog(@"Classes inheriting from MLPQBaseViewCOntroller must set currentResult before calling onAnswer!");
+        return [NSMutableArray arrayWithArray:[provider getItems]];//return all
     }
+    NSMutableArray* wordArr = [NSMutableArray array];
+    for(int i=0; i<catItemPairs.count; i++)
+    {
+        MLPair* pair = [catItemPairs objectAtIndex:i];
+        MLCategory* cat = pair.first;
+        if(cat.categoryId==selectedCategory.categoryId)
+        {
+            MLItem* word=pair.second;
+            [wordArr addObject: word];
+            
+        }
+    }
+    return  wordArr;
+}
+-(MLItem*)pickRandomItem:(NSMutableArray*)items
+{
+    int rand = arc4random_uniform(items.count);
+    return [items objectAtIndex:rand];
 }
 -(void) pushSequeOnStack:(NSNumber*)mode
 {

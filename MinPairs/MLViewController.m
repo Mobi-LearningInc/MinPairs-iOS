@@ -14,8 +14,7 @@
 #import "MLCategory.h"
 #import "MLTestResultDatabase.h"
 @interface MLViewController ()
-@property int practiceQuestionCount;
-@property int quizQuestionCount;
+
 @end
 
 @implementation MLViewController
@@ -23,14 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"p count %i",self.practiceQuestionCount++);
-    //testing settings
-    MLSettingDatabase* sDB = [[MLSettingDatabase alloc]initSettingDatabase];
-    MLSettingsData* setting=[sDB getSetting];
-    MLCategory* catL=setting.settingFilterCatPair.first;
-    MLCategory* catR=setting.settingFilterCatPair.second;
-    NSLog(@"setting data : times(%i%i%i) filter(%i,%i)",setting.settingTimeSelect,setting.settingTimeRead,setting.settingTimeType,catL.categoryId,catR.categoryId);
+
 }
 
 - (void)didReceiveMemoryWarning

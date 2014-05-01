@@ -27,7 +27,14 @@
         
         instance->_mappedSounds = nil;
         instance->_provider = [[MLMainDataProvider alloc] initMainProvider];
-        instance->_categories = [instance->_provider getCategories];
+        NSArray* catPairs = [instance->_provider getCategoryPairs];
+        NSMutableArray* catLeft = [NSMutableArray array];
+        for (int i=0; i<catPairs.count; i++)
+        {
+            MLPair* p =[catPairs objectAtIndex:i];
+            [catLeft addObject:p.first];
+        }
+        instance->_categories = catLeft;//[instance->_provider getCategories];
     });
     
     return instance;

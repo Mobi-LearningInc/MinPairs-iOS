@@ -10,7 +10,9 @@
 #import "MLPQThreeViewController.h"
 
 @interface MLPQTwoViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *textAnswer;
+@property (weak, nonatomic) IBOutlet UILabel *typeTimeLabel;
+@property (strong,nonatomic)MLItem* correctItem;
 @end
 
 @implementation MLPQTwoViewController
@@ -28,18 +30,58 @@
 {
     [super viewDidLoad];
     self.sequeName=@"PQTwo";
+    int rand = arc4random_uniform(2);
+    MLCategory* rCat=(rand==0)?self.catFromFilterLeft:self.catFromFilterRight;
+    self.correctItem=[self pickRandomItem:[self getItemsForCategory:rCat]];
+    NSLog(@"Correct item is %@",self.correctItem.itemDescription);
+    [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:nil event:nil typeLabel:self.typeTimeLabel event:^(void){
+        MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
+            wrong:1+self.previousResult.testQuestionsWrong
+            type:self.previousResult.testType
+            date:self.previousResult.testDate
+            timeInSec:self.timeCount+self.previousResult.testTime
+            extraInfo:self.previousResult.testExtra];
+        [self onAnswer:currentResult];
+    }];
+}
 
+- (IBAction)onPlayBtn:(id)sender
+{
+    [self playItem:self.correctItem];
+    NSLog(@"Played sound for %@",self.correctItem.itemDescription);
 }
 - (IBAction)onAnswerBtn:(id)sender
 {
-    // test values
-    int corr=1;
-    int wrong=0;
-    int time = 55;
-    self.currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:time+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
-    [self onAnswer];
+    NSString* raw = self.textAnswer.text;
+    NSString* noWS=[raw stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString* cleanStr=[noWS lowercaseString];
+    NSLog(@"User typed %@",cleanStr);
+    int corr;
+    int wrong;
+    if([cleanStr isEqualToString: [self.correctItem.itemDescription lowercaseString] ])
+    {
+        corr=1;
+        wrong=0;
+    }
+    else
+    {
+        corr=0;
+        wrong=1;
+    }
+    
+    MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect
+        wrong:wrong+self.previousResult.testQuestionsWrong
+        type:self.previousResult.testType
+        date:self.previousResult.testDate
+        timeInSec:self.timeCount+self.previousResult.testTime
+        extraInfo:self.previousResult.testExtra];
+    [self onAnswer:currentResult];
 }
-
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
+{
+    //hides keyboard
+    [self.view endEditing:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

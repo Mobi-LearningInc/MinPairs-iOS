@@ -8,7 +8,10 @@
 
 #import "MLLineGraphView.h"
 #import "MLGraphAxis.h"
-
+#import "MLSettingDatabase.h"
+#import "MLPair.h"
+#import "MLCategory.h"
+#import "MLTestResultDatabase.h"
 @implementation MLLineGraphView
 
 - (id)initWithFrame:(CGRect)frame
@@ -27,6 +30,29 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    MLSettingDatabase* settingsDb = [[MLSettingDatabase alloc]initSettingDatabase];
+    MLSettingsData* setting = [settingsDb getSetting];
+    MLPair* pair =setting.settingFilterCatPair;
+    MLCategory* catLeft = pair.first;
+    MLCategory* catRight=pair.second;
+    MLTestResultDatabase* testResultDb=[[MLTestResultDatabase alloc]initTestResultDatabase];
+    NSArray* testResults=[testResultDb getTestResults];
+    NSMutableArray* filteredResults=[NSMutableArray array];
+    NSString* filterStr=[NSString stringWithFormat:@"%@|%@",catLeft.categoryDescription,catRight.categoryDescription];
+    for (int i =0; i<testResults.count; i++)
+    {
+        MLTestResult* test = [testResults objectAtIndex:i];
+        if([test.testExtra isEqualToString:filterStr])
+        {
+            [filteredResults addObject:test];
+        }
+    }
+    for (int i=0; i<filteredResults.count; i++)
+    {
+        MLTestResult* t = [filteredResults objectAtIndex:i];
+        float percentScore = ((float)t.testQuestionsCorrect)/((float)(t.testQuestionsCorrect+t.testQuestionsWrong))*100.0f;
+        NSLog(@"Statistics score %f%%, time: %i(s) type:%@",percentScore, t.testTime, t.testType);
+    }
     MLGraphics* graphics = [[MLGraphics alloc] init];
     
     MLGraphAxis* axis = [[MLGraphAxis alloc] initWithGraphics: graphics];

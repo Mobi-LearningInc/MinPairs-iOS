@@ -15,6 +15,7 @@
 #import "MLPair.h"
 #import "MLMainDataProvider.h"
 #import "MLBasicAudioPlayer.h"
+#import "MLTestResult.h"
 @interface MLPQThreeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftPlayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rightPlayBtn;
@@ -24,8 +25,9 @@
 @property (strong,nonatomic) MLItem* itemLeft;
 @property (strong,nonatomic) MLItem* itemRight;
 @property (weak, nonatomic) IBOutlet UILabel *itemMainLable;
-@property (strong,nonatomic) NSTimer * timer;
-@property int timeCount;
+@property (weak, nonatomic) IBOutlet UILabel *readTimeLabel;
+
+@property (strong, nonatomic)MLItem* correctAnswer;
 @end
 
 @implementation MLPQThreeViewController
@@ -43,64 +45,54 @@
 {
     [super viewDidLoad];
     self.sequeName=@"PQThree";
-    self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
-    self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
-    [self.radioBtnLeft setTitle:self.itemLeft.itemDescription forState:UIControlStateNormal];
-    [self.radioBtnRight setTitle:self.itemRight.itemDescription forState:UIControlStateNormal];
+    int rSwap = arc4random_uniform(2);
+    if (rSwap==0)
+    {
+        self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
+        self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
+    }
+    else
+    {
+        self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
+        self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
+    }
+    [self.radioBtnLeft setTitle:@"pick left" forState:UIControlStateNormal];
+    [self.radioBtnRight setTitle:@"pick right" forState:UIControlStateNormal];
     int rand = arc4random_uniform(2);
-    self.itemMainLable.text = rand==0?self.itemLeft.itemDescription:self.itemRight.itemDescription;
-    self.timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTick) userInfo:nil repeats:YES];
+    MLItem* cor= rand==0?self.itemLeft:self.itemRight;
+    self.itemMainLable.text=cor.itemDescription;
+    self.correctAnswer=cor;
+    NSLog(@"Correct answer is %@",self.correctAnswer.itemDescription);
+    [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:self.readTimeLabel event:^(void){
+        MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
+             wrong:1+self.previousResult.testQuestionsWrong
+             type:self.previousResult.testType
+             date:self.previousResult.testDate
+            timeInSec:self.timeCount+self.previousResult.testTime
+             extraInfo:self.previousResult.testExtra];
+        [self onAnswer:currentResult];
+    } typeLabel:nil event:nil];
 }
--(void)onTick
-{
-    self.timeCount++;
-}
+
 - (IBAction)onLeftPlayBtnTap:(id)sender
 {
     [self playItem:self.itemLeft];
+    NSLog(@"Played sound for %@",self.itemLeft.itemDescription);
 }
 - (IBAction)onRightPlayBtnTap:(id)sender
 {
     [self playItem:self.itemRight];
+    NSLog(@"Played sound for %@",self.itemRight.itemDescription);
 }
--(void)playItem:(MLItem*)item
-{
-    MLBasicAudioPlayer* audioPlayer = [[MLBasicAudioPlayer alloc]init];
-    [audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
-    [audioPlayer prepareToPlay];
-    [audioPlayer play];
-}
--(NSMutableArray*)getItemsForCategory:(MLCategory*)selectedCategory
-{
-    MLMainDataProvider* provider=[[MLMainDataProvider alloc]initMainProvider];
-    NSArray* catItemPairs =[provider getCategoryItemPairs];
-    NSMutableArray* wordArr = [NSMutableArray array];
-    for(int i=0; i<catItemPairs.count; i++)
-    {
-        MLPair* pair = [catItemPairs objectAtIndex:i];
-        MLCategory* cat = pair.first;
-        if(cat.categoryId==selectedCategory.categoryId)
-        {
-            MLItem* word=pair.second;
-            [wordArr addObject: word];
-            
-        }
-    }
-    return  wordArr;
-}
--(MLItem*)pickRandomItem:(NSMutableArray*)items
-{
-    int rand = arc4random_uniform(items.count);
-    return [items objectAtIndex:rand];
-}
+
 - (IBAction)onAnswerButton:(id)sender
 {
-    [self.timer invalidate];
-    self.timer = nil;
-    NSString* selectedString = self.btnGroup.selectedButton.currentTitle;
+    
     int corr;
     int wrong;
-    if([self.itemMainLable.text isEqualToString:selectedString])
+    MLItem* selected =(self.btnGroup.selectedIndex==0)?self.itemLeft:self.itemRight;
+    NSLog(@"User selected %@",selected.itemDescription);
+    if(self.correctAnswer==selected)
     {
         corr=1;
         wrong=0;
@@ -110,9 +102,8 @@
         corr=0;
         wrong=1;
     }
-    NSLog(@"status : correct:%i, wrong:%i, time: %i",corr,wrong,self.timeCount);
-    self.currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
-    [self onAnswer];
+    MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
+    [self onAnswer:currentResult];
 }
 
 
