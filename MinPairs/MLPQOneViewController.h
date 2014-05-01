@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLPQBaseViewController.h"
+@interface MLPQOneViewController : MLPQBaseViewController
 
-@interface MLPQOneViewController : UIViewController
-@property (nonatomic, assign) bool practiceMode;
 @end

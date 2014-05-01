@@ -5,8 +5,9 @@
 //  Created by Brandon on 2014-04-26.
 //  Copyright (c) 2014 MobiLearning. All rights reserved.
 //
-
+#import "MLPQOneViewController.h"
 #import "MLPQTwoViewController.h"
+#import "MLPQThreeViewController.h"
 
 @interface MLPQTwoViewController ()
 
@@ -26,11 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSString* modeStr = [NSString stringWithFormat: @"You are currently in: %s mode.", [self practiceMode] ? "PracticeMode" : "QuizMode."];
-    
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:modeStr delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
+    self.sequeName=@"PQTwo";
+
+}
+- (IBAction)onAnswerBtn:(id)sender
+{
+    // test values
+    int corr=1;
+    int wrong=0;
+    int time = 55;
+    self.currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:time+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
+    [self onAnswer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,15 +46,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 @end

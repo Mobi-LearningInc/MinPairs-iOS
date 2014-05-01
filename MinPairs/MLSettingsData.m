@@ -9,7 +9,7 @@
 #import "MLSettingsData.h"
 
 @implementation MLSettingsData
--(instancetype)initSettingWithId:(int)settingId timeSelect:(int)settingTimeSelect timeRead:(int)settingTimeRead timeType:(int)settingTimeType
+-(instancetype)initSettingWithId:(int)settingId timeSelect:(int)settingTimeSelect timeRead:(int)settingTimeRead timeType:(int)settingTimeType filterSelection:(MLPair*)categoryPair;
 {
     self=[super init];
     if(self)
@@ -18,10 +18,11 @@
         self.settingTimeSelect=settingTimeSelect;
         self.settingTimeRead=settingTimeRead;
         self.settingTimeType=settingTimeType;
+        self.settingFilterCatPair=categoryPair;
     }
     return self;
 }
--(instancetype)initSettingWithTimeSelect:(int)settingTimeSelect timeRead:(int)settingTimeRead timeType:(int)settingTimeType
+-(instancetype)initSettingWithTimeSelect:(int)settingTimeSelect timeRead:(int)settingTimeRead timeType:(int)settingTimeType filterSelection:(MLPair*)categoryPair;
 {
     self=[super init];
     if(self)
@@ -30,6 +31,7 @@
         self.settingTimeSelect=settingTimeSelect;
         self.settingTimeRead=settingTimeRead;
         self.settingTimeType=settingTimeType;
+        self.settingFilterCatPair=categoryPair;
     }
     return self;
 }

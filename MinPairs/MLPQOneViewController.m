@@ -7,7 +7,8 @@
 //
 
 #import "MLPQOneViewController.h"
-
+#import "MLPQTwoViewController.h"
+#import "MLPQThreeViewController.h"
 @interface MLPQOneViewController ()
 
 @end
@@ -26,11 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.sequeName=@"PQOne";
     
-    NSString* modeStr = [NSString stringWithFormat: @"You are currently in: %s mode.", [self practiceMode] ? "PracticeMode" : "QuizMode."];
-    
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Notice" message:modeStr delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
+}
+- (IBAction)onAnswerBtn:(id)sender
+{
+    // test values
+    int corr=0;
+    int wrong=1;
+    int time = 41;
+    self.currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:time+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
+    [self onAnswer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,15 +47,7 @@
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

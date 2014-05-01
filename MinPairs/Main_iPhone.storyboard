@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -391,6 +391,9 @@
                                 <state key="normal" title="Answer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAnswerButton:" destination="plC-UE-duX" eventType="touchUpInside" id="UBi-hi-EJh"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="urb-zF-KEh">
                                 <rect key="frame" x="16" y="204" width="288" height="174"/>
@@ -436,6 +439,9 @@
                                         <state key="normal" title="Play" image="Play2.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onLeftPlayBtnTap:" destination="plC-UE-duX" eventType="touchUpInside" id="UR9-g4-7S4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-4T-WvJ">
                                         <rect key="frame" x="204" y="11" width="75" height="75"/>
@@ -443,6 +449,9 @@
                                         <state key="normal" title="Play" image="Play2.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onRightPlayBtnTap:" destination="plC-UE-duX" eventType="touchUpInside" id="PJp-1d-bIT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -452,11 +461,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-Xw-yAP">
+                                <rect key="frame" x="126" y="174" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nOm-MQ-Kgv"/>
+                    <connections>
+                        <outlet property="btnGroup" destination="hmc-bZ-5yu" id="nK2-Ou-Ltf"/>
+                        <outlet property="itemMainLable" destination="s1d-Xw-yAP" id="imX-LM-AaC"/>
+                        <outlet property="leftPlayBtn" destination="tsM-yp-Qq6" id="pU9-F6-IzL"/>
+                        <outlet property="radioBtnLeft" destination="cVr-ct-Z8c" id="idB-6h-wu9"/>
+                        <outlet property="radioBtnRight" destination="zeZ-nW-LBz" id="9pI-Lz-yEC"/>
+                        <outlet property="rightPlayBtn" destination="NWW-4T-WvJ" id="aEj-bo-aLw"/>
+                        <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="ftR-Qk-zmG"/>
+                        <segue destination="Wka-r1-Mpd" kind="push" identifier="PQOne" id="6iJ-t5-LbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4I-R0-myw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -493,6 +519,9 @@
                                 <state key="normal" title="Answer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAnswerBtn:" destination="CeJ-mv-Dkw" eventType="touchUpInside" id="Eux-Cl-UmJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
                                 <rect key="frame" x="123" y="175" width="75" height="75"/>
@@ -517,6 +546,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="zhG-QC-PcW"/>
+                    <connections>
+                        <segue destination="Wka-r1-Mpd" kind="push" identifier="PQOne" id="TyA-nf-f42"/>
+                        <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="0jx-Fn-kNE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="414-Uf-Xve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -553,6 +586,9 @@
                                 <state key="normal" title="Answer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAnswerBtn:" destination="Wka-r1-Mpd" eventType="touchUpInside" id="gk5-bE-zSR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-ng-0Jn">
                                 <rect key="frame" x="123" y="131" width="75" height="75"/>
@@ -614,6 +650,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="hkZ-M0-vHk"/>
+                    <connections>
+                        <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="4x2-T0-iI7"/>
+                        <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="Bkb-fV-617"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRh-yV-f7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -632,4 +672,9 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="0jx-Fn-kNE"/>
+        <segue reference="ftR-Qk-zmG"/>
+        <segue reference="6iJ-t5-LbI"/>
+    </inferredMetricsTieBreakers>
 </document>

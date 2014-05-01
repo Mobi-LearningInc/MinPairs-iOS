@@ -7,11 +7,12 @@
 //
 
 #import "MLFilterViewController.h"
-
+#import "MLSettingDatabase.h"
 @interface MLFilterViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) UITableView* leftView;
 @property (strong, nonatomic) UITableView* rightView;
 @property (weak, nonatomic) NSMutableArray* mappedSounds;
+@property int catIdLeft;
 @end
 
 @implementation MLFilterViewController
@@ -110,6 +111,7 @@
     if (tableView == [self leftView])
     {
         MLCategory* ocat = [[MLSynchronousFilter getLeft] objectAtIndex: indexPath.row];
+        self.catIdLeft=ocat.categoryId;
         _mappedSounds = [MLSynchronousFilter getCategoriesRight: ocat];
         [[self rightView] reloadData];
         
@@ -118,8 +120,27 @@
             [self animate: true];
         }
     }
+    else //rightView then save selected pair to setting table in database and quit filter
+    {
+        MLCategory* catFromRightTable =[self.mappedSounds objectAtIndex:indexPath.row];
+        int catIdRight = catFromRightTable.categoryId;
+        MLMainDataProvider* dataProvider =[[MLMainDataProvider alloc]initMainProvider];
+        MLCategory* catLeft =[dataProvider getCategoryWithId:self.catIdLeft];
+        MLCategory* catRight = [dataProvider getCategoryWithId:catIdRight];
+        MLPair* catPair = [[MLPair alloc]initPairWithFirstObject:catLeft secondObject:catRight];
+        MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
+        MLSettingsData* currentSetting=[settingDb getSetting];
+        currentSetting.settingFilterCatPair=catPair;
+        [settingDb saveSetting:currentSetting];
+        [self returnBack];
+    }
 }
-
+-(void)returnBack
+{
+    int index = self.navigationController.viewControllers.count-2; //previous controller index
+    UIViewController *back= [self.navigationController.viewControllers objectAtIndex:index];
+    [self.navigationController popToViewController:back animated:YES];
+}
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;

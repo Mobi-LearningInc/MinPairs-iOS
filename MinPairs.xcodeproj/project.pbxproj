@@ -287,6 +287,7 @@
 		E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E109705719097120000C7E11 /* MLFileDataProvider.m */; };
 		E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E40CB190C839E0002D88C /* MLSettingsData.m */; };
 		E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E40CE190C878D0002D88C /* MLSettingDatabase.m */; };
+		E13E14851911D20900A6D5A9 /* MLPQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */; };
 		E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */; };
 		E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248A3190AEDC300F9E8BF /* MLDatabase.m */; };
 		E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */; };
@@ -620,6 +621,8 @@
 		E12E40CB190C839E0002D88C /* MLSettingsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingsData.m; sourceTree = "<group>"; };
 		E12E40CD190C878D0002D88C /* MLSettingDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingDatabase.h; sourceTree = "<group>"; };
 		E12E40CE190C878D0002D88C /* MLSettingDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingDatabase.m; sourceTree = "<group>"; };
+		E13E14831911D20900A6D5A9 /* MLPQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPQBaseViewController.h; sourceTree = "<group>"; };
+		E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPQBaseViewController.m; sourceTree = "<group>"; };
 		E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderEventListener.h; sourceTree = "<group>"; };
 		E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMainDataProvider.h; sourceTree = "<group>"; };
 		E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMainDataProvider.m; sourceTree = "<group>"; };
@@ -1110,6 +1113,8 @@
 				CA1C0245190BDB99003C5F90 /* MLFilterViewController.m */,
 				CA1C0252190C19FE003C5F90 /* MLStatisticsViewController.h */,
 				CA1C0253190C19FE003C5F90 /* MLStatisticsViewController.m */,
+				E13E14831911D20900A6D5A9 /* MLPQBaseViewController.h */,
+				E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1505,6 +1510,7 @@
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,
 				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,
 				CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */,
+				E13E14851911D20900A6D5A9 /* MLPQBaseViewController.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */,
 				CAC946DB190DCC380002ED3B /* MLGraphAxis.m in Sources */,

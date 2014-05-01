@@ -52,8 +52,10 @@
     int selectTime = [self.listenAndSelectBox.text intValue];
     int readTime=[self.listenAndReadBox.text intValue];
     int typeTime =[self.listenAndTypeBox.text intValue];
-    MLSettingsData* data = [[MLSettingsData alloc]initSettingWithTimeSelect:selectTime timeRead:readTime timeType:typeTime];
     MLSettingDatabase * settingsDb=[[MLSettingDatabase alloc]initSettingDatabase];
+    MLSettingsData* currentSetting =[settingsDb getSetting];
+    MLSettingsData* data = [[MLSettingsData alloc]initSettingWithTimeSelect:selectTime timeRead:readTime timeType:typeTime filterSelection:currentSetting.settingFilterCatPair];
+    
     [settingsDb saveSetting:data];
 }
 
