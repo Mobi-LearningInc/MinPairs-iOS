@@ -78,7 +78,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M6A-fY-b7v" kind="push" id="yi9-OZ-jRX"/>
+                                    <segue destination="M6A-fY-b7v" kind="push" id="8lO-qw-Uu5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
@@ -427,13 +427,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-Cl-hvj">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-Cl-hvj">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="Q46-16-Veq"/>
-                                            </constraints>
                                             <inset key="imageEdgeInsets" minX="120" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Button" image="Arrows-Forward-icon.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -442,13 +439,10 @@
                                                 <action selector="onButtonClicked:" destination="fS1-eS-F10" eventType="touchUpInside" id="klW-bS-cxb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-Mi-EeU">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-Mi-EeU">
                                             <rect key="frame" x="170" y="0.0" width="150" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="hh7-CK-G2I"/>
-                                            </constraints>
                                             <inset key="imageEdgeInsets" minX="120" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Button" image="Arrows-Forward-icon.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -458,14 +452,6 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Rw1-Cl-hvj" firstAttribute="top" secondItem="9E7-OW-SKA" secondAttribute="top" id="CKo-Gg-OBj"/>
-                                        <constraint firstAttribute="trailing" secondItem="S7E-Mi-EeU" secondAttribute="trailing" id="EeL-ly-o68"/>
-                                        <constraint firstItem="Rw1-Cl-hvj" firstAttribute="leading" secondItem="9E7-OW-SKA" secondAttribute="leading" id="QK3-HJ-4bh"/>
-                                        <constraint firstAttribute="bottom" secondItem="Rw1-Cl-hvj" secondAttribute="bottom" id="SFr-3T-170"/>
-                                        <constraint firstItem="S7E-Mi-EeU" firstAttribute="top" secondItem="9E7-OW-SKA" secondAttribute="top" id="ZB5-2b-zq0"/>
-                                        <constraint firstAttribute="bottom" secondItem="S7E-Mi-EeU" secondAttribute="bottom" id="rHW-wE-1yb"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="left" destination="Rw1-Cl-hvj" id="vW0-FM-A4n"/>
@@ -482,7 +468,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5g-CU-VRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="742"/>
+            <point key="canvasLocation" x="1119" y="742"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="bfM-gf-1WM">
