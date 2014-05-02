@@ -27,6 +27,7 @@
 @property (copy) void (^onSelectEnd)(void);
 @property (copy) void (^onReadEnd)(void);
 @property BOOL pauseTimer;
+@property (strong,nonatomic)MLBasicAudioPlayer* audioPlayer;
 @end
 
 @implementation MLPQBaseViewController
@@ -43,7 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.audioPlayer=[[MLBasicAudioPlayer alloc]init];
+    
     self.pauseTimer=false;
     if(self.questionCount==1)//Show instrustion on first msg
     {
@@ -207,10 +209,10 @@
 }
 -(void)playItem:(MLItem*)item
 {
-    MLBasicAudioPlayer* audioPlayer = [[MLBasicAudioPlayer alloc]init];
-    [audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
-    [audioPlayer prepareToPlay];
-    [audioPlayer play];
+    
+    [self.audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
 }
 -(NSMutableArray*)getItemsForCategory:(MLCategory*)selectedCategory
 {

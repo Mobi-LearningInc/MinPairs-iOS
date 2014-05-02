@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelLeft;
 @property (weak, nonatomic) IBOutlet UILabel *labelRight;
 @property (weak, nonatomic) IBOutlet UIButton *btnRight;
+@property (strong,nonatomic) MLBasicAudioPlayer* audioPlayer;
 @end
 @implementation MLLearnTableViewCell
 
@@ -22,14 +23,16 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        if (!_audioPlayer)
+            self.audioPlayer =[[MLBasicAudioPlayer alloc]init];
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    if (!_audioPlayer)
+        self.audioPlayer = [[MLBasicAudioPlayer alloc]init];
 }
 -(void)setCellItemPair:(MLPair*)itemPair
 {
@@ -56,10 +59,10 @@
 }
 -(void)playItem:(MLItem*)item
 {
-    MLBasicAudioPlayer* audioPlayer = [[MLBasicAudioPlayer alloc]init];
-    [audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
-    [audioPlayer prepareToPlay];
-    [audioPlayer play];
+    
+    [self.audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
     NSLog(@"Played sound for %@",item.itemDescription);
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
