@@ -12,6 +12,13 @@
 #import "MLPair.h"
 #import "MLCategory.h"
 #import "MLTestResultDatabase.h"
+
+@interface MLLineGraphView()
+@property (nonatomic, strong) MLSettingDatabase* settingsDB;
+@property (nonatomic, strong) MLSettingsData* settings;
+@property (nonatomic, strong) NSArray* testResults;
+@end
+
 @implementation MLLineGraphView
 
 - (id)initWithFrame:(CGRect)frame
@@ -25,36 +32,17 @@
 
 -(void) awakeFromNib
 {
+    _settingsDB = [[MLSettingDatabase alloc]initSettingDatabase];
+    _settings = [_settingsDB getSetting];
+    MLPair* pair = [_settings settingFilterCatPair];
+    MLTestResultDatabase* testResultDb = [[MLTestResultDatabase alloc] initTestResultDatabase];
+    _testResults = [testResultDb getTestResults];
     [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    MLSettingDatabase* settingsDb = [[MLSettingDatabase alloc]initSettingDatabase];
-    MLSettingsData* setting = [settingsDb getSetting];
-    MLPair* pair =setting.settingFilterCatPair;
-    MLCategory* catLeft = pair.first;
-    MLCategory* catRight=pair.second;
-    MLTestResultDatabase* testResultDb=[[MLTestResultDatabase alloc]initTestResultDatabase];
-    NSArray* testResults=[testResultDb getTestResults];
-    NSMutableArray* filteredResults=[NSMutableArray array];
-    NSString* filterStr=[NSString stringWithFormat:@"%@|%@",catLeft.categoryDescription,catRight.categoryDescription];
-    for (int i =0; i<testResults.count; i++)
-    {
-        MLTestResult* test = [testResults objectAtIndex:i];
-        if([test.testExtra isEqualToString:filterStr])
-        {
-            [filteredResults addObject:test];
-        }
-    }
-    for (int i=0; i<filteredResults.count; i++)
-    {
-        MLTestResult* t = [filteredResults objectAtIndex:i];
-        float percentScore = ((float)t.testQuestionsCorrect)/((float)(t.testQuestionsCorrect+t.testQuestionsWrong))*100.0f;
-        NSLog(@"Statistics score %f%%, time: %i(s) type:%@",percentScore, t.testTime, t.testType);
-    }
     MLGraphics* graphics = [[MLGraphics alloc] init];
-    
     MLGraphAxis* axis = [[MLGraphAxis alloc] initWithGraphics: graphics];
     
     [axis setxMin: 0];
