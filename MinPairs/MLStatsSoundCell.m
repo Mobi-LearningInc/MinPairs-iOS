@@ -11,8 +11,8 @@
 @interface MLStatsSoundCell()
 @property (weak, nonatomic) IBOutlet UIButton* left;
 @property (weak, nonatomic) IBOutlet UIButton* right;
-@property (weak, nonatomic) NSString* leftSound;
-@property (weak, nonatomic) NSString* rightSound;
+@property (assign, nonatomic) NSUInteger leftIndex;
+@property (assign, nonatomic) NSUInteger rightIndex;
 @end
 
 @implementation MLStatsSoundCell
@@ -47,15 +47,15 @@
     }
 }
 
+-(void)setIndices:(NSUInteger)left withRightIndex:(NSUInteger)right
+{
+    self.leftIndex = left;
+    self.rightIndex = right;
+}
+
 - (IBAction)onButtonClicked:(UIButton *)sender
 {
     bool left = sender == [self left];
-    [_delegate onSoundSelected: left ? [self leftSound] : [self rightSound]];
-}
-
--(void)setSounds:(NSString*)left withRight:(NSString*)right
-{
-    self.leftSound = left;
-    self.rightSound = right;
+    [_delegate onSoundSelected: left ? [self leftIndex] : [self rightIndex]];
 }
 @end

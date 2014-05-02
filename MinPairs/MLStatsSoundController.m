@@ -10,12 +10,14 @@
 #import "MLBasicAudioPlayer.h"
 #import "MLMainDataProvider.h"
 #import "MLStatsSoundCell.h"
+#import "MLStatisticsViewController.h"
 
 @interface MLStatsSoundController () <UITableViewDataSource, UITableViewDelegate, MLStatSoundDelegate>
 @property (nonatomic, strong) MLBasicAudioPlayer* player;
 @property (nonatomic, strong) NSArray* categories;
 @property (nonatomic, strong) UIView* dropDown;
 @property (nonatomic, assign) NSUInteger dropDownSelectedOption;
+@property (nonatomic, assign) NSUInteger selectedSoundIndex;
 @end
 
 @implementation MLStatsSoundController
@@ -145,7 +147,7 @@
             [[self dropDown] removeFromSuperview];
             self.dropDown = nil;
             UITableView* view = (UITableView*)[self view];
-            [view setScrollEnabled: false];
+            [view setScrollEnabled: true];
         }
     }];
 }
@@ -203,36 +205,44 @@
     MLStatsSoundCell* cell = [tableView dequeueReusableCellWithIdentifier:@"StatsSoundCellID" forIndexPath:indexPath];
     
     NSString* desc_left = nil;
-    NSString* sound_left = nil;
-    
     NSString* desc_right = nil;
-    NSString* sound_right = nil;
+    
+    NSUInteger sound_left_index = 0;
+    NSUInteger sound_right_index = 0;
     
     if (indexPath.row * 2 + 0 < [[self categories] count])
     {
-        desc_left = [[[self categories] objectAtIndex: indexPath.row * 2 + 0] categoryDescription];
-        sound_left = [[[self categories] objectAtIndex: indexPath.row * 2 + 0] categoryAudioFile];
+        sound_left_index = indexPath.row * 2 + 0;
+        desc_left = [[[self categories] objectAtIndex: sound_left_index] categoryDescription];
     }
     
     if (indexPath.row * 2 + 1 < [[self categories] count])
     {
-        desc_right = [[[self categories] objectAtIndex: indexPath.row * 2 + 1] categoryDescription];
-        sound_right = [[[self categories] objectAtIndex: indexPath.row * 2 + 1] categoryAudioFile];
+        sound_right_index = indexPath.row * 2 + 1;
+        desc_right = [[[self categories] objectAtIndex: sound_right_index] categoryDescription];
     }
     
     [cell setTitles: desc_left withRight: desc_right];
-    [cell setSounds: sound_left withRight: sound_right];
+    [cell setIndices: sound_left_index withRightIndex: sound_right_index];
     cell.delegate = self;
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MLStatsSoundCell* cell = (MLStatsSoundCell*)[tableView cellForRowAtIndexPath: indexPath];
+    if (cell.selectionStyle != UITableViewCellSelectionStyleNone)
+    {
+    }
 }
 
--(void) onSoundSelected:(NSString*)soundToPlay
+-(void) onSoundSelected:(NSUInteger)soundIndex
 {
+    self.selectedSoundIndex = soundIndex;
+    NSString* soundToPlay = [[[self categories] objectAtIndex: soundIndex] categoryAudioFile];
     [[self player] loadFileFromResource: soundToPlay withExtension: @"mp3"];
     [[self player] prepareToPlay];
     [[self player] play];
@@ -247,6 +257,20 @@
     //this page or previous page should display a dropdown or view with 4 options.
     //get selection title, save it in the database or pass it to the next view.
     //next view will display the time-settings page for the user to select the date-range filter.
+
+    [self performSegueWithIdentifier: @"stats_graph_segue" sender: [NSNumber numberWithUnsignedInteger: [self selectedSoundIndex]]];
+    
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier]isEqualToString:@"stats_graph_segue"])
+    {
+        MLStatisticsViewController* vc = [segue destinationViewController];
+        vc.categories = [self categories];
+        vc.dropDownSelectedOption = [self dropDownSelectedOption];
+        vc.categoryIndex = [sender unsignedIntegerValue];
+    }
 }
 
 @end

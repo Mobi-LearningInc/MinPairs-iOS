@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MLStatisticsViewController : UIViewController
-
+@property (nonatomic, weak) NSArray* categories;
+@property (nonatomic, assign) NSUInteger dropDownSelectedOption;
+@property (nonatomic, assign) NSUInteger categoryIndex;
 @end

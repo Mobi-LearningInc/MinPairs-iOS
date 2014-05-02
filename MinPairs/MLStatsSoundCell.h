@@ -13,5 +13,5 @@
 @property (nonatomic, strong) id<MLStatSoundDelegate> delegate;
 
 -(void)setTitles:(NSString*)left withRight:(NSString*)right;
--(void)setSounds:(NSString*)left withRight:(NSString*)right;
+-(void)setIndices:(NSUInteger)left withRightIndex:(NSUInteger)right;
 @end

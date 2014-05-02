@@ -78,7 +78,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M6A-fY-b7v" kind="push" id="8lO-qw-Uu5"/>
+                                    <segue destination="M6A-fY-b7v" kind="push" identifier="stats_settings_segue" id="8lO-qw-Uu5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
@@ -465,6 +465,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="hUG-Vu-cPI"/>
+                    <connections>
+                        <segue destination="DGo-Or-WGG" kind="push" identifier="stats_graph_segue" id="ZQn-fH-oDg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5g-CU-VRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol MLStatSoundDelegate <NSObject>
--(void)onSoundSelected:(NSString*)soundToPlay;
+-(void)onSoundSelected:(NSUInteger)soundIndex;
 @end
