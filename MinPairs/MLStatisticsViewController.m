@@ -8,6 +8,7 @@
 
 #import "MLStatisticsViewController.h"
 #import "MLTestResultDatabase.h"
+#import "MLLineGraphView.h"
 
 @interface MLStatisticsViewController ()
 @property (nonatomic, strong) UIView* dropDown;
@@ -259,6 +260,7 @@
             
             self.dropDownFinished = true;
             [self destroyDropDown];
+            [self loadGraph];
         }
         break;
             
@@ -270,7 +272,6 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [[self dropDown] removeFromSuperview];
-    
     
     for (UIView* view in [[self view] subviews])
     {
@@ -297,6 +298,11 @@
     {
         [self initDropDown];
     }
+    else
+    {
+        [self setDropDownFinished: true];
+        [self loadGraph];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -321,6 +327,39 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+-(void) loadGraph
+{
+    NSMutableArray* data = [[NSMutableArray alloc] init];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat: @"yyyy MMM dd HH:mm:ss"];
+    
+    for (MLTestResult* result in [self testResults])
+    {
+        NSDate* date = [formatter dateFromString: [result testDate]];
+        
+        NSComparisonResult res1 = [date compare: _minDate];
+        NSComparisonResult res2 = [date compare: _maxDate];
+        
+        //_minDate <= date <= _maxDate
+        if (((res1 == NSOrderedDescending) && (res2 == NSOrderedAscending)) || ((res1 == NSOrderedSame) || (res2 == NSOrderedSame)))
+        {
+            //[data addObject: result];
+        }
+    }
+    
+    [data addObjectsFromArray: [self testResults]];
+    
+    for (UIView* view in [[self view] subviews])
+    {
+        if ([view isKindOfClass: [MLLineGraphView class]])
+        {
+            MLLineGraphView* v = (MLLineGraphView*)view;
+            [v setTestData: data];
+            [v setNeedsDisplay];
+        }
+    }
 }
 
 @end

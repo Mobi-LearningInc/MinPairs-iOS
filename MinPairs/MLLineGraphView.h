@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MLGraphics.h"
 
-@interface MLLineGraphView : UIView
-
+@interface MLLineGraphView : UIScrollView
+@property (nonatomic, strong) NSMutableArray* testData;
 @end

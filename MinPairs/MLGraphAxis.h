@@ -26,10 +26,16 @@
 
 -(void) setyScale:(float)yScale;
 
+-(void) setxAxisTitle:(NSString*)title;
+
+-(void) setyAxisTitle:(NSString*)title;
+
 -(void) setAxisColour:(Colour)axisColour;
 
 -(void) setPadding:(float)top withBottom:(float)bottom withLeft:(float)left withRight:(float)right;
 
 -(void) draw;
+
+-(void) drawPoints:(NSMutableArray*)testData;
 
 @end

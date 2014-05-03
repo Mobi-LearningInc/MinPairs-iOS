@@ -295,7 +295,6 @@
 - (IBAction)onNextClicked:(UIButton*)sender
 {
     [self performSegueWithIdentifier: @"stats_graph_segue" sender: [NSNumber numberWithUnsignedInteger: [self selectedSoundIndex]]];
-    
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
