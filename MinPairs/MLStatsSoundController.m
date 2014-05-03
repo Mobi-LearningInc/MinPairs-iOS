@@ -11,6 +11,7 @@
 #import "MLMainDataProvider.h"
 #import "MLStatsSoundCell.h"
 #import "MLStatisticsViewController.h"
+#import "MLTestResultDatabase.h"
 
 @interface MLStatsSoundController () <UITableViewDataSource, UITableViewDelegate, MLStatSoundDelegate>
 @property (nonatomic, strong) MLBasicAudioPlayer* player;
@@ -18,6 +19,9 @@
 @property (nonatomic, strong) UIView* dropDown;
 @property (nonatomic, assign) NSUInteger dropDownSelectedOption;
 @property (nonatomic, assign) NSUInteger selectedSoundIndex;
+@property (nonatomic, strong) NSArray* testResults;
+@property (nonatomic, strong) NSDate* minDate;
+@property (nonatomic, strong) NSDate* maxDate;
 @end
 
 @implementation MLStatsSoundController
@@ -174,6 +178,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (![[[MLTestResultDatabase alloc] initTestResultDatabase] getCount])
+    {
+        [self.navigationController popViewControllerAnimated: true];
+        return;
+    }
+    
+    
     [self initDropDown];
     
     if (!_player)
@@ -181,6 +193,35 @@
         _player = [[MLBasicAudioPlayer alloc] init];
         [self initializeData];
     }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        MLTestResultDatabase* db = [[MLTestResultDatabase alloc] initTestResultDatabase];
+        _testResults = [db getTestResults];
+        
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat: @"yyyy MMM dd HH:mm:ss"];
+        
+        if ([_testResults count])
+        {
+            _minDate = [formatter dateFromString: [_testResults[0] testDate]];
+            _maxDate = [formatter dateFromString: [_testResults[0] testDate]];
+        }
+        
+        for (int i = 1; i < [_testResults count]; ++i)
+        {
+            NSDate* date = [formatter dateFromString: [_testResults[i] testDate]];
+            
+            if ([date compare: _minDate] == NSOrderedAscending)
+            {
+                _minDate = date;
+            }
+            
+            if ([date compare: _maxDate] == NSOrderedDescending)
+            {
+                _maxDate = date;
+            }
+        }
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -265,6 +306,9 @@
         vc.categories = [self categories];
         vc.dropDownSelectedOption = [self dropDownSelectedOption];
         vc.categoryIndex = [sender unsignedIntegerValue];
+        vc.testResults = [self testResults];
+        vc.minDate = [self minDate];
+        vc.maxDate = [self maxDate];
     }
 }
 

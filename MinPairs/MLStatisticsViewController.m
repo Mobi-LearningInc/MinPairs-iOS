@@ -7,12 +7,11 @@
 //
 
 #import "MLStatisticsViewController.h"
+#import "MLTestResultDatabase.h"
 
 @interface MLStatisticsViewController ()
 @property (nonatomic, strong) UIView* dropDown;
 @property (nonatomic, strong) UIDatePicker* date_picker;
-@property (nonatomic, strong) NSDate* minDate;
-@property (nonatomic, strong) NSDate* maxDate;
 @property (nonatomic, strong) NSDateFormatter* formatter;
 @property (nonatomic, assign) bool dropDownFinished;
 @end
@@ -291,14 +290,18 @@
 {
     [super viewDidLoad];
     
-    /** Create fake date for testing -- TODO: get dates from the database. **/
-    
     self.formatter = [[NSDateFormatter alloc] init];
     [[self formatter] setDateFormat: @"MM/dd/yyyy"];
-    self.minDate = [[self formatter] dateFromString: @"01/01/1990"];
-    self.maxDate = [[self formatter] dateFromString: @"12/31/2014"];
     
-    [self initDropDown];
+    if ([_minDate compare: _maxDate] != NSOrderedSame)
+    {
+        [self initDropDown];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -318,11 +321,6 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 @end

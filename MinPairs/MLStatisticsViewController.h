@@ -12,4 +12,7 @@
 @property (nonatomic, weak) NSArray* categories;
 @property (nonatomic, assign) NSUInteger dropDownSelectedOption;
 @property (nonatomic, assign) NSUInteger categoryIndex;
+@property (nonatomic, strong) NSArray* testResults;
+@property (nonatomic, strong) NSDate* minDate;
+@property (nonatomic, strong) NSDate* maxDate;
 @end

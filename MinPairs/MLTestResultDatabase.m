@@ -45,4 +45,22 @@
     }
     return nil;
 }
+
+-(NSUInteger) getCount
+{
+    NSString* query = [NSString stringWithFormat:@"SELECT COUNT(*) FROM %@ ;", ML_DB_TEST_TABLE_NAME];
+    
+    NSString* err = nil;
+    NSMutableArray* arr = [NSMutableArray array];
+    
+    if ([self runQuery:query errorString: &err returnArray: &arr])
+    {
+        if ([arr count])
+        {
+            NSMutableArray* rowDataArr = [arr objectAtIndex: 0];
+            return [[rowDataArr objectAtIndex:0]intValue];
+        }
+    }
+    return 0;
+}
 @end

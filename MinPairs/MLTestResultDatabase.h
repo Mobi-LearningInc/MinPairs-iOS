@@ -33,6 +33,8 @@
  * \returns NSArray of MLTestResultObjects
  */
 -(NSArray*)getTestResults;
+
+-(NSUInteger) getCount;
 @end
 /*
  USAGE EXAMPLE
