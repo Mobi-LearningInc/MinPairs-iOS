@@ -34,7 +34,7 @@
 {
     _settingsDB = [[MLSettingDatabase alloc]initSettingDatabase];
     _settings = [_settingsDB getSetting];
-    MLPair* pair = [_settings settingFilterCatPair];
+    //MLPair* pair = [_settings settingFilterCatPair];
     MLTestResultDatabase* testResultDb = [[MLTestResultDatabase alloc] initTestResultDatabase];
     _testResults = [testResultDb getTestResults];
     [self setNeedsDisplay];

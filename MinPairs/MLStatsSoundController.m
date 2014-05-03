@@ -48,11 +48,11 @@
     [UIView animateWithDuration: 0.7f animations: ^{
         CGRect rect = [view frame];
         rect.size.height = offset;
-        self.dropDown.frame = rect;
+        view.frame = rect;
     } completion: completion_func];
 }
 
--(void)addDropDownButtons
+-(void)addDropDownControls
 {
     UIView* view = [self dropDown];
     
@@ -131,7 +131,7 @@
     
     [[self view] addSubview: [self dropDown]];
     [self animate: [self dropDown] withOffset: self.view.frame.size.height withCompletion: nil];
-    [self addDropDownButtons];
+    [self addDropDownControls];
 }
 
 -(void)destroyDropDown
@@ -253,11 +253,6 @@
 
 - (IBAction)onNextClicked:(UIButton*)sender
 {
-    //TODO:
-    //this page or previous page should display a dropdown or view with 4 options.
-    //get selection title, save it in the database or pass it to the next view.
-    //next view will display the time-settings page for the user to select the date-range filter.
-
     [self performSegueWithIdentifier: @"stats_graph_segue" sender: [NSNumber numberWithUnsignedInteger: [self selectedSoundIndex]]];
     
 }
