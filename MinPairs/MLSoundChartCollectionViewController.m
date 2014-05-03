@@ -101,13 +101,13 @@
         else
         {
             int t=tapCount/wordArr.count;
-            int i =tapCount-t*wordArr.count;
-            index=i;
+            int i = (int)(tapCount - t * wordArr.count);
+            index = i;
         }
         word =[wordArr objectAtIndex:index];
         soundFileName=word.itemAudioFile;
         NSLog(@"playing sound for item %@ from %@",word.itemDescription,word.itemAudioFile);
-        NSLog(@"word arr size : %i get item at index %i",wordArr.count,index);
+        NSLog(@"word arr size : %lu get item at index %i",(unsigned long)wordArr.count,index);
     }
     cell.tapCount++;
     [self.audioPlayer loadFileFromResource:soundFileName withExtension: @"mp3"];

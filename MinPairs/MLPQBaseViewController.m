@@ -161,7 +161,7 @@
     if (buttonIndex == [alertView cancelButtonIndex])//'cancel' button from quit popup or 'ok' button from stat info popup
     {
         self.pauseTimer=false;
-        NSLog(@"btn index %i",buttonIndex );
+        NSLog(@"btn index %li",(long)buttonIndex );
     }
     if(buttonIndex==1)//ok btn from quit popup
     {
@@ -170,7 +170,7 @@
             [self.timer invalidate];
             self.timer = nil;
         }
-        NSLog(@"btn index %i",buttonIndex );
+        NSLog(@"btn index %li",(long)buttonIndex );
         [self.navigationController popToRootViewControllerAnimated:YES];
     }    
     
@@ -238,7 +238,7 @@
 }
 -(MLItem*)pickRandomItem:(NSMutableArray*)items
 {
-    int rand = arc4random_uniform(items.count);
+    unsigned int rand = arc4random_uniform((unsigned int)items.count);
     return [items objectAtIndex:rand];
 }
 -(void) pushSequeOnStack:(NSNumber*)mode
@@ -251,8 +251,8 @@
             [workArr addObject:[self.controllerArray objectAtIndex:i]];
         }
     }
-    int range=workArr.count;
-    unsigned int r = arc4random_uniform(range);
+    unsigned long range=workArr.count;
+    unsigned int r = arc4random_uniform((unsigned int)range);
     [self performSegueWithIdentifier:[workArr objectAtIndex:r] sender: mode];
 }
 -(void)saveResultAndReturnHome

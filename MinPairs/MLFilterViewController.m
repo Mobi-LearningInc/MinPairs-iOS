@@ -137,7 +137,7 @@
 }
 -(void)returnBack
 {
-    int index = self.navigationController.viewControllers.count-2; //previous controller index
+    NSInteger index = self.navigationController.viewControllers.count-2; //previous controller index
     UIViewController *back= [self.navigationController.viewControllers objectAtIndex:index];
     [self.navigationController popToViewController:back animated:YES];
 }
