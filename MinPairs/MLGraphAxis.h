@@ -34,8 +34,8 @@
 
 -(void) setPadding:(float)top withBottom:(float)bottom withLeft:(float)left withRight:(float)right;
 
--(void) draw;
+-(void) draw:(CGRect)bounds;
 
--(void) drawPoints:(NSMutableArray*)testData;
+-(void) drawPoints:(CGRect)bounds withData: (NSMutableArray*)testData;
 
 @end

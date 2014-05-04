@@ -111,23 +111,15 @@ float scale(float value, float min, float max, float minr, float maxr)
     return (((maxr - minr) * (value - min)) / (max - min)) + minr;
 }
 
--(void) draw
+-(void) draw:(CGRect)bounds
 {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
-    float width = screenRect.size.width;
-    float height = screenRect.size.height;
+    float width = bounds.size.width;
+    float height = bounds.size.height;
     
     float x1 = [self leftPad] + 30;
     float y1 = [self topPad] + 30;
     float x2 = width - [self rightPad];
-    float y2 = height - [self bottomPad] - 75;
-    
-    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-    {
-        x2 = height - [self rightPad];
-        y2 = width - [self bottomPad] - 75;
-    }
+    float y2 = height - [self bottomPad] - 30;
     
     
     /** Graph Title **/
@@ -207,26 +199,17 @@ float scale(float value, float min, float max, float minr, float maxr)
     }
 }
 
--(void) drawPoints:(NSMutableArray*)testData
+-(void) drawPoints:(CGRect)bounds withData:(NSMutableArray*)testData
 {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
     float point_radius = 3.0f;
-    float width = screenRect.size.width;
-    float height = screenRect.size.height;
+    float width = bounds.size.width;
+    float height = bounds.size.height;
     
     float x1 = [self leftPad] + 30;
     float y1 = [self topPad] + 30;
     float x2 = width - [self rightPad];
-    float y2 = height - [self bottomPad] - 75;
+    float y2 = height - [self bottomPad] - 30;
     
-    //Font font = [[self graphics] CreateFont: @"Helvetica" withSize: 10];
-    
-    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-    {
-        x2 = height - [self rightPad];
-        y2 = width - [self bottomPad] - 75;
-    }
     
     NSMutableArray* points = [[NSMutableArray alloc] initWithCapacity: [testData count]];
 

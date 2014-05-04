@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIView* dropDown;
 @property (nonatomic, strong) UIDatePicker* date_picker;
 @property (nonatomic, strong) NSDateFormatter* formatter;
+@property (weak, nonatomic) IBOutlet UIButton* homeButton;
 @property (nonatomic, assign) bool dropDownFinished;
 @end
 
@@ -35,6 +36,14 @@
         rect.size.height = offset;
         view.frame = rect;
     } completion: completion_func];
+}
+
+-(void)showHomeButton
+{
+    CGRect rect = self.homeButton.frame;
+    rect.origin.x = self.view.frame.size.width - self.homeButton.frame.size.width;
+    rect.origin.y = 0;
+    self.homeButton.frame = rect;
 }
 
 -(UIDatePicker*)allocDatePicker
@@ -281,6 +290,8 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
+    [self showHomeButton];
+    
     if (![self dropDownFinished])
     {
         [self initDropDown];
@@ -290,6 +301,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showHomeButton];
     
     self.formatter = [[NSDateFormatter alloc] init];
     [[self formatter] setDateFormat: @"MM/dd/yyyy"];
@@ -327,6 +339,11 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+- (IBAction)onHomePressed:(UIButton *)sender
+{
+    [[self navigationController] popToRootViewControllerAnimated: YES];
 }
 
 -(void) loadGraph

@@ -48,6 +48,7 @@
 		CAEA6BB81913B65C0005B4F5 /* Arrows-Forward-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEA6BB71913B65C0005B4F5 /* Arrows-Forward-icon.png */; };
 		CAEA6BBB1913B8E70005B4F5 /* MLStatsSoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */; };
 		CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */; };
+		CAF3194B1915E4B30055F7D7 /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF3194A1915E4B30055F7D7 /* home2.png */; };
 		CAFFECAD1911A07B009929DF /* MLSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFFECAC1911A07B009929DF /* MLSplitViewController.m */; };
 		E1096F5C19095C06000C7E11 /* )_walk1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E6F19095C04000C7E11 /* )_walk1.mp3 */; };
 		E1096F5D19095C06000C7E11 /* 3_work1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7019095C04000C7E11 /* 3_work1.mp3 */; };
@@ -383,6 +384,7 @@
 		CAEA6BBC1913BC480005B4F5 /* MLStatsSoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStatsSoundCell.h; sourceTree = "<group>"; };
 		CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatsSoundCell.m; sourceTree = "<group>"; };
 		CAEA6BBF1913C73D0005B4F5 /* MLStatSoundDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLStatSoundDelegate.h; sourceTree = "<group>"; };
+		CAF3194A1915E4B30055F7D7 /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
 		CAFFECAB1911A07B009929DF /* MLSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSplitViewController.h; sourceTree = "<group>"; };
 		CAFFECAC1911A07B009929DF /* MLSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSplitViewController.m; sourceTree = "<group>"; };
 		E1096E6F19095C04000C7E11 /* )_walk1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ")_walk1.mp3"; sourceTree = "<group>"; };
@@ -687,7 +689,6 @@
 				E1096F3E19095C06000C7E11 /* Data */,
 				E1096F4419095C06000C7E11 /* Image */,
 				51F8749B190835BE00450DB2 /* MinPairs */,
-				51F874BD190835BE00450DB2 /* MinPairsTests */,
 				51F87494190835BE00450DB2 /* Frameworks */,
 				51F87493190835BE00450DB2 /* Products */,
 			);
@@ -729,6 +730,7 @@
 				E109704719095F7E000C7E11 /* Models */,
 				E109704819095F93000C7E11 /* Controllers */,
 				51F874B0190835BE00450DB2 /* Images.xcassets */,
+				51F874BD190835BE00450DB2 /* MinPairsTests */,
 				51F8749C190835BE00450DB2 /* Supporting Files */,
 			);
 			path = MinPairs;
@@ -752,7 +754,7 @@
 				51F874BE190835BE00450DB2 /* Supporting Files */,
 			);
 			path = MinPairsTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		51F874BE190835BE00450DB2 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -1052,6 +1054,7 @@
 		E1096F4419095C06000C7E11 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				CAF3194A1915E4B30055F7D7 /* home2.png */,
 				CAEA6BB71913B65C0005B4F5 /* Arrows-Forward-icon.png */,
 				CAC946DC190DDE9F0002ED3B /* statisticsbg.png */,
 				CA7ED6E5190BB57D009F1BB7 /* Play5.png */,
@@ -1272,6 +1275,7 @@
 				E1096F9A19095C06000C7E11 /* Fill1.mp3 in Resources */,
 				E109703B19095C06000C7E11 /* Play3.png in Resources */,
 				E1096FBB19095C06000C7E11 /* Mash1.mp3 in Resources */,
+				CAF3194B1915E4B30055F7D7 /* home2.png in Resources */,
 				E109700C19095C06000C7E11 /* Thumb1.mp3 in Resources */,
 				E109700B19095C06000C7E11 /* Through1.mp3 in Resources */,
 				E109704019095C06000C7E11 /* settings.png in Resources */,
@@ -1682,7 +1686,7 @@
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7136C885-2A3C-49AF-AA39-D82B591B5F68";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1700,7 +1704,7 @@
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7136C885-2A3C-49AF-AA39-D82B591B5F68";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

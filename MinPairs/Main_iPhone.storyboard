@@ -485,35 +485,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" backgroundImage="statisticsbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="X9U-SZ-M2C">
-                                <rect key="frame" x="0.0" y="431" width="320" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <tabBarItem title="Bar Graph" id="SX5-Gb-XGI"/>
-                                    <tabBarItem title="Scatter Plot" id="dMg-zH-JVG"/>
-                                </items>
-                            </tabBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-qx-ENd" customClass="MLLineGraphView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-Io-MZb">
+                                        <rect key="frame" x="260" y="0.0" width="60" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="home2.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onHomePressed:" destination="DGo-Or-WGG" eventType="touchUpInside" id="ISP-9s-YdZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.1586064878" green="0.1586064878" blue="0.1586064878" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1586064878" green="0.1586064878" blue="0.1586064878" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7MX-qx-ENd" firstAttribute="top" secondItem="qep-pS-r2K" secondAttribute="top" id="7cB-gp-c0t"/>
-                            <constraint firstItem="7MX-qx-ENd" firstAttribute="leading" secondItem="qep-pS-r2K" secondAttribute="leading" id="HSE-WS-gw1"/>
-                            <constraint firstAttribute="trailing" secondItem="7MX-qx-ENd" secondAttribute="trailing" id="JF2-Xc-y34"/>
-                            <constraint firstItem="X9U-SZ-M2C" firstAttribute="trailing" secondItem="7MX-qx-ENd" secondAttribute="trailing" id="Oou-9s-JQw"/>
-                            <constraint firstItem="X9U-SZ-M2C" firstAttribute="top" secondItem="7MX-qx-ENd" secondAttribute="bottom" id="QvA-bQ-JLO"/>
-                            <constraint firstItem="7MX-qx-ENd" firstAttribute="leading" secondItem="X9U-SZ-M2C" secondAttribute="leading" id="a4J-Zy-U3C"/>
-                            <constraint firstAttribute="bottom" secondItem="X9U-SZ-M2C" secondAttribute="bottom" id="bp1-iT-GGa"/>
+                            <constraint firstAttribute="bottom" secondItem="7MX-qx-ENd" secondAttribute="bottom" id="Let-Mu-370"/>
+                            <constraint firstItem="7MX-qx-ENd" firstAttribute="leading" secondItem="qep-pS-r2K" secondAttribute="leading" id="bGD-QW-U5u"/>
+                            <constraint firstItem="7MX-qx-ENd" firstAttribute="top" secondItem="qep-pS-r2K" secondAttribute="top" id="oel-VV-6Zq"/>
+                            <constraint firstAttribute="trailing" secondItem="7MX-qx-ENd" secondAttribute="trailing" id="vQt-lY-W7l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IeQ-YF-gDt"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="homeButton" destination="fZU-Io-MZb" id="AHd-vn-RE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9u-b2-uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -811,10 +817,10 @@
     <resources>
         <image name="Arrows-Forward-icon.png" width="24" height="24"/>
         <image name="Play2.png" width="208" height="208"/>
+        <image name="home2.png" width="96" height="96"/>
         <image name="na1.png" width="147" height="147"/>
         <image name="radio_button_default.png" width="14" height="15"/>
         <image name="radio_button_selected.png" width="14" height="15"/>
-        <image name="statisticsbg.png" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

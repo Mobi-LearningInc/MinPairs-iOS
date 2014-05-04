@@ -47,13 +47,13 @@
     
     [axis setPadding:5 withBottom:5 withLeft:10 withRight:10];
     [axis setAxisColour: [graphics CreateColour:1 withGreen:1 withBlue:1 withAlpha:1]];
-    [axis draw];
+    [axis draw: rect];
     
     @synchronized([self testData])
     {
         if ([self testData])
         {
-            [axis drawPoints: [self testData]];
+            [axis drawPoints: rect withData: [self testData]];
         }
     }
 }

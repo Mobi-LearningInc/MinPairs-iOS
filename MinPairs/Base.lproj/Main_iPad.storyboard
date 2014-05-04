@@ -461,35 +461,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" backgroundImage="statisticsbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="fQJ-sF-ycW">
-                                <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <tabBarItem title="Bar Graph" id="1li-V3-Vjh"/>
-                                    <tabBarItem title="Scatter Plot" id="TnR-23-jbZ"/>
-                                </items>
-                            </tabBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUJ-YQ-zVm" customClass="MLLineGraphView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilX-bx-blw">
+                                        <rect key="frame" x="672" y="0.0" width="96" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="home2.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onHomePressed:" destination="Sik-QP-oGF" eventType="touchUpInside" id="gfi-Jz-rKS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.1586064878" green="0.1586064878" blue="0.1586064878" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NUJ-YQ-zVm" firstAttribute="top" secondItem="dN4-wQ-YcJ" secondAttribute="top" id="HGe-nF-Xpe"/>
-                            <constraint firstAttribute="trailing" secondItem="NUJ-YQ-zVm" secondAttribute="trailing" id="RX6-Fo-NGh"/>
-                            <constraint firstItem="NUJ-YQ-zVm" firstAttribute="leading" secondItem="dN4-wQ-YcJ" secondAttribute="leading" id="UWX-F9-MBI"/>
-                            <constraint firstAttribute="bottom" secondItem="fQJ-sF-ycW" secondAttribute="bottom" id="bra-rT-Nx1"/>
-                            <constraint firstItem="fQJ-sF-ycW" firstAttribute="trailing" secondItem="NUJ-YQ-zVm" secondAttribute="trailing" id="kcY-XG-buw"/>
-                            <constraint firstItem="fQJ-sF-ycW" firstAttribute="top" secondItem="NUJ-YQ-zVm" secondAttribute="bottom" id="nHl-GQ-JUy"/>
-                            <constraint firstItem="NUJ-YQ-zVm" firstAttribute="leading" secondItem="fQJ-sF-ycW" secondAttribute="leading" id="s9I-xw-i9N"/>
+                            <constraint firstItem="NUJ-YQ-zVm" firstAttribute="leading" secondItem="dN4-wQ-YcJ" secondAttribute="leading" id="0KY-cy-DQE"/>
+                            <constraint firstAttribute="bottom" secondItem="NUJ-YQ-zVm" secondAttribute="bottom" id="9iG-wF-QBK"/>
+                            <constraint firstAttribute="trailing" secondItem="NUJ-YQ-zVm" secondAttribute="trailing" id="LoS-5a-5Xw"/>
+                            <constraint firstItem="NUJ-YQ-zVm" firstAttribute="top" secondItem="dN4-wQ-YcJ" secondAttribute="top" id="q1k-Vu-meh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ozw-kt-s75"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="homeButton" destination="ilX-bx-blw" id="l4l-li-U6o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ji2-KS-2ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -787,10 +793,10 @@
     <resources>
         <image name="Arrows-Forward-icon.png" width="24" height="24"/>
         <image name="Play2.png" width="208" height="208"/>
+        <image name="home2.png" width="96" height="96"/>
         <image name="na1.png" width="147" height="147"/>
         <image name="radio_button_default.png" width="14" height="15"/>
         <image name="radio_button_selected.png" width="14" height="15"/>
-        <image name="statisticsbg.png" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
