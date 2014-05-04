@@ -179,13 +179,6 @@
 {
     [super viewDidLoad];
     
-    if (![[[MLTestResultDatabase alloc] initTestResultDatabase] getCount])
-    {
-        [self.navigationController popViewControllerAnimated: true];
-        return;
-    }
-    
-    
     [self initDropDown];
     
     if (!_player)
