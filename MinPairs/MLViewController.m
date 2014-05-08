@@ -19,6 +19,11 @@
 
 @implementation MLViewController
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"Back.jpg"]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
