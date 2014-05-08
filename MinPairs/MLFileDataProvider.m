@@ -14,13 +14,19 @@
  */
 -(NSArray*)getCategories
 {
+    static NSMutableArray* resultArr;
+    if (resultArr==nil)
+    {
+        
+    
     NSString* dataStr =[[NSString alloc]initWithContentsOfFile:[self getFilePath:MP_CATEGORIES_FILENAME type: MP_CATEGORIES_FILETYPE ] encoding:NSUTF8StringEncoding error:nil];
     NSArray* dataLinesStrArr =[dataStr componentsSeparatedByString:MP_LINE_SEPERATOR];
-    NSMutableArray* resultArr=[NSMutableArray array];
+    resultArr=[NSMutableArray array];
     for (int i=0; i<[dataLinesStrArr count]; i++)
     {
         NSArray* dataItemsStrArr = [[dataLinesStrArr objectAtIndex:i]componentsSeparatedByString:MP_DATA_SEPERATOR];
         [resultArr addObject:[[MLCategory alloc]initCategoryWithId:[[dataItemsStrArr objectAtIndex:0] intValue] description:[dataItemsStrArr objectAtIndex:1] audioPath:[dataItemsStrArr objectAtIndex:2] imagePath:[dataItemsStrArr objectAtIndex:3] seperator:MP_DATA_SEPERATOR]];
+    }
     }
     return resultArr;
 }
@@ -29,13 +35,18 @@
  */
 -(NSArray*)getItems
 {
+    static NSMutableArray* resultArr;
+    if (resultArr==nil)
+    {
+
     NSString* dataStr =[[NSString alloc]initWithContentsOfFile:[self getFilePath:MP_ITEMS_FILENAME type: MP_ITEMS_FILETYPE ] encoding:NSUTF8StringEncoding error:nil];
     NSArray* dataLinesStrArr =[dataStr componentsSeparatedByString:MP_LINE_SEPERATOR];
-    NSMutableArray* resultArr=[NSMutableArray array];
+    resultArr=[NSMutableArray array];
     for (int i=0; i<[dataLinesStrArr count]; i++)
     {
         NSArray* dataItemsStrArr = [[dataLinesStrArr objectAtIndex:i]componentsSeparatedByString:MP_DATA_SEPERATOR];
         [resultArr addObject:[[MLItem alloc]initItemWithId:[[dataItemsStrArr objectAtIndex:0]intValue] description:[dataItemsStrArr objectAtIndex:1] audioPath:[dataItemsStrArr objectAtIndex:2] imagePath:[dataItemsStrArr objectAtIndex:3]  seperator:MP_DATA_SEPERATOR]];
+    }
     }
     return resultArr;
 }
@@ -44,9 +55,13 @@
  */
 -(NSArray*)getCategoryPairs
 {
+    static NSMutableArray* resultArr;
+    if (resultArr==nil)
+    {
+        
     NSString* dataStr =[[NSString alloc]initWithContentsOfFile:[self getFilePath:MP_CAT_PAIRS_FILENAME type: MP_CAT_PAIRS_FILETYPE ] encoding:NSUTF8StringEncoding error:nil];
     NSArray* dataLinesStrArr =[dataStr componentsSeparatedByString:MP_LINE_SEPERATOR];
-    NSMutableArray* resultArr=[NSMutableArray array];
+    resultArr=[NSMutableArray array];
     for (int i=0; i<[dataLinesStrArr count]; i++)
     {
         NSArray* dataItemsStrArr = [[dataLinesStrArr objectAtIndex:i]componentsSeparatedByString:MP_DATA_SEPERATOR];
@@ -55,6 +70,7 @@
         MLPair* pair =[[MLPair alloc]initPairWithFirstObject:one secondObject:two];
         [resultArr addObject:pair];
     }
+    }
     return resultArr;
 }
 /*! Reads the file resource and returns array of MLPair objects
@@ -62,9 +78,12 @@
  */
 -(NSArray*)getCategoryItemPairs
 {
+    static NSMutableArray* resultArr;
+    if(resultArr==nil)
+    {
     NSString* dataStr =[[NSString alloc]initWithContentsOfFile:[self getFilePath:MP_ITEMS_CATEGORIES_FILENAME type: MP_ITEMS_CATEGORIES_FILETYPE ] encoding:NSUTF8StringEncoding error:nil];
     NSArray* dataLinesStrArr =[dataStr componentsSeparatedByString:MP_LINE_SEPERATOR];
-    NSMutableArray* resultArr=[NSMutableArray array];
+    resultArr=[NSMutableArray array];
     for (int i=0; i<[dataLinesStrArr count]; i++)
     {
         NSArray* dataItemsStrArr = [[dataLinesStrArr objectAtIndex:i]componentsSeparatedByString:MP_DATA_SEPERATOR];
@@ -73,6 +92,7 @@
         MLPair* pair =[[MLPair alloc]initPairWithFirstObject:one secondObject:two];
         [resultArr addObject:pair];
     }
+    }
     return resultArr;
 }
 /*! Reads the file resource and returns array of MLPair objects
@@ -80,9 +100,12 @@
  */
 -(NSArray*)getPairs
 {
+    static NSMutableArray* resultArr;
+    if(resultArr==nil)
+    {
     NSString* dataStr =[[NSString alloc]initWithContentsOfFile:[self getFilePath:MP_PAIRS_FILENAME type: MP_PAIRS_FILETYPE ] encoding:NSUTF8StringEncoding error:nil];
     NSArray* dataLinesStrArr =[dataStr componentsSeparatedByString:MP_LINE_SEPERATOR];
-    NSMutableArray* resultArr=[NSMutableArray array];
+    resultArr=[NSMutableArray array];
     
     for (int i=0; i<[dataLinesStrArr count]; i++)
     {
@@ -99,6 +122,7 @@
             MLPair* pair =[[MLPair alloc]initPairWithFirstObject:pairL secondObject:pairR];
             [resultArr addObject:pair];
         }
+    }
     }
     return resultArr;
 }
