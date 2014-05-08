@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //[self.searchDisplayController.searchResultsTableView registerClass:[MLLearnTableViewCell class] forCellReuseIdentifier: @"LearnCell"];
 
     MLMainDataProvider* dataPro=[[MLMainDataProvider alloc]initMainProvider];
     MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
@@ -104,7 +106,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MLLearnTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"LearnCell" forIndexPath:indexPath];
+    /** This line is a HACK. It uses self.tableView rather than the tableView parameter. It should not do this
+        but there is no other way to use the same storyboard cell for both search and non-search views without
+        doing them programatically.
+     **/
+    MLLearnTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"LearnCell" forIndexPath: indexPath];
     
     if (!cell)
     {
@@ -123,6 +129,11 @@
     }
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self tableView] rowHeight];
 }
 
 @end
