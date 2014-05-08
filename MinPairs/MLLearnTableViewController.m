@@ -10,8 +10,10 @@
 #import "MLLearnTableViewCell.h"
 #import "MLMainDataProvider.h"
 #import "MLSettingDatabase.h"
-@interface MLLearnTableViewController ()
+
+@interface MLLearnTableViewController() <UISearchDisplayDelegate, UISearchBarDelegate>
 @property NSArray* learnPairsArr;
+@property (strong, nonatomic) NSArray* searchResults;
 @end
 
 @implementation MLLearnTableViewController
@@ -28,12 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     MLMainDataProvider* dataPro=[[MLMainDataProvider alloc]initMainProvider];
     MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
@@ -72,81 +68,61 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
+/** Filters the category array and stores the results in searchResults array. **/
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate* resultPredicate = [NSPredicate predicateWithFormat:@"(SELF.%K.itemDescription contains[cd] %@) OR (SELF.%K.itemDescription contains[cd] %@)", @"first", searchText, @"second", searchText];
+    self.searchResults = [self.learnPairsArr filteredArrayUsingPredicate:resultPredicate];
+}
+
+/** When the user types something. Called whenever the search string changes. **/
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        return [self.searchResults count];
+    }
     return self.learnPairsArr.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MLLearnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LearnCell" forIndexPath:indexPath];
+    MLLearnTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"LearnCell" forIndexPath:indexPath];
     
-    MLPair* itmePair =[self.learnPairsArr objectAtIndex:indexPath.row];
-    [cell setCellItemPair:itmePair];
+    if (!cell)
+    {
+        cell = [[MLLearnTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LearnCell"];
+    }
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        MLPair* itemPair = [self.searchResults objectAtIndex:indexPath.row];
+        [cell setCellItemPair: itemPair];
+    }
+    else
+    {
+        MLPair* itemPair = [self.learnPairsArr objectAtIndex:indexPath.row];
+        [cell setCellItemPair:itemPair];
+    }
     
     return cell;
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

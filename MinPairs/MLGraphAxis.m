@@ -129,15 +129,15 @@ float scale(float value, float min, float max, float minr, float maxr)
     [[self graphics] SetFontSubPixelPositioning: true];
     Font titleFont = [[self graphics] CreateFont: @"Helvetica" withSize: 18.0f];
     
-    [[self graphics] DrawText: titleFont withColour: [MLPlatform whiteColor] withText: @"Statistics" withX: ((x1 + x2) / 2.0f) - 40.0f withY: [self topPad]];
+    [[self graphics] DrawText: titleFont withColour: [UIColor whiteColor] withText: @"Statistics" withX: ((x1 + x2) / 2.0f) - 40.0f withY: [self topPad]];
     [[self graphics] PopSurface];
     
     
     /** Draw Y-Axis Lines **/
     
     [[self graphics] SetLineWidth: 0.5f];
-    [[self graphics] SetStrokeColour: [MLPlatform blackColor]];
-    [[self graphics] SetFillColour: [MLPlatform blackColor]];
+    [[self graphics] SetStrokeColour: [UIColor blackColor]];
+    [[self graphics] SetFillColour: [UIColor blackColor]];
     [[self graphics] SetAntiAliasing: false];
     
     for (float yOffset = y2; yOffset >= y1; yOffset -= (y2 - y1) / [self yScale])
@@ -213,8 +213,8 @@ float scale(float value, float min, float max, float minr, float maxr)
     
     NSMutableArray* points = [[NSMutableArray alloc] initWithCapacity: [testData count]];
 
-    [[self graphics] SetFillColour: [MLPlatform greenColor]];
-    [[self graphics] SetStrokeColour: [MLPlatform greenColor]];
+    [[self graphics] SetFillColour: [UIColor greenColor]];
+    [[self graphics] SetStrokeColour: [UIColor greenColor]];
     
     for (float i = 0, xOffset = x1; i < [testData count]; ++i, xOffset += (x2 - x1) / [self xScale])
     {

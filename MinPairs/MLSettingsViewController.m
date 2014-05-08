@@ -8,6 +8,7 @@
 
 #import "MLSettingsViewController.h"
 #import "MLSettingDatabase.h"
+#import "MLPlatform.h"
 
 @interface MLSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField* listenAndSelectBox;
@@ -28,6 +29,7 @@
 
 - (void)viewDidLoad
 {
+    [MLPlatform setButtonsRound: [self view] withRadius: 5.0f];
     [super viewDidLoad];
     [self updateControls];
 }

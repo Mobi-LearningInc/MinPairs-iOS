@@ -17,20 +17,8 @@
 +(float) getMajorSystemVersion;
 +(float) getMinorSystemVersion;
 +(NSString*) getSystemVersion;
-
-+(UIColor*)blackColor;
-+(UIColor*)darkGrayColor;
-+(UIColor*)lightGrayColor;
-+(UIColor*)whiteColor;
-+(UIColor*)grayColor;
-+(UIColor*)redColor;
-+(UIColor*)greenColor;
-+(UIColor*)blueColor;
-+(UIColor*)cyanColor;
-+(UIColor*)yellowColor;
-+(UIColor*)magentaColor;
-+(UIColor*)orangeColor;
-+(UIColor*)purpleColor;
-+(UIColor*)brownColor;
-+(UIColor*)clearColor;
++(void) setButtonRound:(UIButton*)button withRadius:(float)radius;
++(void) setButtonsRound:(UIView*)view withRadius:(float)radius;
++(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour;
++(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour;
 @end

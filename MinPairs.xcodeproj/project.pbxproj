@@ -21,8 +21,6 @@
 		51F874BA190835BE00450DB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F87499190835BE00450DB2 /* UIKit.framework */; };
 		51F874C2190835BE00450DB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51F874C0190835BE00450DB2 /* InfoPlist.strings */; };
 		51F874C4190835BE00450DB2 /* MinPairsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874C3190835BE00450DB2 /* MinPairsTests.m */; };
-		CA01289619102EF200CCFCBB /* MLiPadLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA01289519102EF200CCFCBB /* MLiPadLeftViewController.m */; };
-		CA0128991910300800CCFCBB /* MLiPadRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0128981910300800CCFCBB /* MLiPadRightViewController.m */; };
 		CA1168D1191AFB2E00BCB464 /* ankle.png in Resources */ = {isa = PBXBuildFile; fileRef = CA116875191AFB2E00BCB464 /* ankle.png */; };
 		CA1168D2191AFB2E00BCB464 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA116876191AFB2E00BCB464 /* appicon.png */; };
 		CA1168D3191AFB2E00BCB464 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = CA116877191AFB2E00BCB464 /* b.png */; };
@@ -142,7 +140,6 @@
 		CAEA6BBB1913B8E70005B4F5 /* MLStatsSoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */; };
 		CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */; };
 		CAF3194B1915E4B30055F7D7 /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF3194A1915E4B30055F7D7 /* home2.png */; };
-		CAFFECAD1911A07B009929DF /* MLSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFFECAC1911A07B009929DF /* MLSplitViewController.m */; };
 		E1096F5C19095C06000C7E11 /* )_walk1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E6F19095C04000C7E11 /* )_walk1.mp3 */; };
 		E1096F5D19095C06000C7E11 /* 3_work1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7019095C04000C7E11 /* 3_work1.mp3 */; };
 		E1096F5E19095C06000C7E11 /* ^_cut1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7119095C04000C7E11 /* ^_cut1.mp3 */; };
@@ -426,10 +423,6 @@
 		51F874BF190835BE00450DB2 /* MinPairsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinPairsTests-Info.plist"; sourceTree = "<group>"; };
 		51F874C1190835BE00450DB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F874C3190835BE00450DB2 /* MinPairsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinPairsTests.m; sourceTree = "<group>"; };
-		CA01289419102EF200CCFCBB /* MLiPadLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLiPadLeftViewController.h; sourceTree = "<group>"; };
-		CA01289519102EF200CCFCBB /* MLiPadLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLiPadLeftViewController.m; sourceTree = "<group>"; };
-		CA0128971910300800CCFCBB /* MLiPadRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLiPadRightViewController.h; sourceTree = "<group>"; };
-		CA0128981910300800CCFCBB /* MLiPadRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLiPadRightViewController.m; sourceTree = "<group>"; };
 		CA116875191AFB2E00BCB464 /* ankle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ankle.png; sourceTree = "<group>"; };
 		CA116876191AFB2E00BCB464 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		CA116877191AFB2E00BCB464 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
@@ -571,8 +564,6 @@
 		CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatsSoundCell.m; sourceTree = "<group>"; };
 		CAEA6BBF1913C73D0005B4F5 /* MLStatSoundDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLStatSoundDelegate.h; sourceTree = "<group>"; };
 		CAF3194A1915E4B30055F7D7 /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
-		CAFFECAB1911A07B009929DF /* MLSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSplitViewController.h; sourceTree = "<group>"; };
-		CAFFECAC1911A07B009929DF /* MLSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSplitViewController.m; sourceTree = "<group>"; };
 		E1096E6F19095C04000C7E11 /* )_walk1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ")_walk1.mp3"; sourceTree = "<group>"; };
 		E1096E7019095C04000C7E11 /* 3_work1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3_work1.mp3; sourceTree = "<group>"; };
 		E1096E7119095C04000C7E11 /* ^_cut1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "^_cut1.mp3"; sourceTree = "<group>"; };
@@ -905,7 +896,6 @@
 			isa = PBXGroup;
 			children = (
 				CAA1B2141911B14B00453852 /* Platform */,
-				CA01289319102E8C00CCFCBB /* iPad */,
 				CA7ED6D2190B469D009F1BB7 /* Graphics */,
 				E1C248A1190AED9200F9E8BF /* DataBase */,
 				CAC772A3190A3EB000CB74A5 /* CustomControls */,
@@ -949,19 +939,6 @@
 				51F874C0190835BE00450DB2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CA01289319102E8C00CCFCBB /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				CA01289419102EF200CCFCBB /* MLiPadLeftViewController.h */,
-				CA01289519102EF200CCFCBB /* MLiPadLeftViewController.m */,
-				CA0128971910300800CCFCBB /* MLiPadRightViewController.h */,
-				CA0128981910300800CCFCBB /* MLiPadRightViewController.m */,
-				CAFFECAB1911A07B009929DF /* MLSplitViewController.h */,
-				CAFFECAC1911A07B009929DF /* MLSplitViewController.m */,
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		CA116874191AFB2D00BCB464 /* img */ = {
@@ -1909,16 +1886,13 @@
 				CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */,
 				E12B14621912BA8900D697BB /* MLLearnTableViewCell.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
-				CA0128991910300800CCFCBB /* MLiPadRightViewController.m in Sources */,
 				CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */,
 				CA1C0254190C19FE003C5F90 /* MLStatisticsViewController.m in Sources */,
-				CA01289619102EF200CCFCBB /* MLiPadLeftViewController.m in Sources */,
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
 				CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */,
 				CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */,
-				CAFFECAD1911A07B009929DF /* MLSplitViewController.m in Sources */,
 				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
 				E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */,
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,

@@ -36,7 +36,35 @@
     return [[UIDevice currentDevice] systemVersion];
 }
 
-+(UIColor*)blackColor
++(void) setButtonRound:(UIButton*)button withRadius:(float)radius
+{
+    button.layer.cornerRadius = radius;
+}
+
++(void) setButtonsRound:(UIView*)view withRadius:(float)radius
+{
+    for (UIButton* btn in [view subviews])
+    {
+        btn.layer.cornerRadius = radius;
+    }
+}
+
++(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour
+{
+    button.layer.borderWidth = borderWidth;
+    button.layer.borderColor = [colour CGColor];
+}
+
++(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour
+{
+    for (UIButton* btn in [view subviews])
+    {
+        btn.layer.borderWidth = borderWidth;
+        btn.layer.borderColor = [colour CGColor];
+    }
+}
+
+/*+(UIColor*)blackColor
 {
     return [UIColor colorWithRed: 0.0f green: 0.0f blue: 0.0f alpha: 1.0f];
 }
@@ -109,5 +137,5 @@
 +(UIColor *)clearColor
 {
     return [UIColor colorWithRed: 0.0f green: 0.0f blue: 0.0f alpha: 0.0f];
-}
+}*/
 @end

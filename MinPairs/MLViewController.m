@@ -13,6 +13,8 @@
 #import "MLSettingDatabase.h"
 #import "MLCategory.h"
 #import "MLTestResultDatabase.h"
+#import "MLPlatform.h"
+
 @interface MLViewController ()
 
 @end
@@ -21,7 +23,9 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"Back.jpg"]];
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Mobi_logo_large.png"]];
+    [MLPlatform setButtonsRound: [self view] withRadius: 0.0f];
+    [MLPlatform setButtonsBorder: [self view] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
 }
 
 - (void)viewDidLoad
