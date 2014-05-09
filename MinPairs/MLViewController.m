@@ -32,6 +32,7 @@
         if ([view isKindOfClass: [UIButton class]])
         {
             [((UIButton*)view) setBackgroundColor: _btnColour];
+            [((UIButton*)view) setBackgroundImage: nil forState: UIControlStateNormal];
         }
     }
 }
