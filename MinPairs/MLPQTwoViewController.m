@@ -12,6 +12,7 @@
 @interface MLPQTwoViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *typeTimeLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (strong,nonatomic)MLItem* correctItem;
 @end
 
@@ -31,8 +32,9 @@
     [super viewDidLoad];
     self.sequeName=@"PQTwo";
     int rand = arc4random_uniform(2);
-    MLCategory* rCat=(rand==0)?self.catFromFilterLeft:self.catFromFilterRight;
-    self.correctItem=[self pickRandomItem:[self getItemsForCategory:rCat]];
+    MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
+
+    self.correctItem=(rand==0)?itemPair.first:itemPair.second;
     NSLog(@"Correct item is %@",self.correctItem.itemDescription);
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:nil event:nil typeLabel:self.typeTimeLabel event:^(void){
         MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect

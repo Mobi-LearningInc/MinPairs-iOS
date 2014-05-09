@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -735,6 +735,10 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-53-ImS">
+                                <rect key="frame" x="0.0" y="66" width="320" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
@@ -744,6 +748,7 @@
                         <outlet property="btnGroup" destination="hmc-bZ-5yu" id="nK2-Ou-Ltf"/>
                         <outlet property="itemMainLable" destination="s1d-Xw-yAP" id="imX-LM-AaC"/>
                         <outlet property="leftPlayBtn" destination="tsM-yp-Qq6" id="pU9-F6-IzL"/>
+                        <outlet property="progressBar" destination="Rd7-53-ImS" id="e1b-Ik-Rm0"/>
                         <outlet property="radioBtnLeft" destination="cVr-ct-Z8c" id="idB-6h-wu9"/>
                         <outlet property="radioBtnRight" destination="zeZ-nW-LBz" id="9pI-Lz-yEC"/>
                         <outlet property="readTimeLabel" destination="oPv-FH-i2M" id="sga-vb-MSo"/>
@@ -797,7 +802,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Listen to the sound and type the corresponding word:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="e7h-o8-oTv">
-                                <rect key="frame" x="20" y="72" width="280" height="34"/>
+                                <rect key="frame" x="20" y="77" width="280" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
@@ -815,11 +820,16 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
+                                <rect key="frame" x="0.0" y="67" width="320" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="zhG-QC-PcW"/>
                     <connections>
+                        <outlet property="progressBar" destination="xXy-WM-MrK" id="mJr-I3-wlc"/>
                         <outlet property="textAnswer" destination="tAF-YL-PX7" id="jVn-SS-bhx"/>
                         <outlet property="typeTimeLabel" destination="5Rp-u1-vIx" id="DGB-pC-Wpu"/>
                         <segue destination="Wka-r1-Mpd" kind="push" identifier="PQOne" id="TyA-nf-f42"/>
@@ -843,7 +853,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Listen to the word and select the right option." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDy-1X-snR">
-                                <rect key="frame" x="20" y="66" width="280" height="16"/>
+                                <rect key="frame" x="20" y="76" width="280" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
@@ -903,12 +913,17 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-DN-9m3">
+                                <rect key="frame" x="0.0" y="66" width="320" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="hkZ-M0-vHk"/>
                     <connections>
                         <outlet property="leftImgBtn" destination="VVI-gK-KTF" id="EzH-96-2UN"/>
+                        <outlet property="progressBar" destination="XDg-DN-9m3" id="yfv-Cc-2F5"/>
                         <outlet property="rightImgBtn" destination="K3C-Bj-QJp" id="jaA-6O-8an"/>
                         <outlet property="selectTimeLabel" destination="p4Q-bC-HGF" id="FKv-gu-Z7w"/>
                         <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="4x2-T0-iI7"/>
@@ -934,8 +949,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JAT-OG-QHa"/>
-        <segue reference="KDw-fn-wD3"/>
-        <segue reference="WQr-zY-AR2"/>
+        <segue reference="6iJ-t5-LbI"/>
+        <segue reference="0jx-Fn-kNE"/>
+        <segue reference="ftR-Qk-zmG"/>
     </inferredMetricsTieBreakers>
 </document>

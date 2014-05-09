@@ -26,6 +26,8 @@
 @property (strong,nonatomic) MLItem* itemRight;
 @property (weak, nonatomic) IBOutlet UILabel *itemMainLable;
 @property (weak, nonatomic) IBOutlet UILabel *readTimeLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+
 
 @property (strong, nonatomic)MLItem* correctAnswer;
 @end
@@ -48,13 +50,15 @@
     int rSwap = arc4random_uniform(2);
     if (rSwap==0)
     {
-        self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
-        self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
+        MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
+        self.itemLeft = itemPair.first;
+        self.itemRight = itemPair.second;
     }
     else
     {
-        self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
-        self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
+        MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
+        self.itemLeft = itemPair.second;
+        self.itemRight = itemPair.first;
     }
     [self.radioBtnLeft setTitle:@"pick left" forState:UIControlStateNormal];
     [self.radioBtnRight setTitle:@"pick right" forState:UIControlStateNormal];

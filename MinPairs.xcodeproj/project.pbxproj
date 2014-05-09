@@ -1074,7 +1074,7 @@
 			name = MainController;
 			sourceTree = "<group>";
 		};
-		CA16C01D191C7D3F0000B48E /* SoundController */ = {
+		CA16C01D191C7D3F0000B48E /* SoundChartController */ = {
 			isa = PBXGroup;
 			children = (
 				E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */,
@@ -1082,7 +1082,7 @@
 				E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */,
 				E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */,
 			);
-			name = SoundController;
+			name = SoundChartController;
 			sourceTree = "<group>";
 		};
 		CA16C01E191C7D520000B48E /* SettingsController */ = {
@@ -1494,7 +1494,7 @@
 				CA16C020191C7D760000B48E /* LearnController */,
 				CA16C01F191C7D640000B48E /* FilterController */,
 				CA16C01E191C7D520000B48E /* SettingsController */,
-				CA16C01D191C7D3F0000B48E /* SoundController */,
+				CA16C01D191C7D3F0000B48E /* SoundChartController */,
 				CA16C01C191C7D250000B48E /* MainController */,
 			);
 			name = Controllers;
@@ -1574,6 +1574,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MobiLearning;
 				TargetAttributes = {
+					51F87491190835BE00450DB2 = {
+						DevelopmentTeam = 47AR6RK5PF;
+					};
 					51F874B5190835BE00450DB2 = {
 						TestTargetID = 51F87491190835BE00450DB2;
 					};
@@ -2121,14 +2124,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2139,14 +2142,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

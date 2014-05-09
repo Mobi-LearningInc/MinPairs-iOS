@@ -17,6 +17,7 @@
 @property (strong,nonatomic) MLItem* correctItem;
 @property (weak, nonatomic) IBOutlet UILabel *selectTimeLabel;
 @property BOOL leftSelected;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property BOOL rightSelected;
 @end
 
@@ -33,18 +34,21 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     self.sequeName=@"PQOne";
     int rSwap = arc4random_uniform(2);
     if (rSwap==0)
     {
-        self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
-        self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
+        MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
+        self.itemLeft = itemPair.first;
+        self.itemRight = itemPair.second;
     }
     else
     {
-        self.itemRight=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterLeft]];
-        self.itemLeft=[self pickRandomItem:[self getItemsForCategory:self.catFromFilterRight]];
+        MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
+        self.itemLeft = itemPair.second;
+        self.itemRight = itemPair.first;
     }
     UIImage* imgLeft =([UIImage imageNamed:self.itemLeft.itemImageFile]==NULL)?[UIImage imageNamed:@"na1.png"]:[UIImage imageNamed:self.itemLeft.itemImageFile];
     UIImage* imgRight=([UIImage imageNamed:self.itemRight.itemImageFile]==NULL)?[UIImage imageNamed:@"na1.png"]:[UIImage imageNamed:self.itemRight.itemImageFile];

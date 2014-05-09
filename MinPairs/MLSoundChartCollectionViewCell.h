@@ -15,6 +15,7 @@
 @interface MLSoundChartCollectionViewCell : UICollectionViewCell
 #define SOUND_CHART_CELL_DEFAULT_IMAGE @"na1"
 @property int tapCount;
+@property BOOL needsToPlayCategorySound;
 /*! This method need to be called in order for the cell to display data
  * \param MLCategory object
  * \returns void

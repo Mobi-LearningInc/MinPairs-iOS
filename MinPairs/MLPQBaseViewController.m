@@ -47,6 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.audioPlayer=[[MLBasicAudioPlayer alloc]init];
     
     self.pauseTimer=false;
@@ -58,11 +59,16 @@
     [alert show];
     self.pauseTimer=true;
     }
+    if(self.progressBar)
+    {
+        [self.progressBar setProgress:(float)self.questionCount/(float)(ML_MLPQBASE_QUESTION_LIMIT+1) animated:YES];
+    }
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     self.navigationItem.leftBarButtonItem=quitBtn;
     MLSettingDatabase * settingDB= [[MLSettingDatabase alloc]initSettingDatabase];
     self.setting= [settingDB getSetting];
     MLPair* pair = self.setting.settingFilterCatPair;
+    self.filterCatPair=pair;
     self.catFromFilterLeft=pair.first;
     self.catFromFilterRight=pair.second;
     self.previousResult.testExtra=[NSString stringWithFormat:@"%@|%@",[pair.first categoryDescription],[pair.second categoryDescription]];
@@ -217,32 +223,40 @@
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
 }
--(NSMutableArray*)getItemsForCategory:(MLCategory*)selectedCategory
+
+-(MLPair*)pickRandomItemPairPairForCategory:(MLPair*) filterCatPair
 {
-    MLMainDataProvider* provider=[[MLMainDataProvider alloc]initMainProvider];
-    NSArray* catItemPairs =[provider getCategoryItemPairs];
-    if (selectedCategory.categoryId==0)//if All is selcted
+    MLCategory* filterCatLeft=filterCatPair.first;
+    MLCategory* filterCatRight=filterCatPair.second;
+    self.title =[NSString stringWithFormat:@"Learn %@ vs %@",filterCatLeft.categoryDescription,filterCatRight.categoryDescription];
+    MLMainDataProvider* dataPro = [[MLMainDataProvider alloc]initMainProvider];
+    NSArray* pairPairArr = [dataPro getPairs];
+    NSMutableArray* filteredArr = [NSMutableArray array];
+    for (int i=0; i<pairPairArr.count; i++)
     {
-        return [NSMutableArray arrayWithArray:[provider getItems]];//return all
-    }
-    NSMutableArray* wordArr = [NSMutableArray array];
-    for(int i=0; i<catItemPairs.count; i++)
-    {
-        MLPair* pair = [catItemPairs objectAtIndex:i];
-        MLCategory* cat = pair.first;
-        if(cat.categoryId==selectedCategory.categoryId)
+        MLPair* p=[pairPairArr objectAtIndex:i];
+        MLPair * pl=p.first;
+        MLPair* pr = p.second;
+        MLCategory * cl = pl.first;
+        MLItem* il = pl.second;
+        MLCategory * cr=pr.first;
+        MLItem* ir=pr.second;
+        if (filterCatLeft.categoryId==0)//filter is set to 'all'
         {
-            MLItem* word=pair.second;
-            [wordArr addObject: word];
-            
+            [filteredArr addObject:[[MLPair alloc]initPairWithFirstObject:il secondObject:ir]];
         }
+        else
+        {
+            if ((filterCatLeft.categoryId==cl.categoryId&&filterCatRight.categoryId==cr.categoryId)||(filterCatLeft.categoryId==cr.categoryId&&filterCatRight.categoryId==cl.categoryId))
+            {
+                [filteredArr addObject:[[MLPair alloc]initPairWithFirstObject:il secondObject:ir]];
+            }
+        }
+        
+        
     }
-    return  wordArr;
-}
--(MLItem*)pickRandomItem:(NSMutableArray*)items
-{
-    unsigned int rand = arc4random_uniform((unsigned int)items.count);
-    return [items objectAtIndex:rand];
+    int randomIndex=arc4random_uniform(filteredArr.count);
+    return [filteredArr objectAtIndex:randomIndex];
 }
 -(void) pushSequeOnStack:(NSNumber*)mode
 {
