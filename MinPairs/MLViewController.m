@@ -35,6 +35,9 @@
             [((UIButton*)view) setBackgroundImage: nil forState: UIControlStateNormal];
         }
     }
+    
+    [MLPlatform setButtonsRound: [self view] withRadius: 0.0f];
+    [MLPlatform setButtonsBorder: [self view] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
 }
 
 - (IBAction)onTestThemeClicked:(UIButton *)sender
