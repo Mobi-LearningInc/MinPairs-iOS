@@ -113,11 +113,102 @@
                         <segue destination="Wka-r1-Mpd" kind="push" identifier="PQOne" id="JAT-OG-QHa"/>
                         <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="WQr-zY-AR2"/>
                         <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="KDw-fn-wD3"/>
+                        <segue destination="kMg-aZ-5Ua" kind="push" identifier="PQResults" id="TCs-Uo-9Sq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="138"/>
+        </scene>
+        <!--Results View Controller - Results-->
+        <scene sceneID="145-ft-ETd">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="kMg-aZ-5Ua" customClass="MLResultsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c5P-gI-abj"/>
+                        <viewControllerLayoutGuide type="bottom" id="VV6-9V-IMV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e68-on-uBP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions Correct:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSE-K9-3RC">
+                                <rect key="frame" x="20" y="107" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-dF-TC6">
+                                <rect key="frame" x="20" y="425" width="280" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="lb6-fY-8zW"/>
+                                </constraints>
+                                <state key="normal" title="Continue..">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onContinueClicked:" destination="kMg-aZ-5Ua" eventType="touchUpInside" id="n7r-tL-iKU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions Wrong:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sr6-eg-b2C">
+                                <rect key="frame" x="20" y="150" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Questions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP0-RV-YAp">
+                                <rect key="frame" x="20" y="193" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Taken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-B6-JBX">
+                                <rect key="frame" x="20" y="239" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvI-RU-132">
+                                <rect key="frame" x="20" y="28" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="a1C-Cu-0H0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l1G-dF-TC6" firstAttribute="leading" secondItem="e68-on-uBP" secondAttribute="leading" constant="20" symbolic="YES" id="2v8-wA-fNM"/>
+                            <constraint firstItem="VV6-9V-IMV" firstAttribute="top" secondItem="l1G-dF-TC6" secondAttribute="bottom" constant="20" id="5Np-hx-WvN"/>
+                            <constraint firstAttribute="trailing" secondItem="l1G-dF-TC6" secondAttribute="trailing" constant="20" symbolic="YES" id="7Av-sU-q6Q"/>
+                            <constraint firstItem="KvI-RU-132" firstAttribute="leading" secondItem="e68-on-uBP" secondAttribute="leading" constant="20" symbolic="YES" id="XUI-wz-RAN"/>
+                            <constraint firstItem="KvI-RU-132" firstAttribute="top" secondItem="c5P-gI-abj" secondAttribute="bottom" constant="20" symbolic="YES" id="de5-YE-ZC1"/>
+                            <constraint firstAttribute="trailing" secondItem="KvI-RU-132" secondAttribute="trailing" constant="20" symbolic="YES" id="huq-jW-zI8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="haL-Hf-uOe"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="continueButton" destination="l1G-dF-TC6" id="OIC-6O-e8i"/>
+                        <outlet property="correctLabel" destination="QSE-K9-3RC" id="TTZ-Au-8AG"/>
+                        <outlet property="timeLabel" destination="Eed-B6-JBX" id="Dv1-4d-Tw0"/>
+                        <outlet property="titleLabel" destination="KvI-RU-132" id="i4A-Rs-4kV"/>
+                        <outlet property="totalLabel" destination="UP0-RV-YAp" id="OkL-J0-1rg"/>
+                        <outlet property="wrongLabel" destination="sr6-eg-b2C" id="Z6P-f8-zxc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-Pf-weJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="1341"/>
         </scene>
         <!--Filter View Controller - Filter-->
         <scene sceneID="Qsb-x8-16h">
@@ -514,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9u-b2-uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="1294"/>
+            <point key="canvasLocation" x="1119" y="1341"/>
         </scene>
         <!--PQThree View Controller-->
         <scene sceneID="Dae-kw-hTA">

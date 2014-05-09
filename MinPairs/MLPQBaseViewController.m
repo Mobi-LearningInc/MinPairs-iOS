@@ -14,9 +14,11 @@
 #import "MLSettingDatabase.h"
 #import "MLBasicAudioPlayer.h"
 #import "MLPair.h"
-
 #import "MLMainDataProvider.h"
-@interface MLPQBaseViewController ()
+
+#import "MLResultsViewController.h"
+
+@interface MLPQBaseViewController ()<UIViewControllerTransitioningDelegate>
 @property NSTimer* timer;
 @property MLTestResult* currentResult;
 @property (weak,nonatomic)UILabel* selectTimeLabel;
@@ -28,6 +30,7 @@
 @property (copy) void (^onReadEnd)(void);
 @property BOOL pauseTimer;
 @property (strong,nonatomic)MLBasicAudioPlayer* audioPlayer;
+@property (nonatomic, strong) MLModalAnimator* animator;
 @end
 
 @implementation MLPQBaseViewController
@@ -255,17 +258,47 @@
     unsigned int r = arc4random_uniform((unsigned int)range);
     [self performSegueWithIdentifier:[workArr objectAtIndex:r] sender: mode];
 }
+
 -(void)saveResultAndReturnHome
 {
 
     MLTestResultDatabase* resultDb = [[MLTestResultDatabase alloc]initTestResultDatabase];
     [resultDb saveTestResult:self.currentResult];
-    NSString* msgTitle =[NSString stringWithFormat:@"%@ results",self.currentResult.testType];
-    NSString* msgBody = [NSString stringWithFormat:@"Test result : \nQuestions Correct: %i,\nQuestions Wrong:%i,\n Time: %i",self.currentResult.testQuestionsCorrect,self.currentResult.testQuestionsWrong,self.currentResult.testTime];
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:msgTitle message:msgBody delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    
+    MLResultsViewController* rvc = [self.storyboard instantiateViewControllerWithIdentifier: @"ResultsViewController"];
+    
+    rvc.text = [NSString stringWithFormat: @"%@ Results", self.currentResult.testType];
+    rvc.correct = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect];
+    rvc.wrong = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsWrong];
+    rvc.total = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect + self.currentResult.testQuestionsWrong];
+    rvc.time = [NSString stringWithFormat: @"%i", self.currentResult.testTime];
+    
+    _animator = [[MLModalAnimator alloc] init];
+    [self present: rvc];
+    [[self navigationController] popToRootViewControllerAnimated: YES];
 }
+
+-(void) present:(UIViewController*)toController
+{
+    [[self animator] setPadding: 20.0f];
+    toController.transitioningDelegate = self;
+    toController.modalPresentationStyle = UIModalPresentationCustom;
+    [[self navigationController] presentViewController: toController animated: true completion: nil];
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    [[self animator] setPresent: true];
+    return [self animator];
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    [[self animator] setPresent: false];
+    return [self animator];
+}
+
 
 #pragma mark - Navigation
 

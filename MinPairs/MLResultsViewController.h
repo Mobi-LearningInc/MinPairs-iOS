@@ -1,0 +1,18 @@
+//
+//  MLResultsViewController.h
+//  MinPairs
+//
+//  Created by Brandon on 2014-05-09.
+//  Copyright (c) 2014 MobiLearning. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "MLModalAnimator.h"
+
+@interface MLResultsViewController : UIViewController
+@property (strong, nonatomic) NSString* text;
+@property (strong, nonatomic) NSString* correct;
+@property (strong, nonatomic) NSString* wrong;
+@property (strong, nonatomic) NSString* total;
+@property (strong, nonatomic) NSString* time;
+@end

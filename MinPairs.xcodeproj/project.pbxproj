@@ -129,6 +129,8 @@
 		CA16C012191C72F10000B48E /* radio_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF97191C72F10000B48E /* radio_button_selected.png */; };
 		CA16C013191C72F10000B48E /* radio_button_selected2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF98191C72F10000B48E /* radio_button_selected2.png */; };
 		CA16C018191C72F10000B48E /* statisticsbg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF9D191C72F10000B48E /* statisticsbg.png */; };
+		CA16C027191C8D020000B48E /* MLModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16C026191C8D020000B48E /* MLModalAnimator.m */; };
+		CA16C02A191C8D6D0000B48E /* MLResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16C029191C8D6D0000B48E /* MLResultsViewController.m */; };
 		CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0236190BBACC003C5F90 /* MLPQOneViewController.m */; };
 		CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0239190BC38B003C5F90 /* MLSynchronousFilter.m */; };
 		CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0245190BDB99003C5F90 /* MLFilterViewController.m */; };
@@ -516,6 +518,10 @@
 		CA16BF97191C72F10000B48E /* radio_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_button_selected.png; sourceTree = "<group>"; };
 		CA16BF98191C72F10000B48E /* radio_button_selected2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_button_selected2.png; sourceTree = "<group>"; };
 		CA16BF9D191C72F10000B48E /* statisticsbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statisticsbg.png; sourceTree = "<group>"; };
+		CA16C025191C8D020000B48E /* MLModalAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLModalAnimator.h; sourceTree = "<group>"; };
+		CA16C026191C8D020000B48E /* MLModalAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLModalAnimator.m; sourceTree = "<group>"; };
+		CA16C028191C8D6D0000B48E /* MLResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLResultsViewController.h; sourceTree = "<group>"; };
+		CA16C029191C8D6D0000B48E /* MLResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLResultsViewController.m; sourceTree = "<group>"; };
 		CA1C0235190BBACC003C5F90 /* MLPQOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPQOneViewController.h; sourceTree = "<group>"; };
 		CA1C0236190BBACC003C5F90 /* MLPQOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPQOneViewController.m; sourceTree = "<group>"; };
 		CA1C0238190BC38B003C5F90 /* MLSynchronousFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSynchronousFilter.h; sourceTree = "<group>"; };
@@ -1034,6 +1040,101 @@
 			path = img;
 			sourceTree = "<group>";
 		};
+		CA16C01C191C7D250000B48E /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				51F874AD190835BE00450DB2 /* MLViewController.h */,
+				51F874AE190835BE00450DB2 /* MLViewController.m */,
+			);
+			name = MainController;
+			sourceTree = "<group>";
+		};
+		CA16C01D191C7D3F0000B48E /* SoundController */ = {
+			isa = PBXGroup;
+			children = (
+				E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */,
+				E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */,
+				E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */,
+				E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */,
+			);
+			name = SoundController;
+			sourceTree = "<group>";
+		};
+		CA16C01E191C7D520000B48E /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				CA7ED6DF190B8380009F1BB7 /* MLSettingsViewController.h */,
+				CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */,
+			);
+			name = SettingsController;
+			sourceTree = "<group>";
+		};
+		CA16C01F191C7D640000B48E /* FilterController */ = {
+			isa = PBXGroup;
+			children = (
+				CA1C0244190BDB99003C5F90 /* MLFilterViewController.h */,
+				CA1C0245190BDB99003C5F90 /* MLFilterViewController.m */,
+			);
+			name = FilterController;
+			sourceTree = "<group>";
+		};
+		CA16C020191C7D760000B48E /* LearnController */ = {
+			isa = PBXGroup;
+			children = (
+				E12B145D1912BA1D00D697BB /* MLLearnTableViewController.h */,
+				E12B145E1912BA1D00D697BB /* MLLearnTableViewController.m */,
+				E12B14601912BA8900D697BB /* MLLearnTableViewCell.h */,
+				E12B14611912BA8900D697BB /* MLLearnTableViewCell.m */,
+			);
+			name = LearnController;
+			sourceTree = "<group>";
+		};
+		CA16C021191C7D8B0000B48E /* PQControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA16C024191C7E890000B48E /* PQResultsController */,
+				CA16C023191C7E780000B48E /* PQFeedbackController */,
+				CA1C0235190BBACC003C5F90 /* MLPQOneViewController.h */,
+				CA1C0236190BBACC003C5F90 /* MLPQOneViewController.m */,
+				CA1C024C190C193A003C5F90 /* MLPQTwoViewController.h */,
+				CA1C024D190C193A003C5F90 /* MLPQTwoViewController.m */,
+				CA1C024F190C19A9003C5F90 /* MLPQThreeViewController.h */,
+				CA1C0250190C19A9003C5F90 /* MLPQThreeViewController.m */,
+				E13E14831911D20900A6D5A9 /* MLPQBaseViewController.h */,
+				E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */,
+			);
+			name = PQControllers;
+			sourceTree = "<group>";
+		};
+		CA16C022191C7DB50000B48E /* StatisticsController */ = {
+			isa = PBXGroup;
+			children = (
+				CA1C0252190C19FE003C5F90 /* MLStatisticsViewController.h */,
+				CA1C0253190C19FE003C5F90 /* MLStatisticsViewController.m */,
+				CAEA6BB91913B8E70005B4F5 /* MLStatsSoundController.h */,
+				CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */,
+			);
+			name = StatisticsController;
+			sourceTree = "<group>";
+		};
+		CA16C023191C7E780000B48E /* PQFeedbackController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PQFeedbackController;
+			sourceTree = "<group>";
+		};
+		CA16C024191C7E890000B48E /* PQResultsController */ = {
+			isa = PBXGroup;
+			children = (
+				CA16C025191C8D020000B48E /* MLModalAnimator.h */,
+				CA16C026191C8D020000B48E /* MLModalAnimator.m */,
+				CA16C028191C8D6D0000B48E /* MLResultsViewController.h */,
+				CA16C029191C8D6D0000B48E /* MLResultsViewController.m */,
+			);
+			name = PQResultsController;
+			sourceTree = "<group>";
+		};
 		CA7ED6D2190B469D009F1BB7 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1336,32 +1437,13 @@
 		E109704819095F93000C7E11 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				51F874AD190835BE00450DB2 /* MLViewController.h */,
-				51F874AE190835BE00450DB2 /* MLViewController.m */,
-				E1E19F381909E54700208ECD /* MLSoundChartCollectionViewCell.h */,
-				E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */,
-				E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */,
-				E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */,
-				CA7ED6DF190B8380009F1BB7 /* MLSettingsViewController.h */,
-				CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */,
-				CA1C0235190BBACC003C5F90 /* MLPQOneViewController.h */,
-				CA1C0236190BBACC003C5F90 /* MLPQOneViewController.m */,
-				CA1C024C190C193A003C5F90 /* MLPQTwoViewController.h */,
-				CA1C024D190C193A003C5F90 /* MLPQTwoViewController.m */,
-				CA1C024F190C19A9003C5F90 /* MLPQThreeViewController.h */,
-				CA1C0250190C19A9003C5F90 /* MLPQThreeViewController.m */,
-				CA1C0244190BDB99003C5F90 /* MLFilterViewController.h */,
-				CA1C0245190BDB99003C5F90 /* MLFilterViewController.m */,
-				E13E14831911D20900A6D5A9 /* MLPQBaseViewController.h */,
-				E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */,
-				E12B145D1912BA1D00D697BB /* MLLearnTableViewController.h */,
-				E12B145E1912BA1D00D697BB /* MLLearnTableViewController.m */,
-				E12B14601912BA8900D697BB /* MLLearnTableViewCell.h */,
-				E12B14611912BA8900D697BB /* MLLearnTableViewCell.m */,
-				CA1C0252190C19FE003C5F90 /* MLStatisticsViewController.h */,
-				CA1C0253190C19FE003C5F90 /* MLStatisticsViewController.m */,
-				CAEA6BB91913B8E70005B4F5 /* MLStatsSoundController.h */,
-				CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */,
+				CA16C022191C7DB50000B48E /* StatisticsController */,
+				CA16C021191C7D8B0000B48E /* PQControllers */,
+				CA16C020191C7D760000B48E /* LearnController */,
+				CA16C01F191C7D640000B48E /* FilterController */,
+				CA16C01E191C7D520000B48E /* SettingsController */,
+				CA16C01D191C7D3F0000B48E /* SoundController */,
+				CA16C01C191C7D250000B48E /* MainController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1827,6 +1909,7 @@
 				E12B14621912BA8900D697BB /* MLLearnTableViewCell.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
 				CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */,
+				CA16C027191C8D020000B48E /* MLModalAnimator.m in Sources */,
 				CA1C0254190C19FE003C5F90 /* MLStatisticsViewController.m in Sources */,
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
@@ -1836,6 +1919,7 @@
 				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
 				E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */,
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,
+				CA16C02A191C8D6D0000B48E /* MLResultsViewController.m in Sources */,
 				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,
 				CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */,
 				E13E14851911D20900A6D5A9 /* MLPQBaseViewController.m in Sources */,
