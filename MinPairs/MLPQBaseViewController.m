@@ -51,7 +51,7 @@
     self.audioPlayer=[[MLBasicAudioPlayer alloc]init];
     
     self.pauseTimer=false;
-    if(self.questionCount==1)//Show instrustion on first msg
+    if(self.questionCount==0)//Show instrustion on first msg
     {
     NSString* modeStr = [NSString stringWithFormat: @"You are currently in: %s mode.", [self practiceMode] ? "PracticeMode" : "QuizMode."];
     
@@ -61,7 +61,7 @@
     }
     if(self.progressBar)
     {
-        [self.progressBar setProgress:(float)self.questionCount/(float)(ML_MLPQBASE_QUESTION_LIMIT+1) animated:YES];
+        [self.progressBar setProgress:(float)self.questionCount/(float)ML_MLPQBASE_QUESTION_LIMIT animated:YES];
     }
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     self.navigationItem.leftBarButtonItem=quitBtn;
@@ -205,13 +205,14 @@
     self.timer = nil;
     self.currentResult=currentResult;
 
-    if (self.questionCount>ML_MLPQBASE_QUESTION_LIMIT)
+    if (self.questionCount>=ML_MLPQBASE_QUESTION_LIMIT)
     {
         [self saveResultAndReturnHome];
     }
     else
     {
-    [self pushSequeOnStack: [NSNumber numberWithBool: [self.previousResult.testType isEqualToString:ML_TEST_TYPE_PRACTICE]?true:false]];
+        NSLog(@"will start next question");
+        [self pushSequeOnStack: [NSNumber numberWithBool: [self.previousResult.testType isEqualToString:ML_TEST_TYPE_PRACTICE]?true:false]];
     }
 
  
@@ -337,7 +338,7 @@
     {
         MLPQThreeViewController* vc = [segue destinationViewController];
         vc.practiceMode = [sender boolValue];
-        vc.questionCount=++self.questionCount;;
+        vc.questionCount=++self.questionCount;
         vc.previousResult=self.currentResult;
     }
 }

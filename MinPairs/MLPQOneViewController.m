@@ -113,7 +113,7 @@
     else
     {
         corr=0;
-        wrong=0;
+        wrong=1;
     }
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
     [self onAnswer:currentResult];

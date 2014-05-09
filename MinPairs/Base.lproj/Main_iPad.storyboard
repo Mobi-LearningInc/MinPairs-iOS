@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Oli-Q6-cN3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Oli-Q6-cN3">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -605,6 +605,10 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-Cu-ZoQ">
+                                <rect key="frame" x="0.0" y="66" width="768" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
@@ -614,6 +618,7 @@
                         <outlet property="btnGroup" destination="JVr-Sj-b9v" id="9h2-nM-r6N"/>
                         <outlet property="itemMainLable" destination="Oec-yG-Buf" id="zby-Hg-a1w"/>
                         <outlet property="leftPlayBtn" destination="VeZ-d6-90E" id="edb-XO-4i7"/>
+                        <outlet property="progressBar" destination="YCI-Cu-ZoQ" id="6mq-5l-gZM"/>
                         <outlet property="radioBtnLeft" destination="Jbm-NI-RzN" id="Lie-3A-rTS"/>
                         <outlet property="radioBtnRight" destination="YzK-nV-Rxo" id="inm-Jk-FBR"/>
                         <outlet property="readTimeLabel" destination="xyS-gb-NFD" id="WYP-er-7zO"/>
@@ -685,11 +690,16 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dWU-SY-ngZ">
+                                <rect key="frame" x="0.0" y="66" width="768" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="u12-Cn-Dww"/>
                     <connections>
+                        <outlet property="progressBar" destination="dWU-SY-ngZ" id="uf1-fx-Vfp"/>
                         <outlet property="textAnswer" destination="3oP-fh-vvI" id="c6X-7u-sfT"/>
                         <outlet property="typeTimeLabel" destination="cP1-SR-qOl" id="8ra-IP-Nfk"/>
                         <segue destination="RmB-jZ-YJ2" kind="push" identifier="PQOne" id="lmx-eD-ELX"/>
@@ -773,12 +783,17 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-cZ-TLy">
+                                <rect key="frame" x="0.0" y="66" width="768" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0ze-Vf-RZe"/>
                     <connections>
                         <outlet property="leftImgBtn" destination="1eK-97-lkP" id="p3J-TW-0q3"/>
+                        <outlet property="progressBar" destination="hZ4-cZ-TLy" id="JwX-ah-Haj"/>
                         <outlet property="rightImgBtn" destination="uAB-ZD-VZY" id="sLv-p6-LYM"/>
                         <outlet property="selectTimeLabel" destination="1Ku-u3-ktE" id="0Bf-H9-0hq"/>
                         <segue destination="pWF-dq-kSA" kind="push" identifier="PQTwo" id="QS5-7F-5Xr"/>
@@ -788,6 +803,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PJ-vu-jDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2726" y="409"/>
+        </scene>
+        <!--Results View Controller - Results-->
+        <scene sceneID="jzN-NP-7Pm">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="HwU-nY-Hbi" customClass="MLResultsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zX9-Df-YHw"/>
+                        <viewControllerLayoutGuide type="bottom" id="4yh-fP-XtW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1C4-3p-fPe">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions Correct:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLg-lf-OeW">
+                                <rect key="frame" x="244" y="96" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPJ-c6-71V">
+                                <rect key="frame" x="20" y="969" width="728" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="k0P-l6-Vig"/>
+                                </constraints>
+                                <state key="normal" title="Continue..">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onContinueClicked:" destination="HwU-nY-Hbi" eventType="touchUpInside" id="Pmm-fq-bpe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions Wrong:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7un-UZ-uNU">
+                                <rect key="frame" x="244" y="139" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Questions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcs-vQ-hHL">
+                                <rect key="frame" x="244" y="182" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Taken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3v-J0-vC0">
+                                <rect key="frame" x="244" y="228" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-Vk-sK2">
+                                <rect key="frame" x="20" y="28" width="728" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="AOs-x6-MTn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80622209820000001" green="0.80622209820000001" blue="0.80622209820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cPJ-c6-71V" firstAttribute="leading" secondItem="1C4-3p-fPe" secondAttribute="leading" constant="20" symbolic="YES" id="2N1-RI-tPi"/>
+                            <constraint firstItem="QB2-Vk-sK2" firstAttribute="top" secondItem="zX9-Df-YHw" secondAttribute="bottom" constant="20" symbolic="YES" id="DwF-dK-rOa"/>
+                            <constraint firstItem="QB2-Vk-sK2" firstAttribute="leading" secondItem="1C4-3p-fPe" secondAttribute="leading" constant="20" symbolic="YES" id="b7a-tw-A4c"/>
+                            <constraint firstAttribute="trailing" secondItem="cPJ-c6-71V" secondAttribute="trailing" constant="20" symbolic="YES" id="bm3-Bi-wlT"/>
+                            <constraint firstItem="4yh-fP-XtW" firstAttribute="top" secondItem="cPJ-c6-71V" secondAttribute="bottom" constant="20" id="fQj-fS-h4u"/>
+                            <constraint firstAttribute="trailing" secondItem="QB2-Vk-sK2" secondAttribute="trailing" constant="20" symbolic="YES" id="wCF-oC-vY7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="yLy-cZ-Rmw"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="continueButton" destination="cPJ-c6-71V" id="rMY-os-zWr"/>
+                        <outlet property="correctLabel" destination="YLg-lf-OeW" id="rro-t8-ky5"/>
+                        <outlet property="timeLabel" destination="Q3v-J0-vC0" id="lIh-3t-ri4"/>
+                        <outlet property="titleLabel" destination="QB2-Vk-sK2" id="xu7-Xf-crL"/>
+                        <outlet property="totalLabel" destination="tcs-vQ-hHL" id="X4s-n1-59y"/>
+                        <outlet property="wrongLabel" destination="7un-UZ-uNU" id="79C-nC-aco"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lt7-SH-k7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="1341"/>
         </scene>
     </scenes>
     <resources>
@@ -805,7 +910,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="lmx-eD-ELX"/>
-        <segue reference="QS5-7F-5Xr"/>
+        <segue reference="RSf-cq-sGS"/>
         <segue reference="2pJ-t8-f1J"/>
     </inferredMetricsTieBreakers>
 </document>
