@@ -38,15 +38,27 @@
 {
     if(itemPair)
     {
-    self.itemPair=itemPair;
-    MLItem* itemLeft =itemPair.first;
-    MLItem* itemRight = itemPair.second;
-    self.labelLeft.text=itemLeft.itemDescription;
-    self.labelRight.text=itemRight.itemDescription;
-    UIImage* imgLeft = ![UIImage imageNamed:itemLeft.itemImageFile]?[UIImage imageNamed:@"na1.png"]:[UIImage imageNamed:itemLeft.itemImageFile];
-    UIImage* imgRight=![UIImage imageNamed:itemRight.itemImageFile]?[UIImage imageNamed:@"na1.png"]:[UIImage imageNamed:itemRight.itemImageFile];
-    [self.btnLeft setImage:imgLeft forState:UIControlStateNormal];
-    [self.btnRight setImage:imgRight forState:UIControlStateNormal];
+        self.itemPair=itemPair;
+        MLItem* itemLeft =itemPair.first;
+        MLItem* itemRight = itemPair.second;
+        self.labelLeft.text=itemLeft.itemDescription;
+        self.labelRight.text=itemRight.itemDescription;
+        
+        UIImage* imgLeft = [UIImage imageNamed:itemLeft.itemImageFile];
+        UIImage* imgRight = [UIImage imageNamed:itemRight.itemImageFile];
+        
+        if (!imgLeft)
+        {
+            imgLeft = [UIImage imageNamed:@"na1.png"];
+        }
+        
+        if (!imgRight)
+        {
+            imgRight = [UIImage imageNamed:@"na1.png"];
+        }
+        
+        [self.btnLeft setImage:imgLeft forState:UIControlStateNormal];
+        [self.btnRight setImage:imgRight forState:UIControlStateNormal];
     }
 }
 - (IBAction)onLeftBtnTap:(id)sender
