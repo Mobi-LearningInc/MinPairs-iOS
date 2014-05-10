@@ -481,7 +481,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koC-SA-bst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="-496"/>
+            <point key="canvasLocation" x="1161" y="-446"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fHM-Hn-3da">
@@ -691,7 +691,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5g-CU-VRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="742"/>
+            <point key="canvasLocation" x="1161" y="721"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="bfM-gf-1WM">
@@ -743,7 +743,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9u-b2-uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="1341"/>
+            <point key="canvasLocation" x="1161" y="1341"/>
         </scene>
         <!--PQThree View Controller-->
         <scene sceneID="Dae-kw-hTA">
