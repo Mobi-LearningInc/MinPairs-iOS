@@ -29,7 +29,7 @@
     NSString* build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
-    NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:self.InfoView.text, version, build, @"[colour=#FF0000]Aga Palalas[/colour]", @"Przemyslaw Pawluk", @"Daniel Vintan", @"..."]];
+    NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:self.InfoView.text, version, build, @"Aga Palalas", @"Przemyslaw Pawluk", @"Daniel Vintan", @"..."]];
     
     self.InfoView.attributedText = [MLPlatform parseBBCodes:text withFontSize:self.InfoView.font.pointSize];
     self.InfoView.dataDetectorTypes = UIDataDetectorTypeLink;
