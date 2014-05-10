@@ -139,11 +139,12 @@
                         <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="KDw-fn-wD3"/>
                         <segue destination="kMg-aZ-5Ua" kind="push" identifier="PQResults" id="TCs-Uo-9Sq"/>
                         <segue destination="AaK-25-S7r" kind="push" identifier="AppInfo" id="rfe-PS-Wrt"/>
+                        <segue destination="0ud-QF-7PU" kind="push" identifier="TestInstructions" id="8Gp-UU-tcW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="144"/>
+            <point key="canvasLocation" x="664" y="129"/>
         </scene>
         <!--Results View Controller - Results-->
         <scene sceneID="145-ft-ETd">
@@ -234,6 +235,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOU-Pf-weJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1642" y="1341"/>
+        </scene>
+        <!--Instructions View Controller - Instructions-->
+        <scene sceneID="xOk-1H-dFA">
+            <objects>
+                <viewController id="0ud-QF-7PU" customClass="MLInstructionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="85n-ed-Dkd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ath-nj-kQn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1Q-4C-QaI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. Listen to the word." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btn-pV-zMa">
+                                <rect key="frame" x="145" y="130" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play6.png" translatesAutoresizingMaskIntoConstraints="NO" id="I8x-PZ-myB">
+                                <rect key="frame" x="34" y="111" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. Select your answer." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X15-fe-pF3">
+                                <rect key="frame" x="145" y="229" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="touch.png" translatesAutoresizingMaskIntoConstraints="NO" id="SiA-3K-WTk">
+                                <rect key="frame" x="34" y="210" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. Submit your choice." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sug-SV-U2p">
+                                <rect key="frame" x="145" y="330" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.24999999999999967" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-8B-YtU">
+                                <rect key="frame" x="34" y="311" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKV-62-48q">
+                                <rect key="frame" x="20" y="430" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Touch To Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTouchToStartClicked:" destination="0ud-QF-7PU" eventType="touchUpInside" id="pba-Il-IsR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instructions" id="P9t-6L-GYG"/>
+                    <connections>
+                        <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="LKQ-GX-APY"/>
+                        <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="uXz-Mu-If8"/>
+                        <segue destination="Wka-r1-Mpd" kind="push" identifier="PQOne" id="Nd2-aZ-hCp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xq3-x8-3hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="742"/>
         </scene>
         <!--Filter View Controller - Filter-->
         <scene sceneID="Qsb-x8-16h">
@@ -984,10 +1053,13 @@
         <image name="Arrows-Forward-icon.png" width="24" height="24"/>
         <image name="Mobi_logo_large.png" width="400" height="400"/>
         <image name="Play2.png" width="208" height="208"/>
+        <image name="checkmark.png" width="600" height="556"/>
         <image name="home2.png" width="96" height="96"/>
         <image name="na1.png" width="147" height="147"/>
+        <image name="play6.png" width="256" height="256"/>
         <image name="radio_button_default.png" width="14" height="15"/>
         <image name="radio_button_selected.png" width="14" height="15"/>
+        <image name="touch.png" width="170" height="228"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -995,8 +1067,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KDw-fn-wD3"/>
-        <segue reference="WQr-zY-AR2"/>
-        <segue reference="JAT-OG-QHa"/>
+        <segue reference="uXz-Mu-If8"/>
+        <segue reference="LKQ-GX-APY"/>
+        <segue reference="Nd2-aZ-hCp"/>
     </inferredMetricsTieBreakers>
 </document>

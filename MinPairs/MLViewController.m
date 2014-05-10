@@ -7,11 +7,9 @@
 //
 
 #import "MLViewController.h"
-#import "MLPQOneViewController.h"
-#import "MLPQTwoViewController.h"
-#import "MLPQThreeViewController.h"
-#import "MLSettingDatabase.h"
+#import "MLInstructionsViewController.h"
 #import "MLCategory.h"
+#import "MLSettingDatabase.h"
 #import "MLTestResultDatabase.h"
 #import "MLPlatform.h"
 
@@ -189,12 +187,12 @@
 
 - (IBAction)onPracticeClicked:(UIButton *)sender
 {
-    [self pushSequeOnStack: [NSNumber numberWithBool: true]];
+    [self performSegueWithIdentifier:@"TestInstructions" sender: [NSNumber numberWithBool: true]];
 }
 
 - (IBAction)onQuizzesClicked:(UIButton *)sender
 {
-    [self pushSequeOnStack: [NSNumber numberWithBool: false]];
+    [self performSegueWithIdentifier:@"TestInstructions" sender: [NSNumber numberWithBool: false]];
 }
 
 -(IBAction)onAboutClicked:(UIBarButtonItem *)sender
@@ -205,25 +203,6 @@
 -(IBAction)onHelpClicked:(UIBarButtonItem *)sender
 {
     
-}
-
--(void) pushSequeOnStack:(NSNumber*)mode
-{
-    unsigned int r = arc4random_uniform(30);
-    
-    if (r < 10)
-    {
-        [self performSegueWithIdentifier:@"PQOne" sender: mode];
-        
-    }
-    else if (r < 20)
-    {
-        [self performSegueWithIdentifier:@"PQTwo" sender: mode];
-    }
-    else
-    {
-        [self performSegueWithIdentifier:@"PQThree" sender: mode];
-    }
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
@@ -241,35 +220,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    if([[segue identifier]isEqualToString:@"PQOne"]||[[segue identifier]isEqualToString:@"PQTwo"]||[[segue identifier]isEqualToString:@"PQThree"])
+    if([[segue identifier] isEqualToString: @"TestInstructions"])
     {
-        NSString* typeStr = ([sender boolValue])?ML_TEST_TYPE_PRACTICE:ML_TEST_TYPE_QUIZ;
-        NSDate* now = [NSDate date];
-        NSDateFormatter* formatter =[[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"yyyy MMM dd HH:mm:ss"];
-        NSString* dateStr = [formatter stringFromDate:now];
-        MLTestResult* initialResult= [[MLTestResult alloc]initTestResultWithCorrect:0 wrong:0 type:typeStr date:dateStr timeInSec:0 extraInfo:@"testing"];
-        if([[segue identifier]isEqualToString:@"PQOne"])
-        {
-            MLPQOneViewController* vc = [segue destinationViewController];
-            vc.practiceMode = [sender boolValue];
-            vc.previousResult=initialResult;
-            vc.questionCount=1;
-        }
-        else if([[segue identifier]isEqualToString:@"PQTwo"])
-        {
-            MLPQTwoViewController* vc = [segue destinationViewController];
-            vc.practiceMode = [sender boolValue];
-            vc.previousResult=initialResult;
-            vc.questionCount=1;
-        }
-        else if ([[segue identifier]isEqualToString:@"PQThree"])
-        {
-            MLPQThreeViewController* vc = [segue destinationViewController];
-            vc.practiceMode = [sender boolValue];
-            vc.previousResult=initialResult;
-            vc.questionCount=1;
-        }
+        MLInstructionsViewController* vc = [segue destinationViewController];
+        vc.mode = sender;
     }
 }
 
