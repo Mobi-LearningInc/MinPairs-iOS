@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -138,11 +138,12 @@
                         <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="WQr-zY-AR2"/>
                         <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="KDw-fn-wD3"/>
                         <segue destination="kMg-aZ-5Ua" kind="push" identifier="PQResults" id="TCs-Uo-9Sq"/>
+                        <segue destination="AaK-25-S7r" kind="push" identifier="AppInfo" id="rfe-PS-Wrt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="138"/>
+            <point key="canvasLocation" x="664" y="144"/>
         </scene>
         <!--Results View Controller - Results-->
         <scene sceneID="145-ft-ETd">
@@ -430,6 +431,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rH-Q0-6fl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="209" y="129"/>
+        </scene>
+        <!--Info View Controller - Information-->
+        <scene sceneID="bDq-w7-KS0">
+            <objects>
+                <viewController id="AaK-25-S7r" customClass="MLInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ffj-yH-5GC"/>
+                        <viewControllerLayoutGuide type="bottom" id="NhN-Gc-Dhb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Akq-Rp-Wff">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mobi_logo_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-RW-PCG">
+                                <rect key="frame" x="20" y="77" width="280" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copyright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-Rh-At1">
+                                <rect key="frame" x="20" y="439" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-4j-VR5">
+                                <rect key="frame" x="20" y="256" width="280" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">[b]App. Info:[/b]     Version: %@     Build: %@  [b]Executives:[/b]     President:         %@     Vice-President: %@     Vice-President: %@  [b]Website:[/b]     http://mobilearninginc.com  [b]Info:[/b]     %@</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Information" id="jhs-Ja-lz8"/>
+                    <connections>
+                        <outlet property="CopyrightLabel" destination="5xL-Rh-At1" id="aUH-k9-Ist"/>
+                        <outlet property="InfoView" destination="6Az-4j-VR5" id="cTS-US-vZe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4Y-ig-5iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="-457"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="aOt-vN-I72">
@@ -937,6 +982,7 @@
     </scenes>
     <resources>
         <image name="Arrows-Forward-icon.png" width="24" height="24"/>
+        <image name="Mobi_logo_large.png" width="400" height="400"/>
         <image name="Play2.png" width="208" height="208"/>
         <image name="home2.png" width="96" height="96"/>
         <image name="na1.png" width="147" height="147"/>
@@ -949,8 +995,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6iJ-t5-LbI"/>
-        <segue reference="0jx-Fn-kNE"/>
-        <segue reference="ftR-Qk-zmG"/>
+        <segue reference="KDw-fn-wD3"/>
+        <segue reference="WQr-zY-AR2"/>
+        <segue reference="JAT-OG-QHa"/>
     </inferredMetricsTieBreakers>
 </document>

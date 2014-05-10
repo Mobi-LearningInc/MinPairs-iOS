@@ -256,7 +256,8 @@
         
         
     }
-    int randomIndex=arc4random_uniform(filteredArr.count);
+    
+    NSUInteger randomIndex = arc4random_uniform((unsigned int)filteredArr.count);
     return [filteredArr objectAtIndex:randomIndex];
 }
 -(void) pushSequeOnStack:(NSNumber*)mode

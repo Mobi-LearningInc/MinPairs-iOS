@@ -43,9 +43,12 @@
 
 +(void) setButtonsRound:(UIView*)view withRadius:(float)radius
 {
-    for (UIButton* btn in [view subviews])
+    for (UIView* v in [view subviews])
     {
-        btn.layer.cornerRadius = radius;
+        if ([v isKindOfClass:[UIButton class]])
+        {
+            ((UIButton*)v).layer.cornerRadius = radius;
+        }
     }
 }
 
@@ -57,85 +60,30 @@
 
 +(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour
 {
-    for (UIButton* btn in [view subviews])
+    for (UIView* v in [view subviews])
     {
-        btn.layer.borderWidth = borderWidth;
-        btn.layer.borderColor = [colour CGColor];
+        if ([v isKindOfClass:[UIButton class]])
+        {
+            ((UIButton*)v).layer.borderWidth = borderWidth;
+            ((UIButton*)v).layer.borderColor = [colour CGColor];
+        }
     }
 }
 
-/*+(UIColor*)blackColor
++(UIImage*)imageWithColor:(UIImage*)img withColour:(UIColor*)colour
 {
-    return [UIColor colorWithRed: 0.0f green: 0.0f blue: 0.0f alpha: 1.0f];
+    UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, img.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGRect rect = CGRectMake(0, 0, img.size.width, img.size.height);
+    CGContextClipToMask(context, rect, img.CGImage);
+    [colour setFill];
+    CGContextFillRect(context, rect);
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
-+(UIColor*)darkGrayColor
-{
-    return [UIColor colorWithRed: 0.333f green: 0.333f blue: 0.333f alpha: 1.0f];
-}
-
-+(UIColor*)lightGrayColor
-{
-    return [UIColor colorWithRed: 0.667f green: 0.667f blue: 0.667f alpha: 1.0f];
-}
-
-+(UIColor*)whiteColor
-{
-    return [UIColor colorWithRed: 1.0f green:1.0f blue:1.0f alpha:1.0f];
-}
-
-+(UIColor*)grayColor
-{
-    return [UIColor colorWithRed: 0.5f green: 0.5f blue: 0.5f alpha: 1.0f];
-}
-
-+(UIColor*)redColor
-{
-    return [UIColor colorWithRed: 1.0f green: 0.0f blue: 0.0f alpha: 1.0f];
-}
-
-+(UIColor*)greenColor
-{
-    return [UIColor colorWithRed: 0.0f green: 1.0f blue: 0.0f alpha: 1.0f];
-}
-
-+(UIColor*)blueColor
-{
-    return [UIColor colorWithRed: 0.0f green: 0.0f blue: 1.0f alpha: 1.0f];
-}
-
-+(UIColor*)cyanColor
-{
-    return [UIColor colorWithRed: 0.0f green: 1.0f blue: 1.0f alpha: 1.0f];
-}
-
-+(UIColor*)yellowColor
-{
-    return [UIColor colorWithRed: 1.0f green: 1.0f blue: 0.0f alpha: 1.0f];
-}
-
-+(UIColor*)magentaColor
-{
-    return [UIColor colorWithRed: 1.0f green: 0.0f blue: 1.0f alpha: 1.0f];
-}
-
-+(UIColor*)orangeColor
-{
-    return [UIColor colorWithRed: 1.0f green: 0.5f blue: 0.0f alpha: 1.0f];
-}
-
-+(UIColor*)purpleColor
-{
-    return [UIColor colorWithRed: 0.5f green: 0.0f blue: 0.5f alpha: 1.0f];
-}
-
-+(UIColor*)brownColor
-{
-    return [UIColor colorWithRed: 0.6f green: 0.4f blue: 0.2f alpha: 1.0f];
-}
-
-+(UIColor *)clearColor
-{
-    return [UIColor colorWithRed: 0.0f green: 0.0f blue: 0.0f alpha: 0.0f];
-}*/
 @end

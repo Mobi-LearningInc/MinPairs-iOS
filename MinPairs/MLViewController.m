@@ -152,12 +152,33 @@
             }
         }
     }
+    
+    UIImage* helpicon = [UIImage imageNamed:@"help.png"];
+    UIImage* helpiconnormal = [MLPlatform imageWithColor:helpicon withColour:[UIColor colorWithRed:0.0f green:120.0f/0xFF blue:1.0f alpha:1.0f]];
+    UIImage* helpiconhighlighted = [MLPlatform imageWithColor:helpicon withColour:[UIColor colorWithRed:0.0f green:120.0f/0xFF blue:1.0f alpha:0.25f]];
+    
+    UIButton* aboutbtn = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    UIButton* helpbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
+    
+    [aboutbtn setFrame:CGRectMake(0, 0, 28, 28)];
+    [helpbtn setFrame:CGRectMake(0, 0, 28, 28)];
+    
+    [aboutbtn addTarget: self action: @selector(onAboutClicked:) forControlEvents: UIControlEventTouchUpInside];
+    [helpbtn addTarget: self action: @selector(onHelpClicked:) forControlEvents: UIControlEventTouchUpInside];
+    
+    [helpbtn setBackgroundImage:helpiconnormal forState: UIControlStateNormal];
+    [helpbtn setBackgroundImage:helpiconhighlighted forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem* about = [[UIBarButtonItem alloc] initWithCustomView:aboutbtn];
+    UIBarButtonItem* help = [[UIBarButtonItem alloc] initWithCustomView:helpbtn];
+    
+    self.navigationItem.rightBarButtonItems = @[about];
+    self.navigationItem.leftBarButtonItems = @[help];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -174,6 +195,16 @@
 - (IBAction)onQuizzesClicked:(UIButton *)sender
 {
     [self pushSequeOnStack: [NSNumber numberWithBool: false]];
+}
+
+-(IBAction)onAboutClicked:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"AppInfo" sender: @"Info"];
+}
+
+-(IBAction)onHelpClicked:(UIBarButtonItem *)sender
+{
+    
 }
 
 -(void) pushSequeOnStack:(NSNumber*)mode
@@ -212,33 +243,33 @@
 {
     if([[segue identifier]isEqualToString:@"PQOne"]||[[segue identifier]isEqualToString:@"PQTwo"]||[[segue identifier]isEqualToString:@"PQThree"])
     {
-    NSString* typeStr = ([sender boolValue])?ML_TEST_TYPE_PRACTICE:ML_TEST_TYPE_QUIZ;
-    NSDate* now = [NSDate date];
-    NSDateFormatter* formatter =[[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy MMM dd HH:mm:ss"];
-    NSString* dateStr = [formatter stringFromDate:now];
-    MLTestResult* initialResult= [[MLTestResult alloc]initTestResultWithCorrect:0 wrong:0 type:typeStr date:dateStr timeInSec:0 extraInfo:@"testing"];
-    if([[segue identifier]isEqualToString:@"PQOne"])
-    {
-        MLPQOneViewController* vc = [segue destinationViewController];
-        vc.practiceMode = [sender boolValue];
-        vc.previousResult=initialResult;
-        vc.questionCount=1;
-    }
-    else if([[segue identifier]isEqualToString:@"PQTwo"])
-    {
-        MLPQTwoViewController* vc = [segue destinationViewController];
-        vc.practiceMode = [sender boolValue];
-        vc.previousResult=initialResult;
-        vc.questionCount=1;
-    }
-    else if ([[segue identifier]isEqualToString:@"PQThree"])
-    {
-        MLPQThreeViewController* vc = [segue destinationViewController];
-        vc.practiceMode = [sender boolValue];
-        vc.previousResult=initialResult;
-        vc.questionCount=1;
-    }
+        NSString* typeStr = ([sender boolValue])?ML_TEST_TYPE_PRACTICE:ML_TEST_TYPE_QUIZ;
+        NSDate* now = [NSDate date];
+        NSDateFormatter* formatter =[[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"yyyy MMM dd HH:mm:ss"];
+        NSString* dateStr = [formatter stringFromDate:now];
+        MLTestResult* initialResult= [[MLTestResult alloc]initTestResultWithCorrect:0 wrong:0 type:typeStr date:dateStr timeInSec:0 extraInfo:@"testing"];
+        if([[segue identifier]isEqualToString:@"PQOne"])
+        {
+            MLPQOneViewController* vc = [segue destinationViewController];
+            vc.practiceMode = [sender boolValue];
+            vc.previousResult=initialResult;
+            vc.questionCount=1;
+        }
+        else if([[segue identifier]isEqualToString:@"PQTwo"])
+        {
+            MLPQTwoViewController* vc = [segue destinationViewController];
+            vc.practiceMode = [sender boolValue];
+            vc.previousResult=initialResult;
+            vc.questionCount=1;
+        }
+        else if ([[segue identifier]isEqualToString:@"PQThree"])
+        {
+            MLPQThreeViewController* vc = [segue destinationViewController];
+            vc.practiceMode = [sender boolValue];
+            vc.previousResult=initialResult;
+            vc.questionCount=1;
+        }
     }
 }
 

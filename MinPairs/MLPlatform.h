@@ -21,4 +21,5 @@
 +(void) setButtonsRound:(UIView*)view withRadius:(float)radius;
 +(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour;
 +(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour;
++(UIImage*)imageWithColor:(UIImage*)img withColour:(UIColor*)colour;
 @end

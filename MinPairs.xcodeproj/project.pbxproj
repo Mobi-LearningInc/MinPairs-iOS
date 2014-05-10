@@ -21,6 +21,8 @@
 		51F874BA190835BE00450DB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F87499190835BE00450DB2 /* UIKit.framework */; };
 		51F874C2190835BE00450DB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51F874C0190835BE00450DB2 /* InfoPlist.strings */; };
 		51F874C4190835BE00450DB2 /* MinPairsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874C3190835BE00450DB2 /* MinPairsTests.m */; };
+		CA0343D6191DCAC300CAF871 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0343D5191DCAC300CAF871 /* help.png */; };
+		CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343DB191DED0900CAF871 /* MLInfoViewController.m */; };
 		CA16BFA2191C72F10000B48E /* Arrows-Forward-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF26191C72F00000B48E /* Arrows-Forward-icon.png */; };
 		CA16BFA3191C72F10000B48E /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF27191C72F00000B48E /* filter.png */; };
 		CA16BFA4191C72F10000B48E /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF28191C72F00000B48E /* graph.png */; };
@@ -422,6 +424,9 @@
 		51F874BF190835BE00450DB2 /* MinPairsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinPairsTests-Info.plist"; sourceTree = "<group>"; };
 		51F874C1190835BE00450DB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F874C3190835BE00450DB2 /* MinPairsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinPairsTests.m; sourceTree = "<group>"; };
+		CA0343D5191DCAC300CAF871 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		CA0343DA191DED0900CAF871 /* MLInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInfoViewController.h; sourceTree = "<group>"; };
+		CA0343DB191DED0900CAF871 /* MLInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInfoViewController.m; sourceTree = "<group>"; };
 		CA16BF26191C72F00000B48E /* Arrows-Forward-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrows-Forward-icon.png"; sourceTree = "<group>"; };
 		CA16BF27191C72F00000B48E /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		CA16BF28191C72F00000B48E /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
@@ -941,6 +946,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CA0343D9191DD0E000CAF871 /* InfoController */ = {
+			isa = PBXGroup;
+			children = (
+				CA0343DA191DED0900CAF871 /* MLInfoViewController.h */,
+				CA0343DB191DED0900CAF871 /* MLInfoViewController.m */,
+			);
+			name = InfoController;
+			sourceTree = "<group>";
+		};
 		CA16BF24191C72F00000B48E /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,6 +965,7 @@
 				CA16BF28191C72F00000B48E /* graph.png */,
 				CA16BF29191C72F00000B48E /* home.png */,
 				CA16BF2A191C72F00000B48E /* home2.png */,
+				CA0343D5191DCAC300CAF871 /* help.png */,
 				CA16BF89191C72F10000B48E /* MP-Colors.png */,
 				CA16BF8A191C72F10000B48E /* na.jpg */,
 				CA16BF8B191C72F10000B48E /* na1.png */,
@@ -1489,6 +1504,7 @@
 		E109704819095F93000C7E11 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA0343D9191DD0E000CAF871 /* InfoController */,
 				CA16C022191C7DB50000B48E /* StatisticsController */,
 				CA16C021191C7D8B0000B48E /* PQControllers */,
 				CA16C020191C7D760000B48E /* LearnController */,
@@ -1574,9 +1590,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MobiLearning;
 				TargetAttributes = {
-					51F87491190835BE00450DB2 = {
-						DevelopmentTeam = 47AR6RK5PF;
-					};
 					51F874B5190835BE00450DB2 = {
 						TestTargetID = 51F87491190835BE00450DB2;
 					};
@@ -1617,6 +1630,7 @@
 				E1096F9519095C06000C7E11 /* Eyes1.mp3 in Resources */,
 				E1096F8119095C06000C7E11 /* Cat1.mp3 in Resources */,
 				E1096FCB19095C06000C7E11 /* Pine1.mp3 in Resources */,
+				CA0343D6191DCAC300CAF871 /* help.png in Resources */,
 				E1096FDF19095C06000C7E11 /* Sang1.mp3 in Resources */,
 				E1096FA519095C06000C7E11 /* Hate1.mp3 in Resources */,
 				CAEFE22D191D568F00881775 /* dblack.png in Resources */,
@@ -1993,6 +2007,7 @@
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */,
 				CAC946DB190DCC380002ED3B /* MLGraphAxis.m in Sources */,
+				CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */,
 				CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */,
 				E1C248A9190AF67C00F9E8BF /* MLTestResultDatabase.m in Sources */,
 				E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */,
@@ -2124,7 +2139,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
@@ -2142,7 +2157,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
