@@ -29,29 +29,9 @@
     NSString* build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
-    NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:self.InfoView.text, version, build, @"Aga Palalas", @"Przemyslaw Pawluk", @"Daniel Vintan", @"..."]];
+    NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:self.InfoView.text, version, build, @"[colour=#FF0000]Aga Palalas[/colour]", @"Przemyslaw Pawluk", @"Daniel Vintan", @"..."]];
     
-    
-    
-    NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:@"\\[b\\](.+?)\\[/b\\]" options:NSRegularExpressionDotMatchesLineSeparators error:nil];
-    
-    NSTextCheckingResult* match = [regex firstMatchInString:text.string options:0x00 range:NSMakeRange(0x00, [text.string length])];
-    
-    while (match)
-    {
-        NSRange group0 = [match rangeAtIndex:0x00];
-        NSRange group1 = [match rangeAtIndex:0x01];
-        
-        [text replaceCharactersInRange:group0 withString: [text.string substringWithRange:group1]];
-        
-        group0.length -= 0x07;
-        group1.length -= 0x07;
-        
-        [text setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize: self.InfoView.font.pointSize]} range:group0];
-        match = [regex firstMatchInString:text.string options:0x00 range:NSMakeRange(0x00, [text.string length])];
-    }
-    
-    self.InfoView.attributedText = text;
+    self.InfoView.attributedText = [MLPlatform parseBBCodes:text withFontSize:self.InfoView.font.pointSize];
     self.InfoView.dataDetectorTypes = UIDataDetectorTypeLink;
     self.CopyrightLabel.text = @"Copyright © 2014. Mobi-Learning™ Inc.";
 }
