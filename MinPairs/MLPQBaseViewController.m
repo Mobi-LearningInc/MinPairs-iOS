@@ -28,7 +28,7 @@
 @property (copy) void (^onTypeEnd)(void);
 @property (copy) void (^onSelectEnd)(void);
 @property (copy) void (^onReadEnd)(void);
-@property BOOL pauseTimer;
+
 @property (strong,nonatomic)MLBasicAudioPlayer* audioPlayer;
 @property (nonatomic, strong) MLModalAnimator* animator;
 @end
@@ -198,11 +198,16 @@
     }
     [super viewDidDisappear:animated];
 }
+
 -(void)onAnswer:(MLTestResult*)currentResult
 {
+    if(!self.timer)
+    {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
     NSLog(@"status : correct:%i, wrong:%i, time: %i",currentResult.testQuestionsCorrect,currentResult.testQuestionsWrong,self.timeCount);
-    [self.timer invalidate];
-    self.timer = nil;
+
     self.currentResult=currentResult;
 
     if (self.questionCount>=ML_MLPQBASE_QUESTION_LIMIT)
@@ -290,8 +295,10 @@
     rvc.total = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect + self.currentResult.testQuestionsWrong];
     rvc.time = [NSString stringWithFormat: @"%i", self.currentResult.testTime];
     
-    _animator = [[MLModalAnimator alloc] init];
-    [self present: rvc];
+    //_animator = [[MLModalAnimator alloc] init];
+    //[self present: rvc];
+    /* Modal animator has an issue when the modal view controller presents another modal view controller. ex: Results vc >>> Share vc . */
+    [self presentViewController:rvc animated:YES completion:nil];
     [[self navigationController] popToRootViewControllerAnimated: YES];
 }
 

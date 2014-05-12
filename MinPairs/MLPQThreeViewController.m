@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemMainLable;
 @property (weak, nonatomic) IBOutlet UILabel *readTimeLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 
 
 @property (strong, nonatomic)MLItem* correctAnswer;
@@ -91,7 +92,7 @@
 
 - (IBAction)onAnswerButton:(id)sender
 {
-    
+    self.pauseTimer=YES;
     int corr;
     int wrong;
     MLItem* selected =(self.btnGroup.selectedIndex==0)?self.itemLeft:self.itemRight;
@@ -100,14 +101,18 @@
     {
         corr=1;
         wrong=0;
+        self.statusImg.image=[UIImage imageNamed:@"checkmark"];
     }
     else
     {
         corr=0;
         wrong=1;
+        self.statusImg.image=[UIImage imageNamed:@"xmark"];
     }
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
-    [self onAnswer:currentResult];
+    [sender setEnabled: NO];
+    [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+    //[self onAnswer:currentResult];
 }
 
 

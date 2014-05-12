@@ -8,6 +8,7 @@
 
 #import "MLResultsViewController.h"
 #import "MLPlatform.h"
+#import "MLShareViewController.h"
 
 @interface MLResultsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
@@ -56,13 +57,37 @@
 {
     [self dismissViewControllerAnimated: YES completion: nil];
 }
-
+- (IBAction)onShareClicked:(id)sender
+{
+    MLShareViewController* msvc=[self.storyboard instantiateViewControllerWithIdentifier: @"ShareViewController"];
+    msvc.socialMessage=[NSString stringWithFormat:@"I am using MinPairs app to improve my english."];
+    msvc.isModal=true;
+    msvc.socialImage = [self captureScreen:self.view];
+    [self presentViewController:msvc animated:YES completion:nil];
+}
+-(UIImage*)captureScreen:(UIView*) viewToCapture
+{
+    UIGraphicsBeginImageContext(viewToCapture.bounds.size);
+    [viewToCapture.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    /*
+    if([segue.identifier isEqualToString:@"fromResultsGoToShare"])
+    {
+        if ([[segue destinationViewController] isKindOfClass:[MLShareViewController class]])
+        {
+            MLShareViewController* msvc=[segue destinationViewController];
+            msvc.socialMessage=[NSString stringWithFormat:@"I am using MinPairs app to improve my english."];
+            msvc.isModal=false;
+            msvc.socialImage = [self captureScreen:self.view];
+        }
+    }*/
 }
 
 @end

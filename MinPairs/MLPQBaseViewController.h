@@ -25,6 +25,7 @@
 @property NSString* sequeName;//set in child
 @property int timeCount;//set by NSTimer
 @property UIProgressView* progressBar;
+@property BOOL pauseTimer;
 /** called when quiz or practice controller is ready with the result
  *@param currentResult is a MLTestResult object filled with cumulative data from this test session
  */

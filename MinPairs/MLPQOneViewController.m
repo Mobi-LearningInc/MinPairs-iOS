@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *selectTimeLabel;
 @property BOOL leftSelected;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 @property BOOL rightSelected;
 @end
 
@@ -87,7 +88,7 @@
 {
 
     self.rightSelected=true;
-    self.leftSelected=true;
+    self.leftSelected=false;
     [self performSelector:@selector(highlightBtn:) withObject:self.rightImgBtn afterDelay:0];
     [self performSelector:@selector(unHighlightBtn:) withObject:self.leftImgBtn afterDelay:0];
 }
@@ -101,6 +102,7 @@
 }
 - (IBAction)onAnswerBtn:(id)sender
 {
+    self.pauseTimer=YES;
     int corr;
     int wrong;
     MLItem* selected=self.leftSelected?self.itemLeft:self.itemRight;
@@ -109,14 +111,18 @@
     {
         corr=1;
         wrong=0;
+        self.statusImg.image=[UIImage imageNamed:@"checkmark"];
     }
     else
     {
         corr=0;
         wrong=1;
+        self.statusImg.image=[UIImage imageNamed:@"xmark"];
     }
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
-    [self onAnswer:currentResult];
+    [sender setEnabled: NO];
+    [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+    //[self onAnswer:currentResult];
 }
 
 - (void)didReceiveMemoryWarning

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *typeTimeLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 @property (strong,nonatomic)MLItem* correctItem;
 @end
 
@@ -54,6 +55,7 @@
 }
 - (IBAction)onAnswerBtn:(id)sender
 {
+    self.pauseTimer=YES;
     NSString* raw = self.textAnswer.text;
     NSString* noWS=[raw stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString* cleanStr=[noWS lowercaseString];
@@ -64,11 +66,13 @@
     {
         corr=1;
         wrong=0;
+        self.statusImg.image=[UIImage imageNamed:@"checkmark"];
     }
     else
     {
         corr=0;
         wrong=1;
+        self.statusImg.image=[UIImage imageNamed:@"xmark"];
     }
     
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect
@@ -77,7 +81,9 @@
         date:self.previousResult.testDate
         timeInSec:self.timeCount+self.previousResult.testTime
         extraInfo:self.previousResult.testExtra];
-    [self onAnswer:currentResult];
+    [sender setEnabled: NO];
+    [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+    //[self onAnswer:currentResult];
 }
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {

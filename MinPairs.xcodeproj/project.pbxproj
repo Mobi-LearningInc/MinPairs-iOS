@@ -392,6 +392,10 @@
 		E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E40CB190C839E0002D88C /* MLSettingsData.m */; };
 		E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E12E40CE190C878D0002D88C /* MLSettingDatabase.m */; };
 		E13E14851911D20900A6D5A9 /* MLPQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */; };
+		E13EFF531920FE5D005C407F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EFF521920FE5D005C407F /* MessageUI.framework */; };
+		E13EFF551920FE64005C407F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EFF541920FE64005C407F /* Social.framework */; };
+		E13EFF591920FEDA005C407F /* MLShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13EFF581920FEDA005C407F /* MLShareViewController.m */; };
+		E13EFF5E19211C42005C407F /* xmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E13EFF5D19211C42005C407F /* xmark.png */; };
 		E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */; };
 		E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248A3190AEDC300F9E8BF /* MLDatabase.m */; };
 		E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */; };
@@ -838,6 +842,11 @@
 		E12E40CE190C878D0002D88C /* MLSettingDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingDatabase.m; sourceTree = "<group>"; };
 		E13E14831911D20900A6D5A9 /* MLPQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPQBaseViewController.h; sourceTree = "<group>"; };
 		E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPQBaseViewController.m; sourceTree = "<group>"; };
+		E13EFF521920FE5D005C407F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E13EFF541920FE64005C407F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E13EFF571920FEDA005C407F /* MLShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLShareViewController.h; sourceTree = "<group>"; };
+		E13EFF581920FEDA005C407F /* MLShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLShareViewController.m; sourceTree = "<group>"; };
+		E13EFF5D19211C42005C407F /* xmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xmark.png; sourceTree = "<group>"; };
 		E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderEventListener.h; sourceTree = "<group>"; };
 		E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMainDataProvider.h; sourceTree = "<group>"; };
 		E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMainDataProvider.m; sourceTree = "<group>"; };
@@ -860,6 +869,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13EFF551920FE64005C407F /* Social.framework in Frameworks */,
+				E13EFF531920FE5D005C407F /* MessageUI.framework in Frameworks */,
 				E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */,
 				51F87498190835BE00450DB2 /* CoreGraphics.framework in Frameworks */,
 				51F8749A190835BE00450DB2 /* UIKit.framework in Frameworks */,
@@ -904,6 +915,8 @@
 		51F87494190835BE00450DB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E13EFF541920FE64005C407F /* Social.framework */,
+				E13EFF521920FE5D005C407F /* MessageUI.framework */,
 				E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */,
 				51F87495190835BE00450DB2 /* Foundation.framework */,
 				51F87497190835BE00450DB2 /* CoreGraphics.framework */,
@@ -1015,6 +1028,7 @@
 				CA07712719204C1F009C1171 /* picture.png */,
 				CA07712819204C1F009C1171 /* sound.png */,
 				CA07712919204C1F009C1171 /* write.png */,
+				E13EFF5D19211C42005C407F /* xmark.png */,
 				CA16BF9D191C72F10000B48E /* statisticsbg.png */,
 			);
 			path = Image;
@@ -1543,6 +1557,7 @@
 		E109704819095F93000C7E11 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E13EFF561920FEA0005C407F /* ShareController */,
 				CA0343DE191E195000CAF871 /* InstructionsController */,
 				CA0343DD191E194900CAF871 /* HelpController */,
 				CA0343D9191DD0E000CAF871 /* InfoController */,
@@ -1564,6 +1579,15 @@
 				51F874AA190835BE00450DB2 /* Main_iPad.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E13EFF561920FEA0005C407F /* ShareController */ = {
+			isa = PBXGroup;
+			children = (
+				E13EFF571920FEDA005C407F /* MLShareViewController.h */,
+				E13EFF581920FEDA005C407F /* MLShareViewController.m */,
+			);
+			name = ShareController;
 			sourceTree = "<group>";
 		};
 		E1C248A1190AED9200F9E8BF /* DataBase */ = {
@@ -1928,6 +1952,7 @@
 				CA16BFCC191C72F10000B48E /* Light.png in Resources */,
 				E109702919095C06000C7E11 /* Zip1.mp3 in Resources */,
 				E1096F9119095C06000C7E11 /* Drunk1.mp3 in Resources */,
+				E13EFF5E19211C42005C407F /* xmark.png in Resources */,
 				E1096FCE19095C06000C7E11 /* Please1.mp3 in Resources */,
 				CA16BFB2191C72F10000B48E /* Blade.png in Resources */,
 				E1096FC619095C06000C7E11 /* Peck1.mp3 in Resources */,
@@ -2041,6 +2066,7 @@
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
+				E13EFF591920FEDA005C407F /* MLShareViewController.m in Sources */,
 				CA07712619202369009C1171 /* MLHelpViewController.m in Sources */,
 				CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */,
 				CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */,
