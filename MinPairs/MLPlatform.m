@@ -169,11 +169,11 @@
         
         if (last.location != NSNotFound)
         {
-            *sublen = last.location - offset.location;
-            *subpos = offset.location;
+            *sublen = (int)last.location - (int)offset.location;
+            *subpos = (int)offset.location;
             
-            *len = (last.location - first.location) + [bb_last length];
-            *pos = first.location;
+            *len = (int)(last.location - first.location) + (int)[bb_last length];
+            *pos = (int)first.location;
             return true;
         }
     }
@@ -201,14 +201,14 @@
             NSRange last = [str rangeOfString:bb_last options:NSCaseInsensitiveSearch range:offset];
             if (last.location != NSNotFound)
             {
-                *colourlen = last.location - offset.location;
-                *colourpos = offset.location;
+                *colourlen = (int)last.location - (int)offset.location;
+                *colourpos = (int)offset.location;
                 
-                *sublen = (last.location - (second.location + [bb_colour length]));
-                *subpos = second.location + [bb_colour length];
+                *sublen = (int)(last.location - (second.location + [bb_colour length]));
+                *subpos = (int)second.location + (int)[bb_colour length];
                 
-                *len = (last.location - first.location) + [bb_last length];
-                *pos = first.location;
+                *len = (int)(last.location - first.location) + (int)[bb_last length];
+                *pos = (int)first.location;
                 return true;
             }
         }
