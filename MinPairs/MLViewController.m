@@ -202,7 +202,7 @@
 
 -(IBAction)onHelpClicked:(UIBarButtonItem *)sender
 {
-    
+    [self performSegueWithIdentifier:@"AppHelp" sender: @"Help"];
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender

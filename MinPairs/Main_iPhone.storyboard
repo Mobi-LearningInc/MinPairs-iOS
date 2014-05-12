@@ -140,6 +140,7 @@
                         <segue destination="kMg-aZ-5Ua" kind="push" identifier="PQResults" id="TCs-Uo-9Sq"/>
                         <segue destination="AaK-25-S7r" kind="push" identifier="AppInfo" id="rfe-PS-Wrt"/>
                         <segue destination="0ud-QF-7PU" kind="push" identifier="TestInstructions" id="8Gp-UU-tcW"/>
+                        <segue destination="5YO-4H-GVw" kind="push" identifier="AppHelp" id="ZDa-a6-SnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -693,6 +694,38 @@
             </objects>
             <point key="canvasLocation" x="1161" y="721"/>
         </scene>
+        <!--Help View Controller - Help-->
+        <scene sceneID="fSu-8W-gkI">
+            <objects>
+                <viewController id="5YO-4H-GVw" customClass="MLHelpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FIa-0B-CaU"/>
+                        <viewControllerLayoutGuide type="bottom" id="E3l-3c-82e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oR0-CJ-2c3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5om-zF-iSw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">[b]Listen and select (images):[/b]     1. Listen to the sound.     2. Select the image matching the sound.     3. Submit your answer.  [b]Read and select (sounds):[/b]    1. Read the word.    2. Listen to both sounds and select the sound matching the word.    3. Submit your answer.  [b]Listen and type (words):[/b]    1. Listen to the word.    2. Type the word you heard.    3. Submit your answer.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="w5h-p6-UMp"/>
+                    <connections>
+                        <outlet property="textView" destination="5om-zF-iSw" id="Kvg-10-jV5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8x3-Rp-mVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="1341"/>
+        </scene>
         <!--Statistics View Controller-->
         <scene sceneID="bfM-gf-1WM">
             <objects>
@@ -1067,8 +1100,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uXz-Mu-If8"/>
         <segue reference="LKQ-GX-APY"/>
         <segue reference="Nd2-aZ-hCp"/>
+        <segue reference="uXz-Mu-If8"/>
     </inferredMetricsTieBreakers>
 </document>

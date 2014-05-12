@@ -26,6 +26,10 @@
 		CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */; };
 		CA0343E3191E1D2C00CAF871 /* touch.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0343E2191E1D2B00CAF871 /* touch.png */; };
 		CA0343E5191E1F3000CAF871 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0343E4191E1F3000CAF871 /* checkmark.png */; };
+		CA07712619202369009C1171 /* MLHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07712519202369009C1171 /* MLHelpViewController.m */; };
+		CA07712A19204C1F009C1171 /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CA07712719204C1F009C1171 /* picture.png */; };
+		CA07712B19204C1F009C1171 /* sound.png in Resources */ = {isa = PBXBuildFile; fileRef = CA07712819204C1F009C1171 /* sound.png */; };
+		CA07712C19204C1F009C1171 /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = CA07712919204C1F009C1171 /* write.png */; };
 		CA16BFA2191C72F10000B48E /* Arrows-Forward-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF26191C72F00000B48E /* Arrows-Forward-icon.png */; };
 		CA16BFA3191C72F10000B48E /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF27191C72F00000B48E /* filter.png */; };
 		CA16BFA4191C72F10000B48E /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF28191C72F00000B48E /* graph.png */; };
@@ -434,6 +438,11 @@
 		CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInstructionsViewController.m; sourceTree = "<group>"; };
 		CA0343E2191E1D2B00CAF871 /* touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch.png; sourceTree = "<group>"; };
 		CA0343E4191E1F3000CAF871 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		CA07712419202369009C1171 /* MLHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHelpViewController.h; sourceTree = "<group>"; };
+		CA07712519202369009C1171 /* MLHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHelpViewController.m; sourceTree = "<group>"; };
+		CA07712719204C1F009C1171 /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
+		CA07712819204C1F009C1171 /* sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound.png; sourceTree = "<group>"; };
+		CA07712919204C1F009C1171 /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
 		CA16BF26191C72F00000B48E /* Arrows-Forward-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrows-Forward-icon.png"; sourceTree = "<group>"; };
 		CA16BF27191C72F00000B48E /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		CA16BF28191C72F00000B48E /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
@@ -965,6 +974,8 @@
 		CA0343DD191E194900CAF871 /* HelpController */ = {
 			isa = PBXGroup;
 			children = (
+				CA07712419202369009C1171 /* MLHelpViewController.h */,
+				CA07712519202369009C1171 /* MLHelpViewController.m */,
 			);
 			name = HelpController;
 			sourceTree = "<group>";
@@ -1001,6 +1012,9 @@
 				CA16BF98191C72F10000B48E /* radio_button_selected2.png */,
 				CA0343E2191E1D2B00CAF871 /* touch.png */,
 				CA0343E4191E1F3000CAF871 /* checkmark.png */,
+				CA07712719204C1F009C1171 /* picture.png */,
+				CA07712819204C1F009C1171 /* sound.png */,
+				CA07712919204C1F009C1171 /* write.png */,
 				CA16BF9D191C72F10000B48E /* statisticsbg.png */,
 			);
 			path = Image;
@@ -1712,6 +1726,7 @@
 				E1096FFB19095C06000C7E11 /* Taught1.mp3 in Resources */,
 				E109700E19095C06000C7E11 /* Tree1.mp3 in Resources */,
 				E1096FC919095C06000C7E11 /* Pill1.mp3 in Resources */,
+				CA07712A19204C1F009C1171 /* picture.png in Resources */,
 				CA16BFAF191C72F10000B48E /* Bet.png in Resources */,
 				CA16BFAB191C72F10000B48E /* Ban.png in Resources */,
 				CA16BFC8191C72F10000B48E /* Iris.png in Resources */,
@@ -1776,6 +1791,7 @@
 				E1096FEC19095C06000C7E11 /* Should1.mp3 in Resources */,
 				E1096F9F19095C06000C7E11 /* Form1.mp3 in Resources */,
 				E109702D19095C06000C7E11 /* MP_Items.dat in Resources */,
+				CA07712B19204C1F009C1171 /* sound.png in Resources */,
 				51F874AC190835BE00450DB2 /* Main_iPad.storyboard in Resources */,
 				E109701519095C06000C7E11 /* Van1.mp3 in Resources */,
 				E1096FA119095C06000C7E11 /* Fry1.mp3 in Resources */,
@@ -1963,6 +1979,7 @@
 				CA16BFAA191C72F10000B48E /* Back.jpg in Resources */,
 				E1096FD719095C06000C7E11 /* Right1.mp3 in Resources */,
 				CA16BFFA191C72F10000B48E /* ŋ.png in Resources */,
+				CA07712C19204C1F009C1171 /* write.png in Resources */,
 				E109701019095C06000C7E11 /* U_OO1.mp3 in Resources */,
 				E1096FCC19095C06000C7E11 /* Place1.mp3 in Resources */,
 				E1096FA019095C06000C7E11 /* Four1.mp3 in Resources */,
@@ -2024,6 +2041,7 @@
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
+				CA07712619202369009C1171 /* MLHelpViewController.m in Sources */,
 				CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */,
 				CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */,
 				CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */,

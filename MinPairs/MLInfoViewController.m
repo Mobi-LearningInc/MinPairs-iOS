@@ -10,7 +10,7 @@
 #import "MLPlatform.h"
 
 @interface MLInfoViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *InfoView;
+@property (weak, nonatomic) IBOutlet UITextView* InfoView;
 @property (weak, nonatomic) IBOutlet UILabel* CopyrightLabel;
 @end
 
@@ -33,6 +33,7 @@
     
     self.InfoView.attributedText = [MLPlatform parseBBCodes:text withFontSize:self.InfoView.font.pointSize];
     self.InfoView.dataDetectorTypes = UIDataDetectorTypeLink;
+    
     self.CopyrightLabel.text = @"Copyright © 2014. Mobi-Learning™ Inc.";
 }
 
