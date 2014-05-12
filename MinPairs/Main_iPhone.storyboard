@@ -1211,8 +1211,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LKQ-GX-APY"/>
-        <segue reference="Nd2-aZ-hCp"/>
         <segue reference="uXz-Mu-If8"/>
+        <segue reference="ftR-Qk-zmG"/>
+        <segue reference="TyA-nf-f42"/>
     </inferredMetricsTieBreakers>
 </document>

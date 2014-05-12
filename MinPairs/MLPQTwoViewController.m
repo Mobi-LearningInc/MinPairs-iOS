@@ -81,7 +81,7 @@
         date:self.previousResult.testDate
         timeInSec:self.timeCount+self.previousResult.testTime
         extraInfo:self.previousResult.testExtra];
-    [sender setEnabled: NO];
+    [sender setHidden: YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
     //[self onAnswer:currentResult];
 }

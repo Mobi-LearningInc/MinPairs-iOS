@@ -120,7 +120,7 @@
         self.statusImg.image=[UIImage imageNamed:@"xmark"];
     }
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
-    [sender setEnabled: NO];
+    [sender setHidden: YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
     //[self onAnswer:currentResult];
 }
