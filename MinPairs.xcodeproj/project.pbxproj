@@ -403,6 +403,9 @@
 		E1C248AC190AFAC100F9E8BF /* MLTestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248AB190AFAC100F9E8BF /* MLTestResult.m */; };
 		E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */; };
 		E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */; };
+		EBC4B4421925158900D07F4B /* MLLrsCredentialsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B43D1925158900D07F4B /* MLLrsCredentialsDatabase.m */; };
+		EBC4B4431925158900D07F4B /* MLLsrCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */; };
+		EBC4B4441925158900D07F4B /* MLTinCanConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B4411925158900D07F4B /* MLTinCanConnector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -862,6 +865,12 @@
 		E1E19F391909E54700208ECD /* MLSoundChartCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSoundChartCollectionViewCell.m; sourceTree = "<group>"; };
 		E1E19F3B1909E80400208ECD /* MLSoundChartCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSoundChartCollectionViewController.h; sourceTree = "<group>"; };
 		E1E19F3C1909E80400208ECD /* MLSoundChartCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSoundChartCollectionViewController.m; sourceTree = "<group>"; };
+		EBC4B43C1925158900D07F4B /* MLLrsCredentialsDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLrsCredentialsDatabase.h; sourceTree = "<group>"; };
+		EBC4B43D1925158900D07F4B /* MLLrsCredentialsDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLrsCredentialsDatabase.m; sourceTree = "<group>"; };
+		EBC4B43E1925158900D07F4B /* MLLsrCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLsrCredentials.h; sourceTree = "<group>"; };
+		EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLsrCredentials.m; sourceTree = "<group>"; };
+		EBC4B4401925158900D07F4B /* MLTinCanConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTinCanConnector.h; sourceTree = "<group>"; };
+		EBC4B4411925158900D07F4B /* MLTinCanConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTinCanConnector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -894,10 +903,10 @@
 		51F87489190835BE00450DB2 = {
 			isa = PBXGroup;
 			children = (
+				51F8749B190835BE00450DB2 /* MinPairs */,
 				E1096E6E19095C04000C7E11 /* Audio */,
 				E1096F3E19095C06000C7E11 /* Data */,
 				CA16BF24191C72F00000B48E /* Image */,
-				51F8749B190835BE00450DB2 /* MinPairs */,
 				51F87494190835BE00450DB2 /* Frameworks */,
 				51F87493190835BE00450DB2 /* Products */,
 			);
@@ -929,6 +938,7 @@
 		51F8749B190835BE00450DB2 /* MinPairs */ = {
 			isa = PBXGroup;
 			children = (
+				EBC4B4451925159500D07F4B /* TinCan */,
 				CAA1B2141911B14B00453852 /* Platform */,
 				CA7ED6D2190B469D009F1BB7 /* Graphics */,
 				E1C248A1190AED9200F9E8BF /* DataBase */,
@@ -1607,6 +1617,19 @@
 			name = DataBase;
 			sourceTree = "<group>";
 		};
+		EBC4B4451925159500D07F4B /* TinCan */ = {
+			isa = PBXGroup;
+			children = (
+				EBC4B43C1925158900D07F4B /* MLLrsCredentialsDatabase.h */,
+				EBC4B43D1925158900D07F4B /* MLLrsCredentialsDatabase.m */,
+				EBC4B43E1925158900D07F4B /* MLLsrCredentials.h */,
+				EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */,
+				EBC4B4401925158900D07F4B /* MLTinCanConnector.h */,
+				EBC4B4411925158900D07F4B /* MLTinCanConnector.m */,
+			);
+			name = TinCan;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2056,6 +2079,7 @@
 				E1C248AC190AFAC100F9E8BF /* MLTestResult.m in Sources */,
 				51F874AF190835BE00450DB2 /* MLViewController.m in Sources */,
 				CA1C024E190C193A003C5F90 /* MLPQTwoViewController.m in Sources */,
+				EBC4B4441925158900D07F4B /* MLTinCanConnector.m in Sources */,
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */,
 				E12B14621912BA8900D697BB /* MLLearnTableViewCell.m in Sources */,
@@ -2066,6 +2090,7 @@
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
+				EBC4B4431925158900D07F4B /* MLLsrCredentials.m in Sources */,
 				E13EFF591920FEDA005C407F /* MLShareViewController.m in Sources */,
 				CA07712619202369009C1171 /* MLHelpViewController.m in Sources */,
 				CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */,
@@ -2087,6 +2112,7 @@
 				E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */,
 				E109704F19096AC9000C7E11 /* MLItem.m in Sources */,
 				CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */,
+				EBC4B4421925158900D07F4B /* MLLrsCredentialsDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
