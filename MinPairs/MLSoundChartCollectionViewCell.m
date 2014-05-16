@@ -23,6 +23,30 @@
     }
     return self;
 }
+
+-(void)flipAnimate:(NSString*) wordFile
+{
+    UIImage* image = nil;
+    
+    if (wordFile)
+    {
+        image = [UIImage imageNamed: wordFile];
+    }
+    else
+    {
+        image = [UIImage imageNamed: self.category.categoryImageFile];
+    }
+    
+    if (!image)
+    {
+        image = [UIImage imageNamed:SOUND_CHART_CELL_DEFAULT_IMAGE];
+    }
+    
+    [UIView transitionWithView:[self imageView] duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+        [self.imageView setImage:image];
+    } completion: nil];
+}
+
 -(void)setCellCategory:(MLCategory*)category
 {
     self.category=category;

@@ -68,7 +68,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MLSoundChartCollectionViewCell *cell = (MLSoundChartCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    NSString* soundFileName=@"";
+    NSString* soundFileName = @"";
     MLCategory* selectedCategory = [self.catArr objectAtIndex:indexPath.row];
     if(cell.tapCount==0)
     {
@@ -82,6 +82,7 @@
         {
             soundFileName=selectedCategory.categoryAudioFile;
             cell.needsToPlayCategorySound=false;
+            [cell flipAnimate: nil];
         }
         else
         {
@@ -117,10 +118,13 @@
             soundFileName=word.itemAudioFile;
             NSLog(@"playing sound for item %@ from %@",word.itemDescription,word.itemAudioFile);
             NSLog(@"word arr size : %lu get item at index %i",(unsigned long)wordArr.count,index);
+
+            [cell flipAnimate: [word itemImageFile]];
             cell.needsToPlayCategorySound=true;
             cell.tapCount++;
+            
+            [cell flipAnimate: [word itemImageFile]];
         }
-        
     }
     [self.audioPlayer loadFileFromResource:soundFileName withExtension: @"mp3"];
     [self.audioPlayer prepareToPlay];

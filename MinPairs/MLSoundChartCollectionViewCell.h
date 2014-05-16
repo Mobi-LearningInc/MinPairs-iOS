@@ -21,4 +21,11 @@
  * \returns void
  */
 -(void)setCellCategory:(MLCategory*)category;
+
+/**
+ *  Flip animates an image. Flips from top down.
+ *  @param wordFile name of the file to flip to. If the parameter is nil, 
+ *         it flips back to its original image.
+ */
+-(void)flipAnimate:(NSString*) wordFile;
 @end
