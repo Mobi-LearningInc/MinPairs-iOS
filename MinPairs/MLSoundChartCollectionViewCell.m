@@ -9,7 +9,6 @@
 #import "MLSoundChartCollectionViewCell.h"
 
 @interface MLSoundChartCollectionViewCell()
-@property (weak, nonatomic) IBOutlet UILabel *soundLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) MLCategory* category;
 
@@ -27,7 +26,6 @@
 -(void)setCellCategory:(MLCategory*)category
 {
     self.category=category;
-    self.soundLabel.text=category.categoryDescription;
     UIImage *image = [UIImage imageNamed: category.categoryImageFile];
     if(!image)
     {

@@ -9,7 +9,7 @@
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
 
-@interface MLPQTwoViewController ()
+@interface MLPQTwoViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *typeTimeLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
@@ -31,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.textAnswer.delegate = self;
     self.sequeName=@"PQTwo";
     int rand = arc4random_uniform(2);
     MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
@@ -46,6 +47,12 @@
             extraInfo:self.previousResult.testExtra];
         [self onAnswer:currentResult];
     }];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [self onAnswerBtn:nil];
+    return NO;
 }
 
 - (IBAction)onPlayBtn:(id)sender

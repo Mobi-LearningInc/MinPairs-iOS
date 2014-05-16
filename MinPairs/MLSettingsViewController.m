@@ -11,9 +11,12 @@
 #import "MLPlatform.h"
 
 @interface MLSettingsViewController ()
-@property (weak, nonatomic) IBOutlet UITextField* listenAndSelectBox;
-@property (weak, nonatomic) IBOutlet UITextField* listenAndReadBox;
-@property (weak, nonatomic) IBOutlet UITextField* listenAndTypeBox;
+@property (weak, nonatomic) IBOutlet UIStepper* listenAndSelectStepper;
+@property (weak, nonatomic) IBOutlet UIStepper* listenAndReadStepper;
+@property (weak, nonatomic) IBOutlet UIStepper* listenAndTypeStepper;
+@property (weak, nonatomic) IBOutlet UILabel *listenAndSelectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *listenAndReadLabel;
+@property (weak, nonatomic) IBOutlet UILabel *listenAndTypeLabel;
 @end
 
 @implementation MLSettingsViewController
@@ -38,9 +41,14 @@
 {
     MLSettingDatabase * settingsDb=[[MLSettingDatabase alloc]initSettingDatabase];
     MLSettingsData* data = [settingsDb getSetting];
-    [[self listenAndSelectBox] setText: [NSString stringWithFormat:@"%d", data.settingTimeSelect]];
-    [[self listenAndReadBox] setText: [NSString stringWithFormat:@"%d", data.settingTimeRead]];
-    [[self listenAndTypeBox] setText: [NSString stringWithFormat:@"%d", data.settingTimeType]];
+    
+    [[self listenAndSelectStepper] setValue: data.settingTimeSelect];
+    [[self listenAndReadStepper] setValue: data.settingTimeRead];
+    [[self listenAndTypeStepper] setValue: data.settingTimeType];
+    
+    [[self listenAndSelectLabel] setText: [NSString stringWithFormat:@"%d seconds", data.settingTimeSelect]];
+    [[self listenAndReadLabel] setText: [NSString stringWithFormat:@"%d seconds", data.settingTimeRead]];
+    [[self listenAndTypeLabel] setText: [NSString stringWithFormat:@"%d seconds", data.settingTimeType]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,9 +59,9 @@
 
 - (IBAction)onSaveClicked:(UIButton*)sender
 {
-    int selectTime = [self.listenAndSelectBox.text intValue];
-    int readTime=[self.listenAndReadBox.text intValue];
-    int typeTime =[self.listenAndTypeBox.text intValue];
+    int selectTime = [[self listenAndSelectStepper] value];
+    int readTime = [[self listenAndReadStepper] value];
+    int typeTime = [[self listenAndTypeStepper] value];
     MLSettingDatabase * settingsDb=[[MLSettingDatabase alloc]initSettingDatabase];
     MLSettingsData* currentSetting =[settingsDb getSetting];
     MLSettingsData* data = [[MLSettingsData alloc]initSettingWithTimeSelect:selectTime timeRead:readTime timeType:typeTime filterSelection:currentSetting.settingFilterCatPair];
@@ -72,6 +80,22 @@
 {
     //hides keyboard
     [self.view endEditing:YES];
+}
+
+- (IBAction)onStepperChanged:(UIStepper *)sender
+{
+    if (sender == [self listenAndSelectStepper])
+    {
+        [[self listenAndSelectLabel] setText: [NSString stringWithFormat:@"%lu seconds", (unsigned long)[sender value]]];
+    }
+    else if (sender == [self listenAndReadStepper])
+    {
+        [[self listenAndReadLabel] setText: [NSString stringWithFormat:@"%lu seconds", (unsigned long)[sender value]]];
+    }
+    else
+    {
+        [[self listenAndTypeLabel] setText: [NSString stringWithFormat:@"%lu seconds", (unsigned long)[sender value]]];
+    }
 }
 
 /*

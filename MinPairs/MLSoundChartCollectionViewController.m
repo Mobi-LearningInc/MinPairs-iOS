@@ -32,6 +32,7 @@
     [self.loadingIndicator startAnimating];
     [self.loadingIndicator setHidesWhenStopped:YES];
 }
+
 -(void)onLoadFinish
 {
     [self.loadingIndicator stopAnimating];

@@ -29,12 +29,26 @@
         instance->_provider = [[MLMainDataProvider alloc] initMainProvider];
         NSArray* catPairs = [instance->_provider getCategoryPairs];
         NSMutableArray* catLeft = [NSMutableArray array];
+        
+        
+        int (^find)(MLCategory*, NSMutableArray*) = ^(MLCategory* a, NSMutableArray* b) {
+            for (MLCategory* c in b) {
+                if ([c categoryId] == [a categoryId])
+                    return true;
+            }
+            return false;
+        };
+        
         for (int i=0; i<catPairs.count; i++)
         {
             MLPair* p =[catPairs objectAtIndex:i];
-            [catLeft addObject:p.first];
+            
+            if (!find(p.first, catLeft))
+            {
+                [catLeft addObject: p.first];
+            }
         }
-        instance->_categories = catLeft;//[instance->_provider getCategories];
+        instance->_categories = catLeft;
     });
     
     return instance;
