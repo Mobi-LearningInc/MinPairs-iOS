@@ -9,6 +9,8 @@
 #import "MLResultsViewController.h"
 #import "MLPlatform.h"
 #import "MLShareViewController.h"
+#import "MLTinCanConnector.h"
+#import "MLLrsCredentialsDatabase.h"
 
 @interface MLResultsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
@@ -46,6 +48,15 @@
     self.wrongLabel.text = [NSString stringWithFormat: @"%@ %@", self.wrongLabel.text, [self wrong]];
     self.totalLabel.text = [NSString stringWithFormat: @"%@ %@", self.totalLabel.text, [self total]];
     self.timeLabel.text = [NSString stringWithFormat: @"%@ %@s", self.timeLabel.text, [self time]];
+    
+    NSNumber *c = [NSNumber numberWithInt:[[self correct] intValue]];
+    NSNumber *t = [NSNumber numberWithInt:[[self total] intValue]];
+    NSNumber *p = [NSNumber numberWithFloat:([c floatValue]/[t floatValue])];
+    
+    MLTinCanConnector *tincan = [[MLTinCanConnector alloc]initWithCredentials:[[[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase] getLmsCredentials]];
+    [tincan saveQuizResults:p points:c max:t time:[NSString stringWithFormat:@"PT%@.00S", [self time]]];
+
+    
 }
 
 - (void)didReceiveMemoryWarning

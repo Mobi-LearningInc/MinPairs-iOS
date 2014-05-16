@@ -22,5 +22,6 @@
 
 -(instancetype)initWithCredentials:(MLLsrCredentials *)credentials;
 -(void)saveSampleActivity;
+-(void)saveQuizResults:(NSNumber*)percentage points:(NSNumber*)points max:(NSNumber*)maxPoints time:(NSString*)time;
 
 @end

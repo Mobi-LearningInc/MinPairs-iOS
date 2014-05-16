@@ -22,11 +22,13 @@
 #define ML_DB_CREDENTIALS_DEFAULT_KEY @"sHjKTRNNINNewK5Gfb8"
 #define ML_DB_CREDENTIALS_DEFAULT_SECRET @"CmPyk-hTdmy3i8Idt44"
 #define ML_DB_CREDENTIALS_DEFAULT_APPNAME @"MinPairs"
-#define ML_DB_CREDENTIALS_DEFAULT_ADDRESS @"https://cloud.scorm.com/tc/3454GI76E3/"
+#define ML_DB_CREDENTIALS_DEFAULT_ADDRESS @"https://cloud.scorm.com/tc/I40JG12M9U/"
 //@"https://cloud.scorm.com/tc/3454GI76E3/"
 //@"https://cloud.scorm.com/ScormEngineInterface/TCAPI/public/"
 //@"https://cloud.scorm.com/tc/I40JG12M9U"
 #define ML_DB_CREDENTIALS_DEFAULT_USERNAME @"pawluk@gmail.com"
+//@"agaizabella@rogers.com"
+//@"pawluk@gmail.com"
 #define ML_DB_CREDENTIALS_DEFAULT_PASSWORD @"mojemyszki"
 
 /** Creates and istance of the SettingDatabase class
