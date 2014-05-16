@@ -22,4 +22,26 @@
     }
     return self;
 }
+
+-(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName userName:(NSString*)userName password:(NSString*)password address:(NSString *)address
+{
+    self=[super init];
+    if(self)
+    {
+        self.credentialId = credId;
+        self.appName=appName;
+        self.userName =userName;
+        self.password=password;
+        self.address = address;
+    }
+    return self;
+}
+
+
+-(NSString *)encodedCredentials{
+    
+    NSString *myText = [NSString stringWithFormat:@"%@:%@", self.userName, self.password];
+    return [NSString stringWithFormat:@"Basic %@", [[myText dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0]];
+}
+
 @end

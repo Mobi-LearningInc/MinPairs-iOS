@@ -8,26 +8,44 @@
 
 #import "MLTinCanConnector.h"
 
+
 @interface MLTinCanConnector()
     @property (strong, nonatomic) RSTinCanConnector *tincan;
+    @property (strong, nonatomic) MLLsrCredentials *credentials;
 @end
 
 @implementation MLTinCanConnector
 
+-(instancetype)initWithCredentials:(MLLsrCredentials *)credentials{
+
+    self=[super init];
+    if(self)
+    {
+        self.credentials = credentials;
+        _tincan = [self setUp:credentials];
+    }
+    return self;
+}
+
 -(RSTinCanConnector*)tincan{
     if(_tincan==nil){
-        _tincan = [self setUp];
+        _tincan = [self setUp:self.credentials];
     }
     return _tincan;
 }
 
-- (RSTinCanConnector *)setUp
+- (RSTinCanConnector *)setUp:(MLLsrCredentials*)credentials
 {
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *lrs = [[NSMutableDictionary alloc] init];
+    
     //dummy LRS - supply your own credentials here to run tests
-    [lrs setValue:@"http://166.78.152.121:8000/xAPI"forKey:@"endpoint"];
-    [lrs setValue:@"Basic UHJ6ZW1lazptb2plbXlzemtp"forKey:@"auth"];
+    //@"https://cloud.scorm.com/tc/I40JG12M9U/"
+    //@"Basic UHJ6ZW1lazptb2plbXlzemtp"
+    
+    
+    [lrs setValue:credentials.address forKey:@"endpoint"];
+    [lrs setValue:credentials.encodedCredentials forKey:@"auth"];
     [lrs setValue:@"1.0.0"forKey:@"version"];
     // just add one LRS for now
     [options setValue:[NSArray arrayWithObject:lrs] forKey:@"recordStore"];

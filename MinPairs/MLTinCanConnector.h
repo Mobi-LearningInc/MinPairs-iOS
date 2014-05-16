@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MLLsrCredentials.h"
 #import "RSTinCanConnector.h"
 /*
 #import "TCLocalizedValues.h"
@@ -20,6 +20,7 @@
 
 @interface MLTinCanConnector : NSObject
 
+-(instancetype)initWithCredentials:(MLLsrCredentials *)credentials;
 -(void)saveSampleActivity;
 
 @end

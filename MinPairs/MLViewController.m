@@ -12,14 +12,36 @@
 #import "MLSettingDatabase.h"
 #import "MLTestResultDatabase.h"
 #import "MLPlatform.h"
+#import "MLTinCanConnector.h"
+#import "MLLsrCredentials.h"
+#import "MLLrsCredentialsDatabase.h"
 
 @interface MLViewController ()
 @property (nonatomic, assign) int theme;
 @property (nonatomic, strong) UIColor* colour;
 @property (nonatomic, strong) UIColor* btnColour;
+@property (nonatomic, strong) MLLrsCredentialsDatabase* lrsDatabase;
+@property (nonatomic, strong) MLTinCanConnector* tincan;
 @end
 
 @implementation MLViewController
+
+- (MLLrsCredentialsDatabase *)lrsDatabase{
+    if(!_lrsDatabase){
+        _lrsDatabase = [[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase];
+        [_lrsDatabase saveDefaultCredentials];
+    }
+    
+    return _lrsDatabase;
+}
+
+- (MLTinCanConnector *)tincan{
+
+    if (!_tincan) {
+        _tincan = [[MLTinCanConnector alloc] initWithCredentials:[self.lrsDatabase getLmsCredentials]];
+    }
+    return _tincan;
+}
 
 - (IBAction)onResetThemeClicked:(UIButton *)sender
 {
@@ -177,6 +199,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.tincan saveSampleActivity];
 }
 
 - (void)didReceiveMemoryWarning

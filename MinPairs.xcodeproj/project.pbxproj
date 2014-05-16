@@ -406,6 +406,7 @@
 		EBC4B4421925158900D07F4B /* MLLrsCredentialsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B43D1925158900D07F4B /* MLLrsCredentialsDatabase.m */; };
 		EBC4B4431925158900D07F4B /* MLLsrCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */; };
 		EBC4B4441925158900D07F4B /* MLTinCanConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B4411925158900D07F4B /* MLTinCanConnector.m */; };
+		EBC4B4501925160800D07F4B /* libRSTCAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC4B44D192515E800D07F4B /* libRSTCAPI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -415,6 +416,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 51F87491190835BE00450DB2;
 			remoteInfo = MinPairs;
+		};
+		EBC4B44C192515E800D07F4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBC4B446192515E800D07F4B /* RSTCAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3DBF12C16E02D8D008661C7;
+			remoteInfo = RSTCAPI;
+		};
+		EBC4B44E192515E800D07F4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBC4B446192515E800D07F4B /* RSTCAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3DBF13D16E02D8D008661C7;
+			remoteInfo = RSTCAPITests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -871,6 +886,7 @@
 		EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLsrCredentials.m; sourceTree = "<group>"; };
 		EBC4B4401925158900D07F4B /* MLTinCanConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTinCanConnector.h; sourceTree = "<group>"; };
 		EBC4B4411925158900D07F4B /* MLTinCanConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTinCanConnector.m; sourceTree = "<group>"; };
+		EBC4B446192515E800D07F4B /* RSTCAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSTCAPI.xcodeproj; path = ../TinCanObjC/RSTCAPI.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -878,6 +894,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC4B4501925160800D07F4B /* libRSTCAPI.a in Frameworks */,
 				E13EFF551920FE64005C407F /* Social.framework in Frameworks */,
 				E13EFF531920FE5D005C407F /* MessageUI.framework in Frameworks */,
 				E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */,
@@ -903,6 +920,7 @@
 		51F87489190835BE00450DB2 = {
 			isa = PBXGroup;
 			children = (
+				EBC4B446192515E800D07F4B /* RSTCAPI.xcodeproj */,
 				51F8749B190835BE00450DB2 /* MinPairs */,
 				E1096E6E19095C04000C7E11 /* Audio */,
 				E1096F3E19095C06000C7E11 /* Data */,
@@ -1630,6 +1648,15 @@
 			name = TinCan;
 			sourceTree = "<group>";
 		};
+		EBC4B447192515E800D07F4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBC4B44D192515E800D07F4B /* libRSTCAPI.a */,
+				EBC4B44F192515E800D07F4B /* RSTCAPITests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1694,6 +1721,12 @@
 			mainGroup = 51F87489190835BE00450DB2;
 			productRefGroup = 51F87493190835BE00450DB2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EBC4B447192515E800D07F4B /* Products */;
+					ProjectRef = EBC4B446192515E800D07F4B /* RSTCAPI.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				51F87491190835BE00450DB2 /* MinPairs */,
@@ -1701,6 +1734,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EBC4B44D192515E800D07F4B /* libRSTCAPI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRSTCAPI.a;
+			remoteRef = EBC4B44C192515E800D07F4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EBC4B44F192515E800D07F4B /* RSTCAPITests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSTCAPITests.octest;
+			remoteRef = EBC4B44E192515E800D07F4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		51F87490190835BE00450DB2 /* Resources */ = {
@@ -2243,6 +2293,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Users/mlinc/Documents/mobi-learning/GitHubRepos/TinCanObjC/RSTCAPI",
+				);
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2261,6 +2316,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Users/mlinc/Documents/mobi-learning/GitHubRepos/TinCanObjC/RSTCAPI",
+				);
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

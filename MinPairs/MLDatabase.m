@@ -38,6 +38,8 @@
         NSString * msg;
         
         [self runQuery:createQueryString errorString:&msg];
+        NSLog(@"%@\n", msg);
+        
         /*
          NSFileManager *fileManager = [NSFileManager defaultManager];
         if ([fileManager fileExistsAtPath:self.databasePath]==NO)

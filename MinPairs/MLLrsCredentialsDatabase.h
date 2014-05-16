@@ -16,12 +16,18 @@
 #define ML_DB_CREDENTIALS_TABLE_COL_KEY @"lrs_key"
 #define ML_DB_CREDENTIALS_TABLE_COL_SECRET @"lrs_secret"
 #define ML_DB_CREDENTIALS_TABLE_COL_ADDRESS @"lrs_address"
+#define ML_DB_CREDENTIALS_TABLE_COL_USERNAME @"lrs_username"
+#define ML_DB_CREDENTIALS_TABLE_COL_PASSWD @"lrs_passwd"
 
-#define ML_DB_CREDENTIALS_DEFAULT_KEY @"d9b838c4-d6c8-11e3-80c7-bc764e05584e"
-#define ML_DB_CREDENTIALS_DEFAULT_SECRET @"U6Kak3h3YH"
+#define ML_DB_CREDENTIALS_DEFAULT_KEY @"sHjKTRNNINNewK5Gfb8"
+#define ML_DB_CREDENTIALS_DEFAULT_SECRET @"CmPyk-hTdmy3i8Idt44"
 #define ML_DB_CREDENTIALS_DEFAULT_APPNAME @"MinPairs"
-#define ML_DB_CREDENTIALS_DEFAULT_ADDRESS @"http://166.78.152.121:8000/xAPI"
-
+#define ML_DB_CREDENTIALS_DEFAULT_ADDRESS @"https://cloud.scorm.com/tc/3454GI76E3/"
+//@"https://cloud.scorm.com/tc/3454GI76E3/"
+//@"https://cloud.scorm.com/ScormEngineInterface/TCAPI/public/"
+//@"https://cloud.scorm.com/tc/I40JG12M9U"
+#define ML_DB_CREDENTIALS_DEFAULT_USERNAME @"pawluk@gmail.com"
+#define ML_DB_CREDENTIALS_DEFAULT_PASSWORD @"mojemyszki"
 
 /** Creates and istance of the SettingDatabase class
  * \return instancetype of MLLrsCredentials

@@ -20,13 +20,15 @@
  */
 -(instancetype)initLmsCredentialsDatabase
 {
-    NSString* query = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@ INTEGER PRIMARY KEY AUTOINCREMENT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT);",
+    NSString* query = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@ INTEGER PRIMARY KEY AUTOINCREMENT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT);",
                        ML_DB_CREDENTIALS_TABLE_NAME,
                        ML_DB_CREDENTIALS_TABLE_COL_CREDENTIAL_ID,
                        ML_DB_CREDENTIALS_TABLE_COL_APP_NAME,
                        ML_DB_CREDENTIALS_TABLE_COL_KEY,
                        ML_DB_CREDENTIALS_TABLE_COL_SECRET,
-                       ML_DB_CREDENTIALS_TABLE_COL_ADDRESS];
+                       ML_DB_CREDENTIALS_TABLE_COL_ADDRESS,
+                       ML_DB_CREDENTIALS_TABLE_COL_USERNAME,
+                       ML_DB_CREDENTIALS_TABLE_COL_PASSWD];
     self=[super initDatabaseWithCreateQuery:query];
     return self;
 }
@@ -39,17 +41,19 @@
     NSString* query;
     if ([self countSettings]==0)
     {
-        query = [NSString stringWithFormat:@"INSERT INTO %@ (%@,%@,%@, %@) VALUES(%@,%@,%@, %@);",
+        query = [NSString stringWithFormat:@"INSERT INTO %@ (%@,%@,%@, %@,%@, %@) VALUES('%@','%@','%@', '%@', '%@', '%@');",
                  ML_DB_CREDENTIALS_TABLE_NAME,
                  ML_DB_CREDENTIALS_TABLE_COL_APP_NAME,
                  ML_DB_CREDENTIALS_TABLE_COL_KEY,
                  ML_DB_CREDENTIALS_TABLE_COL_SECRET,
                  ML_DB_CREDENTIALS_TABLE_COL_ADDRESS,
-                 data.appName,data.key,data.secret,data.address];
+                 ML_DB_CREDENTIALS_TABLE_COL_USERNAME,
+                 ML_DB_CREDENTIALS_TABLE_COL_PASSWD,
+                 data.appName,data.key,data.secret,data.address, data.userName, data.password];
     }
     else
     {
-        query = [NSString stringWithFormat:@"UPDATE %@ SET %@='%@',%@='%@',%@='%@', %@='%@; WHERE %@=%i;" ,
+        query = [NSString stringWithFormat:@"UPDATE %@ SET %@='%@',%@='%@',%@='%@', %@='%@', %@='%@', %@='%@' WHERE %@=%i;" ,
                  ML_DB_CREDENTIALS_TABLE_NAME,
                  ML_DB_CREDENTIALS_TABLE_COL_APP_NAME,
                  data.appName,
@@ -59,6 +63,10 @@
                  data.secret,
                  ML_DB_CREDENTIALS_TABLE_COL_ADDRESS,
                  data.address,
+                 ML_DB_CREDENTIALS_TABLE_COL_USERNAME,
+                 data.userName,
+                 ML_DB_CREDENTIALS_TABLE_COL_PASSWD,
+                 data.password,
                  ML_DB_CREDENTIALS_TABLE_COL_CREDENTIAL_ID,
                  1];
     }
@@ -99,6 +107,8 @@
                           secret:[rowDataArr objectAtIndex:3]
                           address:[rowDataArr objectAtIndex:4]
                          ];
+                dataItem.userName = [rowDataArr objectAtIndex:5];
+                dataItem.password = [rowDataArr objectAtIndex:6];
             }
         }
         else
@@ -117,11 +127,18 @@
  */
 -(BOOL)saveDefaultCredentials
 {
-    MLLsrCredentials* deffaultSetting =[[MLLsrCredentials alloc] initCredentialsWithId:1
+   /* MLLsrCredentials* deffaultSetting =[[MLLsrCredentials alloc] initCredentialsWithId:1
                                     appName:ML_DB_CREDENTIALS_DEFAULT_APPNAME
                                     key:ML_DB_CREDENTIALS_DEFAULT_KEY
                                     secret:ML_DB_CREDENTIALS_DEFAULT_SECRET
                                     address:ML_DB_CREDENTIALS_DEFAULT_ADDRESS];
+    */
+    MLLsrCredentials* deffaultSetting =[[MLLsrCredentials alloc] initCredentialsWithId:1
+        appName:ML_DB_CREDENTIALS_DEFAULT_APPNAME
+        userName:ML_DB_CREDENTIALS_DEFAULT_USERNAME
+        password:ML_DB_CREDENTIALS_DEFAULT_PASSWORD
+        address:ML_DB_CREDENTIALS_DEFAULT_ADDRESS];
+                                        
     return [self saveLmsCredentials:deffaultSetting ];
 }
 

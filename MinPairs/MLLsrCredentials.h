@@ -16,6 +16,8 @@
 
 -(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName key:(NSString*)key secret:(NSString*)secret address:(NSString*) address;
 
+-(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName userName:(NSString*)userName password:(NSString*)password address:(NSString *)address;
+
 ///string name of the application
 @property int credentialId;
 
@@ -30,4 +32,14 @@
 
 ///string address of the LRS
 @property (strong, nonatomic) NSString *address;
+
+//user for basicHTTP autherntication
+@property  (strong, nonatomic) NSString *userName;
+
+//pass for basicHTTP autenticarion
+@property   (strong, nonatomic)NSString *password;
+
+//Base64 encoded userName:password
+-(NSString *)encodedCredentials;
+
 @end
