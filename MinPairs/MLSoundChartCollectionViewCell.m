@@ -42,7 +42,7 @@
         image = [UIImage imageNamed:SOUND_CHART_CELL_DEFAULT_IMAGE];
     }
     
-    [UIView transitionWithView:[self imageView] duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+    [UIView transitionWithView:[self imageView] duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
         [self.imageView setImage:image];
     } completion: nil];
 }
