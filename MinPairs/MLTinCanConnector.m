@@ -59,7 +59,7 @@
 
     NSMutableDictionary *statementOptions = [[NSMutableDictionary alloc] init];
     [statementOptions setValue:@"http://mobilearninginc.com/minpairs" forKey:@"activityId"];
-    [statementOptions setValue:[[TCVerb alloc] initWithId:@"http://adlnet.gov/expapi/verbs/experienced" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"experienced"]] forKey:@"verb"];
+    [statementOptions setValue:[[TCVerb alloc] initWithId:@"http://adlnet.gov/expapi/verbs/launched" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"launched"]] forKey:@"verb"];
     [statementOptions setValue:@"http://adlnet.gov/expapi/activities/course/" forKey:@"activityType"];
     
     TCStatement *statementToSend = [self createTestStatementWithOptions:statementOptions];
@@ -76,7 +76,8 @@
 
 - (TCStatement *)createTestStatementWithOptions:(NSDictionary *)options
 {
-    TCAgent *actor = [[TCAgent alloc] initWithName:@"Przemek" withMbox:@"mailto:pawluk@gmail.com" withAccount:nil];
+    TCAgent *actor = [[TCAgent alloc] initWithName:@"Agnieszka" withMbox:@"mailto:agaizabella@rogers.com" withAccount:nil];
+    //   TCAgent *actor = [[TCAgent alloc] initWithName:@"Przemek" withMbox:@"mailto:pawluk@gmail.com" withAccount:nil];
     
     TCActivityDefinition *actDef = [[TCActivityDefinition alloc] initWithName:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"http://mobilearninginc.com/minpairs"]
                                                               withDescription:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"Description for test statement"]
@@ -114,7 +115,7 @@
     [score setValue:maxPoints forKey:@"max"];
 
     
-    TCResult *result = [[TCResult alloc]initWithResponse:[ NSString stringWithFormat: @"Quiz completed with score: %.2f", percentage]
+    TCResult *result = [[TCResult alloc]initWithResponse:[ NSString stringWithFormat: @"Quiz completed with score: %.2f", [percentage floatValue]]
                                         withScore:score
                                         withSuccess:[NSNumber numberWithBool:YES]
                                         withCompletion:[NSNumber numberWithBool:YES]
@@ -135,7 +136,7 @@
 
 - (TCStatement *)createQuizStatementWithOptions:(NSDictionary *)options
 {
-    TCAgent *actor = [[TCAgent alloc] initWithName:@"Przemek" withMbox:@"mailto:pawluk@gmail.com" withAccount:nil];
+    TCAgent *actor = [[TCAgent alloc] initWithName:@"Agnieszka" withMbox:@"mailto:agaizabella@rogers.com" withAccount:nil];
     
     TCActivityDefinition *actDef = [[TCActivityDefinition alloc] initWithName:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"https://cloud.scorm.com/tc/I40JG12M9U"]
                                                               withDescription:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"MinPairs quzi taken"]
