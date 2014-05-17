@@ -8,6 +8,7 @@
 
 #import "MLHelpViewController.h"
 #import "MLPlatform.h"
+#import "MLTheme.h"
 
 @interface MLHelpViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -22,8 +23,14 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     
     UIImageView* listen_select_img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];

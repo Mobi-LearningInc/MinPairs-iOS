@@ -10,6 +10,7 @@
 #import "MLLearnTableViewCell.h"
 #import "MLMainDataProvider.h"
 #import "MLSettingDatabase.h"
+#import "MLTheme.h"
 
 @interface MLLearnTableViewController() <UISearchDisplayDelegate, UISearchBarDelegate>
 @property NSArray* learnPairsArr;
@@ -27,8 +28,14 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
 
     MLMainDataProvider* dataPro=[[MLMainDataProvider alloc]initMainProvider];

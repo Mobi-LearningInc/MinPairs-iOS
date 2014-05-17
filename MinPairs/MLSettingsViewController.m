@@ -9,6 +9,7 @@
 #import "MLSettingsViewController.h"
 #import "MLSettingDatabase.h"
 #import "MLPlatform.h"
+#import "MLTheme.h"
 
 @interface MLSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UIStepper* listenAndSelectStepper;
@@ -30,9 +31,14 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
-    [MLPlatform setButtonsRound: [self view] withRadius: 5.0f];
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     [self updateControls];
 }

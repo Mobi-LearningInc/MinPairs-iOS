@@ -21,6 +21,7 @@
 		51F874BA190835BE00450DB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F87499190835BE00450DB2 /* UIKit.framework */; };
 		51F874C2190835BE00450DB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51F874C0190835BE00450DB2 /* InfoPlist.strings */; };
 		51F874C4190835BE00450DB2 /* MinPairsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874C3190835BE00450DB2 /* MinPairsTests.m */; };
+		CA02B6121927C64200100C76 /* MLTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = CA02B6111927C64200100C76 /* MLTheme.m */; };
 		CA0343D6191DCAC300CAF871 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0343D5191DCAC300CAF871 /* help.png */; };
 		CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343DB191DED0900CAF871 /* MLInfoViewController.m */; };
 		CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */; };
@@ -441,6 +442,8 @@
 		51F874BF190835BE00450DB2 /* MinPairsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinPairsTests-Info.plist"; sourceTree = "<group>"; };
 		51F874C1190835BE00450DB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F874C3190835BE00450DB2 /* MinPairsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinPairsTests.m; sourceTree = "<group>"; };
+		CA02B6101927C64200100C76 /* MLTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTheme.h; sourceTree = "<group>"; };
+		CA02B6111927C64200100C76 /* MLTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTheme.m; sourceTree = "<group>"; };
 		CA0343D5191DCAC300CAF871 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		CA0343DA191DED0900CAF871 /* MLInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInfoViewController.h; sourceTree = "<group>"; };
 		CA0343DB191DED0900CAF871 /* MLInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInfoViewController.m; sourceTree = "<group>"; };
@@ -1587,6 +1590,8 @@
 				CA7ED6D8190B46C1009F1BB7 /* MLLineGraphView.m */,
 				CAC946D9190DCC380002ED3B /* MLGraphAxis.h */,
 				CAC946DA190DCC380002ED3B /* MLGraphAxis.m */,
+				CA02B6101927C64200100C76 /* MLTheme.h */,
+				CA02B6111927C64200100C76 /* MLTheme.m */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -2420,6 +2425,7 @@
 				51F874AF190835BE00450DB2 /* MLViewController.m in Sources */,
 				CA1C024E190C193A003C5F90 /* MLPQTwoViewController.m in Sources */,
 				EBC4B4441925158900D07F4B /* MLTinCanConnector.m in Sources */,
+				CA02B6121927C64200100C76 /* MLTheme.m in Sources */,
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */,
 				E12B14621912BA8900D697BB /* MLLearnTableViewCell.m in Sources */,

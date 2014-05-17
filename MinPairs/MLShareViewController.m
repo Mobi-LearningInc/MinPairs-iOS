@@ -8,6 +8,8 @@
 
 #import "MLShareViewController.h"
 #import <Social/Social.h>
+#import "MLTheme.h"
+
 @interface MLShareViewController ()
 
 @end
@@ -23,8 +25,14 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     self.title=@"Share";
     if(_socialMessage==NULL)

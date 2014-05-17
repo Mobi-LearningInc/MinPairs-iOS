@@ -11,15 +11,13 @@
 #import "MLCategory.h"
 #import "MLSettingDatabase.h"
 #import "MLTestResultDatabase.h"
+#import "MLTheme.h"
 #import "MLPlatform.h"
 #import "MLTinCanConnector.h"
 #import "MLLsrCredentials.h"
 #import "MLLrsCredentialsDatabase.h"
 
 @interface MLViewController ()
-@property (nonatomic, assign) int theme;
-@property (nonatomic, strong) UIColor* colour;
-@property (nonatomic, strong) UIColor* btnColour;
 @property (nonatomic, strong) MLLrsCredentialsDatabase* lrsDatabase;
 @property (nonatomic, strong) MLTinCanConnector* tincan;
 @end
@@ -43,136 +41,8 @@
     return _tincan;
 }
 
-- (IBAction)onResetThemeClicked:(UIButton *)sender
-{
-    self.theme = 0;
-    self.view.backgroundColor = self.colour;
-    for (UIView* view in [[self view] subviews])
-    {
-        if ([view isKindOfClass: [UIButton class]])
-        {
-            [((UIButton*)view) setBackgroundColor: _btnColour];
-            [((UIButton*)view) setBackgroundImage: nil forState: UIControlStateNormal];
-        }
-    }
-    
-    [MLPlatform setButtonsRound: [self view] withRadius: 0.0f];
-    [MLPlatform setButtonsBorder: [self view] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
-}
-
-- (IBAction)onTestThemeClicked:(UIButton *)sender
-{
-    UIImage* img = nil;
-    switch(_theme)
-    {
-        case 2:
-            img = [UIImage imageNamed:@"lblack.png"];
-            break;
-            
-        case 3:
-            img = [UIImage imageNamed:@"lblue.png"];
-            break;
-            
-        case 4:
-            img = [UIImage imageNamed:@"lmagenta.png"];
-            break;
-            
-        case 5:
-            img = [UIImage imageNamed:@"lorange.png"];
-            break;
-            
-        case 6:
-            img = [UIImage imageNamed:@"lyellow.png"];
-            break;
-            
-        case 7:
-            img = [UIImage imageNamed:@"lyelloworange.png"];
-            break;
-            
-        case 8:
-            img = [UIImage imageNamed:@"dblack.png"];
-            break;
-            
-        case 9:
-            img = [UIImage imageNamed:@"dblue.png"];
-            break;
-            
-        case 10:
-            img = [UIImage imageNamed:@"dmagenta.png"];
-            break;
-            
-        case 11:
-            img = [UIImage imageNamed:@"dorange.png"];
-            break;
-            
-        case 12:
-            img = [UIImage imageNamed:@"dyellow.png"];
-            break;
-            
-        case 13:
-            img = [UIImage imageNamed:@"dyelloworange.png"];
-            break;
-    }
-    
-    if (_theme == 0)
-    {
-        [MLPlatform setButtonsRound: [self view] withRadius: 0.0f];
-        [MLPlatform setButtonsBorder: [self view] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
-    }
-    else
-    {
-        [MLPlatform setButtonsRound: [self view] withRadius: 5.0f];
-    }
-    
-    if (_theme > 1 && _theme <= 7)
-    {
-        [MLPlatform setButtonsBorder: [self view] withBorderWidth: 0.0f withColour: nil];
-        self.view.backgroundColor = self.colour;
-    }
-    else
-    {
-        self.view.backgroundColor = [UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1];
-    }
-    
-    for (UIView* view in [[self view] subviews])
-    {
-        if ([view isKindOfClass: [UIButton class]])
-        {
-            [((UIButton*)view) setBackgroundImage:img forState:UIControlStateNormal];
-            
-            if (_theme > 1)
-            {
-                [((UIButton*)view) setBackgroundColor: nil];
-            }
-        }
-    }
-    
-    ++_theme;
-    
-    if (_theme == 14)
-    {
-        _theme = 0;
-    }
-    [[self view] setNeedsDisplay];
-}
-
 -(void) viewWillAppear:(BOOL)animated
 {
-    if (!_theme)
-    {
-        self.colour = self.view.backgroundColor;
-        [MLPlatform setButtonsBorder: [self view] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
-        
-        for (UIView* view in [[self view] subviews])
-        {
-            if ([view isKindOfClass: [UIButton class]])
-            {
-                _btnColour = [((UIButton*)view) backgroundColor];
-                break;
-            }
-        }
-    }
-    
     UIImage* helpicon = [UIImage imageNamed:@"help.png"];
     UIImage* helpiconnormal = [MLPlatform imageWithColor:helpicon withColour:[UIColor colorWithRed:0.0f green:120.0f/0xFF blue:1.0f alpha:1.0f]];
     UIImage* helpiconhighlighted = [MLPlatform imageWithColor:helpicon withColour:[UIColor colorWithRed:0.0f green:120.0f/0xFF blue:1.0f alpha:0.25f]];
@@ -198,6 +68,7 @@
 
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     [self.tincan saveSampleActivity];
 }

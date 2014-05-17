@@ -11,6 +11,7 @@
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
 #import "MLPlatform.h"
+#import "MLTheme.h"
 
 @interface MLInstructionsViewController ()
 
@@ -24,10 +25,15 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
-    [MLPlatform setButtonsRound:[self view] withRadius:5.0f];
 }
 
 - (void)didReceiveMemoryWarning

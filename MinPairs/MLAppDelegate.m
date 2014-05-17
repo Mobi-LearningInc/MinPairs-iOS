@@ -7,12 +7,18 @@
 //
 
 #import "MLAppDelegate.h"
+#import "MLTheme.h"
 
 @implementation MLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+    [MLTheme setNavigationBarColour:222.0f/0xFF withGreen:239.0f/0xFF withBlue:231.0f/0xFF withAlpha:1.0f];
+    [MLTheme setButtonRadius: 10.0f];
+    [MLTheme setButtonBackground:0.0f withGreen:140.0f/0xFF withBlue:140.0f/0xFF withAlpha:1.0f];
+    [MLTheme setTheme: nil];
     return YES;
 }
 							

@@ -17,6 +17,7 @@
 #import "MLMainDataProvider.h"
 
 #import "MLResultsViewController.h"
+#import "MLTheme.h"
 
 @interface MLPQBaseViewController ()<UIViewControllerTransitioningDelegate>
 @property NSTimer* timer;
@@ -44,8 +45,14 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     
     self.audioPlayer=[[MLBasicAudioPlayer alloc]init];

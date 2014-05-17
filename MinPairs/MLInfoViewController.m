@@ -8,6 +8,7 @@
 
 #import "MLInfoViewController.h"
 #import "MLPlatform.h"
+#import "MLTheme.h"
 
 @interface MLInfoViewController ()
 @property (weak, nonatomic) IBOutlet UITextView* InfoView;
@@ -22,8 +23,14 @@
     return self;
 }
 
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     
     NSString* build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];

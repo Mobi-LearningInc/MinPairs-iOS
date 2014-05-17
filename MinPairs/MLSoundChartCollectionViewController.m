@@ -11,6 +11,8 @@
 #import "MLSoundChartCollectionViewCell.h"
 #import "MLBasicAudioPlayer.h"
 #import "MLPair.h"
+#import "MLTheme.h"
+
 @interface MLSoundChartCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property NSArray* catArr;
@@ -37,8 +39,15 @@
 {
     [self.loadingIndicator stopAnimating];
 }
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [MLTheme updateTheme];
+}
+
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     MLMainDataProvider* dataProvider=[[MLMainDataProvider alloc]initMainProvider];
     NSArray* catArr=[dataProvider getCategoriesCallListener:self];
