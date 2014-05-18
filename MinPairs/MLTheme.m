@@ -94,5 +94,7 @@
     {
         [[self sharedInstance] setMainController: controller];
     }
+    
+    [[[controller navigationController] navigationBar] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Avenir" size:20], NSFontAttributeName, [[self sharedInstance] btnBackground], NSForegroundColorAttributeName, nil]];
 }
 @end
