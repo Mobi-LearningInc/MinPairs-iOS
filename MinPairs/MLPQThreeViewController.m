@@ -19,15 +19,16 @@
 @interface MLPQThreeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftPlayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rightPlayBtn;
-@property (weak, nonatomic) IBOutlet MLButtonGroup *btnGroup;
-@property (weak, nonatomic) IBOutlet UIButton *radioBtnLeft;
-@property (weak, nonatomic) IBOutlet UIButton *radioBtnRight;
+
 @property (strong,nonatomic) MLItem* itemLeft;
 @property (strong,nonatomic) MLItem* itemRight;
 @property (weak, nonatomic) IBOutlet UILabel *itemMainLable;
 @property (weak, nonatomic) IBOutlet UILabel *readTimeLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
+@property (weak, nonatomic) IBOutlet UIImageView *leftFingerImg;
+@property (weak, nonatomic) IBOutlet UIImageView *rightFingerImg;
+@property (weak, nonatomic) IBOutlet UIImageView *chekcMarkImg;
 
 
 @property (strong, nonatomic)MLItem* correctAnswer;
@@ -61,13 +62,13 @@
         self.itemLeft = itemPair.second;
         self.itemRight = itemPair.first;
     }
-    [self.radioBtnLeft setTitle:@"pick left" forState:UIControlStateNormal];
-    [self.radioBtnRight setTitle:@"pick right" forState:UIControlStateNormal];
     int rand = arc4random_uniform(2);
     MLItem* cor= rand==0?self.itemLeft:self.itemRight;
     self.itemMainLable.text=cor.itemDescription;
     self.correctAnswer=cor;
     NSLog(@"Correct answer is %@",self.correctAnswer.itemDescription);
+    [self.leftFingerImg setHidden:NO];
+    [self.rightFingerImg setHidden:YES];
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:self.readTimeLabel event:^(void){
         MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
              wrong:1+self.previousResult.testQuestionsWrong
@@ -82,11 +83,16 @@
 - (IBAction)onLeftPlayBtnTap:(id)sender
 {
     [self playItem:self.itemLeft];
+    [self.leftFingerImg setHidden:NO];
+    [self.rightFingerImg setHidden:YES];
     NSLog(@"Played sound for %@",self.itemLeft.itemDescription);
 }
 - (IBAction)onRightPlayBtnTap:(id)sender
 {
     [self playItem:self.itemRight];
+    
+    [self.leftFingerImg setHidden:YES];
+    [self.rightFingerImg setHidden:NO];
     NSLog(@"Played sound for %@",self.itemRight.itemDescription);
 }
 
@@ -95,22 +101,23 @@
     self.pauseTimer=YES;
     int corr;
     int wrong;
-    MLItem* selected =(self.btnGroup.selectedIndex==0)?self.itemLeft:self.itemRight;
+    MLItem* selected =(!self.leftFingerImg.hidden)?self.itemLeft:self.itemRight;
     NSLog(@"User selected %@",selected.itemDescription);
     if(self.correctAnswer==selected)
     {
         corr=1;
         wrong=0;
-        self.statusImg.image=[UIImage imageNamed:@"checkmark"];
+        self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
     }
     else
     {
         corr=0;
         wrong=1;
-        self.statusImg.image=[UIImage imageNamed:@"xmark"];
+        self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
     }
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
     [sender setHidden: YES];
+    [self.chekcMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
     //[self onAnswer:currentResult];
 }

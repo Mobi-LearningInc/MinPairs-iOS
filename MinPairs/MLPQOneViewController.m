@@ -20,6 +20,12 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 @property BOOL rightSelected;
+@property (weak, nonatomic) IBOutlet UIImageView *leftFingerImg;
+@property (weak, nonatomic) IBOutlet UIImageView *rightFingerImg;
+@property (weak, nonatomic) IBOutlet UIImageView *checkMarkImg;
+
+
+
 @end
 
 @implementation MLPQOneViewController
@@ -60,8 +66,10 @@
     self.correctItem=cor;
     NSLog(@"Correct item is %@",self.correctItem.itemDescription);
     self.leftSelected=true;
+    [self.leftFingerImg setHidden:NO];
+    [self.rightFingerImg setHidden:YES];
     self.rightSelected=false;
-    [self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
+    //[self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
     [self registerQuizTimeLabelsAndEventSelectLabel:self.selectTimeLabel event:^(void){
         MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
             wrong:1+self.previousResult.testQuestionsWrong
@@ -81,16 +89,20 @@
 {
     self.leftSelected=true;
     self.rightSelected=false;
-    [self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
-    [self performSelector:@selector(unHighlightBtn:) withObject:self.rightImgBtn afterDelay:0];
+    [self.leftFingerImg setHidden:NO];
+    [self.rightFingerImg setHidden:YES];
+    //[self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
+    //[self performSelector:@selector(unHighlightBtn:) withObject:self.rightImgBtn afterDelay:0];
 }
 - (IBAction)onRightImgBtnTap:(id)sender
 {
-
+    [self.leftFingerImg setHidden:YES];
+    [self.rightFingerImg setHidden:NO];
     self.rightSelected=true;
     self.leftSelected=false;
-    [self performSelector:@selector(highlightBtn:) withObject:self.rightImgBtn afterDelay:0];
-    [self performSelector:@selector(unHighlightBtn:) withObject:self.leftImgBtn afterDelay:0];
+    
+    //[self performSelector:@selector(highlightBtn:) withObject:self.rightImgBtn afterDelay:0];
+    //[self performSelector:@selector(unHighlightBtn:) withObject:self.leftImgBtn afterDelay:0];
 }
 - (void)highlightBtn:(UIButton*)btn
 {
@@ -111,16 +123,17 @@
     {
         corr=1;
         wrong=0;
-        self.statusImg.image=[UIImage imageNamed:@"checkmark"];
+        self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
     }
     else
     {
         corr=0;
         wrong=1;
-        self.statusImg.image=[UIImage imageNamed:@"xmark"];
+        self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
     }
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
-    [sender setHidden: YES];
+    [sender setHidden: YES];    
+    [self.checkMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
     //[self onAnswer:currentResult];
 }

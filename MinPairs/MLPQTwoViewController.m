@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 @property (strong,nonatomic)MLItem* correctItem;
+@property (weak, nonatomic) IBOutlet UIImageView *checkMarkImg;
+@property (weak, nonatomic) IBOutlet UIButton *answerBtn;
+
 @end
 
 @implementation MLPQTwoViewController
@@ -51,7 +54,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    [self onAnswerBtn:nil];
+    [self onAnswerBtn:self.answerBtn];
     return NO;
 }
 
@@ -73,13 +76,13 @@
     {
         corr=1;
         wrong=0;
-        self.statusImg.image=[UIImage imageNamed:@"checkmark"];
+        self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
     }
     else
     {
         corr=0;
         wrong=1;
-        self.statusImg.image=[UIImage imageNamed:@"xmark"];
+        self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
     }
     
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect
@@ -89,6 +92,7 @@
         timeInSec:self.timeCount+self.previousResult.testTime
         extraInfo:self.previousResult.testExtra];
     [sender setHidden: YES];
+    [self.checkMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
     //[self onAnswer:currentResult];
 }
