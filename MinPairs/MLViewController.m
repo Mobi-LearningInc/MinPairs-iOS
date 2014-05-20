@@ -43,27 +43,32 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    UIImage* helpicon = [UIImage imageNamed:@"help.png"];
-    UIImage* helpiconnormal = [MLPlatform imageWithColor:helpicon withColour:[UIColor colorWithRed:0.0f green:120.0f/0xFF blue:1.0f alpha:1.0f]];
-    UIImage* helpiconhighlighted = [MLPlatform imageWithColor:helpicon withColour:[UIColor colorWithRed:0.0f green:120.0f/0xFF blue:1.0f alpha:0.25f]];
+    UIImage* infoicon = [UIImage imageNamed:@"info.PNG"];
+    UIImage* helpicon = [UIImage imageNamed:@"help.PNG"];
+    UIImage* filtericon = [UIImage imageNamed:@"filter.PNG"];
     
-    UIButton* aboutbtn = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    UIButton* infobtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
     UIButton* helpbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
+    UIButton* filterbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
     
-    [aboutbtn setFrame:CGRectMake(0, 0, 28, 28)];
+    [infobtn setFrame:CGRectMake(0, 0, 28, 28)];
     [helpbtn setFrame:CGRectMake(0, 0, 28, 28)];
+    [filterbtn setFrame:CGRectMake(0, 0, 28, 28)];
     
-    [aboutbtn addTarget: self action: @selector(onAboutClicked:) forControlEvents: UIControlEventTouchUpInside];
-    [helpbtn addTarget: self action: @selector(onHelpClicked:) forControlEvents: UIControlEventTouchUpInside];
+    [infobtn setImage:infoicon forState:UIControlStateNormal];
+    [helpbtn setImage:helpicon forState:UIControlStateNormal];
+    [filterbtn setImage:filtericon forState:UIControlStateNormal];
     
-    [helpbtn setBackgroundImage:helpiconnormal forState: UIControlStateNormal];
-    [helpbtn setBackgroundImage:helpiconhighlighted forState:UIControlStateHighlighted];
+    [infobtn addTarget:self action:@selector(onInfoClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [helpbtn addTarget:self action:@selector(onHelpClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [filterbtn addTarget:self action:@selector(onFilterClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem* about = [[UIBarButtonItem alloc] initWithCustomView:aboutbtn];
+    UIBarButtonItem* info = [[UIBarButtonItem alloc] initWithCustomView:infobtn];
     UIBarButtonItem* help = [[UIBarButtonItem alloc] initWithCustomView:helpbtn];
+    UIBarButtonItem* filter = [[UIBarButtonItem alloc] initWithCustomView:filterbtn];
     
-    self.navigationItem.rightBarButtonItems = @[about];
-    self.navigationItem.leftBarButtonItems = @[help];
+    self.navigationItem.rightBarButtonItems = @[help, filter];
+    self.navigationItem.leftBarButtonItems = @[info];
 }
 
 - (void)viewDidLoad
@@ -89,7 +94,7 @@
     [self performSegueWithIdentifier:@"TestInstructions" sender: [NSNumber numberWithBool: false]];
 }
 
--(IBAction)onAboutClicked:(UIBarButtonItem *)sender
+-(IBAction)onInfoClicked:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"AppInfo" sender: @"Info"];
 }
@@ -97,6 +102,11 @@
 -(IBAction)onHelpClicked:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"AppHelp" sender: @"Help"];
+}
+
+-(IBAction)onFilterClicked:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"AppFilter" sender: @"Filter"];
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender

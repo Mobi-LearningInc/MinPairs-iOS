@@ -11,6 +11,7 @@
 #import "MLShareViewController.h"
 #import "MLTinCanConnector.h"
 #import "MLLrsCredentialsDatabase.h"
+#import "MLTheme.h"
 
 @interface MLResultsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
@@ -31,6 +32,7 @@
 
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -40,8 +42,9 @@
     self.view.layer.cornerRadius = 5.0;
     //self.view.layer.masksToBounds = YES;
     
-    [MLPlatform setButtonBorder: [self continueButton] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
-    [MLPlatform setButtonRound: [self continueButton] withRadius: 10.0f];
+    //[MLPlatform setButtonBorder: [self continueButton] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
+    //[MLPlatform setButtonRound: [self continueButton] withRadius: 10.0f];
+    
     
     self.titleLabel.text = [[self text] capitalizedString];
     self.correctLabel.text = [NSString stringWithFormat: @"%@ %@", self.correctLabel.text, [self correct]];
