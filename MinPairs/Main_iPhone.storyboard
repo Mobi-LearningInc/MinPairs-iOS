@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -88,7 +88,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M6A-fY-b7v" kind="push" identifier="stats_settings_segue" id="8lO-qw-Uu5"/>
+                                    <segue destination="IWa-Q5-03Q" kind="push" identifier="StatisticsSegue" id="J04-tX-Qde"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
@@ -134,6 +134,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="129"/>
+        </scene>
+        <!--Bar Graph View Controller - Bar Graph-->
+        <scene sceneID="N2P-O5-iFJ">
+            <objects>
+                <viewController id="TQR-ch-Y9K" customClass="MLBarGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c6V-Az-pCN"/>
+                        <viewControllerLayoutGuide type="bottom" id="vu5-gc-uak"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="23Q-rJ-5r3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AnU-ar-Uu5" customClass="MLBarGraphView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bar Graph" id="u2k-jT-qUb"/>
+                    <connections>
+                        <outlet property="hostView" destination="AnU-ar-Uu5" id="NRz-Kd-Rx2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEF-lu-yvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="1341"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nIz-DF-4yJ">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="IWa-Q5-03Q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5mi-cz-Tiv"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="30U-ss-Wdw">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TQR-ch-Y9K" kind="relationship" relationship="viewControllers" id="LFN-bH-Nfa"/>
+                        <segue destination="Ub3-md-lVW" kind="relationship" relationship="viewControllers" id="pAV-J5-Cmu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ef6-RP-c3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="742"/>
+        </scene>
+        <!--Line Graph View Controller - Line Graph-->
+        <scene sceneID="N80-uS-Kg3">
+            <objects>
+                <viewController id="Ub3-md-lVW" customClass="MLLineGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bgc-rC-LTM"/>
+                        <viewControllerLayoutGuide type="bottom" id="1EG-Jn-2B3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u5D-75-bLX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NmQ-f1-Qjm" customClass="MLLineGraphView">
+                                <rect key="frame" x="0.0" y="63" width="320" height="368"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Line Graph" id="nNc-gx-wOc"/>
+                    <connections>
+                        <outlet property="hostView" destination="NmQ-f1-Qjm" id="vns-WK-0lP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Svg-zx-rtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="1951"/>
         </scene>
         <!--Results View Controller - Results-->
         <scene sceneID="145-ft-ETd">
@@ -759,68 +837,6 @@
             </objects>
             <point key="canvasLocation" x="664" y="-457"/>
         </scene>
-        <!--Stats Sound Controller - STATISTICS-->
-        <scene sceneID="aBN-oI-XBI">
-            <objects>
-                <tableViewController id="M6A-fY-b7v" customClass="MLStatsSoundController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YLw-gc-byj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StatsSoundCellID" rowHeight="37" id="fS1-eS-F10" customClass="MLStatsSoundCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="37"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fS1-eS-F10" id="9E7-OW-SKA">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-Cl-hvj">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <inset key="imageEdgeInsets" minX="120" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Button" image="Arrows-Forward-icon.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="onButtonClicked:" destination="fS1-eS-F10" eventType="touchUpInside" id="klW-bS-cxb"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-Mi-EeU">
-                                            <rect key="frame" x="170" y="0.0" width="150" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.38188596260000002" green="0.6439224643" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <inset key="imageEdgeInsets" minX="120" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Button" image="Arrows-Forward-icon.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="onButtonClicked:" destination="fS1-eS-F10" eventType="touchUpInside" id="fyN-0v-2ih"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="left" destination="Rw1-Cl-hvj" id="vW0-FM-A4n"/>
-                                    <outlet property="right" destination="S7E-Mi-EeU" id="uSb-wf-tAC"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="M6A-fY-b7v" id="6y7-zu-ofb"/>
-                            <outlet property="delegate" destination="M6A-fY-b7v" id="lRf-tg-Qq7"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="STATISTICS" id="hUG-Vu-cPI"/>
-                    <connections>
-                        <segue destination="DGo-Or-WGG" kind="push" identifier="stats_graph_segue" id="ZQn-fH-oDg"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a5g-CU-VRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1161" y="721"/>
-        </scene>
         <!--Help View Controller - HELP-->
         <scene sceneID="fSu-8W-gkI">
             <objects>
@@ -852,58 +868,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x3-Rp-mVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="1341"/>
-        </scene>
-        <!--Statistics View Controller-->
-        <scene sceneID="bfM-gf-1WM">
-            <objects>
-                <viewController storyboardIdentifier="stats_graph_controller" id="DGo-Or-WGG" customClass="MLStatisticsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TzX-C1-BOH"/>
-                        <viewControllerLayoutGuide type="bottom" id="2du-YB-8Tz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qep-pS-r2K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-qx-ENd" customClass="MLLineGraphView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-Io-MZb">
-                                        <rect key="frame" x="260" y="0.0" width="60" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" image="home2.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onHomePressed:" destination="DGo-Or-WGG" eventType="touchUpInside" id="ISP-9s-YdZ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.1586064878" green="0.1586064878" blue="0.1586064878" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1586064878" green="0.1586064878" blue="0.1586064878" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="7MX-qx-ENd" secondAttribute="bottom" id="Let-Mu-370"/>
-                            <constraint firstItem="7MX-qx-ENd" firstAttribute="leading" secondItem="qep-pS-r2K" secondAttribute="leading" id="bGD-QW-U5u"/>
-                            <constraint firstItem="7MX-qx-ENd" firstAttribute="top" secondItem="qep-pS-r2K" secondAttribute="top" id="oel-VV-6Zq"/>
-                            <constraint firstAttribute="trailing" secondItem="7MX-qx-ENd" secondAttribute="trailing" id="vQt-lY-W7l"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="IeQ-YF-gDt"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="homeButton" destination="fZU-Io-MZb" id="AHd-vn-RE5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u9u-b2-uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1161" y="1341"/>
         </scene>
         <!--PQThree View Controller-->
         <scene sceneID="Dae-kw-hTA">
@@ -972,7 +936,7 @@
                                     </imageView>
                                 </subviews>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-Xw-yAP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-Xw-yAP">
                                 <rect key="frame" x="20" y="96" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -987,7 +951,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-53-ImS">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-53-ImS">
                                 <rect key="frame" x="0.0" y="64" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -1068,7 +1032,7 @@
                                     <action selector="onAnswerBtn:" destination="CeJ-mv-Dkw" eventType="touchUpInside" id="Eux-Cl-UmJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
                                 <rect key="frame" x="20" y="96" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1092,7 +1056,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
                                 <rect key="frame" x="0.0" y="64" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -1171,7 +1135,7 @@
                                     <action selector="onAnswerBtn:" destination="Wka-r1-Mpd" eventType="touchUpInside" id="gk5-bE-zSR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-ng-0Jn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-ng-0Jn">
                                 <rect key="frame" x="20" y="96" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1221,7 +1185,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-DN-9m3">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-DN-9m3">
                                 <rect key="frame" x="0.0" y="64" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -1275,13 +1239,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Arrows-Forward-icon.png" width="24" height="24"/>
         <image name="Mobi_logo_large.png" width="400" height="400"/>
         <image name="checkmark.png" width="600" height="556"/>
         <image name="checkmark_plain_white.png" width="400" height="400"/>
         <image name="ear.png" width="400" height="400"/>
         <image name="finger.png" width="400" height="400"/>
-        <image name="home2.png" width="96" height="96"/>
         <image name="na1.png" width="147" height="147"/>
         <image name="play6.png" width="256" height="256"/>
         <image name="touch.png" width="170" height="228"/>

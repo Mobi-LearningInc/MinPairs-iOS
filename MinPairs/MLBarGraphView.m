@@ -1,20 +1,19 @@
 //
-//  LineGraphView.m
+//  MLBarGraphView.m
 //  MinPairs
 //
 //  Created by Brandon on 2014-05-20.
 //  Copyright (c) 2014 Brandon. All rights reserved.
 //
 
-#import "MLLineGraphView.h"
-#import "CorePlot-CocoaTouch.h"
+#import "MLBarGraphView.h"
 
-@interface MLLineGraphView()
+@interface MLBarGraphView()
 @property (nonatomic, strong) CPTXYGraph* graph;
 @property (nonatomic, strong) NSMutableDictionary* graphData;
 @end
 
-@implementation MLLineGraphView
+@implementation MLBarGraphView
 
 -(void)awakeFromNib
 {
@@ -37,27 +36,20 @@
     [[self graph] applyTheme: [CPTTheme themeNamed: kCPTDarkGradientTheme]];
     self.hostedGraph = [self graph];
     
-    //[[[self graph] plotAreaFrame] setMasksToBorder: false];
-    
     /*[[self graph] setPaddingTop: 0.0f];
     [[self graph] setPaddingBottom: 0.0f];
     [[self graph] setPaddingLeft: 0.0f];
-    [[self graph] setPaddingRight: 0.0f];
+    [[self graph] setPaddingRight: 0.0f];*/
     
-    CPTMutableLineStyle* borderLineStyle = [CPTMutableLineStyle lineStyle];
-    [borderLineStyle setLineColor: [CPTColor grayColor]];
-    [borderLineStyle setLineWidth: 4.0f];
-    
-    [[[self graph] plotAreaFrame] setBorderLineStyle: borderLineStyle];*/
     [[[self graph] plotAreaFrame] setPaddingTop: 20.0f];
     [[[self graph] plotAreaFrame] setPaddingBottom: 70.0f];
     [[[self graph] plotAreaFrame] setPaddingLeft: 70.0f];
     [[[self graph] plotAreaFrame] setPaddingRight: 20.0f];
-    
+   
     
     /** Set graph plot space **/
     
-    float xMin = -0.05f;
+    float xMin = 0.0f;
     float yMin = 0.0f;
     float xMax = [[self graphData] count];
     float yMax = 10.0f;
@@ -85,30 +77,38 @@
     [axisTextStyle setFontSize: 14.0f];
     [axisTextStyle setColor: [CPTColor whiteColor]];
     
+    CPTMutableLineStyle* axisLineStyle = [CPTMutableLineStyle lineStyle];
+    [axisLineStyle setLineColor: [CPTColor whiteColor]];
+    [axisLineStyle setLineWidth: 2.0f];
+    
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
-    
+
     [xAxis setTitle: @"Date"];
+    [xAxis setTitleTextStyle: axisTextStyle];
+    [xAxis setLabelTextStyle: axisTextStyle];
     [xAxis setTitleOffset: 30.0f];
     [xAxis setLabelOffset: 3.0f];
-    [xAxis setLabelingPolicy: CPTAxisLabelingPolicyNone];
-    [xAxis setOrthogonalCoordinateDecimal: CPTDecimalFromInt(0)];
-    [xAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
-    [xAxis setMinorTicksPerInterval: 1.0f];
     [xAxis setMajorGridLineStyle: nil];
-    [xAxis setMinorGridLineStyle: nil];
+    [xAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
+    [xAxis setMajorTickLength: 7.0f];
+    [xAxis setMinorTickLength: 5.0f];
+    [xAxis setMinorTicksPerInterval: 0.0f];
     [xAxis setAxisConstraints: [CPTConstraints constraintWithLowerOffset: 0.0f]];
+    [xAxis setLabelingPolicy: CPTAxisLabelingPolicyNone];
+    
     
     [yAxis setTitle: @"Score"];
+    [yAxis setTitleTextStyle: axisTextStyle];
+    [yAxis setLabelTextStyle: axisTextStyle];
     [yAxis setTitleOffset: 40.0f];
     [yAxis setLabelOffset: 3.0f];
-    //[yAxis setLabelingPolicy: CPTAxisLabelingPolicyNone];
-    [yAxis setOrthogonalCoordinateDecimal: CPTDecimalFromInt(0)];
-    [yAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
-    [yAxis setMinorTicksPerInterval: 1.0f];
     [yAxis setMajorGridLineStyle: majorGridLineStyle];
-    [yAxis setMinorGridLineStyle: nil];
+    [yAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
+    [yAxis setMajorTickLength: 7.0f];
+    [yAxis setMinorTickLength: 5.0f];
+    [yAxis setMinorTicksPerInterval: 0.0f];
     [yAxis setAxisConstraints: [CPTConstraints constraintWithLowerOffset: 0.0f]];
     
     
@@ -133,26 +133,23 @@
         [xLabels addObject: xlabel];
         ++xPosition;
     }
-     
+    
     [xAxis setAxisLabels: [NSSet setWithArray: xLabels]];
-    
-    
+
+
     /** Setup plot **/
     
-    CPTMutableLineStyle* plotLineStyle = [CPTMutableLineStyle lineStyle];
-    [plotLineStyle setLineColor: [CPTColor blueColor]];
-    [plotLineStyle setLineWidth: 2.0f];
-    
-    CPTPlotSymbol* plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
-    [plotSymbol setFill: [CPTFill fillWithColor: [plotLineStyle lineColor]]];
-    [plotSymbol setSize: CGSizeMake(4.0f, 4.0f)];
-    [plotSymbol setLineStyle: plotLineStyle];
-    
-    CPTScatterPlot* plot = [[CPTScatterPlot alloc] init];
+    CPTBarPlot* plot = [[CPTBarPlot alloc] init];
     [plot setDataSource: self];
+    [plot setDelegate: self];
+    [plot setBarWidth: [[NSDecimalNumber decimalNumberWithString:@"0.7"] decimalValue]];
+    [plot setBarOffset: [[NSDecimalNumber decimalNumberWithString:@"0.0"] decimalValue]];
+    [plot setBarCornerRadius: 5.0f];
+
+    CPTMutableLineStyle* barBorderLineStyle = [CPTMutableLineStyle lineStyle];
+    [barBorderLineStyle setLineColor: [CPTColor clearColor]];
+    [plot setLineStyle: barBorderLineStyle];
     [plot setIdentifier: @"main"];
-    [plot setDataLineStyle: plotLineStyle];
-    [plot setPlotSymbol: plotSymbol];
     [[self graph] addPlot: plot];
 }
 
@@ -161,22 +158,69 @@
     return [[self graphData] count];
 }
 
-- (double)doubleForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
+- (NSNumber*)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
     if ([[plot identifier] isEqual: @"main"])
     {
         NSNumber* num = [[[self graphData] allValues] objectAtIndex: index];
         
-        if (fieldEnum == CPTScatterPlotFieldX) //X-Axis
+        if (fieldEnum == CPTBarPlotFieldBarLocation) //X-Axis
         {
-            return index;
+            return [NSNumber numberWithUnsignedInteger: index];
         }
-        else //Y-Axis
+        else if (fieldEnum == CPTBarPlotFieldBarTip) //Y-Axis
         {
-            return [num doubleValue];
+            return num;
         }
     }
     
-    return 0;
+    return [NSNumber numberWithInteger: 0];
+}
+
+- (CPTLayer*)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
+{
+    if ([[plot identifier] isEqual: @"main"])
+    {
+        CPTMutableTextStyle* textStyle = [CPTMutableTextStyle textStyle];
+        [textStyle setFontName: @"Helvetica"];
+        [textStyle setFontSize: 14];
+        [textStyle setColor: [CPTColor whiteColor]];
+        
+        CPTTextLayer* label = [[CPTTextLayer alloc] initWithText: @"text"];
+        [label setTextStyle: textStyle];
+        return label;
+    }
+    
+    CPTTextLayer* label = [[CPTTextLayer alloc] initWithText: @"???"];
+    return label;
+    
+}
+
+- (CPTFill*)barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSUInteger)index
+{
+    if ([[barPlot identifier] isEqual: @"main"])
+    {
+        CPTColor* colours[] =
+        {
+            [CPTColor redColor],
+            [CPTColor blueColor],
+            [CPTColor orangeColor],
+            [CPTColor purpleColor]
+        };
+        
+        static unsigned int index = 0;
+        
+        CPTGradient* gradient = [CPTGradient gradientWithBeginningColor:[CPTColor whiteColor] endingColor: colours[index] beginningPosition: 0.0f endingPosition: 0.3f];
+        [gradient setGradientType: CPTGradientTypeAxial];
+        [gradient setAngle: 320.0];
+        
+        if (index++ == 3)
+            index = 0;
+        
+        return [CPTFill fillWithGradient: gradient];
+        
+    }
+    return [CPTFill fillWithColor: [CPTColor whiteColor]];
+    
 }
 @end

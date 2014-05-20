@@ -147,12 +147,14 @@
 		CA1C024B190C0477003C5F90 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1C024A190C0477003C5F90 /* Main_iPhone.storyboard */; };
 		CA1C024E190C193A003C5F90 /* MLPQTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C024D190C193A003C5F90 /* MLPQTwoViewController.m */; };
 		CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0250190C19A9003C5F90 /* MLPQThreeViewController.m */; };
-		CA1C0254190C19FE003C5F90 /* MLStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0253190C19FE003C5F90 /* MLStatisticsViewController.m */; };
-		CA22B95F1927A7D500366A1C /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA22B95E1927A7D500366A1C /* libCorePlot-CocoaTouch.a */; };
-		CA22B9771927A7E000366A1C /* libRSTCAPI-Combined.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA22B9751927A7E000366A1C /* libRSTCAPI-Combined.a */; };
-		CA22B9781927A7E000366A1C /* libRSTCAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA22B9761927A7E000366A1C /* libRSTCAPI.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CA6BAEE1192B866F00DA1FB4 /* MLBarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEDE192B866F00DA1FB4 /* MLBarGraphView.m */; };
+		CA6BAEE2192B866F00DA1FB4 /* MLLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE0192B866F00DA1FB4 /* MLLineGraphView.m */; };
+		CA6BAEE5192B88BA00DA1FB4 /* MLBarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE4192B88BA00DA1FB4 /* MLBarGraphViewController.m */; };
+		CA6BAEE8192B88E900DA1FB4 /* MLLineGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */; };
+		CA6BAEEC192B8BFA00DA1FB4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */; };
+		CA6BAEEE192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEED192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a */; };
+		CA6BAEF0192B91A200DA1FB4 /* libRSTCAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEEF192B91A200DA1FB4 /* libRSTCAPI.a */; };
 		CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */; };
-		CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6D8190B46C1009F1BB7 /* MLLineGraphView.m */; };
 		CA7ED6DE190B70D7009F1BB7 /* MLSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */; };
 		CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */; };
 		CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */; };
@@ -160,8 +162,6 @@
 		CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */; };
 		CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */; };
 		CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC772A5190A496400CB74A5 /* MLButtonGroup.m */; };
-		CAC946DB190DCC380002ED3B /* MLGraphAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC946DA190DCC380002ED3B /* MLGraphAxis.m */; };
-		CAEA6BBB1913B8E70005B4F5 /* MLStatsSoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */; };
 		CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */; };
 		CAEFE22D191D568F00881775 /* dblack.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEFE220191D568F00881775 /* dblack.png */; };
 		CAEFE22E191D568F00881775 /* dblue.png in Resources */ = {isa = PBXBuildFile; fileRef = CAEFE221191D568F00881775 /* dblue.png */; };
@@ -583,8 +583,6 @@
 		CA1C024D190C193A003C5F90 /* MLPQTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPQTwoViewController.m; sourceTree = "<group>"; };
 		CA1C024F190C19A9003C5F90 /* MLPQThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPQThreeViewController.h; sourceTree = "<group>"; };
 		CA1C0250190C19A9003C5F90 /* MLPQThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPQThreeViewController.m; sourceTree = "<group>"; };
-		CA1C0252190C19FE003C5F90 /* MLStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStatisticsViewController.h; sourceTree = "<group>"; };
-		CA1C0253190C19FE003C5F90 /* MLStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatisticsViewController.m; sourceTree = "<group>"; };
 		CA22B8E41927A7D400366A1C /* _CPTAnimationCGFloatPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTAnimationCGFloatPeriod.h; sourceTree = "<group>"; };
 		CA22B8E51927A7D400366A1C /* _CPTAnimationCGPointPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTAnimationCGPointPeriod.h; sourceTree = "<group>"; };
 		CA22B8E61927A7D400366A1C /* _CPTAnimationCGRectPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTAnimationCGRectPeriod.h; sourceTree = "<group>"; };
@@ -707,7 +705,6 @@
 		CA22B95B1927A7D500366A1C /* NSCoderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCoderExtensions.h; sourceTree = "<group>"; };
 		CA22B95C1927A7D500366A1C /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		CA22B95D1927A7D500366A1C /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
-		CA22B95E1927A7D500366A1C /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		CA22B9631927A7E000366A1C /* RSTCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTCAPI.h; sourceTree = "<group>"; };
 		CA22B9641927A7E000366A1C /* RSTinCanConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTinCanConnector.h; sourceTree = "<group>"; };
 		CA22B9651927A7E000366A1C /* TCActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCActivity.h; sourceTree = "<group>"; };
@@ -726,13 +723,20 @@
 		CA22B9721927A7E000366A1C /* TCStatementCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStatementCollection.h; sourceTree = "<group>"; };
 		CA22B9731927A7E000366A1C /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
 		CA22B9741927A7E000366A1C /* TCVerb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVerb.h; sourceTree = "<group>"; };
-		CA22B9751927A7E000366A1C /* libRSTCAPI-Combined.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libRSTCAPI-Combined.a"; sourceTree = "<group>"; };
-		CA22B9761927A7E000366A1C /* libRSTCAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSTCAPI.a; sourceTree = "<group>"; };
+		CA6BAEDD192B866F00DA1FB4 /* MLBarGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBarGraphView.h; sourceTree = "<group>"; };
+		CA6BAEDE192B866F00DA1FB4 /* MLBarGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBarGraphView.m; sourceTree = "<group>"; };
+		CA6BAEDF192B866F00DA1FB4 /* MLLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLineGraphView.h; sourceTree = "<group>"; };
+		CA6BAEE0192B866F00DA1FB4 /* MLLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLineGraphView.m; sourceTree = "<group>"; };
+		CA6BAEE3192B88BA00DA1FB4 /* MLBarGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBarGraphViewController.h; sourceTree = "<group>"; };
+		CA6BAEE4192B88BA00DA1FB4 /* MLBarGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBarGraphViewController.m; sourceTree = "<group>"; };
+		CA6BAEE6192B88E900DA1FB4 /* MLLineGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLineGraphViewController.h; sourceTree = "<group>"; };
+		CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLineGraphViewController.m; sourceTree = "<group>"; };
+		CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		CA6BAEED192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		CA6BAEEF192B91A200DA1FB4 /* libRSTCAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSTCAPI.a; sourceTree = "<group>"; };
 		CA7ED6D1190B4192009F1BB7 /* MLAudioPlayerQueueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueueDelegate.h; sourceTree = "<group>"; };
 		CA7ED6D3190B46C1009F1BB7 /* MLGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLGraphics.h; sourceTree = "<group>"; };
 		CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLGraphics.m; sourceTree = "<group>"; };
-		CA7ED6D7190B46C1009F1BB7 /* MLLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLineGraphView.h; sourceTree = "<group>"; };
-		CA7ED6D8190B46C1009F1BB7 /* MLLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLineGraphView.m; sourceTree = "<group>"; };
 		CA7ED6DC190B70D7009F1BB7 /* MLSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettings.h; sourceTree = "<group>"; };
 		CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettings.m; sourceTree = "<group>"; };
 		CA7ED6DF190B8380009F1BB7 /* MLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingsViewController.h; sourceTree = "<group>"; };
@@ -749,10 +753,6 @@
 		CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLBaseAudioPlayerDelegate.h; sourceTree = "<group>"; };
 		CAC772A4190A496400CB74A5 /* MLButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLButtonGroup.h; sourceTree = "<group>"; };
 		CAC772A5190A496400CB74A5 /* MLButtonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLButtonGroup.m; sourceTree = "<group>"; };
-		CAC946D9190DCC380002ED3B /* MLGraphAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLGraphAxis.h; sourceTree = "<group>"; };
-		CAC946DA190DCC380002ED3B /* MLGraphAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLGraphAxis.m; sourceTree = "<group>"; };
-		CAEA6BB91913B8E70005B4F5 /* MLStatsSoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStatsSoundController.h; sourceTree = "<group>"; };
-		CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatsSoundController.m; sourceTree = "<group>"; };
 		CAEA6BBC1913BC480005B4F5 /* MLStatsSoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStatsSoundCell.h; sourceTree = "<group>"; };
 		CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatsSoundCell.m; sourceTree = "<group>"; };
 		CAEA6BBF1913C73D0005B4F5 /* MLStatSoundDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLStatSoundDelegate.h; sourceTree = "<group>"; };
@@ -1035,15 +1035,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6BAEEC192B8BFA00DA1FB4 /* Accelerate.framework in Frameworks */,
 				E13EFF551920FE64005C407F /* Social.framework in Frameworks */,
 				E13EFF531920FE5D005C407F /* MessageUI.framework in Frameworks */,
 				E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */,
 				51F87498190835BE00450DB2 /* CoreGraphics.framework in Frameworks */,
 				51F8749A190835BE00450DB2 /* UIKit.framework in Frameworks */,
 				51F87496190835BE00450DB2 /* Foundation.framework in Frameworks */,
-				CA22B95F1927A7D500366A1C /* libCorePlot-CocoaTouch.a in Frameworks */,
-				CA22B9781927A7E000366A1C /* libRSTCAPI.a in Frameworks */,
-				CA22B9771927A7E000366A1C /* libRSTCAPI-Combined.a in Frameworks */,
+				CA6BAEF0192B91A200DA1FB4 /* libRSTCAPI.a in Frameworks */,
+				CA6BAEEE192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,6 +1084,7 @@
 		51F87494190835BE00450DB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */,
 				E13EFF541920FE64005C407F /* Social.framework */,
 				E13EFF521920FE5D005C407F /* MessageUI.framework */,
 				E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */,
@@ -1377,10 +1378,10 @@
 		CA16C022191C7DB50000B48E /* StatisticsController */ = {
 			isa = PBXGroup;
 			children = (
-				CA1C0252190C19FE003C5F90 /* MLStatisticsViewController.h */,
-				CA1C0253190C19FE003C5F90 /* MLStatisticsViewController.m */,
-				CAEA6BB91913B8E70005B4F5 /* MLStatsSoundController.h */,
-				CAEA6BBA1913B8E70005B4F5 /* MLStatsSoundController.m */,
+				CA6BAEE3192B88BA00DA1FB4 /* MLBarGraphViewController.h */,
+				CA6BAEE4192B88BA00DA1FB4 /* MLBarGraphViewController.m */,
+				CA6BAEE6192B88E900DA1FB4 /* MLLineGraphViewController.h */,
+				CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */,
 			);
 			name = StatisticsController;
 			sourceTree = "<group>";
@@ -1415,8 +1416,8 @@
 		CA22B8E21927A7D400366A1C /* CorePlot */ = {
 			isa = PBXGroup;
 			children = (
+				CA6BAEED192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a */,
 				CA22B8E31927A7D400366A1C /* include */,
-				CA22B95E1927A7D500366A1C /* libCorePlot-CocoaTouch.a */,
 			);
 			path = CorePlot;
 			sourceTree = SOURCE_ROOT;
@@ -1553,9 +1554,8 @@
 		CA22B9601927A7E000366A1C /* TinCan */ = {
 			isa = PBXGroup;
 			children = (
+				CA6BAEEF192B91A200DA1FB4 /* libRSTCAPI.a */,
 				CA22B9611927A7E000366A1C /* include */,
-				CA22B9751927A7E000366A1C /* libRSTCAPI-Combined.a */,
-				CA22B9761927A7E000366A1C /* libRSTCAPI.a */,
 			);
 			path = TinCan;
 			sourceTree = SOURCE_ROOT;
@@ -1596,12 +1596,12 @@
 		CA7ED6D2190B469D009F1BB7 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				CA6BAEDD192B866F00DA1FB4 /* MLBarGraphView.h */,
+				CA6BAEDE192B866F00DA1FB4 /* MLBarGraphView.m */,
+				CA6BAEDF192B866F00DA1FB4 /* MLLineGraphView.h */,
+				CA6BAEE0192B866F00DA1FB4 /* MLLineGraphView.m */,
 				CA7ED6D3190B46C1009F1BB7 /* MLGraphics.h */,
 				CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */,
-				CA7ED6D7190B46C1009F1BB7 /* MLLineGraphView.h */,
-				CA7ED6D8190B46C1009F1BB7 /* MLLineGraphView.m */,
-				CAC946D9190DCC380002ED3B /* MLGraphAxis.h */,
-				CAC946DA190DCC380002ED3B /* MLGraphAxis.m */,
 				CA02B6101927C64200100C76 /* MLTheme.h */,
 				CA02B6111927C64200100C76 /* MLTheme.m */,
 			);
@@ -2434,7 +2434,7 @@
 				CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */,
 				E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */,
 				51F874A2190835BE00450DB2 /* main.m in Sources */,
-				CAEA6BBB1913B8E70005B4F5 /* MLStatsSoundController.m in Sources */,
+				CA6BAEE1192B866F00DA1FB4 /* MLBarGraphView.m in Sources */,
 				CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */,
 				CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */,
 				E1C248AC190AFAC100F9E8BF /* MLTestResult.m in Sources */,
@@ -2444,30 +2444,30 @@
 				CA02B6121927C64200100C76 /* MLTheme.m in Sources */,
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */,
+				CA6BAEE5192B88BA00DA1FB4 /* MLBarGraphViewController.m in Sources */,
 				E12B14621912BA8900D697BB /* MLLearnTableViewCell.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
 				CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */,
 				CA16C027191C8D020000B48E /* MLModalAnimator.m in Sources */,
-				CA1C0254190C19FE003C5F90 /* MLStatisticsViewController.m in Sources */,
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
 				EBC4B4431925158900D07F4B /* MLLsrCredentials.m in Sources */,
 				E13EFF591920FEDA005C407F /* MLShareViewController.m in Sources */,
 				CA07712619202369009C1171 /* MLHelpViewController.m in Sources */,
+				CA6BAEE2192B866F00DA1FB4 /* MLLineGraphView.m in Sources */,
 				CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */,
 				CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */,
-				CA7ED6DB190B46C1009F1BB7 /* MLLineGraphView.m in Sources */,
 				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
 				E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */,
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,
 				CA16C02A191C8D6D0000B48E /* MLResultsViewController.m in Sources */,
 				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,
+				CA6BAEE8192B88E900DA1FB4 /* MLLineGraphViewController.m in Sources */,
 				CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */,
 				E13E14851911D20900A6D5A9 /* MLPQBaseViewController.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */,
-				CAC946DB190DCC380002ED3B /* MLGraphAxis.m in Sources */,
 				CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */,
 				CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */,
 				E1C248A9190AF67C00F9E8BF /* MLTestResultDatabase.m in Sources */,
@@ -2613,10 +2613,12 @@
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MinPairs/TinCan",
 					"$(PROJECT_DIR)/CorePlot",
 					"$(PROJECT_DIR)/TinCan",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
@@ -2642,10 +2644,12 @@
 				INFOPLIST_FILE = "MinPairs/MinPairs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MinPairs/TinCan",
 					"$(PROJECT_DIR)/CorePlot",
 					"$(PROJECT_DIR)/TinCan",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
