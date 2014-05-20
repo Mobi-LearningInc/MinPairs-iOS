@@ -152,8 +152,8 @@
 		CA6BAEE5192B88BA00DA1FB4 /* MLBarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE4192B88BA00DA1FB4 /* MLBarGraphViewController.m */; };
 		CA6BAEE8192B88E900DA1FB4 /* MLLineGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */; };
 		CA6BAEEC192B8BFA00DA1FB4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */; };
-		CA6BAEEE192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEED192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a */; };
-		CA6BAEF0192B91A200DA1FB4 /* libRSTCAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEEF192B91A200DA1FB4 /* libRSTCAPI.a */; };
+		CA6BAEF4192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEF3192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a */; };
+		CA6BAEF6192B97E500DA1FB4 /* libRSTCAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEF5192B97E500DA1FB4 /* libRSTCAPI.a */; };
 		CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */; };
 		CA7ED6DE190B70D7009F1BB7 /* MLSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */; };
 		CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */; };
@@ -732,8 +732,8 @@
 		CA6BAEE6192B88E900DA1FB4 /* MLLineGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLineGraphViewController.h; sourceTree = "<group>"; };
 		CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLineGraphViewController.m; sourceTree = "<group>"; };
 		CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		CA6BAEED192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
-		CA6BAEEF192B91A200DA1FB4 /* libRSTCAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSTCAPI.a; sourceTree = "<group>"; };
+		CA6BAEF3192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		CA6BAEF5192B97E500DA1FB4 /* libRSTCAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRSTCAPI.a; sourceTree = "<group>"; };
 		CA7ED6D1190B4192009F1BB7 /* MLAudioPlayerQueueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueueDelegate.h; sourceTree = "<group>"; };
 		CA7ED6D3190B46C1009F1BB7 /* MLGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLGraphics.h; sourceTree = "<group>"; };
 		CA7ED6D4190B46C1009F1BB7 /* MLGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLGraphics.m; sourceTree = "<group>"; };
@@ -1038,12 +1038,12 @@
 				CA6BAEEC192B8BFA00DA1FB4 /* Accelerate.framework in Frameworks */,
 				E13EFF551920FE64005C407F /* Social.framework in Frameworks */,
 				E13EFF531920FE5D005C407F /* MessageUI.framework in Frameworks */,
+				CA6BAEF4192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */,
 				51F87498190835BE00450DB2 /* CoreGraphics.framework in Frameworks */,
 				51F8749A190835BE00450DB2 /* UIKit.framework in Frameworks */,
+				CA6BAEF6192B97E500DA1FB4 /* libRSTCAPI.a in Frameworks */,
 				51F87496190835BE00450DB2 /* Foundation.framework in Frameworks */,
-				CA6BAEF0192B91A200DA1FB4 /* libRSTCAPI.a in Frameworks */,
-				CA6BAEEE192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1416,7 +1416,7 @@
 		CA22B8E21927A7D400366A1C /* CorePlot */ = {
 			isa = PBXGroup;
 			children = (
-				CA6BAEED192B917E00DA1FB4 /* libCorePlot-CocoaTouch.a */,
+				CA6BAEF3192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a */,
 				CA22B8E31927A7D400366A1C /* include */,
 			);
 			path = CorePlot;
@@ -1554,7 +1554,7 @@
 		CA22B9601927A7E000366A1C /* TinCan */ = {
 			isa = PBXGroup;
 			children = (
-				CA6BAEEF192B91A200DA1FB4 /* libRSTCAPI.a */,
+				CA6BAEF5192B97E500DA1FB4 /* libRSTCAPI.a */,
 				CA22B9611927A7E000366A1C /* include */,
 			);
 			path = TinCan;
