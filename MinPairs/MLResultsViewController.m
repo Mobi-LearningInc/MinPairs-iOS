@@ -16,10 +16,8 @@
 @interface MLResultsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *correctLabel;
-@property (weak, nonatomic) IBOutlet UILabel *wrongLabel;
-@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreInfoLabel;
+
 @end
 
 @implementation MLResultsViewController
@@ -47,10 +45,7 @@
     
     
     self.titleLabel.text = [[self text] capitalizedString];
-    self.correctLabel.text = [NSString stringWithFormat: @"%@ %@", self.correctLabel.text, [self correct]];
-    self.wrongLabel.text = [NSString stringWithFormat: @"%@ %@", self.wrongLabel.text, [self wrong]];
-    self.totalLabel.text = [NSString stringWithFormat: @"%@ %@", self.totalLabel.text, [self total]];
-    self.timeLabel.text = [NSString stringWithFormat: @"%@ %@s", self.timeLabel.text, [self time]];
+    self.scoreInfoLabel.text = [NSString stringWithFormat:@"Score: %@ / %@\n\nTime taken: %@s", [self correct], [self total], [self time]];
     
     NSNumber *c = [NSNumber numberWithInt:[[self correct] intValue]];
     NSNumber *t = [NSNumber numberWithInt:[[self total] intValue]];
