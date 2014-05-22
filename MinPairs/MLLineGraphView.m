@@ -195,7 +195,7 @@
     
     if (coordinate == CPTCoordinateX)
     {
-        if (newRange.locationDouble < 0.0f)
+        if (newRange.locationDouble < 0.0f) //only allow scrolling in one direction.
             return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:newRange.length];
         
         return [CPTPlotRange plotRangeWithLocation:newRange.location length:newRange.length];
