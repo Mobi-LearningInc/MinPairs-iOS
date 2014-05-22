@@ -15,7 +15,7 @@
 {
     // Override point for customization after application launch.
 
-    [MLTheme setNavigationBarColour:222.0f/0xFF withGreen:239.0f/0xFF withBlue:231.0f/0xFF withAlpha:1.0f];
+    [MLTheme setNavigationBarColour:77.0f/0xFF withGreen:77.0f/0xFF withBlue:77.0f/0xFF withAlpha:1.0f];
     [MLTheme setButtonRadius: 10.0f];
     [MLTheme setButtonBackground:21.0f/0xFF withGreen:142.0f/0xFF withBlue:141.0f/0xFF withAlpha:1.0f];
     [MLTheme setTheme: nil];

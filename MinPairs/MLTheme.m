@@ -87,7 +87,7 @@
     
     if (view && ([view tag] != 1))
     {
-        UIColor* colour = [UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
+        UIColor* colour = [UIColor colorWithRed:77.0f/0xFF green:77.0f/0xFF blue:77.0f/0xFF alpha:1.0f];
         [[[controller navigationController] navigationBar] setBarTintColor: colour];
     }
     else

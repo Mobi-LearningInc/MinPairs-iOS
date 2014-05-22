@@ -33,8 +33,12 @@
     /** Create graph with theme and padding **/
     
     [self setGraph: [[CPTXYGraph alloc] initWithFrame: CGRectZero]];
-    [[self graph] applyTheme: [CPTTheme themeNamed: kCPTDarkGradientTheme]];
     self.hostedGraph = [self graph];
+    [[self graph] setTitle: @"Bar Graph"];
+    
+    CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
+    [[self graph] setFill: [CPTFill fillWithColor: bgColour]];
+    //self.graph.plotAreaFrame.fill = [CPTFill fillWithColor: bgColour];
     
     /*[[self graph] setPaddingTop: 0.0f];
     [[self graph] setPaddingBottom: 0.0f];
@@ -55,9 +59,14 @@
     float yMax = 10.0f;
     
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
+    
     [plotSpace setDelegate: self];
+    [plotSpace setAllowsUserInteraction: true];
+    
     [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat(xMax - xMin)]];
+    
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(yMin) length:CPTDecimalFromFloat(yMax - yMin)]];
+    
     
     
     /** Set grid lines **/
@@ -73,21 +82,21 @@
     /** Setup axises **/
     
     CPTMutableTextStyle* axisTextStyle = [CPTMutableTextStyle textStyle];
-    [axisTextStyle setFontName: @"Helvetica"];
+    [axisTextStyle setFontName: @"Avenir"];
     [axisTextStyle setFontSize: 14.0f];
-    [axisTextStyle setColor: [CPTColor whiteColor]];
+    [axisTextStyle setColor: [CPTColor blackColor]];
     
     CPTMutableLineStyle* axisLineStyle = [CPTMutableLineStyle lineStyle];
-    [axisLineStyle setLineColor: [CPTColor whiteColor]];
+    [axisLineStyle setLineColor: [CPTColor blackColor]];
     [axisLineStyle setLineWidth: 2.0f];
     
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
 
-    [xAxis setTitle: @"Date"];
-    [xAxis setTitleTextStyle: axisTextStyle];
-    [xAxis setLabelTextStyle: axisTextStyle];
+    //[xAxis setTitle: @"Date"];
+    //[xAxis setTitleTextStyle: axisTextStyle];
+    //[xAxis setLabelTextStyle: axisTextStyle];
     [xAxis setTitleOffset: 30.0f];
     [xAxis setLabelOffset: 3.0f];
     [xAxis setMajorGridLineStyle: nil];
@@ -100,8 +109,8 @@
     
     
     [yAxis setTitle: @"Score"];
-    [yAxis setTitleTextStyle: axisTextStyle];
-    [yAxis setLabelTextStyle: axisTextStyle];
+    //[yAxis setTitleTextStyle: axisTextStyle];
+    //[yAxis setLabelTextStyle: axisTextStyle];
     [yAxis setTitleOffset: 40.0f];
     [yAxis setLabelOffset: 3.0f];
     [yAxis setMajorGridLineStyle: majorGridLineStyle];
@@ -119,7 +128,7 @@
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"MM/dd/yyyy"];
     
-    uint32_t xPosition = 0;
+    float xPosition = 0.3f;
     NSMutableArray* xLabels = [NSMutableArray array];
     
     for (NSDate* date in dates)
@@ -127,7 +136,7 @@
         NSString* dateString = [dateFormatter stringFromDate: date];
         
         CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: dateString textStyle: [xAxis labelTextStyle]];
-        [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
+        [xlabel setTickLocation: [[NSNumber numberWithFloat: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];
         [xLabels addObject: xlabel];
@@ -143,13 +152,14 @@
     [plot setDataSource: self];
     [plot setDelegate: self];
     [plot setBarWidth: [[NSDecimalNumber decimalNumberWithString:@"0.7"] decimalValue]];
-    [plot setBarOffset: [[NSDecimalNumber decimalNumberWithString:@"0.0"] decimalValue]];
+    [plot setBarOffset: [[NSDecimalNumber decimalNumberWithString:@"0.3"] decimalValue]];
     [plot setBarCornerRadius: 5.0f];
 
     CPTMutableLineStyle* barBorderLineStyle = [CPTMutableLineStyle lineStyle];
     [barBorderLineStyle setLineColor: [CPTColor clearColor]];
     [plot setLineStyle: barBorderLineStyle];
     [plot setIdentifier: @"main"];
+    
     [[self graph] addPlot: plot];
 }
 
@@ -177,12 +187,12 @@
     return [NSNumber numberWithInteger: 0];
 }
 
-- (CPTLayer*)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
+/*- (CPTLayer*)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
 {
     if ([[plot identifier] isEqual: @"main"])
     {
         CPTMutableTextStyle* textStyle = [CPTMutableTextStyle textStyle];
-        [textStyle setFontName: @"Helvetica"];
+        [textStyle setFontName: @"Avenir"];
         [textStyle setFontSize: 14];
         [textStyle setColor: [CPTColor whiteColor]];
         
@@ -193,34 +203,41 @@
     
     CPTTextLayer* label = [[CPTTextLayer alloc] initWithText: @"???"];
     return label;
-    
-}
+}*/
 
 - (CPTFill*)barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSUInteger)index
 {
     if ([[barPlot identifier] isEqual: @"main"])
     {
-        CPTColor* colours[] =
-        {
-            [CPTColor redColor],
-            [CPTColor blueColor],
-            [CPTColor orangeColor],
-            [CPTColor purpleColor]
-        };
+        CPTColor* colour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:1.0f];
         
-        static unsigned int index = 0;
-        
-        CPTGradient* gradient = [CPTGradient gradientWithBeginningColor:[CPTColor whiteColor] endingColor: colours[index] beginningPosition: 0.0f endingPosition: 0.3f];
-        [gradient setGradientType: CPTGradientTypeAxial];
-        [gradient setAngle: 320.0];
-        
-        if (index++ == 3)
-            index = 0;
-        
-        return [CPTFill fillWithGradient: gradient];
+        return [CPTFill fillWithColor: colour];
         
     }
     return [CPTFill fillWithColor: [CPTColor whiteColor]];
+}
+
+- (CPTPlotRange *)plotSpace:(CPTPlotSpace *)space willChangePlotRangeTo:(CPTPlotRange *)newRange forCoordinate:(CPTCoordinate)coordinate
+{
     
+    if (coordinate == CPTCoordinateX)
+    {
+        if (newRange.locationDouble < 0.0f)
+            return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:newRange.length];
+        
+        return [CPTPlotRange plotRangeWithLocation:newRange.location length:newRange.length];
+    }
+    else
+    {
+        return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)];
+    }
+    
+    
+    return nil;
+}
+
+- (CGPoint)plotSpace:(CPTPlotSpace *)space willDisplaceBy:(CGPoint)displacement
+{
+    return CGPointMake(displacement.x, 0);
 }
 @end
