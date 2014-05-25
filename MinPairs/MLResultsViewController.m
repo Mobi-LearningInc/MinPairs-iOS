@@ -12,7 +12,7 @@
 #import "MLTinCanConnector.h"
 #import "MLLrsCredentialsDatabase.h"
 #import "MLTheme.h"
-
+#import "MLDetailTableViewController.h"
 @interface MLResultsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -56,6 +56,12 @@
 
     
 }
+- (IBAction)onDetailsBtn:(id)sender
+{
+    MLDetailTableViewController* dtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsTableViewController"];
+    dtvc.array=self.detailsArray;
+    [self presentViewController:dtvc animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -86,6 +92,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    /*
+    if([segue.identifier isEqualToString:@"goToDetails"])
+    {
+        if([[segue destinationViewController] isKindOfClass:[MLDetailTableViewController class ]])
+        {
+            MLDetailTableViewController* dtvc =[segue destinationViewController];
+            dtvc.array=self.detailsArray;
+        }
+    }
+     */
     /*
     if([segue.identifier isEqualToString:@"fromResultsGoToShare"])
     {

@@ -8,7 +8,7 @@
 #import "MLPQOneViewController.h"
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
-
+#import "MLDetailsItem.h"
 @interface MLPQTwoViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textAnswer;
 @property (weak, nonatomic) IBOutlet UILabel *typeTimeLabel;
@@ -72,19 +72,26 @@
     NSLog(@"User typed %@",cleanStr);
     int corr;
     int wrong;
+    MLDetailsItem* dItem;
     if([cleanStr isEqualToString: [self.correctItem.itemDescription lowercaseString] ])
     {
         corr=1;
         wrong=0;
         self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
+        dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
         self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
+        dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:false index:self.questionCount];
     }
-    
+    if(!self.detailsArray)
+    {
+        self.detailsArray = [NSMutableArray array];
+    }
+    [self.detailsArray addObject:dItem];
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect
         wrong:wrong+self.previousResult.testQuestionsWrong
         type:self.previousResult.testType

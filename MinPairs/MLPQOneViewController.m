@@ -9,6 +9,7 @@
 #import "MLPQOneViewController.h"
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
+#import "MLDetailsItem.h"
 @interface MLPQOneViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftImgBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rightImgBtn;
@@ -119,18 +120,26 @@
     int wrong;
     MLItem* selected=self.leftSelected?self.itemLeft:self.itemRight;
     NSLog(@"User selected %@",selected.itemDescription);
+    MLDetailsItem* dItem;
     if(selected==self.correctItem)
     {
         corr=1;
         wrong=0;
         self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
+        dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_ONE correctItem:self.correctItem userItem:selected status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
         self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
+        dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_ONE correctItem:self.correctItem userItem:selected status:false index:self.questionCount];
     }
+    if(!self.detailsArray)
+    {
+        self.detailsArray = [NSMutableArray array];
+    }
+    [self.detailsArray addObject:dItem];
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
     [sender setHidden: YES];    
     [self.checkMarkImg setHidden:YES];

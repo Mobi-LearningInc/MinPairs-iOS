@@ -15,7 +15,7 @@
 #import "MLBasicAudioPlayer.h"
 #import "MLPair.h"
 #import "MLMainDataProvider.h"
-
+#import "MLDetailsItem.h"
 #import "MLResultsViewController.h"
 #import "MLTheme.h"
 
@@ -301,7 +301,7 @@
     rvc.wrong = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsWrong];
     rvc.total = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect + self.currentResult.testQuestionsWrong];
     rvc.time = [NSString stringWithFormat: @"%i", self.currentResult.testTime];
-    
+    rvc.detailsArray=self.detailsArray;
     //_animator = [[MLModalAnimator alloc] init];
     //[self present: rvc];
     /* Modal animator has an issue when the modal view controller presents another modal view controller. ex: Results vc >>> Share vc . */
@@ -341,6 +341,7 @@
         vc.practiceMode = [sender boolValue];
         vc.questionCount=++self.questionCount;;
         vc.previousResult=self.currentResult;
+        vc.detailsArray=self.detailsArray;
     }
     else if([[segue identifier]isEqualToString:@"PQTwo"])
     {
@@ -348,6 +349,7 @@
         vc.practiceMode = [sender boolValue];
         vc.questionCount=++self.questionCount;;
         vc.previousResult=self.currentResult;
+        vc.detailsArray=self.detailsArray;
     }
     else if ([[segue identifier]isEqualToString:@"PQThree"])
     {
@@ -355,6 +357,7 @@
         vc.practiceMode = [sender boolValue];
         vc.questionCount=++self.questionCount;
         vc.previousResult=self.currentResult;
+        vc.detailsArray=self.detailsArray;
     }
 }
 

@@ -15,4 +15,5 @@
 @property (strong, nonatomic) NSString* wrong;
 @property (strong, nonatomic) NSString* total;
 @property (strong, nonatomic) NSString* time;
+@property (strong, nonatomic) NSMutableArray* detailsArray;
 @end

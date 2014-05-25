@@ -411,6 +411,11 @@
 		E13EFF551920FE64005C407F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EFF541920FE64005C407F /* Social.framework */; };
 		E13EFF591920FEDA005C407F /* MLShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E13EFF581920FEDA005C407F /* MLShareViewController.m */; };
 		E13EFF5E19211C42005C407F /* xmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E13EFF5D19211C42005C407F /* xmark.png */; };
+		E16B4BDF19316A70000C704D /* MLDetailTableCellTypeOne.m in Sources */ = {isa = PBXBuildFile; fileRef = E16B4BDE19316A70000C704D /* MLDetailTableCellTypeOne.m */; };
+		E16B4BE219316A8D000C704D /* MLDetailTableCellTypeTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = E16B4BE119316A8D000C704D /* MLDetailTableCellTypeTwo.m */; };
+		E16B4BE519316AA8000C704D /* MLDetailTableCellTypeThree.m in Sources */ = {isa = PBXBuildFile; fileRef = E16B4BE419316AA8000C704D /* MLDetailTableCellTypeThree.m */; };
+		E16B4BE819316E9E000C704D /* MLDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16B4BE719316E9E000C704D /* MLDetailTableViewController.m */; };
+		E19B1B35193170DF0039F58B /* MLDetailsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E19B1B34193170DF0039F58B /* MLDetailsItem.m */; };
 		E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */; };
 		E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C248A3190AEDC300F9E8BF /* MLDatabase.m */; };
 		E1C248A6190AEEC200F9E8BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C248A5190AEEC200F9E8BF /* libsqlite3.dylib */; };
@@ -1021,6 +1026,16 @@
 		E13EFF571920FEDA005C407F /* MLShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLShareViewController.h; sourceTree = "<group>"; };
 		E13EFF581920FEDA005C407F /* MLShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLShareViewController.m; sourceTree = "<group>"; };
 		E13EFF5D19211C42005C407F /* xmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xmark.png; sourceTree = "<group>"; };
+		E16B4BDD19316A70000C704D /* MLDetailTableCellTypeOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetailTableCellTypeOne.h; sourceTree = "<group>"; };
+		E16B4BDE19316A70000C704D /* MLDetailTableCellTypeOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailTableCellTypeOne.m; sourceTree = "<group>"; };
+		E16B4BE019316A8D000C704D /* MLDetailTableCellTypeTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetailTableCellTypeTwo.h; sourceTree = "<group>"; };
+		E16B4BE119316A8D000C704D /* MLDetailTableCellTypeTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailTableCellTypeTwo.m; sourceTree = "<group>"; };
+		E16B4BE319316AA8000C704D /* MLDetailTableCellTypeThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetailTableCellTypeThree.h; sourceTree = "<group>"; };
+		E16B4BE419316AA8000C704D /* MLDetailTableCellTypeThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailTableCellTypeThree.m; sourceTree = "<group>"; };
+		E16B4BE619316E9E000C704D /* MLDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetailTableViewController.h; sourceTree = "<group>"; };
+		E16B4BE719316E9E000C704D /* MLDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailTableViewController.m; sourceTree = "<group>"; };
+		E19B1B33193170DF0039F58B /* MLDetailsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetailsItem.h; sourceTree = "<group>"; };
+		E19B1B34193170DF0039F58B /* MLDetailsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailsItem.m; sourceTree = "<group>"; };
 		E1C2489C190AB8AE00F9E8BF /* MLDataProviderEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLDataProviderEventListener.h; sourceTree = "<group>"; };
 		E1C2489D190AC30300F9E8BF /* MLMainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMainDataProvider.h; sourceTree = "<group>"; };
 		E1C2489E190AC30300F9E8BF /* MLMainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMainDataProvider.m; sourceTree = "<group>"; };
@@ -1382,6 +1397,7 @@
 		CA16C021191C7D8B0000B48E /* PQControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E16B4BDC19316A15000C704D /* PQDetailsControllers */,
 				CA16C024191C7E890000B48E /* PQResultsController */,
 				CA16C023191C7E780000B48E /* PQFeedbackController */,
 				CA1C0235190BBACC003C5F90 /* MLPQOneViewController.h */,
@@ -1938,6 +1954,8 @@
 				CAEA6BBC1913BC480005B4F5 /* MLStatsSoundCell.h */,
 				CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */,
 				CAEA6BBF1913C73D0005B4F5 /* MLStatSoundDelegate.h */,
+				E19B1B33193170DF0039F58B /* MLDetailsItem.h */,
+				E19B1B34193170DF0039F58B /* MLDetailsItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1976,6 +1994,21 @@
 				E13EFF581920FEDA005C407F /* MLShareViewController.m */,
 			);
 			name = ShareController;
+			sourceTree = "<group>";
+		};
+		E16B4BDC19316A15000C704D /* PQDetailsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E16B4BDD19316A70000C704D /* MLDetailTableCellTypeOne.h */,
+				E16B4BDE19316A70000C704D /* MLDetailTableCellTypeOne.m */,
+				E16B4BE019316A8D000C704D /* MLDetailTableCellTypeTwo.h */,
+				E16B4BE119316A8D000C704D /* MLDetailTableCellTypeTwo.m */,
+				E16B4BE319316AA8000C704D /* MLDetailTableCellTypeThree.h */,
+				E16B4BE419316AA8000C704D /* MLDetailTableCellTypeThree.m */,
+				E16B4BE619316E9E000C704D /* MLDetailTableViewController.h */,
+				E16B4BE719316E9E000C704D /* MLDetailTableViewController.m */,
+			);
+			name = PQDetailsControllers;
 			sourceTree = "<group>";
 		};
 		E1C248A1190AED9200F9E8BF /* DataBase */ = {
@@ -2461,6 +2494,7 @@
 				E12B145F1912BA1D00D697BB /* MLLearnTableViewController.m in Sources */,
 				CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */,
 				E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */,
+				E19B1B35193170DF0039F58B /* MLDetailsItem.m in Sources */,
 				51F874A2190835BE00450DB2 /* main.m in Sources */,
 				CA6BAEE1192B866F00DA1FB4 /* MLBarGraphView.m in Sources */,
 				CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */,
@@ -2470,6 +2504,7 @@
 				CA1C024E190C193A003C5F90 /* MLPQTwoViewController.m in Sources */,
 				EBC4B4441925158900D07F4B /* MLTinCanConnector.m in Sources */,
 				CA02B6121927C64200100C76 /* MLTheme.m in Sources */,
+				E16B4BE819316E9E000C704D /* MLDetailTableViewController.m in Sources */,
 				E109705519096ECB000C7E11 /* MLPair.m in Sources */,
 				CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */,
 				CA6BAEE5192B88BA00DA1FB4 /* MLBarGraphViewController.m in Sources */,
@@ -2477,6 +2512,8 @@
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
 				CA7ED6D9190B46C1009F1BB7 /* MLGraphics.m in Sources */,
 				CA16C027191C8D020000B48E /* MLModalAnimator.m in Sources */,
+				E16B4BDF19316A70000C704D /* MLDetailTableCellTypeOne.m in Sources */,
+				E16B4BE219316A8D000C704D /* MLDetailTableCellTypeTwo.m in Sources */,
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
@@ -2488,6 +2525,7 @@
 				CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */,
 				E1E19F3A1909E54700208ECD /* MLSoundChartCollectionViewCell.m in Sources */,
 				E12E40CF190C878D0002D88C /* MLSettingDatabase.m in Sources */,
+				E16B4BE519316AA8000C704D /* MLDetailTableCellTypeThree.m in Sources */,
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,
 				CA16C02A191C8D6D0000B48E /* MLResultsViewController.m in Sources */,
 				E1E19F3D1909E80400208ECD /* MLSoundChartCollectionViewController.m in Sources */,

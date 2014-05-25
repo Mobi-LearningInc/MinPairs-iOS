@@ -26,6 +26,7 @@
 @property int timeCount;//set by NSTimer
 @property UIProgressView* progressBar;
 @property BOOL pauseTimer;
+@property (strong, nonatomic) NSMutableArray* detailsArray;//set by children
 /** called when quiz or practice controller is ready with the result
  *@param currentResult is a MLTestResult object filled with cumulative data from this test session
  */
