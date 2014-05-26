@@ -7,6 +7,7 @@
 //
 
 #import "MLLineGraphViewController.h"
+#import "MLStatsTabBarViewController.h"
 
 @interface MLLineGraphViewController ()
 @property (weak, nonatomic) IBOutlet MLLineGraphView *hostView;
@@ -27,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    MLStatsTabBarViewController* controller = (MLStatsTabBarViewController*)[self tabBarController];
+    [[self hostView] setGraphData: [controller results]];
     [[self hostView] createGraph];
 }
 

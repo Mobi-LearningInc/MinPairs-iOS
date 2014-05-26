@@ -119,7 +119,6 @@
 		CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */; };
 		CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */; };
 		CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC772A5190A496400CB74A5 /* MLButtonGroup.m */; };
-		CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */; };
 		E1096F5C19095C06000C7E11 /* )_walk1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E6F19095C04000C7E11 /* )_walk1.mp3 */; };
 		E1096F5D19095C06000C7E11 /* 3_work1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7019095C04000C7E11 /* 3_work1.mp3 */; };
 		E1096F5E19095C06000C7E11 /* ^_cut1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7119095C04000C7E11 /* ^_cut1.mp3 */; };
@@ -661,9 +660,6 @@
 		CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLBaseAudioPlayerDelegate.h; sourceTree = "<group>"; };
 		CAC772A4190A496400CB74A5 /* MLButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLButtonGroup.h; sourceTree = "<group>"; };
 		CAC772A5190A496400CB74A5 /* MLButtonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLButtonGroup.m; sourceTree = "<group>"; };
-		CAEA6BBC1913BC480005B4F5 /* MLStatsSoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStatsSoundCell.h; sourceTree = "<group>"; };
-		CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatsSoundCell.m; sourceTree = "<group>"; };
-		CAEA6BBF1913C73D0005B4F5 /* MLStatSoundDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLStatSoundDelegate.h; sourceTree = "<group>"; };
 		E1096E6F19095C04000C7E11 /* )_walk1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ")_walk1.mp3"; sourceTree = "<group>"; };
 		E1096E7019095C04000C7E11 /* 3_work1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3_work1.mp3; sourceTree = "<group>"; };
 		E1096E7119095C04000C7E11 /* ^_cut1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "^_cut1.mp3"; sourceTree = "<group>"; };
@@ -1759,9 +1755,6 @@
 				E1C248AB190AFAC100F9E8BF /* MLTestResult.m */,
 				E12E40CA190C839D0002D88C /* MLSettingsData.h */,
 				E12E40CB190C839E0002D88C /* MLSettingsData.m */,
-				CAEA6BBC1913BC480005B4F5 /* MLStatsSoundCell.h */,
-				CAEA6BBD1913BC480005B4F5 /* MLStatsSoundCell.m */,
-				CAEA6BBF1913C73D0005B4F5 /* MLStatSoundDelegate.h */,
 				E19B1B33193170DF0039F58B /* MLDetailsItem.h */,
 				E19B1B34193170DF0039F58B /* MLDetailsItem.m */,
 			);
@@ -2242,7 +2235,6 @@
 				E19B1B35193170DF0039F58B /* MLDetailsItem.m in Sources */,
 				51F874A2190835BE00450DB2 /* main.m in Sources */,
 				CA6BAEE1192B866F00DA1FB4 /* MLBarGraphView.m in Sources */,
-				CAEA6BBE1913BC480005B4F5 /* MLStatsSoundCell.m in Sources */,
 				CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */,
 				E1C248AC190AFAC100F9E8BF /* MLTestResult.m in Sources */,
 				51F874AF190835BE00450DB2 /* MLViewController.m in Sources */,

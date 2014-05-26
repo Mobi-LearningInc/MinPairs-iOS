@@ -7,6 +7,7 @@
 //
 
 #import "MLStatsTabBarViewController.h"
+#import "MLTestResultDatabase.h"
 
 @interface MLStatsTabBarViewController ()
 
@@ -31,7 +32,65 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    MLTestResultDatabase* db = [[MLTestResultDatabase alloc] initTestResultDatabase];
+    NSArray* testResults = [db getTestResults];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat: @"yyyy MMM dd HH:mm:ss"];
+    
+    NSMutableDictionary* duplicates = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < [testResults count]; ++i)
+    {
+        NSDate* date = [formatter dateFromString: [testResults[i] testDate]];
+        NSString* str = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+        
+        int score = [testResults[i] testQuestionsCorrect];
+        
+        NSArray* data = [duplicates objectForKey: str];
+        if (data)
+        {
+            NSNumber* added_score = data[0];
+            added_score = @([added_score intValue] + score);
+            
+            NSNumber* dup_count = data[1];
+            dup_count = @([dup_count intValue] + 1);
+            [duplicates setObject: data forKey: str];
+        }
+        else
+        {
+            data = @[[NSNumber numberWithInt: score], [NSNumber numberWithInt: 1]];
+            [duplicates setObject: data forKey: str];
+        }
+    }
+    
+    _results = [[NSMutableDictionary alloc] init];
+    
+    for (NSString* key in duplicates)
+    {
+        NSArray* arr = [duplicates objectForKey: key];
+        int dup_count = [((NSNumber*)arr[1]) intValue];
+        
+        if (dup_count > 1)
+        {
+            float val = [((NSNumber*)arr[0]) floatValue];
+            val /= dup_count;
+            [_results setObject:[NSNumber numberWithFloat:val] forKey:key];
+        }
+        else
+        {
+            [_results setObject:[NSNumber numberWithFloat:[((NSNumber*)arr[0]) floatValue]] forKey:key];
+        }
+    }
+    
+    [_results setObject:[NSNumber numberWithFloat:10] forKey: @"fake"];
+    [_results setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake2"];
+    [_results setObject:[NSNumber numberWithFloat:3.5] forKey: @"fake3"];
+    [_results setObject:[NSNumber numberWithFloat:9.5] forKey: @"fake4"];
+    [_results setObject:[NSNumber numberWithFloat:5.5] forKey: @"fake5"];
+    [_results setObject:[NSNumber numberWithFloat:6.5] forKey: @"fake6"];
+    [_results setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake7"];
 }
 
 - (void)didReceiveMemoryWarning

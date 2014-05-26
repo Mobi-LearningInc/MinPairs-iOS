@@ -15,17 +15,9 @@
 
 @implementation MLBarGraphView
 
--(void)awakeFromNib
+- (void) setGraphData:(NSMutableDictionary*)data
 {
-    self.graphData = [[NSMutableDictionary alloc] init];
-    
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"MM/dd/yyyy"];
-    
-    [[self graphData] setObject: [NSNumber numberWithInteger: 10] forKey: [dateFormatter dateFromString: @"03/26/1990"]];
-    [[self graphData] setObject:[NSNumber numberWithInteger: 5] forKey: [dateFormatter dateFromString: @"04/26/1990"]];
-    [[self graphData] setObject:[NSNumber numberWithInteger: 3] forKey: [dateFormatter dateFromString: @"05/26/1990"]];
-    [[self graphData] setObject:[NSNumber numberWithInteger: 7] forKey: [dateFormatter dateFromString: @"06/26/1990"]];
+    _graphData = data;
 }
 
 - (void)createGraph
@@ -37,25 +29,19 @@
     [[self graph] setTitle: @"Bar Graph"];
     
     CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
+    
     [[self graph] setFill: [CPTFill fillWithColor: bgColour]];
-    //self.graph.plotAreaFrame.fill = [CPTFill fillWithColor: bgColour];
-    
-    /*[[self graph] setPaddingTop: 0.0f];
-    [[self graph] setPaddingBottom: 0.0f];
-    [[self graph] setPaddingLeft: 0.0f];
-    [[self graph] setPaddingRight: 0.0f];*/
-    
     [[[self graph] plotAreaFrame] setPaddingTop: 20.0f];
-    [[[self graph] plotAreaFrame] setPaddingBottom: 70.0f];
-    [[[self graph] plotAreaFrame] setPaddingLeft: 70.0f];
-    [[[self graph] plotAreaFrame] setPaddingRight: 20.0f];
+    [[[self graph] plotAreaFrame] setPaddingBottom: 65.0f];
+    [[[self graph] plotAreaFrame] setPaddingLeft: 55.0f];
+    [[[self graph] plotAreaFrame] setPaddingRight: 5.0f];
    
     
     /** Set graph plot space **/
     
     float xMin = 0.0f;
     float yMin = 0.0f;
-    float xMax = [[self graphData] count];
+    float xMax = 4.0f;//[[self graphData] count];
     float yMax = 10.0f;
     
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
@@ -94,9 +80,7 @@
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
 
-    //[xAxis setTitle: @"Date"];
-    //[xAxis setTitleTextStyle: axisTextStyle];
-    //[xAxis setLabelTextStyle: axisTextStyle];
+    
     [xAxis setTitleOffset: 30.0f];
     [xAxis setLabelOffset: 3.0f];
     [xAxis setMajorGridLineStyle: nil];
@@ -109,8 +93,6 @@
     
     
     [yAxis setTitle: @"Score"];
-    //[yAxis setTitleTextStyle: axisTextStyle];
-    //[yAxis setLabelTextStyle: axisTextStyle];
     [yAxis setTitleOffset: 40.0f];
     [yAxis setLabelOffset: 3.0f];
     [yAxis setMajorGridLineStyle: majorGridLineStyle];
@@ -125,17 +107,13 @@
     
     NSArray* dates = [[self graphData] allKeys];
     dates = [dates sortedArrayUsingSelector:@selector(compare:)];
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"MM/dd/yyyy"];
     
     float xPosition = 0.3f;
     NSMutableArray* xLabels = [NSMutableArray array];
     
-    for (NSDate* date in dates)
+    for (NSString* date in dates)
     {
-        NSString* dateString = [dateFormatter stringFromDate: date];
-        
-        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: dateString textStyle: [xAxis labelTextStyle]];
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: date textStyle: [xAxis labelTextStyle]];
         [xlabel setTickLocation: [[NSNumber numberWithFloat: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];

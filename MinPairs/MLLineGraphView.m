@@ -16,17 +16,9 @@
 
 @implementation MLLineGraphView
 
--(void)awakeFromNib
+- (void) setGraphData:(NSMutableDictionary*)data
 {
-    self.graphData = [[NSMutableDictionary alloc] init];
-    
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"MM/dd/yyyy"];
-    
-    [[self graphData] setObject: [NSNumber numberWithInteger: 10] forKey: [dateFormatter dateFromString: @"03/26/1990"]];
-    [[self graphData] setObject:[NSNumber numberWithInteger: 5] forKey: [dateFormatter dateFromString: @"04/26/1990"]];
-    [[self graphData] setObject:[NSNumber numberWithInteger: 3] forKey: [dateFormatter dateFromString: @"05/26/1990"]];
-    [[self graphData] setObject:[NSNumber numberWithInteger: 7] forKey: [dateFormatter dateFromString: @"06/26/1990"]];
+    _graphData = data;
 }
 
 - (void)createGraph
@@ -34,37 +26,23 @@
     /** Create graph with theme and padding **/
     
     [self setGraph: [[CPTXYGraph alloc] initWithFrame: CGRectZero]];
-    //[[self graph] applyTheme: [CPTTheme themeNamed: kCPTDarkGradientTheme]];
     self.hostedGraph = [self graph];
     [[self graph] setTitle: @"Line Graph"];
     
     CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
+    
     [[self graph] setFill: [CPTFill fillWithColor: bgColour]];
-    //self.graph.plotAreaFrame.fill = [CPTFill fillWithColor: bgColour];
-    
-    //[[[self graph] plotAreaFrame] setMasksToBorder: false];
-    
-    /*[[self graph] setPaddingTop: 0.0f];
-    [[self graph] setPaddingBottom: 0.0f];
-    [[self graph] setPaddingLeft: 0.0f];
-    [[self graph] setPaddingRight: 0.0f];
-    
-    CPTMutableLineStyle* borderLineStyle = [CPTMutableLineStyle lineStyle];
-    [borderLineStyle setLineColor: [CPTColor grayColor]];
-    [borderLineStyle setLineWidth: 4.0f];
-    
-    [[[self graph] plotAreaFrame] setBorderLineStyle: borderLineStyle];*/
     [[[self graph] plotAreaFrame] setPaddingTop: 20.0f];
-    [[[self graph] plotAreaFrame] setPaddingBottom: 70.0f];
-    [[[self graph] plotAreaFrame] setPaddingLeft: 70.0f];
-    [[[self graph] plotAreaFrame] setPaddingRight: 20.0f];
+    [[[self graph] plotAreaFrame] setPaddingBottom: 65.0f];
+    [[[self graph] plotAreaFrame] setPaddingLeft: 55.0f];
+    [[[self graph] plotAreaFrame] setPaddingRight: 5.0f];
     
     
     /** Set graph plot space **/
     
     float xMin = -0.05f;
     float yMin = 0.0f;
-    float xMax = [[self graphData] count];
+    float xMax = 4.0f;//[[self graphData] count];
     float yMax = 10.0f;
     
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
@@ -112,7 +90,6 @@
     [yAxis setTitle: @"Score"];
     [yAxis setTitleOffset: 40.0f];
     [yAxis setLabelOffset: 3.0f];
-    //[yAxis setLabelingPolicy: CPTAxisLabelingPolicyNone];
     [yAxis setOrthogonalCoordinateDecimal: CPTDecimalFromInt(0)];
     [yAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
     [yAxis setMinorTicksPerInterval: 0.0f];
@@ -125,17 +102,13 @@
     
     NSArray* dates = [[self graphData] allKeys];
     dates = [dates sortedArrayUsingSelector:@selector(compare:)];
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"MM/dd/yyyy"];
     
     uint32_t xPosition = 0;
     NSMutableArray* xLabels = [NSMutableArray array];
     
-    for (NSDate* date in dates)
+    for (NSString* date in dates)
     {
-        NSString* dateString = [dateFormatter stringFromDate: date];
-        
-        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: dateString textStyle: [xAxis labelTextStyle]];
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: date textStyle: [xAxis labelTextStyle]];
         [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];
@@ -163,6 +136,17 @@
     [plot setIdentifier: @"main"];
     [plot setDataLineStyle: plotLineStyle];
     [plot setPlotSymbol: plotSymbol];
+    
+    
+    /** Fill under the graph **/
+    
+    CPTColor* uFillColour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:0.5f];
+    CPTGradient* uFillGradient = [CPTGradient gradientWithBeginningColor:uFillColour endingColor:[CPTColor clearColor]];
+    [uFillGradient setAngle: -90.0f];
+    CPTFill* uFill = [CPTFill fillWithGradient: uFillGradient];
+    [plot setAreaFill: uFill];
+    [plot setAreaBaseValue: CPTDecimalFromString(@"-1.00")];
+    
     [[self graph] addPlot: plot];
 }
 

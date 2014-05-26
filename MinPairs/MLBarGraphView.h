@@ -11,4 +11,5 @@
 
 @interface MLBarGraphView : CPTGraphHostingView<CPTBarPlotDataSource, CPTBarPlotDelegate, CPTPlotSpaceDelegate>
 - (void)createGraph;
+- (void) setGraphData:(NSMutableDictionary*)data;
 @end
