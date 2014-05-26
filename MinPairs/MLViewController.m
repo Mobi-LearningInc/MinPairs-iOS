@@ -43,13 +43,17 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    UIImage* infoicon = [UIImage imageNamed:@"mAbout.png"];
+    /*UIImage* infoicon = [UIImage imageNamed:@"mAbout.png"];
     UIImage* helpicon = [UIImage imageNamed:@"mHelp.png"];
     UIImage* filtericon = [UIImage imageNamed:@"mFilter.png"];
     
     UIButton* infobtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
     UIButton* helpbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
     UIButton* filterbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
+    
+    [infobtn setTag: 1];
+    [helpbtn setTag: 2];
+    [filterbtn setTag: 3];
     
     [infobtn setFrame:CGRectMake(0, 0, 28, 28)];
     [helpbtn setFrame:CGRectMake(0, 0, 28, 28)];
@@ -65,7 +69,17 @@
     
     UIBarButtonItem* info = [[UIBarButtonItem alloc] initWithCustomView:infobtn];
     UIBarButtonItem* help = [[UIBarButtonItem alloc] initWithCustomView:helpbtn];
-    UIBarButtonItem* filter = [[UIBarButtonItem alloc] initWithCustomView:filterbtn];
+    UIBarButtonItem* filter = [[UIBarButtonItem alloc] initWithCustomView:filterbtn];*/
+    
+    UIBarButtonItem* info = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onInfoClicked:)];
+    
+    UIBarButtonItem* help = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpClicked:)];
+    
+    UIBarButtonItem* filter = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
+    
+    [info setImage: [UIImage imageNamed:@"mAbout.png"]];
+    [help setImage: [UIImage imageNamed:@"mHelp.png"]];
+    [filter setImage: [UIImage imageNamed:@"mFilter.png"]];
     
     self.navigationItem.rightBarButtonItems = @[help, filter];
     self.navigationItem.leftBarButtonItems = @[info];

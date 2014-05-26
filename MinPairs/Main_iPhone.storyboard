@@ -168,11 +168,17 @@
             </objects>
             <point key="canvasLocation" x="1161" y="1341"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Stats Tab Bar View Controller-->
         <scene sceneID="nIz-DF-4yJ">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="IWa-Q5-03Q" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="5mi-cz-Tiv"/>
+                <tabBarController definesPresentationContext="YES" id="IWa-Q5-03Q" customClass="MLStatsTabBarViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5mi-cz-Tiv">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="9RW-sj-v7V">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="IWa-Q5-03Q" id="Vbz-k7-APq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="30U-ss-Wdw">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -589,7 +595,13 @@
                             <constraint firstAttribute="trailing" secondItem="yKV-62-48q" secondAttribute="trailing" constant="20" id="Wi7-fk-q0i"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="INSTRUCTIONS" id="P9t-6L-GYG"/>
+                    <navigationItem key="navigationItem" title="INSTRUCTIONS" id="P9t-6L-GYG">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="BD9-Mw-cFD">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="0ud-QF-7PU" id="lFK-fo-Dth"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="CeJ-mv-Dkw" kind="push" identifier="PQTwo" id="LKQ-GX-APY"/>
                         <segue destination="plC-UE-duX" kind="push" identifier="PQThree" id="uXz-Mu-If8"/>
@@ -716,7 +728,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Filter" id="cxK-TB-6Pv"/>
+                    <navigationItem key="navigationItem" title="Filter" id="cxK-TB-6Pv">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="KyH-3U-byz">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="kjc-Gw-hG7" id="X2N-7x-eYx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlG-uH-Zmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -789,7 +807,13 @@
                             <outlet property="delegate" destination="CvA-Qv-OUt" id="7di-cg-H9i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="LEARN" id="4DZ-zX-qJH"/>
+                    <navigationItem key="navigationItem" title="LEARN" id="4DZ-zX-qJH">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="b5q-vQ-ES9">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="CvA-Qv-OUt" id="iVe-bU-u9N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="6e9-O6-oVQ" id="w1U-qU-OAR"/>
                     </connections>
@@ -850,7 +874,13 @@
                             <outlet property="delegate" destination="pwU-RH-joz" id="snF-K8-XBw"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="SOUND CHART" id="Myk-P7-2bL"/>
+                    <navigationItem key="navigationItem" title="SOUND CHART" id="Myk-P7-2bL">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="zHJ-b9-ueV">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="pwU-RH-joz" id="jYx-On-DoW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loadingIndicator" destination="Few-O3-9Jy" id="8jI-DS-TPr"/>
                     </connections>
@@ -911,7 +941,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Information" id="jhs-Ja-lz8"/>
+                    <navigationItem key="navigationItem" title="Information" id="jhs-Ja-lz8">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="fRZ-Cf-7vU">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="AaK-25-S7r" id="jvF-8t-Qh9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CopyrightLabel" destination="5xL-Rh-At1" id="aUH-k9-Ist"/>
                         <outlet property="InfoView" destination="6Az-4j-VR5" id="cTS-US-vZe"/>
@@ -1041,7 +1077,13 @@
                             <constraint firstAttribute="trailing" secondItem="1Uu-a6-om6" secondAttribute="trailing" constant="20" id="r9T-KC-7si"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SETTINGS" id="8SY-gY-nRf"/>
+                    <navigationItem key="navigationItem" title="SETTINGS" id="8SY-gY-nRf">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="4lZ-nA-CEx">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="f48-sO-UOp" id="1h0-YL-JW9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="listenAndReadLabel" destination="DQR-Mh-y1H" id="FH7-Tx-6nf"/>
                         <outlet property="listenAndReadStepper" destination="ltA-cb-OL4" id="LDw-3g-GDM"/>
@@ -1078,7 +1120,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="HELP" id="w5h-p6-UMp"/>
+                    <navigationItem key="navigationItem" title="HELP" id="w5h-p6-UMp">
+                        <barButtonItem key="leftBarButtonItem" image="mHome" id="6nu-rN-mRd">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="5YO-4H-GVw" id="0Ee-II-F16"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="5om-zF-iSw" id="Kvg-10-jV5"/>
                     </connections>
@@ -1279,7 +1327,7 @@
                                     <action selector="onAnswerBtn:" destination="CeJ-mv-Dkw" eventType="touchUpInside" id="Eux-Cl-UmJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
                                 <rect key="frame" x="20" y="96" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1307,7 +1355,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
                                 <rect key="frame" x="0.0" y="64" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -1551,6 +1599,7 @@
         <image name="iSelect" width="47" height="66"/>
         <image name="iSubmit" width="47" height="66"/>
         <image name="mFacebook" width="22" height="22"/>
+        <image name="mHome" width="22" height="22"/>
         <image name="mLearn" width="27" height="22"/>
         <image name="mPractice" width="22" height="22"/>
         <image name="mQuizzes" width="31" height="22"/>
@@ -1569,8 +1618,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LKQ-GX-APY"/>
-        <segue reference="Nd2-aZ-hCp"/>
-        <segue reference="uXz-Mu-If8"/>
+        <segue reference="0jx-Fn-kNE"/>
+        <segue reference="ftR-Qk-zmG"/>
+        <segue reference="6iJ-t5-LbI"/>
     </inferredMetricsTieBreakers>
 </document>

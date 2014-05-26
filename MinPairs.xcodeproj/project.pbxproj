@@ -115,6 +115,7 @@
 		CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */; };
 		CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */; };
 		CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA1B2161911B17C00453852 /* MLPlatform.m */; };
+		CAAB4DFC1932CA01004CC2E3 /* MLStatsTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAB4DFB1932CA01004CC2E3 /* MLStatsTabBarViewController.m */; };
 		CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */; };
 		CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */; };
 		CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC772A5190A496400CB74A5 /* MLButtonGroup.m */; };
@@ -650,6 +651,8 @@
 		CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPushUpView.m; sourceTree = "<group>"; };
 		CAA1B2151911B17C00453852 /* MLPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPlatform.h; sourceTree = "<group>"; };
 		CAA1B2161911B17C00453852 /* MLPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPlatform.m; sourceTree = "<group>"; };
+		CAAB4DFA1932CA01004CC2E3 /* MLStatsTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStatsTabBarViewController.h; sourceTree = "<group>"; };
+		CAAB4DFB1932CA01004CC2E3 /* MLStatsTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStatsTabBarViewController.m; sourceTree = "<group>"; };
 		CAC77287190A13C100CB74A5 /* MLAudioBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAudioBase.h; sourceTree = "<group>"; };
 		CAC77288190A13C100CB74A5 /* MLBasicAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBasicAudioPlayer.h; sourceTree = "<group>"; };
 		CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBasicAudioPlayer.m; sourceTree = "<group>"; };
@@ -1242,6 +1245,8 @@
 				CA6BAEE4192B88BA00DA1FB4 /* MLBarGraphViewController.m */,
 				CA6BAEE6192B88E900DA1FB4 /* MLLineGraphViewController.h */,
 				CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */,
+				CAAB4DFA1932CA01004CC2E3 /* MLStatsTabBarViewController.h */,
+				CAAB4DFB1932CA01004CC2E3 /* MLStatsTabBarViewController.m */,
 			);
 			name = StatisticsController;
 			sourceTree = "<group>";
@@ -2257,6 +2262,7 @@
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
 				CA1C0246190BDB99003C5F90 /* MLFilterViewController.m in Sources */,
 				CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */,
+				CAAB4DFC1932CA01004CC2E3 /* MLStatsTabBarViewController.m in Sources */,
 				EBC4B4431925158900D07F4B /* MLLsrCredentials.m in Sources */,
 				E13EFF591920FEDA005C407F /* MLShareViewController.m in Sources */,
 				CA07712619202369009C1171 /* MLHelpViewController.m in Sources */,

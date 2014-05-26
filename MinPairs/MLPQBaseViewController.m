@@ -70,7 +70,10 @@
     {
         [self.progressBar setProgress:(float)self.questionCount/(float)ML_MLPQBASE_QUESTION_LIMIT animated:YES];
     }
-    UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:@"Quit" style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
+    UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
+    
+    [quitBtn setImage: [UIImage imageNamed:@"mClose.png"]];
+    
     self.navigationItem.leftBarButtonItem=quitBtn;
     MLSettingDatabase * settingDB= [[MLSettingDatabase alloc]initSettingDatabase];
     self.setting= [settingDB getSetting];

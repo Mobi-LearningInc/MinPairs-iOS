@@ -31,6 +31,11 @@
     return self;
 }
 
+- (IBAction)onHomeClicked:(UIBarButtonItem *)sender
+{
+    [[self navigationController] popViewControllerAnimated:true];
+}
+
 -(void) viewWillDisappear:(BOOL)animated
 {
     [MLTheme updateTheme];

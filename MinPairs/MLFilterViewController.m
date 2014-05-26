@@ -26,6 +26,11 @@
     return self;
 }
 
+- (IBAction)onHomeClicked:(UIBarButtonItem *)sender
+{
+    [[self navigationController] popViewControllerAnimated:true];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
