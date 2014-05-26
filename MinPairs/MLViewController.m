@@ -43,9 +43,9 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    UIImage* infoicon = [UIImage imageNamed:@"info.PNG"];
-    UIImage* helpicon = [UIImage imageNamed:@"help.PNG"];
-    UIImage* filtericon = [UIImage imageNamed:@"filter.PNG"];
+    UIImage* infoicon = [UIImage imageNamed:@"mAbout.png"];
+    UIImage* helpicon = [UIImage imageNamed:@"mHelp.png"];
+    UIImage* filtericon = [UIImage imageNamed:@"mFilter.png"];
     
     UIButton* infobtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
     UIButton* helpbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
