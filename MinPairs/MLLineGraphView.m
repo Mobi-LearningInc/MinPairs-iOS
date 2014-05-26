@@ -34,7 +34,7 @@
     [[self graph] setFill: [CPTFill fillWithColor: bgColour]];
     [[[self graph] plotAreaFrame] setPaddingTop: 20.0f];
     [[[self graph] plotAreaFrame] setPaddingBottom: 65.0f];
-    [[[self graph] plotAreaFrame] setPaddingLeft: 55.0f];
+    [[[self graph] plotAreaFrame] setPaddingLeft: 57.0f];
     [[[self graph] plotAreaFrame] setPaddingRight: 5.0f];
     
     
@@ -67,11 +67,17 @@
     
     /** Setup axises **/
     
-    CPTMutableTextStyle* axisTextStyle = [CPTMutableTextStyle textStyle];
-    [axisTextStyle setFontName: @"Avenir"];
-    [axisTextStyle setFontSize: 14.0f];
-    [axisTextStyle setColor: [CPTColor whiteColor]];
+    CPTMutableTextStyle* xAxisTextStyle = [CPTMutableTextStyle textStyle];
+    [xAxisTextStyle setFontName: @"Avenir"];
+    [xAxisTextStyle setFontSize: 11.0f];
+    [xAxisTextStyle setColor: [CPTColor blackColor]];
     
+    CPTMutableTextStyle* yAxisTextStyle = [CPTMutableTextStyle textStyle];
+    [xAxisTextStyle setFontName: @"Avenir"];
+    [xAxisTextStyle setFontSize: 12.0f];
+    [xAxisTextStyle setColor: [CPTColor blackColor]];
+    
+    [[self graph] setTitleTextStyle: yAxisTextStyle];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
@@ -79,6 +85,8 @@
     //[xAxis setTitle: @"Date"];
     [xAxis setTitleOffset: 30.0f];
     [xAxis setLabelOffset: 3.0f];
+    [xAxis setTitleTextStyle: xAxisTextStyle];
+    [xAxis setLabelTextStyle: xAxisTextStyle];
     [xAxis setLabelingPolicy: CPTAxisLabelingPolicyNone];
     [xAxis setOrthogonalCoordinateDecimal: CPTDecimalFromInt(0)];
     [xAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
@@ -90,6 +98,8 @@
     [yAxis setTitle: @"Score"];
     [yAxis setTitleOffset: 40.0f];
     [yAxis setLabelOffset: 3.0f];
+    [yAxis setTitleTextStyle: yAxisTextStyle];
+    [yAxis setLabelTextStyle: yAxisTextStyle];
     [yAxis setOrthogonalCoordinateDecimal: CPTDecimalFromInt(0)];
     [yAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
     [yAxis setMinorTicksPerInterval: 0.0f];

@@ -8,6 +8,7 @@
 
 #import "MLStatsTabBarViewController.h"
 #import "MLTestResultDatabase.h"
+#import "MLTheme.h"
 
 @interface MLStatsTabBarViewController ()
 
@@ -31,6 +32,7 @@
 
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
 
     MLTestResultDatabase* db = [[MLTestResultDatabase alloc] initTestResultDatabase];

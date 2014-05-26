@@ -70,12 +70,31 @@
     [[[[[self sharedInstance] mainController] navigationController] navigationBar] setBarTintColor: [[self sharedInstance] navBarColour]];
 }
 
++(void)setBarButtonTints:(UIViewController*) controller withColour:(UIColor*)colour
+{
+    NSArray* leftBarButtons = [[controller navigationItem] leftBarButtonItems];
+    NSArray* rightBarButtons = [[controller navigationItem] rightBarButtonItems];
+    
+    for (UIBarButtonItem* item in leftBarButtons)
+    {
+        [item setTintColor:colour];
+    }
+    
+    for (UIBarButtonItem* item in rightBarButtons)
+    {
+        [item setTintColor:colour];
+    }
+}
+
 +(void) setTheme:(UIViewController*)controller
 {
     UIView* view = [controller view];
+    UIColor* barButtonColor = [UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
     
     [[[controller navigationController] navigationBar] setBarTintColor: [[self sharedInstance] navBarColour]];
+    
     [MLPlatform setButtonsRound: view withRadius: [[self sharedInstance] btnRadius]];
+    [self setBarButtonTints:controller withColour: barButtonColor];
     
     for (UIView* v in [view subviews])
     {
@@ -87,7 +106,7 @@
     
     if (view && ([view tag] != 1))
     {
-        UIColor* colour = [UIColor colorWithRed:77.0f/0xFF green:77.0f/0xFF blue:77.0f/0xFF alpha:1.0f];
+        UIColor* colour = [UIColor colorWithRed:0xFF/0xFF green:0xFF/0xFF blue:0xFF/0xFF alpha:1.0f];
         [[[controller navigationController] navigationBar] setBarTintColor: colour];
     }
     else

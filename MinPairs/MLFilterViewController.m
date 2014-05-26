@@ -8,6 +8,8 @@
 
 #import "MLFilterViewController.h"
 #import "MLSettingDatabase.h"
+#import "MLTheme.h"
+
 @interface MLFilterViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) UITableView* leftView;
 @property (strong, nonatomic) UITableView* rightView;
@@ -33,6 +35,7 @@
 
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
     [super viewDidLoad];
     _mappedSounds = nil;
     

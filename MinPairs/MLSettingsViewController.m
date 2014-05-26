@@ -57,9 +57,9 @@
     [[self listenAndReadStepper] setValue: data.settingTimeRead];
     [[self listenAndTypeStepper] setValue: data.settingTimeType];
     
-    [[self listenAndSelectLabel] setText: [NSString stringWithFormat:@"%d seconds", data.settingTimeSelect]];
-    [[self listenAndReadLabel] setText: [NSString stringWithFormat:@"%d seconds", data.settingTimeRead]];
-    [[self listenAndTypeLabel] setText: [NSString stringWithFormat:@"%d seconds", data.settingTimeType]];
+    [[self listenAndSelectLabel] setText: [NSString stringWithFormat:@"%d s", data.settingTimeSelect]];
+    [[self listenAndReadLabel] setText: [NSString stringWithFormat:@"%d s", data.settingTimeRead]];
+    [[self listenAndTypeLabel] setText: [NSString stringWithFormat:@"%d s", data.settingTimeType]];
 }
 
 - (void)didReceiveMemoryWarning

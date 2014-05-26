@@ -70,9 +70,12 @@
     {
         [self.progressBar setProgress:(float)self.questionCount/(float)ML_MLPQBASE_QUESTION_LIMIT animated:YES];
     }
+    
+    UIColor* barButtonColor = [UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     
     [quitBtn setImage: [UIImage imageNamed:@"mClose.png"]];
+    [quitBtn setTintColor: barButtonColor];
     
     self.navigationItem.leftBarButtonItem=quitBtn;
     MLSettingDatabase * settingDB= [[MLSettingDatabase alloc]initSettingDatabase];
