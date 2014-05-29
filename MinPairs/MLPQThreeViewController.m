@@ -109,14 +109,16 @@
     {
         corr=1;
         wrong=0;
-        self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
+        //self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
+        self.statusImg.image=[UIImage imageNamed:@"fLargeGreenCheck"];
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_THREE correctItem:self.correctAnswer userItem:selected status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
-        self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
+        //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
+        self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_THREE correctItem:self.correctAnswer userItem:selected status:false index:self.questionCount];
     }
     if(!self.detailsArray)

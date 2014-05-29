@@ -74,8 +74,8 @@
     UIColor* barButtonColor = [MLTheme navButtonColour];
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     
-    [quitBtn setImage: [UIImage imageNamed:@"mClose.png"]];
-    [quitBtn setTintColor: barButtonColor];
+    [quitBtn setImage: [UIImage imageNamed:@"fSmallRedX.png"]];
+    [quitBtn setTintColor: [UIColor redColor]];
     
     self.navigationItem.leftBarButtonItem=quitBtn;
     MLSettingDatabase * settingDB= [[MLSettingDatabase alloc]initSettingDatabase];

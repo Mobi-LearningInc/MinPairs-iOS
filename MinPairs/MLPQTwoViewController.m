@@ -77,14 +77,16 @@
     {
         corr=1;
         wrong=0;
-        self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
+        //self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
+        self.statusImg.image=[UIImage imageNamed:@"fLargeGreenCheck"];
         dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
-        self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
+        //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
+        self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
         dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:false index:self.questionCount];
     }
     if(!self.detailsArray)
