@@ -26,7 +26,7 @@
     
     [self setGraph: [[CPTXYGraph alloc] initWithFrame: CGRectZero]];
     self.hostedGraph = [self graph];
-    [[self graph] setTitle: @"Bar Graph"];
+    [[self graph] setTitle: @"Avg. Score per Day"];
     
     
     CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
@@ -49,6 +49,7 @@
     
     [plotSpace setDelegate: self];
     [plotSpace setAllowsUserInteraction: true];
+    [plotSpace setAllowsMomentumX:true];
     
     [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat(xMax - xMin)]];
     

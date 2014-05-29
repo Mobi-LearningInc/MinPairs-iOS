@@ -104,7 +104,7 @@
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    if ([identifier isEqualToString:@"stats_settings_segue"] &&  ![[[MLTestResultDatabase alloc] initTestResultDatabase] getCount])
+    if ([identifier isEqualToString:@"StatisticsSegue"] &&  ![[[MLTestResultDatabase alloc] initTestResultDatabase] getCount])
     {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Statistics" message:@"There are currently no statistics to display." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];

@@ -71,7 +71,7 @@
         [self.progressBar setProgress:(float)self.questionCount/(float)ML_MLPQBASE_QUESTION_LIMIT animated:YES];
     }
     
-    UIColor* barButtonColor = [MLTheme navButtonColour];
+    //UIColor* barButtonColor = [MLTheme navButtonColour];
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     
     [quitBtn setImage: [UIImage imageNamed:@"fSmallRedX.png"]];

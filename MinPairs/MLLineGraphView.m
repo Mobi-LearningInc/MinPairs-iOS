@@ -27,7 +27,7 @@
     
     [self setGraph: [[CPTXYGraph alloc] initWithFrame: CGRectZero]];
     self.hostedGraph = [self graph];
-    [[self graph] setTitle: @"Line Graph"];
+    [[self graph] setTitle: @"Score per Game"];
     
     CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
     
@@ -49,6 +49,7 @@
     
     [plotSpace setDelegate: self];
     [plotSpace setAllowsUserInteraction: true];
+    [plotSpace setAllowsMomentumX:true];
     
     [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat(xMax - xMin)]];
     
