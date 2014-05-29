@@ -78,11 +78,23 @@
     for (UIBarButtonItem* item in leftBarButtons)
     {
         [item setTintColor:colour];
+        
+        UIView* view = [item valueForKey:@"view"]; //questionable.
+        for (UIView* v in [view subviews])
+        {
+            [v setTintColor:colour];
+        }
     }
     
     for (UIBarButtonItem* item in rightBarButtons)
     {
         [item setTintColor:colour];
+        
+        UIView* view = [item valueForKey:@"view"]; //questionable.
+        for (UIView* v in [view subviews])
+        {
+            [v setTintColor:colour];
+        }
     }
 }
 

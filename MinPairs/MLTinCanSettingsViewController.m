@@ -8,6 +8,9 @@
 
 #import "MLTinCanSettingsViewController.h"
 #import "MLLrsCredentialsDatabase.h"
+#import "MLTheme.h"
+#import "MLPlatform.h" //needed for manually setting the round buttons since MLTheme isn't being applied due to nested views.
+
 @interface MLTinCanSettingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextBox;
@@ -33,6 +36,10 @@
 
 - (void)viewDidLoad
 {
+    [MLTheme setTheme: self];
+    UIView* view = [[[self view] subviews] objectAtIndex:0];
+    [MLPlatform setButtonsRound:view withRadius:10.0f];
+    
     [super viewDidLoad];
     self.userNameTextBox.delegate=self;
     self.emailTextBox.delegate=self;

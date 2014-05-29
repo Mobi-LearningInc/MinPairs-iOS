@@ -102,14 +102,6 @@
             [_barGraphResults setObject:[NSNumber numberWithFloat:[((NSNumber*)arr[0]) floatValue]] forKey:key];
         }
     }
-    
-    /*[_barGraphResults setObject:[NSNumber numberWithFloat:10] forKey: @"fake"];
-    [_barGraphResults setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake2"];
-    [_barGraphResults setObject:[NSNumber numberWithFloat:3.5] forKey: @"fake3"];
-    [_barGraphResults setObject:[NSNumber numberWithFloat:9.5] forKey: @"fake4"];
-    [_barGraphResults setObject:[NSNumber numberWithFloat:5.5] forKey: @"fake5"];
-    [_barGraphResults setObject:[NSNumber numberWithFloat:6.5] forKey: @"fake6"];
-    [_barGraphResults setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake7"];*/
 }
 
 - (void)didReceiveMemoryWarning
