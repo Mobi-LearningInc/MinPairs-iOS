@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -45,7 +46,8 @@
     
     
     self.titleLabel.text = [[self text] capitalizedString];
-    self.scoreInfoLabel.text = [NSString stringWithFormat:@"Score: %@ / %@\n\nTime taken: %@s", [self correct], [self total], [self time]];
+    self.scoreInfoLabel.text = [NSString stringWithFormat:@"%@ / %@", [self correct], [self total]];
+    self.timeLabel.text = [NSString stringWithFormat:@"Time taken: %@ s", [self time]];
     
     NSNumber *c = [NSNumber numberWithInt:[[self correct] intValue]];
     NSNumber *t = [NSNumber numberWithInt:[[self total] intValue]];

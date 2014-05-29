@@ -49,7 +49,7 @@
     
     UIBarButtonItem* filter = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
     
-    UIColor* barButtonColor = [UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
+    UIColor* barButtonColor = [MLTheme navButtonColour];
     
     [info setImage: [UIImage imageNamed:@"mAbout.png"]];
     [help setImage: [UIImage imageNamed:@"mHelp.png"]];

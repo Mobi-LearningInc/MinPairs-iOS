@@ -86,15 +86,19 @@
     }
 }
 
++(UIColor*)navButtonColour
+{
+    return [[self sharedInstance] btnBackground];//[UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
+}
+
 +(void) setTheme:(UIViewController*)controller
 {
     UIView* view = [controller view];
-    UIColor* barButtonColor = [UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
     
     [[[controller navigationController] navigationBar] setBarTintColor: [[self sharedInstance] navBarColour]];
     
     [MLPlatform setButtonsRound: view withRadius: [[self sharedInstance] btnRadius]];
-    [self setBarButtonTints:controller withColour: barButtonColor];
+    [self setBarButtonTints:controller withColour: [self navButtonColour]];
     
     for (UIView* v in [view subviews])
     {

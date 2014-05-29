@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     MLStatsTabBarViewController* controller = (MLStatsTabBarViewController*)[self tabBarController];
-    [[self hostView] setGraphData: [controller results]];
+    [[self hostView] setGraphData: [controller barGraphResults]];
     [[self hostView] createGraph];
 }
 

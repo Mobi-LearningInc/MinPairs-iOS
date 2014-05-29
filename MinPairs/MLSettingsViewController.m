@@ -97,15 +97,15 @@
 {
     if (sender == [self listenAndSelectStepper])
     {
-        [[self listenAndSelectLabel] setText: [NSString stringWithFormat:@"%lu seconds", (unsigned long)[sender value]]];
+        [[self listenAndSelectLabel] setText: [NSString stringWithFormat:@"%lu s", (unsigned long)[sender value]]];
     }
     else if (sender == [self listenAndReadStepper])
     {
-        [[self listenAndReadLabel] setText: [NSString stringWithFormat:@"%lu seconds", (unsigned long)[sender value]]];
+        [[self listenAndReadLabel] setText: [NSString stringWithFormat:@"%lu s", (unsigned long)[sender value]]];
     }
     else
     {
-        [[self listenAndTypeLabel] setText: [NSString stringWithFormat:@"%lu seconds", (unsigned long)[sender value]]];
+        [[self listenAndTypeLabel] setText: [NSString stringWithFormat:@"%lu s", (unsigned long)[sender value]]];
     }
 }
 

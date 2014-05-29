@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MLStatsTabBarViewController : UITabBarController
-@property (nonatomic, strong) NSMutableDictionary* results;
+@property (nonatomic, strong) NSMutableDictionary* barGraphResults;
+@property (nonatomic, strong) NSMutableDictionary* lineGraphResults;
 @end

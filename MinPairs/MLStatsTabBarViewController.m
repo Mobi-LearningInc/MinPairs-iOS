@@ -30,8 +30,17 @@
     [[self navigationController] popViewControllerAnimated:true];
 }
 
+- (IBAction)onFilterClicked:(UIBarButtonItem *)sender
+{
+    
+}
+
 - (void)viewDidLoad
 {
+    UIBarButtonItem* filterBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mFilter.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
+    [filterBtn setTintColor: [MLTheme navButtonColour]];
+    self.navigationItem.rightBarButtonItem = filterBtn;
+    
     [MLTheme setTheme: self];
     [super viewDidLoad];
 
@@ -42,6 +51,12 @@
     [formatter setDateFormat: @"yyyy MMM dd HH:mm:ss"];
     
     NSMutableDictionary* duplicates = [[NSMutableDictionary alloc] init];
+    _lineGraphResults = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    
+    /** Bar Graph Results **/
     
     for (int i = 0; i < [testResults count]; ++i)
     {
@@ -65,9 +80,11 @@
             data = @[[NSNumber numberWithInt: score], [NSNumber numberWithInt: 1]];
             [duplicates setObject: data forKey: str];
         }
+        
+        [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: [NSString stringWithFormat:@"Game #%d", i]];
     }
     
-    _results = [[NSMutableDictionary alloc] init];
+    _barGraphResults = [[NSMutableDictionary alloc] init];
     
     for (NSString* key in duplicates)
     {
@@ -78,21 +95,21 @@
         {
             float val = [((NSNumber*)arr[0]) floatValue];
             val /= dup_count;
-            [_results setObject:[NSNumber numberWithFloat:val] forKey:key];
+            [_barGraphResults setObject:[NSNumber numberWithFloat:val] forKey:key];
         }
         else
         {
-            [_results setObject:[NSNumber numberWithFloat:[((NSNumber*)arr[0]) floatValue]] forKey:key];
+            [_barGraphResults setObject:[NSNumber numberWithFloat:[((NSNumber*)arr[0]) floatValue]] forKey:key];
         }
     }
     
-    [_results setObject:[NSNumber numberWithFloat:10] forKey: @"fake"];
-    [_results setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake2"];
-    [_results setObject:[NSNumber numberWithFloat:3.5] forKey: @"fake3"];
-    [_results setObject:[NSNumber numberWithFloat:9.5] forKey: @"fake4"];
-    [_results setObject:[NSNumber numberWithFloat:5.5] forKey: @"fake5"];
-    [_results setObject:[NSNumber numberWithFloat:6.5] forKey: @"fake6"];
-    [_results setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake7"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:10] forKey: @"fake"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake2"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:3.5] forKey: @"fake3"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:9.5] forKey: @"fake4"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:5.5] forKey: @"fake5"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:6.5] forKey: @"fake6"];
+    [_barGraphResults setObject:[NSNumber numberWithFloat:7.5] forKey: @"fake7"];
 }
 
 - (void)didReceiveMemoryWarning

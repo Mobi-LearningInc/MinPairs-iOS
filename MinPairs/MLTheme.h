@@ -15,7 +15,7 @@
 +(void)setButtonBackground:(CGFloat)R withGreen:(CGFloat)G withBlue:(CGFloat)B withAlpha:(CGFloat)A;
 +(void)setNavigationBarColour:(UIColor*)colour;
 +(void)setNavigationBarColour:(CGFloat)R withGreen:(CGFloat)G withBlue:(CGFloat)B withAlpha:(CGFloat)A;
-
++(UIColor*)navButtonColour;
 +(void)setTheme:(UIViewController*)controller;
 +(void)updateTheme;
 @end

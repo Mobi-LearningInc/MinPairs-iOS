@@ -40,6 +40,10 @@
 
 - (void)viewDidLoad
 {
+    UIBarButtonItem* filterBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mFilter.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
+    [filterBtn setTintColor: [MLTheme navButtonColour]];
+    self.navigationItem.rightBarButtonItem = filterBtn;
+    
     [MLTheme setTheme: self];
     [super viewDidLoad];
 
@@ -80,6 +84,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)onFilterClicked:(UIBarButtonItem *)sender
+{
+    
 }
 
 #pragma mark - Table view data source
