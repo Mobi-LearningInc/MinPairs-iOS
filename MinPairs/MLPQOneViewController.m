@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rightFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *checkMarkImg;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 
 
@@ -72,13 +73,15 @@
     self.rightSelected=false;
     //[self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
     [self registerQuizTimeLabelsAndEventSelectLabel:self.selectTimeLabel event:^(void){
-        MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
+        /*MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
             wrong:1+self.previousResult.testQuestionsWrong
             type:self.previousResult.testType
             date:self.previousResult.testDate
             timeInSec:self.timeCount+self.previousResult.testTime
-            extraInfo:self.previousResult.testExtra];
-        [self onAnswer:currentResult];
+            extraInfo:self.previousResult.testExtra];*/
+        //[self onAnswer:currentResult];
+        //[self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+        [self onAnswerBtn:self.submitBtn];
     } readLabel:nil event:nil typeLabel:nil event:nil];
 }
 - (IBAction)onPlayBtn:(id)sender

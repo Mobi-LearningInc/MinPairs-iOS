@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rightFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *chekcMarkImg;
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 
 @property (strong, nonatomic)MLItem* correctAnswer;
@@ -71,13 +72,15 @@
     [self.leftFingerImg setHidden:NO];
     [self.rightFingerImg setHidden:YES];
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:self.readTimeLabel event:^(void){
-        MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
+        /*MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
              wrong:1+self.previousResult.testQuestionsWrong
              type:self.previousResult.testType
              date:self.previousResult.testDate
             timeInSec:self.timeCount+self.previousResult.testTime
-             extraInfo:self.previousResult.testExtra];
-        [self onAnswer:currentResult];
+             extraInfo:self.previousResult.testExtra];*/
+        //[self onAnswer:currentResult];
+        //[self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+        [self onAnswerButton:self.submitBtn];
     } typeLabel:nil event:nil];
 }
 
