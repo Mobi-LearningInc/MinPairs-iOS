@@ -17,6 +17,7 @@
 @property (strong,nonatomic)MLItem* correctItem;
 @property (weak, nonatomic) IBOutlet UIImageView *checkMarkImg;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn;
+@property (weak, nonatomic) IBOutlet UILabel *correctTextLabel;
 
 @end
 
@@ -36,6 +37,7 @@
     [super viewDidLoad];
     self.textAnswer.delegate = self;
     self.sequeName=@"PQTwo";
+    self.correctTextLabel.text=@"";
     int rand = arc4random_uniform(2);
     MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
 
@@ -87,6 +89,7 @@
     {
         corr=0;
         wrong=1;
+        self.correctTextLabel.text=self.correctItem.itemDescription ;
         //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
         self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
         dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:false index:self.questionCount];
