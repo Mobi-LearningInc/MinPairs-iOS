@@ -833,6 +833,7 @@
 		E13C0609192A5F1E00461E04 /* finger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger.png; sourceTree = "<group>"; };
 		E13C060C192A62F900461E04 /* checkmark_plain_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_plain_white.png; sourceTree = "<group>"; };
 		E13C060E192A6D0100461E04 /* xmark_plain_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xmark_plain_white.png; sourceTree = "<group>"; };
+		E13DB39B19390711008720B9 /* MLFilterChangeListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLFilterChangeListener.h; sourceTree = "<group>"; };
 		E13E14831911D20900A6D5A9 /* MLPQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPQBaseViewController.h; sourceTree = "<group>"; };
 		E13E14841911D20900A6D5A9 /* MLPQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPQBaseViewController.m; sourceTree = "<group>"; };
 		E13EFF521920FE5D005C407F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1672,6 +1673,7 @@
 				E12E40CB190C839E0002D88C /* MLSettingsData.m */,
 				E19B1B33193170DF0039F58B /* MLDetailsItem.h */,
 				E19B1B34193170DF0039F58B /* MLDetailsItem.m */,
+				E13DB39B19390711008720B9 /* MLFilterChangeListener.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";

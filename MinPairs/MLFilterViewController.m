@@ -140,6 +140,10 @@
         MLSettingsData* currentSetting=[settingDb getSetting];
         currentSetting.settingFilterCatPair=catPair;
         [settingDb saveSetting:currentSetting];
+        if(self.listener)
+        {
+            [self.listener onFilterSelectionChange:catPair ];
+        }
         [self returnBack];
     }
 }

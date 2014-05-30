@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MLLearnTableViewController : UITableViewController
+#import "MLFilterChangeListener.h"
+@interface MLLearnTableViewController : UITableViewController <MLFilterChangeListener>
 
 @end

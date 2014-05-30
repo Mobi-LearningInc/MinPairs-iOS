@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MLSynchronousFilter.h"
 #import "MLPair.h"
-
+#import "MLFilterChangeListener.h"
 @interface MLFilterViewController : UIViewController
-
+@property id<MLFilterChangeListener> listener;
 @end

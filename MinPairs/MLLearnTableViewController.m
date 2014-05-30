@@ -11,6 +11,7 @@
 #import "MLMainDataProvider.h"
 #import "MLSettingDatabase.h"
 #import "MLTheme.h"
+#import "MLFilterViewController.h"
 
 @interface MLLearnTableViewController() <UISearchDisplayDelegate, UISearchBarDelegate>
 @property NSArray* learnPairsArr;
@@ -46,7 +47,11 @@
     
     [MLTheme setTheme: self];
     [super viewDidLoad];
-
+    [self loadData];
+    
+}
+-(void)loadData
+{
     MLMainDataProvider* dataPro=[[MLMainDataProvider alloc]initMainProvider];
     MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
     MLSettingsData* setting=[settingDb getSetting];
@@ -80,7 +85,6 @@
     
     self.learnPairsArr = filteredArr;
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -88,7 +92,7 @@
 
 - (IBAction)onFilterClicked:(UIBarButtonItem *)sender
 {
-    
+    [self performSegueWithIdentifier:@"goToFilter" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -156,5 +160,19 @@
 {
     return [[self tableView] rowHeight];
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString: @"goToFilter"])
+    {
+        MLFilterViewController * vc = [segue destinationViewController];
+        vc.listener=self;
+    }
+}
+-(void)onFilterSelectionChange:(MLPair*)itemPair
+{
+    //[self.view setNeedsDisplay];
+    [self loadData];
+    [self.tableView reloadData];
+    NSLog(@"updated view after filter changed");
+}
 @end

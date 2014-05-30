@@ -1053,6 +1053,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="6e9-O6-oVQ" id="w1U-qU-OAR"/>
+                        <segue destination="kjc-Gw-hG7" kind="push" identifier="goToFilter" id="g9E-Hu-eGC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voN-GV-d2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2087,5 +2088,6 @@
         <segue reference="6iJ-t5-LbI"/>
         <segue reference="0jx-Fn-kNE"/>
         <segue reference="ftR-Qk-zmG"/>
+        <segue reference="g9E-Hu-eGC"/>
     </inferredMetricsTieBreakers>
 </document>
