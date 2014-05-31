@@ -81,7 +81,7 @@
             [duplicates setObject: data forKey: str];
         }
         
-        [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: [NSString stringWithFormat:@"Game #%d", i]];
+        [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: [NSString stringWithFormat:@"Game #%d", i + 1]];
     }
     
     _barGraphResults = [[NSMutableDictionary alloc] init];

@@ -10,11 +10,14 @@
 #import "MLPQOneViewController.h"
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
+#import "MLFilterViewController.h"
+#import "MLSettingDatabase.h"
 #import "MLPlatform.h"
 #import "MLTheme.h"
 
 @interface MLInstructionsViewController ()
-
+@property (nonatomic, strong) NSString* filterLabelFmt;
+@property (weak, nonatomic) IBOutlet UILabel *filterLabel;
 @end
 
 @implementation MLInstructionsViewController
@@ -37,8 +40,15 @@
 
 - (void)viewDidLoad
 {
+    UIBarButtonItem* filterBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mFilter.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
+    [filterBtn setTintColor: [MLTheme navButtonColour]];
+    self.navigationItem.rightBarButtonItem = filterBtn;
+    
     [MLTheme setTheme: self];
     [super viewDidLoad];
+    
+    self.filterLabelFmt = [[self filterLabel] text];
+    [self updateFilterLabel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,9 +56,24 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)updateFilterLabel
+{
+    MLSettingDatabase* settingDb = [[MLSettingDatabase alloc] initSettingDatabase];
+    MLSettingsData* setting = [settingDb getSetting];
+    MLPair* catPair = setting.settingFilterCatPair;
+    MLCategory* filterLeft = catPair.first;
+    MLCategory* filterRight = catPair.second;
+    self.filterLabel.text = [NSString stringWithFormat: [self filterLabelFmt], filterLeft.categoryDescription, filterRight.categoryDescription];
+}
+
 - (IBAction)onTouchToStartClicked:(UIButton *)sender
 {
     [self pushSequeOnStack: [self mode]];
+}
+
+- (IBAction)onFilterClicked:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"goToFilter" sender:self];
 }
 
 -(void) pushSequeOnStack:(NSNumber*)mode
@@ -102,6 +127,18 @@
             vc.questionCount=1;
         }
     }
+    else if ([[segue identifier] isEqualToString:@"goToFilter"])
+    {
+        MLFilterViewController* vc = [segue destinationViewController];
+        vc.listener = self;
+    }
+}
+
+-(void)onFilterSelectionChange:(MLPair*)catPair
+{
+    MLCategory* filterLeft = catPair.first;
+    MLCategory* filterRight = catPair.second;
+    self.filterLabel.text = [NSString stringWithFormat: [self filterLabelFmt], filterLeft.categoryDescription, filterRight.categoryDescription];
 }
 
 @end

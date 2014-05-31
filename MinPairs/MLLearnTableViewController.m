@@ -164,7 +164,7 @@
 {
     if([[segue identifier] isEqualToString: @"goToFilter"])
     {
-        MLFilterViewController * vc = [segue destinationViewController];
+        MLFilterViewController* vc = [segue destinationViewController];
         vc.listener=self;
     }
 }

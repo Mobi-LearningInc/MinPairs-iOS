@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLFilterChangeListener.h"
 
-@interface MLInstructionsViewController : UIViewController
+@interface MLInstructionsViewController : UIViewController<MLFilterChangeListener>
 @property (nonatomic, strong) NSNumber* mode;
 @end

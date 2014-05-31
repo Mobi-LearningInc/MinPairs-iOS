@@ -35,10 +35,8 @@
 		CA16BFAE191C72F10000B48E /* Best.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF33191C72F00000B48E /* Best.png */; };
 		CA16BFAF191C72F10000B48E /* Bet.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF34191C72F00000B48E /* Bet.png */; };
 		CA16BFB0191C72F10000B48E /* Bin.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF35191C72F00000B48E /* Bin.png */; };
-		CA16BFB1191C72F10000B48E /* Bird.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF36191C72F00000B48E /* Bird.png */; };
 		CA16BFB2191C72F10000B48E /* Blade.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF37191C72F00000B48E /* Blade.png */; };
 		CA16BFB3191C72F10000B48E /* Bloom.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF38191C72F00000B48E /* Bloom.png */; };
-		CA16BFB5191C72F10000B48E /* Bored.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF3A191C72F00000B48E /* Bored.png */; };
 		CA16BFB7191C72F10000B48E /* Braid.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF3C191C72F00000B48E /* Braid.png */; };
 		CA16BFB8191C72F10000B48E /* Broom.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF3D191C72F00000B48E /* Broom.png */; };
 		CA16BFBF191C72F10000B48E /* Eat.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF44191C72F00000B48E /* Eat.png */; };
@@ -48,9 +46,6 @@
 		CA16BFC5191C72F10000B48E /* Hit.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF4A191C72F00000B48E /* Hit.png */; };
 		CA16BFCB191C72F10000B48E /* Lane.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF50191C72F10000B48E /* Lane.png */; };
 		CA16BFD5191C72F10000B48E /* Rain.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF5A191C72F10000B48E /* Rain.png */; };
-		CA16BFE1191C72F10000B48E /* Shy.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF66191C72F10000B48E /* Shy.png */; };
-		CA16BFE2191C72F10000B48E /* Sigh.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF67191C72F10000B48E /* Sigh.png */; };
-		CA16BFE6191C72F10000B48E /* Taught.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF6B191C72F10000B48E /* Taught.png */; };
 		CA16BFF0191C72F10000B48E /* Van.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF75191C72F10000B48E /* Van.png */; };
 		CA16BFF1191C72F10000B48E /* Vest.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF76191C72F10000B48E /* Vest.png */; };
 		CA16BFF2191C72F10000B48E /* Vet.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF77191C72F10000B48E /* Vet.png */; };
@@ -384,10 +379,8 @@
 		CA16BF33191C72F00000B48E /* Best.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Best.png; sourceTree = "<group>"; };
 		CA16BF34191C72F00000B48E /* Bet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bet.png; sourceTree = "<group>"; };
 		CA16BF35191C72F00000B48E /* Bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bin.png; sourceTree = "<group>"; };
-		CA16BF36191C72F00000B48E /* Bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird.png; sourceTree = "<group>"; };
 		CA16BF37191C72F00000B48E /* Blade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blade.png; sourceTree = "<group>"; };
 		CA16BF38191C72F00000B48E /* Bloom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bloom.png; sourceTree = "<group>"; };
-		CA16BF3A191C72F00000B48E /* Bored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bored.png; sourceTree = "<group>"; };
 		CA16BF3C191C72F00000B48E /* Braid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Braid.png; sourceTree = "<group>"; };
 		CA16BF3D191C72F00000B48E /* Broom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Broom.png; sourceTree = "<group>"; };
 		CA16BF44191C72F00000B48E /* Eat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eat.png; sourceTree = "<group>"; };
@@ -397,9 +390,6 @@
 		CA16BF4A191C72F00000B48E /* Hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hit.png; sourceTree = "<group>"; };
 		CA16BF50191C72F10000B48E /* Lane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lane.png; sourceTree = "<group>"; };
 		CA16BF5A191C72F10000B48E /* Rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rain.png; sourceTree = "<group>"; };
-		CA16BF66191C72F10000B48E /* Shy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shy.png; sourceTree = "<group>"; };
-		CA16BF67191C72F10000B48E /* Sigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sigh.png; sourceTree = "<group>"; };
-		CA16BF6B191C72F10000B48E /* Taught.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Taught.png; sourceTree = "<group>"; };
 		CA16BF75191C72F10000B48E /* Van.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Van.png; sourceTree = "<group>"; };
 		CA16BF76191C72F10000B48E /* Vest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vest.png; sourceTree = "<group>"; };
 		CA16BF77191C72F10000B48E /* Vet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vet.png; sourceTree = "<group>"; };
@@ -1055,10 +1045,8 @@
 				CA16BF33191C72F00000B48E /* Best.png */,
 				CA16BF34191C72F00000B48E /* Bet.png */,
 				CA16BF35191C72F00000B48E /* Bin.png */,
-				CA16BF36191C72F00000B48E /* Bird.png */,
 				CA16BF37191C72F00000B48E /* Blade.png */,
 				CA16BF38191C72F00000B48E /* Bloom.png */,
-				CA16BF3A191C72F00000B48E /* Bored.png */,
 				CA16BF3C191C72F00000B48E /* Braid.png */,
 				CA16BF3D191C72F00000B48E /* Broom.png */,
 				CA16BF44191C72F00000B48E /* Eat.png */,
@@ -1068,9 +1056,6 @@
 				CA16BF4A191C72F00000B48E /* Hit.png */,
 				CA16BF50191C72F10000B48E /* Lane.png */,
 				CA16BF5A191C72F10000B48E /* Rain.png */,
-				CA16BF66191C72F10000B48E /* Shy.png */,
-				CA16BF67191C72F10000B48E /* Sigh.png */,
-				CA16BF6B191C72F10000B48E /* Taught.png */,
 				CA16BF75191C72F10000B48E /* Van.png */,
 				CA16BF76191C72F10000B48E /* Vest.png */,
 				CA16BF77191C72F10000B48E /* Vet.png */,
@@ -1919,20 +1904,17 @@
 				CA16BFF3191C72F10000B48E /* Vote.png in Resources */,
 				E1096FB219095C06000C7E11 /* Lake1.mp3 in Resources */,
 				E1096F6219095C06000C7E11 /* Ankle1.mp3 in Resources */,
-				CA16BFE1191C72F10000B48E /* Shy.png in Resources */,
 				CA16BFAD191C72F10000B48E /* Berry.png in Resources */,
 				E1096F6B19095C06000C7E11 /* Bank1.mp3 in Resources */,
 				E1096F8419095C06000C7E11 /* ch_cheap1.mp3 in Resources */,
 				CA16C00B191C72F10000B48E /* Play3.png in Resources */,
 				E1096FB619095C06000C7E11 /* Live1.mp3 in Resources */,
 				E1096FE719095C06000C7E11 /* Ship1.mp3 in Resources */,
-				CA16BFE2191C72F10000B48E /* Sigh.png in Resources */,
 				E109700519095C06000C7E11 /* Thing1.mp3 in Resources */,
 				CA16C005191C72F10000B48E /* na.jpg in Resources */,
 				E1096F9D19095C06000C7E11 /* Fly1.mp3 in Resources */,
 				E1096FD819095C06000C7E11 /* Ring1.mp3 in Resources */,
 				E1096F8D19095C06000C7E11 /* Den1.mp3 in Resources */,
-				CA16BFB1191C72F10000B48E /* Bird.png in Resources */,
 				E1096F7E19095C06000C7E11 /* Cap1.mp3 in Resources */,
 				E1096FE819095C06000C7E11 /* Shirt1.mp3 in Resources */,
 				E109702219095C06000C7E11 /* Went1.mp3 in Resources */,
@@ -1995,7 +1977,6 @@
 				E1096FEE19095C06000C7E11 /* Sigh1.mp3 in Resources */,
 				E1096F7719095C06000C7E11 /* Bloom1.mp3 in Resources */,
 				E1096FC519095C06000C7E11 /* Part1.mp3 in Resources */,
-				CA16BFB5191C72F10000B48E /* Bored.png in Resources */,
 				E1096FA619095C06000C7E11 /* Heat1.mp3 in Resources */,
 				E1096FF319095C06000C7E11 /* Slip1.mp3 in Resources */,
 				CA16BFC5191C72F10000B48E /* Hit.png in Resources */,
@@ -2024,7 +2005,6 @@
 				E1096F8F19095C06000C7E11 /* Doze1.mp3 in Resources */,
 				E109702019095C06000C7E11 /* Wash1.mp3 in Resources */,
 				E1096FEA19095C06000C7E11 /* Shooed1.mp3 in Resources */,
-				CA16BFE6191C72F10000B48E /* Taught.png in Resources */,
 				E1096FA219095C06000C7E11 /* Full1.mp3 in Resources */,
 				CA16BFC4191C72F10000B48E /* Heat.png in Resources */,
 				E1096F8B19095C06000C7E11 /* Day1.mp3 in Resources */,
