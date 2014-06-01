@@ -1631,13 +1631,13 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="Lpk-8r-Cda">
+                                    <barButtonItem title="Previous" id="Lpk-8r-Cda">
                                         <connections>
                                             <action selector="backBtnClick:" destination="5YO-4H-GVw" id="QKt-Un-ohA"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vuz-WF-glu"/>
-                                    <barButtonItem title="Item" id="5fN-2j-KfD">
+                                    <barButtonItem title="Next" id="5fN-2j-KfD">
                                         <connections>
                                             <action selector="forwardBtnClick:" destination="5YO-4H-GVw" id="rGL-F7-pOb"/>
                                         </connections>
