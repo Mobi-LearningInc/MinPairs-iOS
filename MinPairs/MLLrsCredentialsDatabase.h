@@ -18,6 +18,8 @@
 #define ML_DB_CREDENTIALS_TABLE_COL_ADDRESS @"lrs_address"
 #define ML_DB_CREDENTIALS_TABLE_COL_USERNAME @"lrs_username"
 #define ML_DB_CREDENTIALS_TABLE_COL_PASSWD @"lrs_passwd"
+#define ML_DB_CREDENTIALS_TABLE_COL_APP_USER_NAME @"lrs_name"
+#define ML_DB_CREDENTIALS_TABLE_COL_EMAIL @"lrs_email"
 
 #define ML_DB_CREDENTIALS_DEFAULT_KEY @"A45CA246836B6A4C641210B11F866996"
 #define ML_DB_CREDENTIALS_DEFAULT_SECRET @"aSAydtJ2cW9WdU8TjzFLeG6PL8KCzbWjQ8Q1VoXG"
@@ -27,6 +29,8 @@
 //@"https://cloud.scorm.com/ScormEngineInterface/TCAPI/public/"
 //@"https://cloud.scorm.com/tc/I40JG12M9U"
 #define ML_DB_CREDENTIALS_DEFAULT_USERNAME @"pawluk@gmail.com"
+#define ML_DB_CREDENTIALS_DEFAULT_EMAIL @"agaizabella@gmail.com"
+#define ML_DB_CREDENTIALS_DEFAULT_APP_USERNAME @"Agnieszka"
 //@"agaizabella@rogers.com"
 //@"pawluk@gmail.com"
 #define ML_DB_CREDENTIALS_DEFAULT_PASSWORD @"mojemyszki"

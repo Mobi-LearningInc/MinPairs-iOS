@@ -61,9 +61,12 @@
 {
     MLLrsCredentialsDatabase* credDb =[[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase];
     MLLsrCredentials* loadedCreds = [credDb getLmsCredentials];
+    self.userNameTextBox.text = loadedCreds.name;
+    self.emailTextBox.text = loadedCreds.email;
     self.lrsAuthTextBox.text=loadedCreds.userName;
     self.lrsPasswordTextBox.text=loadedCreds.password;
     self.lrsUrlTextBox.text=loadedCreds.address;
+
     //todo create ways of enabling/disabling tincan
     self.toggleBtn.selectedSegmentIndex=0;
 }
@@ -97,7 +100,7 @@
 {
     NSLog(@"USERNAME and EMAIL are not saved. Everything else is saved.");//todo save username and email
     //todo validate LRS credentials before saving
-    MLLsrCredentials* newCreds = [[MLLsrCredentials alloc]initCredentialsWithId:1 appName:ML_DB_CREDENTIALS_DEFAULT_APPNAME userName:self.lrsAuthTextBox.text password:self.lrsPasswordTextBox.text address:self.lrsUrlTextBox.text];
+    MLLsrCredentials* newCreds = [[MLLsrCredentials alloc]initCredentialsWithId:1 appName:ML_DB_CREDENTIALS_DEFAULT_APPNAME userName:self.lrsAuthTextBox.text password:self.lrsPasswordTextBox.text address:self.lrsUrlTextBox.text appUserName:self.userNameTextBox.text email:self.emailTextBox.text];
     [self saveTinCanSettingsData:newCreds];
     
     [[self navigationController] popViewControllerAnimated:true];

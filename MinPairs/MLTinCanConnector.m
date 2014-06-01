@@ -76,7 +76,7 @@
 
 - (TCStatement *)createTestStatementWithOptions:(NSDictionary *)options
 {
-    TCAgent *actor = [[TCAgent alloc] initWithName:@"Agnieszka" withMbox:@"mailto:agaizabella@rogers.com" withAccount:nil];
+    TCAgent *actor = [[TCAgent alloc] initWithName:self.credentials.name /*@"Agnieszka"*/ withMbox:[NSString stringWithFormat:@"mailto:%@", self.credentials.email]/*@"mailto:agaizabella@rogers.com"*/ withAccount:nil];
     //   TCAgent *actor = [[TCAgent alloc] initWithName:@"Przemek" withMbox:@"mailto:pawluk@gmail.com" withAccount:nil];
     
     TCActivityDefinition *actDef = [[TCActivityDefinition alloc] initWithName:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"http://mobilearninginc.com/minpairs"]
@@ -101,7 +101,7 @@
 
 
 -(void)saveQuizResults:(NSNumber*)percentage points:(NSNumber*)points max:(NSNumber*)maxPoints time:(NSString*)time{
-    
+    //if([self.credentials ])
     NSMutableDictionary *statementOptions = [[NSMutableDictionary alloc] init];
     [statementOptions setValue:@"https://cloud.scorm.com/tc/I40JG12M9U" forKey:@"activityId"];
     [statementOptions setValue:[[TCVerb alloc] initWithId:@"http://adlnet.gov/expapi/verbs/scored" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"scored"]] forKey:@"verb"];
@@ -136,7 +136,7 @@
 
 - (TCStatement *)createQuizStatementWithOptions:(NSDictionary *)options
 {
-    TCAgent *actor = [[TCAgent alloc] initWithName:@"Agnieszka" withMbox:@"mailto:agaizabella@rogers.com" withAccount:nil];
+    TCAgent *actor = [[TCAgent alloc] initWithName:self.credentials.name /*@"Agnieszka"*/ withMbox:[NSString stringWithFormat:@"mailto:%@", self.credentials.email] withAccount:nil];
     
     TCActivityDefinition *actDef = [[TCActivityDefinition alloc] initWithName:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"https://cloud.scorm.com/tc/I40JG12M9U"]
                                                               withDescription:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"MinPairs quzi taken"]

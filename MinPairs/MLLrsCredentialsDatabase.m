@@ -20,7 +20,7 @@
  */
 -(instancetype)initLmsCredentialsDatabase
 {
-    NSString* query = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@ INTEGER PRIMARY KEY AUTOINCREMENT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT);",
+    NSString* query = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@ INTEGER PRIMARY KEY AUTOINCREMENT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT);",
                        ML_DB_CREDENTIALS_TABLE_NAME,
                        ML_DB_CREDENTIALS_TABLE_COL_CREDENTIAL_ID,
                        ML_DB_CREDENTIALS_TABLE_COL_APP_NAME,
@@ -28,7 +28,9 @@
                        ML_DB_CREDENTIALS_TABLE_COL_SECRET,
                        ML_DB_CREDENTIALS_TABLE_COL_ADDRESS,
                        ML_DB_CREDENTIALS_TABLE_COL_USERNAME,
-                       ML_DB_CREDENTIALS_TABLE_COL_PASSWD];
+                       ML_DB_CREDENTIALS_TABLE_COL_PASSWD,
+                       ML_DB_CREDENTIALS_TABLE_COL_APP_USER_NAME,
+                       ML_DB_CREDENTIALS_TABLE_COL_EMAIL];
     self=[super initDatabaseWithCreateQuery:query];
     return self;
 }
@@ -41,7 +43,7 @@
     NSString* query;
     if ([self countSettings]==0)
     {
-        query = [NSString stringWithFormat:@"INSERT INTO %@ (%@,%@,%@, %@,%@, %@) VALUES('%@','%@','%@', '%@', '%@', '%@');",
+        query = [NSString stringWithFormat:@"INSERT INTO %@ (%@,%@,%@, %@,%@, %@,%@, %@) VALUES('%@','%@','%@', '%@', '%@', '%@', '%@', '%@');",
                  ML_DB_CREDENTIALS_TABLE_NAME,
                  ML_DB_CREDENTIALS_TABLE_COL_APP_NAME,
                  ML_DB_CREDENTIALS_TABLE_COL_KEY,
@@ -49,11 +51,13 @@
                  ML_DB_CREDENTIALS_TABLE_COL_ADDRESS,
                  ML_DB_CREDENTIALS_TABLE_COL_USERNAME,
                  ML_DB_CREDENTIALS_TABLE_COL_PASSWD,
-                 data.appName,data.key,data.secret,data.address, data.userName, data.password];
+                 ML_DB_CREDENTIALS_TABLE_COL_APP_USER_NAME,
+                 ML_DB_CREDENTIALS_TABLE_COL_EMAIL,
+                 data.appName,data.key,data.secret,data.address, data.userName, data.password,data.name, data.email];
     }
     else
     {
-        query = [NSString stringWithFormat:@"UPDATE %@ SET %@='%@',%@='%@',%@='%@', %@='%@', %@='%@', %@='%@' WHERE %@=%i;" ,
+        query = [NSString stringWithFormat:@"UPDATE %@ SET %@='%@',%@='%@',%@='%@', %@='%@', %@='%@', %@='%@', %@='%@', %@='%@' WHERE %@=%i;" ,
                  ML_DB_CREDENTIALS_TABLE_NAME,
                  ML_DB_CREDENTIALS_TABLE_COL_APP_NAME,
                  data.appName,
@@ -67,6 +71,10 @@
                  data.userName,
                  ML_DB_CREDENTIALS_TABLE_COL_PASSWD,
                  data.password,
+                 ML_DB_CREDENTIALS_TABLE_COL_APP_USER_NAME,
+                 data.name,
+                 ML_DB_CREDENTIALS_TABLE_COL_EMAIL,
+                 data.email,
                  ML_DB_CREDENTIALS_TABLE_COL_CREDENTIAL_ID,
                  1];
     }
@@ -106,6 +114,8 @@
                           key:[rowDataArr objectAtIndex:2]
                           secret:[rowDataArr objectAtIndex:3]
                           address:[rowDataArr objectAtIndex:4]
+                          appUserName:[rowDataArr objectAtIndex:7]
+                          email:[rowDataArr objectAtIndex:8]
                          ];
                 dataItem.userName = [rowDataArr objectAtIndex:5];
                 dataItem.password = [rowDataArr objectAtIndex:6];
@@ -137,7 +147,8 @@
         appName:ML_DB_CREDENTIALS_DEFAULT_APPNAME
         userName:ML_DB_CREDENTIALS_DEFAULT_USERNAME
         password:ML_DB_CREDENTIALS_DEFAULT_PASSWORD
-        address:ML_DB_CREDENTIALS_DEFAULT_ADDRESS];
+        address:ML_DB_CREDENTIALS_DEFAULT_ADDRESS
+        appUserName:ML_DB_CREDENTIALS_DEFAULT_APP_USERNAME email:ML_DB_CREDENTIALS_DEFAULT_EMAIL];
                                         
     return [self saveLmsCredentials:deffaultSetting ];
 }

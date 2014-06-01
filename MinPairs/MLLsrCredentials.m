@@ -9,7 +9,7 @@
 #import "MLLsrCredentials.h"
 
 @implementation MLLsrCredentials
--(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName key:(NSString*)key secret:(NSString*)secret address:(NSString *)address
+-(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName key:(NSString*)key secret:(NSString*)secret address:(NSString *)address appUserName:(NSString *)appUserName email:(NSString *)email
 {
     self=[super init];
     if(self)
@@ -19,11 +19,13 @@
         self.key=key;
         self.secret=secret;
         self.address = address;
+        self.name = appUserName;
+        self.email = email ;
     }
     return self;
 }
 
--(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName userName:(NSString*)userName password:(NSString*)password address:(NSString *)address
+-(instancetype)initCredentialsWithId:(int) credId appName:(NSString*)appName userName:(NSString*)userName password:(NSString*)password address:(NSString *)address appUserName:(NSString *)appUserName email:(NSString *)email
 {
     self=[super init];
     if(self)
@@ -33,6 +35,8 @@
         self.userName =userName;
         self.password=password;
         self.address = address;
+        self.name = appUserName;
+        self.email = email ;
     }
     return self;
 }

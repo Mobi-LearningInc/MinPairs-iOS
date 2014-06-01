@@ -26,8 +26,12 @@
 
 - (MLLrsCredentialsDatabase *)lrsDatabase{
     if(!_lrsDatabase){
+        
+        ///todo 
         _lrsDatabase = [[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase];
-        [_lrsDatabase saveDefaultCredentials];
+        MLLsrCredentials *cred = [_lrsDatabase getLmsCredentials];
+        if(!cred || [cred.name isEqualToString:@""])
+            [_lrsDatabase saveDefaultCredentials];
     }
     
     return _lrsDatabase;
