@@ -12,6 +12,7 @@
 
 @interface MLHelpViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -37,7 +38,7 @@
 {
     [MLTheme setTheme: self];
     [super viewDidLoad];
-    
+    /*
     UIImageView* listen_select_img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];
     UIImageView* listen_select_word = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, 75, 75)];
     UIImageView* listen_type_word = [[UIImageView alloc] initWithFrame:CGRectMake(0, 200, 75, 75)];
@@ -66,11 +67,28 @@
     self.textView.attributedText = [MLPlatform parseBBCodes:text withFontSize:self.textView.font.pointSize];
     self.textView.dataDetectorTypes = UIDataDetectorTypeLink;
     self.textView.selectable = false;
+     */
+    [self loadRequestFromString:@"index.html"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(void)loadRequestFromString:(NSString*)urlString
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForAuxiliaryExecutable:urlString];
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:fileURL];
+    [self.webView loadRequest:requestObj];
+}
+
+- (IBAction)backBtnClick:(id)sender {
+    [self.webView goBack];
+}
+- (IBAction)forwardBtnClick:(id)sender {
+    [self.webView goForward];
 }
 
 @end

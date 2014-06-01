@@ -329,6 +329,16 @@
 		EBC4B4421925158900D07F4B /* MLLrsCredentialsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B43D1925158900D07F4B /* MLLrsCredentialsDatabase.m */; };
 		EBC4B4431925158900D07F4B /* MLLsrCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */; };
 		EBC4B4441925158900D07F4B /* MLTinCanConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4B4411925158900D07F4B /* MLTinCanConnector.m */; };
+		EBE8A4E7193AA00000EC0A4D /* MPMain.css in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4DD193AA00000EC0A4D /* MPMain.css */; };
+		EBE8A4E8193AA00000EC0A4D /* sound.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4DE193AA00000EC0A4D /* sound.html */; };
+		EBE8A4E9193AA00000EC0A4D /* overview.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4DF193AA00000EC0A4D /* overview.html */; };
+		EBE8A4EA193AA00000EC0A4D /* filter.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E0193AA00000EC0A4D /* filter.html */; };
+		EBE8A4EB193AA00000EC0A4D /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E1193AA00000EC0A4D /* settings.html */; };
+		EBE8A4EC193AA00000EC0A4D /* statistics.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E2193AA00000EC0A4D /* statistics.html */; };
+		EBE8A4ED193AA00000EC0A4D /* quizses.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E3193AA00000EC0A4D /* quizses.html */; };
+		EBE8A4EE193AA00000EC0A4D /* practice.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E4193AA00000EC0A4D /* practice.html */; };
+		EBE8A4EF193AA00000EC0A4D /* learn.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E5193AA00000EC0A4D /* learn.html */; };
+		EBE8A4F0193AA00000EC0A4D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E6193AA00000EC0A4D /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -864,6 +874,16 @@
 		EBC4B43F1925158900D07F4B /* MLLsrCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLsrCredentials.m; sourceTree = "<group>"; };
 		EBC4B4401925158900D07F4B /* MLTinCanConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTinCanConnector.h; sourceTree = "<group>"; };
 		EBC4B4411925158900D07F4B /* MLTinCanConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTinCanConnector.m; sourceTree = "<group>"; };
+		EBE8A4DD193AA00000EC0A4D /* MPMain.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = MPMain.css; sourceTree = "<group>"; };
+		EBE8A4DE193AA00000EC0A4D /* sound.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sound.html; sourceTree = "<group>"; };
+		EBE8A4DF193AA00000EC0A4D /* overview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = overview.html; sourceTree = "<group>"; };
+		EBE8A4E0193AA00000EC0A4D /* filter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = filter.html; sourceTree = "<group>"; };
+		EBE8A4E1193AA00000EC0A4D /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = settings.html; sourceTree = "<group>"; };
+		EBE8A4E2193AA00000EC0A4D /* statistics.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = statistics.html; sourceTree = "<group>"; };
+		EBE8A4E3193AA00000EC0A4D /* quizses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quizses.html; sourceTree = "<group>"; };
+		EBE8A4E4193AA00000EC0A4D /* practice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practice.html; sourceTree = "<group>"; };
+		EBE8A4E5193AA00000EC0A4D /* learn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = learn.html; sourceTree = "<group>"; };
+		EBE8A4E6193AA00000EC0A4D /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -936,6 +956,7 @@
 		51F8749B190835BE00450DB2 /* MinPairs */ = {
 			isa = PBXGroup;
 			children = (
+				EBE8A4C8193A9D9200EC0A4D /* help */,
 				CA22B8E11927A74500366A1C /* Libraries */,
 				EBC4B4451925159500D07F4B /* TinCan */,
 				CAA1B2141911B14B00453852 /* Platform */,
@@ -1753,6 +1774,23 @@
 			name = TinCan;
 			sourceTree = "<group>";
 		};
+		EBE8A4C8193A9D9200EC0A4D /* help */ = {
+			isa = PBXGroup;
+			children = (
+				EBE8A4DD193AA00000EC0A4D /* MPMain.css */,
+				EBE8A4DE193AA00000EC0A4D /* sound.html */,
+				EBE8A4DF193AA00000EC0A4D /* overview.html */,
+				EBE8A4E0193AA00000EC0A4D /* filter.html */,
+				EBE8A4E1193AA00000EC0A4D /* settings.html */,
+				EBE8A4E2193AA00000EC0A4D /* statistics.html */,
+				EBE8A4E3193AA00000EC0A4D /* quizses.html */,
+				EBE8A4E4193AA00000EC0A4D /* practice.html */,
+				EBE8A4E5193AA00000EC0A4D /* learn.html */,
+				EBE8A4E6193AA00000EC0A4D /* index.html */,
+			);
+			name = help;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1849,7 +1887,9 @@
 				E1096FB019095C06000C7E11 /* l_lane1.mp3 in Resources */,
 				E1096F7919095C06000C7E11 /* Bored1.mp3 in Resources */,
 				E109701E19095C06000C7E11 /* Walk1.mp3 in Resources */,
+				EBE8A4E9193AA00000EC0A4D /* overview.html in Resources */,
 				CA16BFF6191C72F10000B48E /* Work.png in Resources */,
+				EBE8A4EE193AA00000EC0A4D /* practice.html in Resources */,
 				E1096FF119095C06000C7E11 /* Sip1.mp3 in Resources */,
 				E1096F9A19095C06000C7E11 /* Fill1.mp3 in Resources */,
 				E1096FBB19095C06000C7E11 /* Mash1.mp3 in Resources */,
@@ -1866,6 +1906,7 @@
 				E109700719095C06000C7E11 /* Those.mp3 in Resources */,
 				E109702E19095C06000C7E11 /* MP_Items_Categories.dat in Resources */,
 				E1096F8619095C06000C7E11 /* Choose1.mp3 in Resources */,
+				EBE8A4EC193AA00000EC0A4D /* statistics.html in Resources */,
 				E1096FD319095C06000C7E11 /* r_rain1.mp3 in Resources */,
 				CA16BFBF191C72F10000B48E /* Eat.png in Resources */,
 				E1096FC819095C06000C7E11 /* Pig1.mp3 in Resources */,
@@ -1882,7 +1923,9 @@
 				CA16BFAB191C72F10000B48E /* Ban.png in Resources */,
 				CA16BFD5191C72F10000B48E /* Rain.png in Resources */,
 				E109700219095C06000C7E11 /* There1.mp3 in Resources */,
+				EBE8A4EF193AA00000EC0A4D /* learn.html in Resources */,
 				CA1C024B190C0477003C5F90 /* Main_iPhone.storyboard in Resources */,
+				EBE8A4E8193AA00000EC0A4D /* sound.html in Resources */,
 				E1096F9E19095C06000C7E11 /* Fool1.mp3 in Resources */,
 				E1096FDA19095C06000C7E11 /* Rise1.mp3 in Resources */,
 				E1096FAC19095C06000C7E11 /* Ice1.mp3 in Resources */,
@@ -1924,6 +1967,7 @@
 				E1096FB819095C06000C7E11 /* Luke1.mp3 in Resources */,
 				E1096F8A19095C06000C7E11 /* Dare1.mp3 in Resources */,
 				E1096FEC19095C06000C7E11 /* Should1.mp3 in Resources */,
+				EBE8A4ED193AA00000EC0A4D /* quizses.html in Resources */,
 				E1096F9F19095C06000C7E11 /* Form1.mp3 in Resources */,
 				E109702D19095C06000C7E11 /* MP_Items.dat in Resources */,
 				CA07712B19204C1F009C1171 /* sound.png in Resources */,
@@ -1971,6 +2015,7 @@
 				E1096FE119095C06000C7E11 /* Saw1.mp3 in Resources */,
 				E109701C19095C06000C7E11 /* Vote1.mp3 in Resources */,
 				E1096FBF19095C06000C7E11 /* nk_think1.mp3 in Resources */,
+				EBE8A4EA193AA00000EC0A4D /* filter.html in Resources */,
 				E1096F8019095C06000C7E11 /* Cash1.mp3 in Resources */,
 				E1096FD219095C06000C7E11 /* Pull1.mp3 in Resources */,
 				E109701119095C06000C7E11 /* U_pool1.mp3 in Resources */,
@@ -1993,14 +2038,17 @@
 				E1096FBA19095C06000C7E11 /* Made1.mp3 in Resources */,
 				E1096F9C19095C06000C7E11 /* Fleas1.mp3 in Resources */,
 				CA16BFB3191C72F10000B48E /* Bloom.png in Resources */,
+				EBE8A4E7193AA00000EC0A4D /* MPMain.css in Resources */,
 				E1096F6519095C06000C7E11 /* Back1.mp3 in Resources */,
 				E1096F7219095C06000C7E11 /* Bet1.mp3 in Resources */,
+				EBE8A4EB193AA00000EC0A4D /* settings.html in Resources */,
 				CA16BFF1191C72F10000B48E /* Vest.png in Resources */,
 				CA16BFB8191C72F10000B48E /* Broom.png in Resources */,
 				E1096F7819095C06000C7E11 /* Boat1.mp3 in Resources */,
 				E109702B19095C06000C7E11 /* MP_Categories.dat in Resources */,
 				E1096F7019095C06000C7E11 /* Berry1.mp3 in Resources */,
 				E109702719095C06000C7E11 /* Work1.mp3 in Resources */,
+				EBE8A4F0193AA00000EC0A4D /* index.html in Resources */,
 				E1096FC219095C06000C7E11 /* Pair1.mp3 in Resources */,
 				E1096F8F19095C06000C7E11 /* Doze1.mp3 in Resources */,
 				E109702019095C06000C7E11 /* Wash1.mp3 in Resources */,
