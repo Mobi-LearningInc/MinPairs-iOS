@@ -13,10 +13,19 @@
 @interface MLHelpViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-
+@property (strong, nonatomic) NSMutableArray *helpFiles;
 @end
 
 @implementation MLHelpViewController
+
+- (NSMutableArray*) helpFiles{
+
+    if(!_helpFiles){
+        _helpFiles = [[NSMutableArray alloc]initWithArray:@[@"index.html", @"filter.html", @"sound.html", @"learn.html", @"practice.html", @"quizzes.html", @"statistics.html", @"settings.html"]];
+    
+    }
+    return _helpFiles;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,7 +77,7 @@
     self.textView.dataDetectorTypes = UIDataDetectorTypeLink;
     self.textView.selectable = false;
      */
-    [self loadRequestFromString:@"index.html"];
+    [self loadRequestFromString:[self.helpFiles objectAtIndex:self.pageId]];
 }
 
 - (void)didReceiveMemoryWarning

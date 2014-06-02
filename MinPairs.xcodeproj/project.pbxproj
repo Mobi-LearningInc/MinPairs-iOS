@@ -335,7 +335,7 @@
 		EBE8A4EA193AA00000EC0A4D /* filter.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E0193AA00000EC0A4D /* filter.html */; };
 		EBE8A4EB193AA00000EC0A4D /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E1193AA00000EC0A4D /* settings.html */; };
 		EBE8A4EC193AA00000EC0A4D /* statistics.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E2193AA00000EC0A4D /* statistics.html */; };
-		EBE8A4ED193AA00000EC0A4D /* quizses.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E3193AA00000EC0A4D /* quizses.html */; };
+		EBE8A4ED193AA00000EC0A4D /* quizzes.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E3193AA00000EC0A4D /* quizzes.html */; };
 		EBE8A4EE193AA00000EC0A4D /* practice.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E4193AA00000EC0A4D /* practice.html */; };
 		EBE8A4EF193AA00000EC0A4D /* learn.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E5193AA00000EC0A4D /* learn.html */; };
 		EBE8A4F0193AA00000EC0A4D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E6193AA00000EC0A4D /* index.html */; };
@@ -882,7 +882,7 @@
 		EBE8A4E0193AA00000EC0A4D /* filter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = filter.html; sourceTree = "<group>"; };
 		EBE8A4E1193AA00000EC0A4D /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = settings.html; sourceTree = "<group>"; };
 		EBE8A4E2193AA00000EC0A4D /* statistics.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = statistics.html; sourceTree = "<group>"; };
-		EBE8A4E3193AA00000EC0A4D /* quizses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quizses.html; sourceTree = "<group>"; };
+		EBE8A4E3193AA00000EC0A4D /* quizzes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = quizzes.html; sourceTree = "<group>"; };
 		EBE8A4E4193AA00000EC0A4D /* practice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = practice.html; sourceTree = "<group>"; };
 		EBE8A4E5193AA00000EC0A4D /* learn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = learn.html; sourceTree = "<group>"; };
 		EBE8A4E6193AA00000EC0A4D /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -1788,7 +1788,7 @@
 				EBE8A4E0193AA00000EC0A4D /* filter.html */,
 				EBE8A4E1193AA00000EC0A4D /* settings.html */,
 				EBE8A4E2193AA00000EC0A4D /* statistics.html */,
-				EBE8A4E3193AA00000EC0A4D /* quizses.html */,
+				EBE8A4E3193AA00000EC0A4D /* quizzes.html */,
 				EBE8A4E4193AA00000EC0A4D /* practice.html */,
 				EBE8A4E5193AA00000EC0A4D /* learn.html */,
 				EBE8A4E6193AA00000EC0A4D /* index.html */,
@@ -1982,7 +1982,7 @@
 				E1096FB819095C06000C7E11 /* Luke1.mp3 in Resources */,
 				E1096F8A19095C06000C7E11 /* Dare1.mp3 in Resources */,
 				E1096FEC19095C06000C7E11 /* Should1.mp3 in Resources */,
-				EBE8A4ED193AA00000EC0A4D /* quizses.html in Resources */,
+				EBE8A4ED193AA00000EC0A4D /* quizzes.html in Resources */,
 				E1096F9F19095C06000C7E11 /* Form1.mp3 in Resources */,
 				E109702D19095C06000C7E11 /* MP_Items.dat in Resources */,
 				CA07712B19204C1F009C1171 /* sound.png in Resources */,
