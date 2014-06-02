@@ -71,10 +71,14 @@
         [self.progressBar setProgress:(float)self.questionCount/(float)ML_MLPQBASE_QUESTION_LIMIT animated:YES];
     }
     
-    //UIColor* barButtonColor = [MLTheme navButtonColour];
+    UIColor* barButtonColor = [MLTheme navButtonColour];
+    UIBarButtonItem *helpBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpBtn)];
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
     
+    [helpBtn setImage: [UIImage imageNamed:@"mHelp.png"]];
     [quitBtn setImage: [UIImage imageNamed:@"fSmallRedX.png"]];
+    
+    [helpBtn setTintColor: barButtonColor];
     [quitBtn setTintColor: [UIColor redColor]];
     
     self.navigationItem.leftBarButtonItem=quitBtn;
@@ -178,6 +182,19 @@
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Quit" message:@"Are you sure you want to quit? All progress will be lost." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     [alert show];
 }
+
+-(void)onHelpBtn
+{
+    if ([self practiceMode])
+    {
+        //push help in practice mode.
+    }
+    else
+    {
+        
+    }
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == [alertView cancelButtonIndex])//'cancel' button from quit popup or 'ok' button from stat info popup

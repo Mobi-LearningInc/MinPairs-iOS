@@ -7,6 +7,7 @@
 //
 
 #import "MLStatsTabBarViewController.h"
+#import "MLHelpViewController.h"
 #import "MLTestResultDatabase.h"
 #import "MLTheme.h"
 
@@ -32,14 +33,21 @@
 
 - (IBAction)onFilterClicked:(UIBarButtonItem *)sender
 {
-    
+}
+
+- (IBAction)onHelpClicked:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"AppHelp" sender:self];
 }
 
 - (void)viewDidLoad
 {
     UIBarButtonItem* filterBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mFilter.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
-    [filterBtn setTintColor: [MLTheme navButtonColour]];
-    self.navigationItem.rightBarButtonItem = filterBtn;
+    
+    UIBarButtonItem* helpBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mHelp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpClicked:)];
+    
+    //[filterBtn setTintColor: [MLTheme navButtonColour]];
+    self.navigationItem.rightBarButtonItems = @[helpBtn, filterBtn];
     
     [MLTheme setTheme: self];
     [super viewDidLoad];
@@ -110,15 +118,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString: @"AppHelp"])
+    {
+        MLHelpViewController* vc = [segue destinationViewController];
+        vc.pageId = 6;
+    }
 }
-*/
 
 @end

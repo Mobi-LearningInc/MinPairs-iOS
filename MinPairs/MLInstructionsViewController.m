@@ -7,6 +7,7 @@
 //
 
 #import "MLInstructionsViewController.h"
+#import "MLHelpViewController.h"
 #import "MLPQOneViewController.h"
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
@@ -41,8 +42,11 @@
 - (void)viewDidLoad
 {
     UIBarButtonItem* filterBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mFilter.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
-    [filterBtn setTintColor: [MLTheme navButtonColour]];
-    self.navigationItem.rightBarButtonItem = filterBtn;
+    
+    UIBarButtonItem* helpBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mHelp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpClicked:)];
+    
+    //[filterBtn setTintColor: [MLTheme navButtonColour]];
+    self.navigationItem.rightBarButtonItems = @[helpBtn, filterBtn];
     
     [MLTheme setTheme: self];
     [super viewDidLoad];
@@ -74,6 +78,11 @@
 - (IBAction)onFilterClicked:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"goToFilter" sender:self];
+}
+
+- (IBAction)onHelpClicked:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"AppHelp" sender:[self mode]];
 }
 
 -(void) pushSequeOnStack:(NSNumber*)mode
@@ -131,6 +140,11 @@
     {
         MLFilterViewController* vc = [segue destinationViewController];
         vc.listener = self;
+    }
+    else if ([[segue identifier] isEqualToString: @"AppHelp"])
+    {
+        MLHelpViewController* vc = [segue destinationViewController];
+        vc.pageId = [sender boolValue] ? 4 : 5;
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "MLLearnTableViewController.h"
+#import "MLHelpViewController.h"
 #import "MLLearnTableViewCell.h"
 #import "MLMainDataProvider.h"
 #import "MLSettingDatabase.h"
@@ -42,8 +43,11 @@
 - (void)viewDidLoad
 {
     UIBarButtonItem* filterBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mFilter.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onFilterClicked:)];
-    [filterBtn setTintColor: [MLTheme navButtonColour]];
-    self.navigationItem.rightBarButtonItem = filterBtn;
+    
+    UIBarButtonItem* helpBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mHelp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpClicked:)];
+    
+    //[filterBtn setTintColor: [MLTheme navButtonColour]];
+    self.navigationItem.rightBarButtonItems = @[helpBtn, filterBtn];
     
     [MLTheme setTheme: self];
     [super viewDidLoad];
@@ -93,6 +97,11 @@
 - (IBAction)onFilterClicked:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"goToFilter" sender:self];
+}
+
+- (IBAction)onHelpClicked:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"AppHelp" sender:self];
 }
 
 #pragma mark - Table view data source
@@ -160,12 +169,18 @@
 {
     return [[self tableView] rowHeight];
 }
+
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString: @"goToFilter"])
     {
         MLFilterViewController* vc = [segue destinationViewController];
         vc.listener=self;
+    }
+    else if ([[segue identifier] isEqualToString: @"AppHelp"])
+    {
+        MLHelpViewController* vc = [segue destinationViewController];
+        vc.pageId = 3;
     }
 }
 -(void)onFilterSelectionChange:(MLPair*)itemPair

@@ -7,6 +7,7 @@
 //
 
 #import "MLSoundChartCollectionViewController.h"
+#import "MLHelpViewController.h"
 #import "MLMainDataProvider.h"
 #import "MLSoundChartCollectionViewCell.h"
 #import "MLBasicAudioPlayer.h"
@@ -144,15 +145,15 @@
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString: @"AppHelp"])
+    {
+        MLHelpViewController* vc = [segue destinationViewController];
+        vc.pageId = 2;
+    }
 }
-*/
 
 @end
