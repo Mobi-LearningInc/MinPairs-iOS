@@ -45,6 +45,7 @@
 
 -(void) viewWillDisappear:(BOOL)animated
 {
+    [self.navigationController setToolbarHidden:true animated:true];
     [MLTheme updateTheme];
 }
 
