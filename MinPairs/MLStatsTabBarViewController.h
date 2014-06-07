@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLFilterChangeListener.h"
 
-@interface MLStatsTabBarViewController : UITabBarController
+@interface MLStatsTabBarViewController : UITabBarController<MLFilterChangeListener>
 @property (nonatomic, strong) NSMutableDictionary* barGraphResults;
 @property (nonatomic, strong) NSMutableDictionary* lineGraphResults;
 @end

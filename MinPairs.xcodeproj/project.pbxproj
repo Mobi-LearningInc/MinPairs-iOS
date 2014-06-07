@@ -960,7 +960,7 @@
 		51F8749B190835BE00450DB2 /* MinPairs */ = {
 			isa = PBXGroup;
 			children = (
-				EBE8A4C8193A9D9200EC0A4D /* help */,
+				EBE8A4C8193A9D9200EC0A4D /* Help */,
 				CA22B8E11927A74500366A1C /* Libraries */,
 				EBC4B4451925159500D07F4B /* TinCan */,
 				CAA1B2141911B14B00453852 /* Platform */,
@@ -1778,7 +1778,7 @@
 			name = TinCan;
 			sourceTree = "<group>";
 		};
-		EBE8A4C8193A9D9200EC0A4D /* help */ = {
+		EBE8A4C8193A9D9200EC0A4D /* Help */ = {
 			isa = PBXGroup;
 			children = (
 				EBE8A4F1193B70A500EC0A4D /* img */,
@@ -1793,7 +1793,7 @@
 				EBE8A4E5193AA00000EC0A4D /* learn.html */,
 				EBE8A4E6193AA00000EC0A4D /* index.html */,
 			);
-			name = help;
+			name = Help;
 			sourceTree = "<group>";
 		};
 		EBE8A4F1193B70A500EC0A4D /* img */ = {

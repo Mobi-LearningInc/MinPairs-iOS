@@ -10,6 +10,7 @@
 #import "CorePlot-CocoaTouch.h"
 
 @interface MLBarGraphView : CPTGraphHostingView<CPTBarPlotDataSource, CPTBarPlotDelegate, CPTPlotSpaceDelegate>
-- (void)createGraph;
+- (void) createGraph;
 - (void) setGraphData:(NSMutableDictionary*)data;
+- (void) reload;
 @end

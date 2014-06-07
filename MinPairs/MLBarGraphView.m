@@ -20,6 +20,31 @@
     _graphData = data;
 }
 
+- (void) reload
+{
+    CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
+    CPTXYAxis* xAxis = [axisSet xAxis];
+    
+    NSArray* dates = [[self graphData] allKeys];
+    dates = [dates sortedArrayUsingSelector:@selector(compare:)];
+    
+    float xPosition = 0.70f / 2.0f;
+    NSMutableArray* xLabels = [NSMutableArray array];
+    
+    for (NSString* date in dates)
+    {
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: date textStyle: [xAxis labelTextStyle]];
+        [xlabel setTickLocation: [[NSNumber numberWithFloat: xPosition] decimalValue]];
+        [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
+        [xlabel setRotation: M_PI / 4.0f];
+        [xLabels addObject: xlabel];
+        ++xPosition;
+    }
+    
+    [xAxis setAxisLabels: [NSSet setWithArray: xLabels]];
+    [_graph reloadData];
+}
+
 - (void)createGraph
 {
     /** Create graph with theme and padding **/

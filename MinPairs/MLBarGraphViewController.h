@@ -10,5 +10,5 @@
 #import "MLBarGraphView.h"
 
 @interface MLBarGraphViewController : UIViewController
-
+- (void)reloadData;
 @end

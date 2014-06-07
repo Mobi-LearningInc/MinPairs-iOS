@@ -34,6 +34,14 @@
     [hostView createGraph];
 }
 
+- (void)reloadData
+{
+    MLBarGraphView* hostView = (MLBarGraphView*)[self view];
+    MLStatsTabBarViewController* controller = (MLStatsTabBarViewController*)[self tabBarController];
+    [hostView setGraphData: [controller barGraphResults]];
+    [hostView reload];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

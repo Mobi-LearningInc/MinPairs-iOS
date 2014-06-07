@@ -271,6 +271,7 @@
                         <segue destination="TQR-ch-Y9K" kind="relationship" relationship="viewControllers" id="LFN-bH-Nfa"/>
                         <segue destination="Ub3-md-lVW" kind="relationship" relationship="viewControllers" id="pAV-J5-Cmu"/>
                         <segue destination="5YO-4H-GVw" kind="push" identifier="AppHelp" id="mZA-Je-FN6"/>
+                        <segue destination="kjc-Gw-hG7" kind="push" identifier="goToFilter" id="n9e-gq-xyq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef6-RP-c3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2117,11 +2118,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ZDa-a6-SnO"/>
+        <segue reference="mZA-Je-FN6"/>
         <segue reference="KDw-fn-wD3"/>
         <segue reference="WQr-zY-AR2"/>
-        <segue reference="z8P-3v-4Hr"/>
         <segue reference="JAT-OG-QHa"/>
         <segue reference="mSI-G2-kJF"/>
+        <segue reference="n9e-gq-xyq"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,6 +21,31 @@
     _graphData = data;
 }
 
+- (void) reload
+{
+    CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
+    CPTXYAxis* xAxis = [axisSet xAxis];
+    
+    NSArray* dates = [[self graphData] allKeys];
+    dates = [dates sortedArrayUsingSelector:@selector(compare:)];
+    
+    uint32_t xPosition = 0;
+    NSMutableArray* xLabels = [NSMutableArray array];
+    
+    for (NSString* date in dates)
+    {
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: date textStyle: [xAxis labelTextStyle]];
+        [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
+        [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
+        [xlabel setRotation: M_PI / 4.0f];
+        [xLabels addObject: xlabel];
+        ++xPosition;
+    }
+    
+    [xAxis setAxisLabels: [NSSet setWithArray: xLabels]];
+    [_graph reloadData];
+}
+
 - (void)createGraph
 {
     /** Create graph with theme and padding **/
@@ -42,7 +67,7 @@
     
     float xMin = -0.05f;
     float yMin = 0.0f;
-    float xMax = [[self graphData] count] / 4.0f;
+    float xMax = 4.0f;
     float yMax = 10.0f;
     float lineOffset = 0.05f;
 
@@ -56,7 +81,7 @@
     
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(yMin) length:CPTDecimalFromFloat(yMax - yMin)]];
     
-    [plotSpace setGlobalXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat([[self graphData] count] - (1.0f - lineOffset))]];
+    [plotSpace setGlobalXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat([[self graphData] count] <= xMax ? xMax : [[self graphData] count] - (1.0f - lineOffset))]];
     
     
     /** Set grid lines **/

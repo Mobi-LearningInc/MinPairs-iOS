@@ -12,4 +12,5 @@
 @interface MLLineGraphView : CPTGraphHostingView<CPTPlotDataSource, CPTPlotSpaceDelegate>
 - (void)createGraph;
 - (void) setGraphData:(NSMutableDictionary*)data;
+- (void) reload;
 @end
