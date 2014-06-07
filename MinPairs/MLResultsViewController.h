@@ -10,6 +10,7 @@
 #import "MLModalAnimator.h"
 
 @interface MLResultsViewController : UIViewController
+@property (assign, nonatomic) bool mode;
 @property (strong, nonatomic) NSString* text;
 @property (strong, nonatomic) NSString* correct;
 @property (strong, nonatomic) NSString* wrong;

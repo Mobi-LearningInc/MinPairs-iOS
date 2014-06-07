@@ -100,7 +100,7 @@
 
 +(UIColor*)navButtonColour
 {
-    return [[self sharedInstance] btnBackground];//[UIColor colorWithRed:166.0f/0xFF green:198.0f/0xFF blue:200.0f/0xFF alpha:1.0f];
+    return [[self sharedInstance] btnBackground];
 }
 
 +(void) setTheme:(UIViewController*)controller

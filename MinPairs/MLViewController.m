@@ -72,7 +72,7 @@
 {
     [MLTheme setTheme: self];
     [super viewDidLoad];
-    //[self.tincan saveSampleActivity]; //throws exception.
+    [self.tincan saveSampleActivity];
 }
 
 - (void)didReceiveMemoryWarning

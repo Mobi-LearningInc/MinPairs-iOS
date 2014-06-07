@@ -14,7 +14,7 @@
 #import "MLTheme.h"
 #import "MLDetailTableViewController.h"
 @interface MLResultsViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (weak, nonatomic) IBOutlet UIButton *tryDoneButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -31,19 +31,23 @@
 
 - (void)viewDidLoad
 {
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.backBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = true;
+    
+    if ([self mode] && ([self correct] < [self total])) //if the user does not score perfect, allow them to try again..
+    {
+        UIBarButtonItem *homeBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onHomeBtn:)];
+        [homeBtn setImage: [UIImage imageNamed:@"mHome.png"]];
+        [homeBtn setTintColor: [MLTheme navButtonColour]];
+        self.navigationItem.leftBarButtonItem = homeBtn;
+        
+        [[self tryDoneButton] setTitle:@"Try Again" forState:UIControlStateNormal];
+        [[self tryDoneButton] setTag: 0xFF];
+    }
+    
     [MLTheme setTheme: self];
     [super viewDidLoad];
-    
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.view.layer.shadowOffset = CGSizeMake(0.0, 8.0);
-    self.view.layer.shadowOpacity = 0.5;
-    self.view.layer.shadowRadius = 10.0;
-    self.view.layer.cornerRadius = 5.0;
-    //self.view.layer.masksToBounds = YES;
-    
-    //[MLPlatform setButtonBorder: [self continueButton] withBorderWidth: 1.0f withColour: [UIColor whiteColor]];
-    //[MLPlatform setButtonRound: [self continueButton] withRadius: 10.0f];
-    
     
     self.titleLabel.text = [[self text] capitalizedString];
     self.scoreInfoLabel.text = [NSString stringWithFormat:@"%@ / %@", [self correct], [self total]];
@@ -58,6 +62,25 @@
 
     
 }
+
+- (IBAction)onHomeBtn:(id)sender
+{
+    self.navigationItem.hidesBackButton = false;
+    [[self navigationController] popToRootViewControllerAnimated: YES];
+}
+
+- (IBAction)onTryDoneClicked:(UIButton *)sender
+{
+    if ([sender tag] == 0xFF) //loop practice.. show more questions..
+    {
+        
+    }
+    else
+    {
+        [self onHomeBtn:nil];
+    }
+}
+
 - (IBAction)onDetailsBtn:(id)sender
 {
     MLDetailTableViewController* dtvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsTableViewController"];
@@ -70,10 +93,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)onContinueClicked:(UIButton *)sender
-{
-    [self dismissViewControllerAnimated: YES completion: nil];
-}
 - (IBAction)onShareClicked:(id)sender
 {
     MLShareViewController* msvc=[self.storyboard instantiateViewControllerWithIdentifier: @"ShareViewController"];

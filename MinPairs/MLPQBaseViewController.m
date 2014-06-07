@@ -19,7 +19,7 @@
 #import "MLResultsViewController.h"
 #import "MLTheme.h"
 
-@interface MLPQBaseViewController ()<UIViewControllerTransitioningDelegate>
+@interface MLPQBaseViewController ()
 @property NSTimer* timer;
 @property MLTestResult* currentResult;
 @property (weak,nonatomic)UILabel* selectTimeLabel;
@@ -70,16 +70,10 @@
     {
         [self.progressBar setProgress:(float)self.questionCount/(float)ML_MLPQBASE_QUESTION_LIMIT animated:YES];
     }
-    
-    UIColor* barButtonColor = [MLTheme navButtonColour];
-    UIBarButtonItem *helpBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpBtn)];
+
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
-    
-    [helpBtn setImage: [UIImage imageNamed:@"mHelp.png"]];
     [quitBtn setImage: [UIImage imageNamed:@"fSmallRedX.png"]];
-    
-    [helpBtn setTintColor: barButtonColor];
-    [quitBtn setTintColor: [UIColor redColor]];
+    [quitBtn setTintColor: [MLTheme navButtonColour]];
     
     self.navigationItem.leftBarButtonItem=quitBtn;
     MLSettingDatabase * settingDB= [[MLSettingDatabase alloc]initSettingDatabase];
@@ -181,18 +175,6 @@
     self.pauseTimer=true;
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Quit" message:@"Are you sure you want to quit? All progress will be lost." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     [alert show];
-}
-
--(void)onHelpBtn
-{
-    if ([self practiceMode])
-    {
-        //push help in practice mode.
-    }
-    else
-    {
-        
-    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -312,75 +294,50 @@
 
 -(void)saveResultAndReturnHome
 {
-
     MLTestResultDatabase* resultDb = [[MLTestResultDatabase alloc]initTestResultDatabase];
     [resultDb saveTestResult:self.currentResult];
-    
-    
-    MLResultsViewController* rvc = [self.storyboard instantiateViewControllerWithIdentifier: @"ResultsViewController"];
-    
-    rvc.text = [NSString stringWithFormat: @"%@ Results", self.currentResult.testType];
-    rvc.correct = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect];
-    rvc.wrong = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsWrong];
-    rvc.total = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect + self.currentResult.testQuestionsWrong];
-    rvc.time = [NSString stringWithFormat: @"%i", self.currentResult.testTime];
-    rvc.detailsArray=self.detailsArray;
-    //_animator = [[MLModalAnimator alloc] init];
-    //[self present: rvc];
-    /* Modal animator has an issue when the modal view controller presents another modal view controller. ex: Results vc >>> Share vc . */
-    [self presentViewController:rvc animated:YES completion:nil];
-    [[self navigationController] popToRootViewControllerAnimated: YES];
+    [self performSegueWithIdentifier:@"PQResults" sender: [NSNumber numberWithBool: [self practiceMode]]];
 }
-
--(void) present:(UIViewController*)toController
-{
-    [[self animator] setPadding: 20.0f];
-    toController.transitioningDelegate = self;
-    toController.modalPresentationStyle = UIModalPresentationCustom;
-    [[self navigationController] presentViewController: toController animated: true completion: nil];
-}
-
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-{
-    [[self animator] setPresent: true];
-    return [self animator];
-}
-
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    [[self animator] setPresent: false];
-    return [self animator];
-}
-
 
 #pragma mark - Navigation
 
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    
     if([[segue identifier]isEqualToString:@"PQOne"])
     {
         MLPQOneViewController* vc = [segue destinationViewController];
         vc.practiceMode = [sender boolValue];
-        vc.questionCount=++self.questionCount;;
-        vc.previousResult=self.currentResult;
-        vc.detailsArray=self.detailsArray;
+        vc.questionCount = ++self.questionCount;;
+        vc.previousResult = self.currentResult;
+        vc.detailsArray = self.detailsArray;
     }
     else if([[segue identifier]isEqualToString:@"PQTwo"])
     {
         MLPQTwoViewController* vc = [segue destinationViewController];
         vc.practiceMode = [sender boolValue];
-        vc.questionCount=++self.questionCount;;
-        vc.previousResult=self.currentResult;
-        vc.detailsArray=self.detailsArray;
+        vc.questionCount = ++self.questionCount;
+        vc.previousResult = self.currentResult;
+        vc.detailsArray = self.detailsArray;
     }
     else if ([[segue identifier]isEqualToString:@"PQThree"])
     {
         MLPQThreeViewController* vc = [segue destinationViewController];
         vc.practiceMode = [sender boolValue];
-        vc.questionCount=++self.questionCount;
-        vc.previousResult=self.currentResult;
-        vc.detailsArray=self.detailsArray;
+        vc.questionCount = ++self.questionCount;
+        vc.previousResult = self.currentResult;
+        vc.detailsArray = self.detailsArray;
+    }
+    else if ([[segue identifier] isEqualToString:@"PQResults"])
+    {
+        MLResultsViewController* rvc = [segue destinationViewController];
+        
+        rvc.mode = [sender boolValue];
+        rvc.text = [NSString stringWithFormat: @"%@ Results", self.currentResult.testType];
+        rvc.correct = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect];
+        rvc.wrong = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsWrong];
+        rvc.total = [NSString stringWithFormat: @"%i", self.currentResult.testQuestionsCorrect + self.currentResult.testQuestionsWrong];
+        rvc.time = [NSString stringWithFormat: @"%i", self.currentResult.testTime];
+        rvc.detailsArray = self.detailsArray;
     }
 }
 

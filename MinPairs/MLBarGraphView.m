@@ -42,8 +42,11 @@
     
     float xMin = 0.0f;
     float yMin = 0.0f;
-    float xMax = 4.0f;//[[self graphData] count];
+    float xMax = 4.0f;
     float yMax = 10.0f;
+    
+    float barWidth = 0.70f;
+    float barOffset = barWidth / 2.0f;
     
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
     
@@ -55,6 +58,7 @@
     
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(yMin) length:CPTDecimalFromFloat(yMax - yMin)]];
     
+    [plotSpace setGlobalXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat([[self graphData] count] <= xMax ? xMax : [[self graphData] count] - (1.0f - barWidth))]];
     
     
     /** Set grid lines **/
@@ -87,32 +91,6 @@
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
-
-    
-    /*[xAxis setTitleOffset: 30.0f];
-    [xAxis setLabelOffset: 3.0f];
-    [xAxis setTitleTextStyle: xAxisTextStyle];
-    [xAxis setLabelTextStyle: xAxisTextStyle];
-    [xAxis setMajorGridLineStyle: nil];
-    [xAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
-    [xAxis setMajorTickLength: 7.0f];
-    [xAxis setMinorTickLength: 5.0f];
-    [xAxis setMinorTicksPerInterval: 0.0f];
-    [xAxis setAxisConstraints: [CPTConstraints constraintWithLowerOffset: 0.0f]];
-    [xAxis setLabelingPolicy: CPTAxisLabelingPolicyNone];
-    
-    
-    [yAxis setTitle: @"Score"];
-    [yAxis setTitleOffset: 40.0f];
-    [yAxis setLabelOffset: 3.0f];
-    [yAxis setTitleTextStyle: yAxisTextStyle];
-    [yAxis setLabelTextStyle: yAxisTextStyle];
-    [yAxis setMajorGridLineStyle: majorGridLineStyle];
-    [yAxis setMajorIntervalLength: CPTDecimalFromFloat(1.0f)];
-    [yAxis setMajorTickLength: 7.0f];
-    [yAxis setMinorTickLength: 5.0f];
-    [yAxis setMinorTicksPerInterval: 0.0f];
-    [yAxis setAxisConstraints: [CPTConstraints constraintWithLowerOffset: 0.0f]];*/
     [xAxis setTitleOffset: 30.0f];
     [xAxis setLabelOffset: 3.0f];
     [xAxis setTitleTextStyle: xAxisTextStyle];
@@ -143,7 +121,7 @@
     NSArray* dates = [[self graphData] allKeys];
     dates = [dates sortedArrayUsingSelector:@selector(compare:)];
     
-    float xPosition = 0.3f;
+    float xPosition = barOffset;
     NSMutableArray* xLabels = [NSMutableArray array];
     
     for (NSString* date in dates)
@@ -164,9 +142,9 @@
     CPTBarPlot* plot = [[CPTBarPlot alloc] init];
     [plot setDataSource: self];
     [plot setDelegate: self];
-    [plot setBarWidth: [[NSDecimalNumber decimalNumberWithString:@"0.7"] decimalValue]];
-    [plot setBarOffset: [[NSDecimalNumber decimalNumberWithString:@"0.3"] decimalValue]];
     [plot setBarCornerRadius: 5.0f];
+    [plot setBarWidth: CPTDecimalFromCGFloat(barWidth)];
+    [plot setBarOffset: CPTDecimalFromCGFloat(barOffset)];
 
     CPTMutableLineStyle* barBorderLineStyle = [CPTMutableLineStyle lineStyle];
     [barBorderLineStyle setLineColor: [CPTColor clearColor]];
@@ -189,7 +167,7 @@
         
         if (fieldEnum == CPTBarPlotFieldBarLocation) //X-Axis
         {
-            return [NSNumber numberWithUnsignedInteger: index];
+            return [NSNumber numberWithFloat:index];
         }
         else if (fieldEnum == CPTBarPlotFieldBarTip) //Y-Axis
         {
@@ -199,24 +177,6 @@
     
     return [NSNumber numberWithInteger: 0];
 }
-
-/*- (CPTLayer*)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
-{
-    if ([[plot identifier] isEqual: @"main"])
-    {
-        CPTMutableTextStyle* textStyle = [CPTMutableTextStyle textStyle];
-        [textStyle setFontName: @"Avenir"];
-        [textStyle setFontSize: 14];
-        [textStyle setColor: [CPTColor whiteColor]];
-        
-        CPTTextLayer* label = [[CPTTextLayer alloc] initWithText: @"text"];
-        [label setTextStyle: textStyle];
-        return label;
-    }
-    
-    CPTTextLayer* label = [[CPTTextLayer alloc] initWithText: @"???"];
-    return label;
-}*/
 
 - (CPTFill*)barFillForBarPlot:(CPTBarPlot *)barPlot recordIndex:(NSUInteger)index
 {
@@ -240,13 +200,8 @@
         
         return [CPTPlotRange plotRangeWithLocation:newRange.location length:newRange.length];
     }
-    else
-    {
-        return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)];
-    }
     
-    
-    return nil;
+    return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)];
 }
 
 - (CGPoint)plotSpace:(CPTPlotSpace *)space willDisplaceBy:(CGPoint)displacement

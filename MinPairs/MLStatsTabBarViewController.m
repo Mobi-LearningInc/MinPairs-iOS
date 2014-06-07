@@ -46,7 +46,6 @@
     
     UIBarButtonItem* helpBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mHelp.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(onHelpClicked:)];
     
-    //[filterBtn setTintColor: [MLTheme navButtonColour]];
     self.navigationItem.rightBarButtonItems = @[helpBtn, filterBtn];
     
     [MLTheme setTheme: self];

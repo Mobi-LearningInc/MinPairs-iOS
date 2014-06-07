@@ -42,9 +42,10 @@
     
     float xMin = -0.05f;
     float yMin = 0.0f;
-    float xMax = 4.0f;//[[self graphData] count];
+    float xMax = [[self graphData] count] / 4.0f;
     float yMax = 10.0f;
-    
+    float lineOffset = 0.05f;
+
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
     
     [plotSpace setDelegate: self];
@@ -54,6 +55,8 @@
     [plotSpace setXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat(xMax - xMin)]];
     
     [plotSpace setYRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(yMin) length:CPTDecimalFromFloat(yMax - yMin)]];
+    
+    [plotSpace setGlobalXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat([[self graphData] count] - (1.0f - lineOffset))]];
     
     
     /** Set grid lines **/
@@ -195,12 +198,8 @@
         
         return [CPTPlotRange plotRangeWithLocation:newRange.location length:newRange.length];
     }
-    else
-    {
-        return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)];
-    }
     
-    return nil;
+    return [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(10.0f)];
 }
 
 - (CGPoint)plotSpace:(CPTPlotSpace *)space willDisplaceBy:(CGPoint)displacement
