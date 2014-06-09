@@ -16,7 +16,7 @@
 #import "MLTinCanConnector.h"
 #import "MLLsrCredentials.h"
 #import "MLLrsCredentialsDatabase.h"
-
+#import "MLResultsViewController.h"
 @interface MLViewController ()
 @property (nonatomic, strong) MLLrsCredentialsDatabase* lrsDatabase;
 @property (nonatomic, strong) MLTinCanConnector* tincan;
@@ -67,7 +67,21 @@
     self.navigationItem.rightBarButtonItems = @[help, filter];
     self.navigationItem.leftBarButtonItems = @[info];
 }
-
+- (IBAction)unwindToHomeController:(UIStoryboardSegue *)unwindSegue
+{
+    UIViewController* callerController = unwindSegue.sourceViewController;
+    if ([callerController isKindOfClass:[MLResultsViewController class]])
+    {
+        MLResultsViewController* rvc= (MLResultsViewController*)callerController;
+        if(rvc.mode && rvc.tryAgainFlag)//if practice and try again
+        {
+            NSLog(@"starting practice round again...");
+            [self performSelector:@selector(onPracticeClicked:) withObject:nil afterDelay:1];//the 1s delay is needed inorder to avoid 'nested push animation can result in corrupted navigation bar' error
+            //[self performSegueWithIdentifier:@"TestInstructions" sender: [NSNumber numberWithBool: true]];
+        }
+    }
+    
+}
 - (void)viewDidLoad
 {
     [MLTheme setTheme: self];

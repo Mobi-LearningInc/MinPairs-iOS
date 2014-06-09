@@ -35,7 +35,7 @@
     self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.hidesBackButton = true;
     
-    if ([self mode] && ([self correct] < [self total])) //if the user does not score perfect, allow them to try again..
+    if ([self mode] && ([self.correct intValue] < [self.total intValue])) //if the user does not score perfect, allow them to try again..
     {
         UIBarButtonItem *homeBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onHomeBtn:)];
         [homeBtn setImage: [UIImage imageNamed:@"mHome.png"]];
@@ -73,7 +73,8 @@
 {
     if ([sender tag] == 0xFF) //loop practice.. show more questions..
     {
-        
+        self.tryAgainFlag=true;
+        [self performSegueWithIdentifier:@"unwindToHome" sender:self];
     }
     else
     {
