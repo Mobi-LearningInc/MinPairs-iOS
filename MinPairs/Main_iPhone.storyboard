@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -306,18 +306,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="RUZ-cY-puA">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="RUZ-cY-puA">
+                            <rect key="frame" x="0.0" y="220" width="320" height="58"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2T-XZ-Vv1">
-                                    <rect key="frame" x="8" y="20" width="40" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2T-XZ-Vv1">
+                                    <rect key="frame" x="118" y="9" width="85" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="gER-xt-yh4"/>
-                                        <constraint firstAttribute="width" constant="40" id="iSx-yQ-MPz"/>
-                                    </constraints>
-                                    <state key="normal" image="mHome">
+                                    <state key="normal" title="Done">
+                                        <color key="titleColor" red="0.12156863510608673" green="0.56078433990478516" blue="0.55294120311737061" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -326,14 +323,10 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="d2T-XZ-Vv1" firstAttribute="leading" secondItem="RUZ-cY-puA" secondAttribute="leading" constant="8" id="CwS-Sk-vMk"/>
-                                <constraint firstItem="d2T-XZ-Vv1" firstAttribute="top" secondItem="RUZ-cY-puA" secondAttribute="top" constant="20" id="W1S-Al-HDZ"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCellTypeOne" rowHeight="60" id="HR5-y6-tfd" customClass="MLDetailTableCellTypeOne">
-                                <rect key="frame" x="0.0" y="98" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HR5-y6-tfd" id="mqZ-X1-bPM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -350,7 +343,7 @@
                                             </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="na1.png" translatesAutoresizingMaskIntoConstraints="NO" id="mk7-3x-PR5">
-                                            <rect key="frame" x="112" y="0.0" width="59" height="59"/>
+                                            <rect key="frame" x="131" y="0.0" width="59" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="na1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQP-Tw-7VE">
@@ -364,7 +357,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fLargeBlackCheck" translatesAutoresizingMaskIntoConstraints="NO" id="pYA-iX-8E2">
-                                            <rect key="frame" x="112" y="0.0" width="59" height="59"/>
+                                            <rect key="frame" x="131" y="0.0" width="59" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" alpha="0.30000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fLargeBlackX" translatesAutoresizingMaskIntoConstraints="NO" id="GmN-f0-sQY">
@@ -380,7 +373,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCellTypeTwo" rowHeight="60" id="tK6-Sh-HbB" customClass="MLDetailTableCellTypeTwo">
-                                <rect key="frame" x="0.0" y="158" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tK6-Sh-HbB" id="BzV-z2-SsW">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -397,7 +390,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L69-G0-DU6">
-                                            <rect key="frame" x="115" y="18" width="90" height="21"/>
+                                            <rect key="frame" x="138" y="20" width="90" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                             <nil key="highlightedColor"/>
@@ -415,7 +408,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fLargeBlackCheck" translatesAutoresizingMaskIntoConstraints="NO" id="1dU-eW-XQ7">
-                                            <rect key="frame" x="115" y="-1" width="59" height="59"/>
+                                            <rect key="frame" x="138" y="1" width="59" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" alpha="0.30000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fLargeBlackX" translatesAutoresizingMaskIntoConstraints="NO" id="9j3-Zc-Hkf">
@@ -431,7 +424,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailCellTypeThree" rowHeight="60" id="xhr-HD-4Av" customClass="MLDetailTableCellTypeThree">
-                                <rect key="frame" x="0.0" y="218" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="160" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xhr-HD-4Av" id="jrN-pd-N0k">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -445,7 +438,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlg-uf-NRC">
-                                            <rect key="frame" x="116" y="0.0" width="60" height="60"/>
+                                            <rect key="frame" x="130" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="ear.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -471,7 +464,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fLargeBlackCheck" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-3Q-Uz4">
-                                            <rect key="frame" x="116" y="0.0" width="59" height="59"/>
+                                            <rect key="frame" x="130" y="0.0" width="59" height="59"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" alpha="0.30000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fLargeBlackX" translatesAutoresizingMaskIntoConstraints="NO" id="Io5-zl-W1G">
@@ -1113,7 +1106,7 @@ Current selection: %@ vs. %@</string>
             </objects>
             <point key="canvasLocation" x="1161" y="144"/>
         </scene>
-        <!--Sound Chart Collection View Controller - SOUND CHART-->
+        <!--Sound Chart Collection View Controller - SOUNDS-->
         <scene sceneID="F26-Lh-Xzw">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="pwU-RH-joz" customClass="MLSoundChartCollectionViewController" sceneMemberID="viewController">
@@ -1156,7 +1149,7 @@ Current selection: %@ vs. %@</string>
                             <outlet property="delegate" destination="pwU-RH-joz" id="snF-K8-XBw"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="SOUND CHART" id="Myk-P7-2bL">
+                    <navigationItem key="navigationItem" title="SOUNDS" id="Myk-P7-2bL">
                         <barButtonItem key="leftBarButtonItem" image="mHome" id="zHJ-b9-ueV">
                             <connections>
                                 <action selector="onHomeClicked:" destination="pwU-RH-joz" id="jYx-On-DoW"/>
@@ -1724,7 +1717,7 @@ Current selection: %@ vs. %@</string>
                                     <constraint firstAttribute="height" constant="175" id="OLh-9e-uuF"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-Xw-yAP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-Xw-yAP">
                                 <rect key="frame" x="20" y="52" width="280" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -1747,7 +1740,7 @@ Current selection: %@ vs. %@</string>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-53-ImS">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-53-ImS">
                                 <rect key="frame" x="0.0" y="20" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -1840,7 +1833,7 @@ Current selection: %@ vs. %@</string>
                                     <action selector="onAnswerBtn:" destination="CeJ-mv-Dkw" eventType="touchUpInside" id="Eux-Cl-UmJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
                                 <rect key="frame" x="20" y="52" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1870,7 +1863,7 @@ Current selection: %@ vs. %@</string>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
                                 <rect key="frame" x="0.0" y="20" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -1967,7 +1960,7 @@ Current selection: %@ vs. %@</string>
                                     <action selector="onAnswerBtn:" destination="Wka-r1-Mpd" eventType="touchUpInside" id="gk5-bE-zSR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-ng-0Jn">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-ng-0Jn">
                                 <rect key="frame" x="20" y="52" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -2035,7 +2028,7 @@ Current selection: %@ vs. %@</string>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-DN-9m3">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-DN-9m3">
                                 <rect key="frame" x="0.0" y="20" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -2118,11 +2111,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mZA-Je-FN6"/>
-        <segue reference="KDw-fn-wD3"/>
-        <segue reference="WQr-zY-AR2"/>
-        <segue reference="JAT-OG-QHa"/>
-        <segue reference="mSI-G2-kJF"/>
+        <segue reference="K8X-AH-X2a"/>
         <segue reference="n9e-gq-xyq"/>
+        <segue reference="WIL-JQ-mTv"/>
+        <segue reference="6iJ-t5-LbI"/>
+        <segue reference="Bkb-fV-617"/>
+        <segue reference="4x2-T0-iI7"/>
     </inferredMetricsTieBreakers>
 </document>
