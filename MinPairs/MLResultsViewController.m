@@ -13,6 +13,8 @@
 #import "MLLrsCredentialsDatabase.h"
 #import "MLTheme.h"
 #import "MLDetailTableViewController.h"
+#import "MLInstructionsViewController.h"
+
 @interface MLResultsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *tryDoneButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -73,8 +75,7 @@
 {
     if ([sender tag] == 0xFF) //loop practice.. show more questions..
     {
-        self.tryAgainFlag=true;
-        [self performSegueWithIdentifier:@"unwindToHome" sender:self];
+        [self performSegueWithIdentifier:@"unwindToInstructions" sender: self];
     }
     else
     {
@@ -110,31 +111,15 @@
     UIGraphicsEndImageContext();
     return image;
 }
-#pragma mark - Navigation
 
+/*#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    /*
-    if([segue.identifier isEqualToString:@"goToDetails"])
+    if ([[segue identifier] isEqualToString:@"TestInstructions"]) //No need for this since unwind segue is used instead.
     {
-        if([[segue destinationViewController] isKindOfClass:[MLDetailTableViewController class ]])
-        {
-            MLDetailTableViewController* dtvc =[segue destinationViewController];
-            dtvc.array=self.detailsArray;
-        }
+        MLInstructionsViewController* vc = [segue destinationViewController];
+        vc.mode = sender;
     }
-     */
-    /*
-    if([segue.identifier isEqualToString:@"fromResultsGoToShare"])
-    {
-        if ([[segue destinationViewController] isKindOfClass:[MLShareViewController class]])
-        {
-            MLShareViewController* msvc=[segue destinationViewController];
-            msvc.socialMessage=[NSString stringWithFormat:@"I am using MinPairs app to improve my english."];
-            msvc.isModal=false;
-            msvc.socialImage = [self captureScreen:self.view];
-        }
-    }*/
-}
+}*/
 
 @end

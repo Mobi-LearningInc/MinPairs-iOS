@@ -11,7 +11,6 @@
 
 @interface MLResultsViewController : UIViewController
 @property (assign, nonatomic) bool mode;
-@property (assign, nonatomic) bool tryAgainFlag;
 @property (strong, nonatomic) NSString* text;
 @property (strong, nonatomic) NSString* correct;
 @property (strong, nonatomic) NSString* wrong;

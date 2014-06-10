@@ -12,6 +12,7 @@
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
 #import "MLFilterViewController.h"
+#import "MLResultsViewController.h"
 #import "MLSettingDatabase.h"
 #import "MLPlatform.h"
 #import "MLTheme.h"
@@ -83,6 +84,17 @@
 - (IBAction)onHelpClicked:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"AppHelp" sender:[self mode]];
+}
+
+- (IBAction)unwindToInstructionsController:(UIStoryboardSegue *)unwindSegue
+{
+    /** No need to inspect controller state or set values/variables.. Previous state is preserved on unwind **/
+    
+    /*UIViewController* callerController = unwindSegue.sourceViewController;
+    if ([callerController isKindOfClass:[MLResultsViewController class]])
+    {
+        //self.mode = [NSNumber numberWithBool: true];
+    }*/
 }
 
 -(void) pushSequeOnStack:(NSNumber*)mode
