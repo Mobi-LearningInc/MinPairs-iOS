@@ -90,7 +90,7 @@
                 [duplicates setObject: data forKey: str];
             }
             
-            [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: [NSString stringWithFormat:@"Game #%d", ++i]];
+            [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: [NSNumber numberWithInt:++i]];// forKey was [NSString stringWithFormat:@"Game #%d", ++i] aka a string, but should be a number so that we dont have sorting issues ;)
         }
     }
 }

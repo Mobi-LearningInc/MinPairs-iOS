@@ -33,15 +33,19 @@
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     
-    NSArray* dates = [[self graphData] allKeys];
+    NSArray* dates = [[self graphData] allKeys];//keys are strings
+    for(int i=0; i<dates.count; i++)
+    {
+        NSLog(@"%@",dates[i]);
+    }
     dates = [dates sortedArrayUsingSelector:@selector(compare:)];
     
     uint32_t xPosition = 0;
     NSMutableArray* xLabels = [NSMutableArray array];
     
-    for (NSString* date in dates)
+    for (NSNumber* date in dates)//dates are keys
     {
-        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: date textStyle: [xAxis labelTextStyle]];
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: [NSString stringWithFormat:@"Game #%@", date] textStyle: [xAxis labelTextStyle]];
         [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];
@@ -153,9 +157,9 @@
     uint32_t xPosition = 0;
     NSMutableArray* xLabels = [NSMutableArray array];
     
-    for (NSString* date in dates)
+    for (NSNumber* date in dates)//dates are keys 
     {
-        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: date textStyle: [xAxis labelTextStyle]];
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: [NSString stringWithFormat:@"Game #%@", date] textStyle: [xAxis labelTextStyle]];
         [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];
