@@ -31,6 +31,7 @@
     MLBarGraphView* hostView = (MLBarGraphView*)[self view];
     MLStatsTabBarViewController* controller = (MLStatsTabBarViewController*)[self tabBarController];
     [hostView setGraphData: [controller barGraphResults]];
+    [hostView setGraphTitle: [controller filterTitle]];
     [hostView createGraph];
 }
 
@@ -39,6 +40,7 @@
     MLBarGraphView* hostView = (MLBarGraphView*)[self view];
     MLStatsTabBarViewController* controller = (MLStatsTabBarViewController*)[self tabBarController];
     [hostView setGraphData: [controller barGraphResults]];
+    [hostView setGraphTitle: [controller filterTitle]];
     [hostView reload];
 }
 

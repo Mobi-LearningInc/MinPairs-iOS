@@ -137,6 +137,7 @@
     
     
     _filterDesc = @"All|All";
+    _filterTitle = @"All vs. All";
     [self loadLineGraphStats: duplicates];
     [self loadBarGraphStats: duplicates];
 }
@@ -174,6 +175,8 @@
     }
     
     _filterDesc = newFilterDesc;
+    _filterTitle = [NSString stringWithFormat:@"%@ vs. %@", filterLeft.categoryDescription, filterRight.categoryDescription];
+    
     
     if (![self filterResultsExist])
     {

@@ -11,6 +11,7 @@
 
 @interface MLLineGraphView()
 @property (nonatomic, strong) CPTXYGraph* graph;
+@property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSMutableDictionary* graphData;
 @end
 
@@ -21,8 +22,14 @@
     _graphData = data;
 }
 
+- (void) setGraphTitle:(NSString*)title
+{
+    _title = [NSString stringWithFormat: @"Score per Game (%@)", title];
+}
+
 - (void) reload
 {
+    [[self graph] setTitle: [self title]];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     
@@ -52,7 +59,7 @@
     
     [self setGraph: [[CPTXYGraph alloc] initWithFrame: CGRectZero]];
     self.hostedGraph = [self graph];
-    [[self graph] setTitle: @"Score per Game"];
+    [[self graph] setTitle: [self title]];
     
     CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
     
@@ -107,6 +114,7 @@
     [xAxisTextStyle setColor: [CPTColor blackColor]];
     
     [[self graph] setTitleTextStyle: yAxisTextStyle];
+    [[self graph] setTitleDisplacement: CGPointMake(20, 0)];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
@@ -180,9 +188,9 @@
     /** Fill under the graph **/
     
     CPTColor* uFillColour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:0.5f];
-    CPTGradient* uFillGradient = [CPTGradient gradientWithBeginningColor:uFillColour endingColor:[CPTColor clearColor]];
-    [uFillGradient setAngle: -90.0f];
-    CPTFill* uFill = [CPTFill fillWithGradient: uFillGradient];
+    //CPTGradient* uFillGradient = [CPTGradient gradientWithBeginningColor:uFillColour endingColor:[CPTColor clearColor]];
+    //[uFillGradient setAngle: -90.0f];
+    CPTFill* uFill = [CPTFill fillWithColor: uFillColour];
     [plot setAreaFill: uFill];
     [plot setAreaBaseValue: CPTDecimalFromString(@"-1.00")];
     

@@ -10,6 +10,7 @@
 
 @interface MLBarGraphView()
 @property (nonatomic, strong) CPTXYGraph* graph;
+@property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSMutableDictionary* graphData;
 @end
 
@@ -20,8 +21,14 @@
     _graphData = data;
 }
 
+- (void) setGraphTitle:(NSString*)title
+{
+    _title = [NSString stringWithFormat: @"Avg. Score per Day (%@)", title];
+}
+
 - (void) reload
 {
+    [[self graph] setTitle: [self title]];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     
@@ -51,7 +58,7 @@
     
     [self setGraph: [[CPTXYGraph alloc] initWithFrame: CGRectZero]];
     self.hostedGraph = [self graph];
-    [[self graph] setTitle: @"Avg. Score per Day"];
+    [[self graph] setTitle: [self title]];
     
     
     CPTColor* bgColour = [CPTColor colorWithComponentRed:220.0f/0xFF green:240.0f/0xFF blue:231.0f/0xFF alpha:1.0f];
@@ -113,6 +120,7 @@
     [axisLineStyle setLineWidth: 2.0f];
     
     [[self graph] setTitleTextStyle: yAxisTextStyle];
+    [[self graph] setTitleDisplacement: CGPointMake(20, 0)];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     CPTXYAxis* yAxis = [axisSet yAxis];
@@ -172,7 +180,10 @@
     [plot setBarOffset: CPTDecimalFromCGFloat(barOffset)];
 
     CPTMutableLineStyle* barBorderLineStyle = [CPTMutableLineStyle lineStyle];
-    [barBorderLineStyle setLineColor: [CPTColor clearColor]];
+    [barBorderLineStyle setLineWidth: 2.0f];
+    
+    CPTColor* barBordercolour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:1.0f];
+    [barBorderLineStyle setLineColor: barBordercolour];
     [plot setLineStyle: barBorderLineStyle];
     [plot setIdentifier: @"main"];
     
@@ -207,7 +218,7 @@
 {
     if ([[barPlot identifier] isEqual: @"main"])
     {
-        CPTColor* colour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:1.0f];
+        CPTColor* colour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:0.5f];
         
         return [CPTFill fillWithColor: colour];
         

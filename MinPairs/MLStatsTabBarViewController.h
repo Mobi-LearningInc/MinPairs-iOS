@@ -12,4 +12,5 @@
 @interface MLStatsTabBarViewController : UITabBarController<MLFilterChangeListener>
 @property (nonatomic, strong) NSMutableDictionary* barGraphResults;
 @property (nonatomic, strong) NSMutableDictionary* lineGraphResults;
+@property (nonatomic, strong) NSString* filterTitle;
 @end

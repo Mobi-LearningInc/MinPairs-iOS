@@ -69,17 +69,10 @@
     self.itemMainLable.text=cor.itemDescription;
     self.correctAnswer=cor;
     NSLog(@"Correct answer is %@",self.correctAnswer.itemDescription);
-    [self.leftFingerImg setHidden:NO];
+    [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:YES];
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:self.readTimeLabel event:^(void){
-        /*MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
-             wrong:1+self.previousResult.testQuestionsWrong
-             type:self.previousResult.testType
-             date:self.previousResult.testDate
-            timeInSec:self.timeCount+self.previousResult.testTime
-             extraInfo:self.previousResult.testExtra];*/
-        //[self onAnswer:currentResult];
-        //[self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+        
         [self onAnswerButton:self.submitBtn];
     } typeLabel:nil event:nil];
 }
@@ -105,7 +98,15 @@
     self.pauseTimer=YES;
     int corr;
     int wrong;
-    MLItem* selected =(!self.leftFingerImg.hidden)?self.itemLeft:self.itemRight;
+    MLItem* selected =nil;//(!self.leftFingerImg.hidden)?self.itemLeft:self.itemRight;
+    if(!self.leftFingerImg.hidden)
+    {
+        selected=self.itemLeft;
+    }
+    else if(!self.rightFingerImg.hidden)
+    {
+        selected=self.itemRight;
+    }
     NSLog(@"User selected %@",selected.itemDescription);
     MLDetailsItem* dItem;
     if(self.correctAnswer==selected)
@@ -122,6 +123,7 @@
         wrong=1;
         //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
         self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
+        selected = self.itemRight == self.correctAnswer ? self.itemLeft : self.itemRight;
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_THREE correctItem:self.correctAnswer userItem:selected status:false index:self.questionCount];
     }
     if(!self.detailsArray)

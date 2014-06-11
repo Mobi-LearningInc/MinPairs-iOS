@@ -11,6 +11,7 @@
 #import "MLDetailTableCellTypeOne.h"
 #import "MLDetailTableCellTypeTwo.h"
 #import "MLDetailTableCellTypeThree.h"
+#import "MLTheme.h"
 @interface MLDetailTableViewController ()
 @property NSMutableArray* cellDataArr;
 @end
@@ -28,6 +29,7 @@
 
 - (void)viewDidLoad
 {
+    [MLTheme setTheme:self];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.

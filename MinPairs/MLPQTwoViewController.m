@@ -44,14 +44,7 @@
     self.correctItem=(rand==0)?itemPair.first:itemPair.second;
     NSLog(@"Correct item is %@",self.correctItem.itemDescription);
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:nil event:nil typeLabel:self.typeTimeLabel event:^(void){
-        /*MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:0+self.previousResult.testQuestionsCorrect
-            wrong:1+self.previousResult.testQuestionsWrong
-            type:self.previousResult.testType
-            date:self.previousResult.testDate
-            timeInSec:self.timeCount+self.previousResult.testTime
-            extraInfo:self.previousResult.testExtra];*/
-        //[self onAnswer:currentResult];
-        //[self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
+        
         [self onAnswerBtn:self.answerBtn];
     }];
 }
