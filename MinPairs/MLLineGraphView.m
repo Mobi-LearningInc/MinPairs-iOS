@@ -33,7 +33,7 @@
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     
-    NSArray* dates = [[self graphData] allKeys];//keys are strings
+    NSArray* dates = [[self graphData] allKeys];//keys should be numbers
     for(int i=0; i<dates.count; i++)
     {
         NSLog(@"%@",dates[i]);
@@ -151,7 +151,7 @@
     
     /** Setup dates on X-Axis **/
     
-    NSArray* dates = [[self graphData] allKeys];
+    NSArray* dates = [[self graphData] allKeys];//keys should be numbers
     dates = [dates sortedArrayUsingSelector:@selector(compare:)];
     
     uint32_t xPosition = 0;

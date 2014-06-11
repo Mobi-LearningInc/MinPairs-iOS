@@ -135,9 +135,15 @@
     _testResults = [db getTestResults];
     [_dateFormatter setDateFormat: @"yyyy MMM dd HH:mm:ss"];
     
+    MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
+    MLSettingsData* setting=[settingDb getSetting];
+    MLPair* filterCatPair =setting.settingFilterCatPair;
+    MLCategory* filterCatLeft=filterCatPair.first;
+    MLCategory* filterCatRight=filterCatPair.second;
     
-    _filterDesc = @"All|All";
-    _filterTitle = @"All vs. All";
+    _filterDesc = [NSString stringWithFormat:@"%@|%@",filterCatLeft.categoryDescription,filterCatRight.categoryDescription];
+    _filterTitle = [NSString stringWithFormat:@"%@ vs %@",filterCatLeft.categoryDescription,filterCatRight.categoryDescription];
+    
     [self loadLineGraphStats: duplicates];
     [self loadBarGraphStats: duplicates];
 }
