@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MLFilterChangeListener.h"
+#import "MLMutableSortedDictionary.h"
 
 @interface MLStatsTabBarViewController : UITabBarController<MLFilterChangeListener>
-@property (nonatomic, strong) NSMutableDictionary* barGraphResults;
-@property (nonatomic, strong) NSMutableDictionary* lineGraphResults;
+@property (nonatomic, strong) MLMutableSortedDictionary* barGraphResults;
+@property (nonatomic, strong) MLMutableSortedDictionary* lineGraphResults;
 @property (nonatomic, strong) NSString* filterTitle;
 @end

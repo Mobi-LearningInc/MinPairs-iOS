@@ -67,6 +67,7 @@
 		CA1C024B190C0477003C5F90 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1C024A190C0477003C5F90 /* Main_iPhone.storyboard */; };
 		CA1C024E190C193A003C5F90 /* MLPQTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C024D190C193A003C5F90 /* MLPQTwoViewController.m */; };
 		CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0250190C19A9003C5F90 /* MLPQThreeViewController.m */; };
+		CA51D4E719499C95007DDCB5 /* MLMutableSortedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CA51D4E619499C95007DDCB5 /* MLMutableSortedDictionary.m */; };
 		CA6BAEE1192B866F00DA1FB4 /* MLBarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEDE192B866F00DA1FB4 /* MLBarGraphView.m */; };
 		CA6BAEE2192B866F00DA1FB4 /* MLLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE0192B866F00DA1FB4 /* MLLineGraphView.m */; };
 		CA6BAEE5192B88BA00DA1FB4 /* MLBarGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE4192B88BA00DA1FB4 /* MLBarGraphViewController.m */; };
@@ -570,6 +571,8 @@
 		CA22B9721927A7E000366A1C /* TCStatementCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStatementCollection.h; sourceTree = "<group>"; };
 		CA22B9731927A7E000366A1C /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
 		CA22B9741927A7E000366A1C /* TCVerb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVerb.h; sourceTree = "<group>"; };
+		CA51D4E519499C95007DDCB5 /* MLMutableSortedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMutableSortedDictionary.h; sourceTree = "<group>"; };
+		CA51D4E619499C95007DDCB5 /* MLMutableSortedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMutableSortedDictionary.m; sourceTree = "<group>"; };
 		CA6BAEDD192B866F00DA1FB4 /* MLBarGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBarGraphView.h; sourceTree = "<group>"; };
 		CA6BAEDE192B866F00DA1FB4 /* MLBarGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBarGraphView.m; sourceTree = "<group>"; };
 		CA6BAEDF192B866F00DA1FB4 /* MLLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLineGraphView.h; sourceTree = "<group>"; };
@@ -1400,6 +1403,8 @@
 			children = (
 				CAA1B2151911B17C00453852 /* MLPlatform.h */,
 				CAA1B2161911B17C00453852 /* MLPlatform.m */,
+				CA51D4E519499C95007DDCB5 /* MLMutableSortedDictionary.h */,
+				CA51D4E619499C95007DDCB5 /* MLMutableSortedDictionary.m */,
 			);
 			name = Platform;
 			sourceTree = "<group>";
@@ -2209,6 +2214,7 @@
 				CA6BAEE8192B88E900DA1FB4 /* MLLineGraphViewController.m in Sources */,
 				CA1C0251190C19A9003C5F90 /* MLPQThreeViewController.m in Sources */,
 				E13E14851911D20900A6D5A9 /* MLPQBaseViewController.m in Sources */,
+				CA51D4E719499C95007DDCB5 /* MLMutableSortedDictionary.m in Sources */,
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */,
 				CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */,

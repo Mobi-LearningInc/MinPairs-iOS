@@ -60,10 +60,14 @@
     return false;
 }
 
-- (void)loadLineGraphStats:(NSMutableDictionary*)duplicates
+- (void)loadLineGraphStats:(MLMutableSortedDictionary*)duplicates
 {
-    int i = 0;
-    _lineGraphResults = [[NSMutableDictionary alloc] init];
+    _lineGraphResults = [[MLMutableSortedDictionary alloc] init];
+    
+    [_lineGraphResults setSortMode:true];
+    [_lineGraphResults setComparator:^NSComparisonResult(NSDate* lhs, NSDate* rhs) {
+        return [lhs compare: rhs];
+    }];
     
     for (MLTestResult* res in [self testResults])
     {
@@ -82,6 +86,8 @@
                 
                 NSNumber* dup_count = data[1];
                 dup_count = @([dup_count intValue] + 1);
+                
+                data = @[added_score, dup_count];
                 [duplicates setObject: data forKey: str];
             }
             else
@@ -90,14 +96,18 @@
                 [duplicates setObject: data forKey: str];
             }
             
-            [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: [NSNumber numberWithInt:++i]];// forKey was [NSString stringWithFormat:@"Game #%d", ++i] aka a string, but should be a number so that we dont have sorting issues ;)
+            [_lineGraphResults setObject:[NSNumber numberWithInt:score] forKey: date];
         }
     }
 }
 
-- (void)loadBarGraphStats:(NSMutableDictionary*)duplicates
+- (void)loadBarGraphStats:(MLMutableSortedDictionary*)duplicates
 {
-    _barGraphResults = [[NSMutableDictionary alloc] init];
+    _barGraphResults = [[MLMutableSortedDictionary alloc] init];
+    [_barGraphResults setSortMode:true];
+    [_barGraphResults setComparator:^NSComparisonResult(NSString* lhs, NSString* rhs) {
+        return [lhs compare: rhs];
+    }];
     
     for (NSString* key in duplicates)
     {
@@ -129,21 +139,15 @@
     [super viewDidLoad];
 
     MLTestResultDatabase* db = [[MLTestResultDatabase alloc] initTestResultDatabase];
-    NSMutableDictionary* duplicates = [[NSMutableDictionary alloc] init];
+    MLMutableSortedDictionary* duplicates = [[MLMutableSortedDictionary alloc] init];
     _dateFormatter = [[NSDateFormatter alloc] init];
     
     _testResults = [db getTestResults];
     [_dateFormatter setDateFormat: @"yyyy MMM dd HH:mm:ss"];
     
-    MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
-    MLSettingsData* setting=[settingDb getSetting];
-    MLPair* filterCatPair =setting.settingFilterCatPair;
-    MLCategory* filterCatLeft=filterCatPair.first;
-    MLCategory* filterCatRight=filterCatPair.second;
-    
-    _filterDesc = [NSString stringWithFormat:@"%@|%@",filterCatLeft.categoryDescription,filterCatRight.categoryDescription];
-    _filterTitle = [NSString stringWithFormat:@"%@ vs %@",filterCatLeft.categoryDescription,filterCatRight.categoryDescription];
-    
+    _filterDesc = @"All|All";
+    _filterTitle = @"All vs. All";
+
     [self loadLineGraphStats: duplicates];
     [self loadBarGraphStats: duplicates];
 }
@@ -191,7 +195,7 @@
         return;
     }
     
-    NSMutableDictionary* duplicates = [[NSMutableDictionary alloc] init];
+    MLMutableSortedDictionary* duplicates = [[MLMutableSortedDictionary alloc] init];
     [self loadLineGraphStats: duplicates];
     [self loadBarGraphStats: duplicates];
     

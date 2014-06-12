@@ -12,8 +12,11 @@
 #import "MLDetailTableCellTypeTwo.h"
 #import "MLDetailTableCellTypeThree.h"
 #import "MLTheme.h"
+#import "MLPlatform.h"
+
 @interface MLDetailTableViewController ()
 @property NSMutableArray* cellDataArr;
+@property (weak, nonatomic) IBOutlet UIButton *DoneButton;
 @end
 
 @implementation MLDetailTableViewController
@@ -30,6 +33,7 @@
 - (void)viewDidLoad
 {
     [MLTheme setTheme:self];
+    [MLPlatform setButtonRound:[self DoneButton] withRadius: 10.0f];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.

@@ -11,12 +11,22 @@
 @interface MLBarGraphView()
 @property (nonatomic, strong) CPTXYGraph* graph;
 @property (nonatomic, strong) NSString* title;
-@property (nonatomic, strong) NSMutableDictionary* graphData;
+@property (nonatomic, strong) MLMutableSortedDictionary* graphData;
 @end
 
 @implementation MLBarGraphView
 
-- (void) setGraphData:(NSMutableDictionary*)data
+/** Internal constants for graph scrolling (Compile time constants - Assembly optimisation) **/
+
+const float xMin = 0.0f;
+const float yMin = 0.0f;
+const float xMax = 4.0f;
+const float yMax = 10.0f;
+
+const float barWidth = 0.70f;
+const float barOffset = barWidth / 2.0f;
+
+- (void) setGraphData:(MLMutableSortedDictionary*)data
 {
     _graphData = data;
 }
@@ -28,12 +38,13 @@
 
 - (void) reload
 {
+    /** Reload graph title & Axis **/
+    
     [[self graph] setTitle: [self title]];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     
     NSArray* dates = [[self graphData] allKeys];
-    dates = [dates sortedArrayUsingSelector:@selector(compare:)];
     
     float xPosition = 0.70f / 2.0f;
     NSMutableArray* xLabels = [NSMutableArray array];
@@ -49,6 +60,13 @@
     }
     
     [xAxis setAxisLabels: [NSSet setWithArray: xLabels]];
+    
+    
+    /** Reset plot space to adjust scrolling limitation to the new data range **/
+    
+    CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] plotSpaceAtIndex:0];
+    [plotSpace setGlobalXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat([[self graphData] count] <= xMax ? xMax : [[self graphData] count] - (1.0f - barWidth))]];
+    
     [_graph reloadData];
 }
 
@@ -71,14 +89,6 @@
    
     
     /** Set graph plot space **/
-    
-    float xMin = 0.0f;
-    float yMin = 0.0f;
-    float xMax = 4.0f;
-    float yMax = 10.0f;
-    
-    float barWidth = 0.70f;
-    float barOffset = barWidth / 2.0f;
     
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
     
@@ -151,10 +161,8 @@
     
     /** Setup dates on X-Axis **/
     
-    NSArray* dates = [[self graphData] allKeys];
-    dates = [dates sortedArrayUsingSelector:@selector(compare:)];
-    
     float xPosition = barOffset;
+    NSArray* dates = [[self graphData] allKeys];
     NSMutableArray* xLabels = [NSMutableArray array];
     
     for (NSString* date in dates)

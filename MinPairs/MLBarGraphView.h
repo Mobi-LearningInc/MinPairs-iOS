@@ -8,10 +8,11 @@
 
 #import "CPTGraphHostingView.h"
 #import "CorePlot-CocoaTouch.h"
+#import "MLMutableSortedDictionary.h"
 
 @interface MLBarGraphView : CPTGraphHostingView<CPTBarPlotDataSource, CPTBarPlotDelegate, CPTPlotSpaceDelegate>
 - (void) createGraph;
-- (void) setGraphData:(NSMutableDictionary*)data;
+- (void) setGraphData:(MLMutableSortedDictionary*)data;
 - (void) setGraphTitle:(NSString*)title;
 - (void) reload;
 @end

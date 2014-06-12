@@ -12,12 +12,20 @@
 @interface MLLineGraphView()
 @property (nonatomic, strong) CPTXYGraph* graph;
 @property (nonatomic, strong) NSString* title;
-@property (nonatomic, strong) NSMutableDictionary* graphData;
+@property (nonatomic, strong) MLMutableSortedDictionary* graphData;
 @end
 
 @implementation MLLineGraphView
 
-- (void) setGraphData:(NSMutableDictionary*)data
+/** Internal constants for graph scrolling (Compile time constants - Assembly optimisation) **/
+
+const float xMin = -0.05f;
+const float yMin = 0.0f;
+const float xMax = 4.0f;
+const float yMax = 10.0f;
+const float lineOffset = 0.1f; //0.05f
+
+- (void) setGraphData:(MLMutableSortedDictionary*)data
 {
     _graphData = data;
 }
@@ -29,23 +37,21 @@
 
 - (void) reload
 {
+    /** Reload graph title & Axis **/
+    
     [[self graph] setTitle: [self title]];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
     CPTXYAxis* xAxis = [axisSet xAxis];
     
-    NSArray* dates = [[self graphData] allKeys];//keys should be numbers
-    for(int i=0; i<dates.count; i++)
-    {
-        NSLog(@"%@",dates[i]);
-    }
-    dates = [dates sortedArrayUsingSelector:@selector(compare:)];
+    NSArray* dates = [[self graphData] allKeys];
+    //dates = [dates sortedArrayUsingSelector:@selector(compare:)];
     
     uint32_t xPosition = 0;
     NSMutableArray* xLabels = [NSMutableArray array];
     
-    for (NSNumber* date in dates)//dates are keys
+    for (int i = 0; i < [dates count]; ++i)
     {
-        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: [NSString stringWithFormat:@"Game #%@", date] textStyle: [xAxis labelTextStyle]];
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: [NSString stringWithFormat:@"Game #%d", i + 1] textStyle: [xAxis labelTextStyle]];
         [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];
@@ -54,6 +60,13 @@
     }
     
     [xAxis setAxisLabels: [NSSet setWithArray: xLabels]];
+    
+    
+    /** Reset plot space to adjust scrolling limitation to the new data range **/
+
+    CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] plotSpaceAtIndex:0];
+    [plotSpace setGlobalXRange: [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(xMin) length:CPTDecimalFromFloat([[self graphData] count] <= xMax ? xMax : [[self graphData] count] - (1.0f - lineOffset))]];
+    
     [_graph reloadData];
 }
 
@@ -75,12 +88,6 @@
     
     
     /** Set graph plot space **/
-    
-    float xMin = -0.05f;
-    float yMin = 0.0f;
-    float xMax = 4.0f;
-    float yMax = 10.0f;
-    float lineOffset = 0.05f;
 
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
     
@@ -151,15 +158,12 @@
     
     /** Setup dates on X-Axis **/
     
-    NSArray* dates = [[self graphData] allKeys];//keys should be numbers
-    dates = [dates sortedArrayUsingSelector:@selector(compare:)];
-    
     uint32_t xPosition = 0;
     NSMutableArray* xLabels = [NSMutableArray array];
     
-    for (NSNumber* date in dates)//dates are keys 
+    for (int i = 0; i < [[self graphData] count]; ++i)
     {
-        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: [NSString stringWithFormat:@"Game #%@", date] textStyle: [xAxis labelTextStyle]];
+        CPTAxisLabel* xlabel = [[CPTAxisLabel alloc] initWithText: [NSString stringWithFormat:@"Game #%d", i + 1] textStyle: [xAxis labelTextStyle]];
         [xlabel setTickLocation: [[NSNumber numberWithUnsignedInt: xPosition] decimalValue]];
         [xlabel setOffset: [xAxis labelOffset] + [xAxis majorTickLength]];
         [xlabel setRotation: M_PI / 4.0f];
@@ -192,8 +196,6 @@
     /** Fill under the graph **/
     
     CPTColor* uFillColour = [CPTColor colorWithComponentRed:21.0f/0xFF green:142.0f/0xFF blue:141.0f/0xFF alpha:0.5f];
-    //CPTGradient* uFillGradient = [CPTGradient gradientWithBeginningColor:uFillColour endingColor:[CPTColor clearColor]];
-    //[uFillGradient setAngle: -90.0f];
     CPTFill* uFill = [CPTFill fillWithColor: uFillColour];
     [plot setAreaFill: uFill];
     [plot setAreaBaseValue: CPTDecimalFromString(@"-1.00")];
