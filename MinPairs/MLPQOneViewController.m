@@ -17,10 +17,8 @@
 @property (strong,nonatomic) MLItem* itemRight;
 @property (strong,nonatomic) MLItem* correctItem;
 @property (weak, nonatomic) IBOutlet UILabel *selectTimeLabel;
-//@property BOOL leftSelected;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
-//@property BOOL rightSelected;
 @property (weak, nonatomic) IBOutlet UIImageView *leftFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rightFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *checkMarkImg;
@@ -67,11 +65,8 @@
     MLItem* cor= rand==0?self.itemLeft:self.itemRight;
     self.correctItem=cor;
     NSLog(@"Correct item is %@",self.correctItem.itemDescription);
-    //self.leftSelected=true;
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:YES];
-    //self.rightSelected=false;
-    //[self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
     [self registerQuizTimeLabelsAndEventSelectLabel:self.selectTimeLabel event:^(void){
         [self onAnswerBtn:self.submitBtn];
     } readLabel:nil event:nil typeLabel:nil event:nil];
@@ -83,22 +78,13 @@
 }
 - (IBAction)onLeftImgBtnTap:(id)sender
 {
-    //self.leftSelected=true;
-    //self.rightSelected=false;
     [self.leftFingerImg setHidden:NO];
     [self.rightFingerImg setHidden:YES];
-    //[self performSelector:@selector(highlightBtn:) withObject:self.leftImgBtn afterDelay:0];
-    //[self performSelector:@selector(unHighlightBtn:) withObject:self.rightImgBtn afterDelay:0];
 }
 - (IBAction)onRightImgBtnTap:(id)sender
 {
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:NO];
-    //self.rightSelected=true;
-    //self.leftSelected=false;
-    
-    //[self performSelector:@selector(highlightBtn:) withObject:self.rightImgBtn afterDelay:0];
-    //[self performSelector:@selector(unHighlightBtn:) withObject:self.leftImgBtn afterDelay:0];
 }
 - (void)highlightBtn:(UIButton*)btn
 {
@@ -113,7 +99,7 @@
     self.pauseTimer=YES;
     int corr;
     int wrong;
-    MLItem* selected=nil;//self.leftSelected?self.itemLeft:self.itemRight;
+    MLItem* selected=nil;
     if(!self.leftFingerImg.hidden)
     {
         selected=self.itemLeft;
@@ -128,17 +114,15 @@
     {
         corr=1;
         wrong=0;
-        //self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
-        self.statusImg.image=[UIImage imageNamed:@"fLargeGreenCheck"];
+        self.statusImg.image=[UIImage imageNamed:@"fCorrect"];
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_ONE correctItem:self.correctItem userItem:selected status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
-        //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
         selected = self.itemRight == self.correctItem ? self.itemLeft : self.itemRight;
-        self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
+        self.statusImg.image=[UIImage imageNamed:@"fIncorrect"];
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_ONE correctItem:self.correctItem userItem:selected status:false index:self.questionCount];
     }
     if(!self.detailsArray)

@@ -74,17 +74,15 @@
     {
         corr=1;
         wrong=0;
-        //self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
-        self.statusImg.image=[UIImage imageNamed:@"fLargeGreenCheck"];
+        self.statusImg.image=[UIImage imageNamed:@"fCorrect"];
         dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
-        self.correctTextLabel.text=self.correctItem.itemDescription ;
-        //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
-        self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
+        self.correctTextLabel.text=self.correctItem.itemDescription;
+        self.statusImg.image=[UIImage imageNamed:@"fIncorrect"];
         dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:false index:self.questionCount];
     }
     if(!self.detailsArray)

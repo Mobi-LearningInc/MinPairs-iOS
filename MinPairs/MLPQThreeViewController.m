@@ -98,7 +98,7 @@
     self.pauseTimer=YES;
     int corr;
     int wrong;
-    MLItem* selected =nil;//(!self.leftFingerImg.hidden)?self.itemLeft:self.itemRight;
+    MLItem* selected =nil;
     if(!self.leftFingerImg.hidden)
     {
         selected=self.itemLeft;
@@ -113,16 +113,14 @@
     {
         corr=1;
         wrong=0;
-        //self.statusImg.image=[UIImage imageNamed:@"checkmark_plain_white"];
-        self.statusImg.image=[UIImage imageNamed:@"fLargeGreenCheck"];
+        self.statusImg.image=[UIImage imageNamed:@"fCorrect"];
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_THREE correctItem:self.correctAnswer userItem:selected status:true index:self.questionCount];
     }
     else
     {
         corr=0;
         wrong=1;
-        //self.statusImg.image=[UIImage imageNamed:@"xmark_plain_white"];
-        self.statusImg.image=[UIImage imageNamed:@"fLargeRedX"];
+        self.statusImg.image=[UIImage imageNamed:@"fIncorrect"];
         selected = self.itemRight == self.correctAnswer ? self.itemLeft : self.itemRight;
         dItem = [[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_THREE correctItem:self.correctAnswer userItem:selected status:false index:self.questionCount];
     }

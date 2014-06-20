@@ -56,7 +56,7 @@
                                     <segue destination="CvA-Qv-OUt" kind="push" id="OrS-5p-c7q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
                                 <rect key="frame" x="20" y="218" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,7 @@
                                     <action selector="onPracticeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uE1-ZA-Ezr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
                                 <rect key="frame" x="20" y="280" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -655,7 +655,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mFilter" translatesAutoresizingMaskIntoConstraints="NO" id="8Mc-Kc-NLD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fFilter" translatesAutoresizingMaskIntoConstraints="NO" id="8Mc-Kc-NLD">
                                 <rect key="frame" x="20" y="94" width="38" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -2112,6 +2112,7 @@ Current selection: %@ vs. %@</string>
         <image name="ear.png" width="400" height="400"/>
         <image name="fBars" width="26" height="22"/>
         <image name="fEar" width="130" height="130"/>
+        <image name="fFilter" width="94" height="132"/>
         <image name="fLargeBlackCheck" width="38" height="34"/>
         <image name="fLargeBlackX" width="33" height="34"/>
         <image name="fLine" width="28" height="22"/>
@@ -2123,7 +2124,6 @@ Current selection: %@ vs. %@</string>
         <image name="iSubmit" width="47" height="66"/>
         <image name="mEmail" width="31" height="22"/>
         <image name="mFacebook" width="22" height="22"/>
-        <image name="mFilter" width="22" height="22"/>
         <image name="mHelp" width="22" height="22"/>
         <image name="mHome" width="22" height="22"/>
         <image name="mLearn" width="27" height="22"/>
@@ -2145,11 +2145,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KDw-fn-wD3"/>
-        <segue reference="g9E-Hu-eGC"/>
-        <segue reference="SJc-rc-SHc"/>
-        <segue reference="6iJ-t5-LbI"/>
-        <segue reference="mSI-G2-kJF"/>
-        <segue reference="ftR-Qk-zmG"/>
+        <segue reference="uXz-Mu-If8"/>
+        <segue reference="LKQ-GX-APY"/>
+        <segue reference="Nd2-aZ-hCp"/>
+        <segue reference="HJ8-lZ-5Hc"/>
+        <segue reference="JBl-hY-9iN"/>
+        <segue reference="H8M-Yu-SQn"/>
     </inferredMetricsTieBreakers>
 </document>

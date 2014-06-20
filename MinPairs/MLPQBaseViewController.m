@@ -72,7 +72,7 @@
     }
 
     UIBarButtonItem *quitBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(onQuitBtn)];
-    [quitBtn setImage: [UIImage imageNamed:@"fSmallRedX.png"]];
+    [quitBtn setImage: [UIImage imageNamed:@"fQuit.png"]];
     [quitBtn setTintColor: [MLTheme navButtonColour]];
     
     self.navigationItem.leftBarButtonItem=quitBtn;
