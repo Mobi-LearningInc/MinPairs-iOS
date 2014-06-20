@@ -56,7 +56,7 @@
                                     <segue destination="CvA-Qv-OUt" kind="push" id="OrS-5p-c7q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
                                 <rect key="frame" x="20" y="218" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,7 @@
                                     <action selector="onPracticeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uE1-ZA-Ezr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
                                 <rect key="frame" x="20" y="280" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -94,7 +94,7 @@
                                     <action selector="onQuizzesClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lI6-3g-wuE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
                                 <rect key="frame" x="20" y="342" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,7 +153,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.84313732385635376" green="0.93333339691162109" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="width" secondItem="F4G-hu-XtN" secondAttribute="width" id="05c-NU-ZHC"/>
                             <constraint firstItem="h1k-DN-PbN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="2PG-9I-3Cp"/>
@@ -954,7 +954,7 @@ Current selection: %@ vs. %@</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.86666673419999996" green="0.94117653369999998" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XBS-S5-2tK" secondAttribute="trailing" constant="20" id="0dY-Rc-aRV"/>
                             <constraint firstItem="cP9-mA-QKY" firstAttribute="top" secondItem="ELm-06-scN" secondAttribute="bottom" id="12g-N5-OOb"/>
@@ -1096,7 +1096,7 @@ Current selection: %@ vs. %@</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.84313732385635376" green="0.93333339691162109" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="backgroundColor" red="0.85882359743118286" green="0.94509810209274292" blue="0.90588241815567017" alpha="1" colorSpace="deviceRGB"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1148,7 +1148,7 @@ Current selection: %@ vs. %@</string>
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="c3w-um-HS3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.86666673421859741" green="0.94117653369903564" blue="0.90588241815567017" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aqg-hy-Ldo">
                             <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1235,11 +1235,11 @@ Current selection: %@ vs. %@</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-RW-PCG">
-                                <rect key="frame" x="20" y="74" width="280" height="170"/>
+                                <rect key="frame" x="20" y="74" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="ABG-m7-OLC"/>
-                                    <constraint firstAttribute="height" constant="170" id="YtA-QY-mNX"/>
+                                    <constraint firstAttribute="width" constant="100" id="ABG-m7-OLC"/>
+                                    <constraint firstAttribute="height" constant="100" id="YtA-QY-mNX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-Rh-At1">
@@ -1253,19 +1253,19 @@ Current selection: %@ vs. %@</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Az-4j-VR5">
-                                <rect key="frame" x="20" y="259" width="280" height="173"/>
+                                <rect key="frame" x="20" y="189" width="280" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="z1n-bj-HOR"/>
                                 </constraints>
-                                <string key="text">[b]App. Info:[/b]     Version: %@     Build: %@  [b]Executives:[/b]     President:         %@     Vice-President: %@  [b]Website:[/b]     http://mobilearninginc.com  [b]Info:[/b]     %@</string>
+                                <string key="text">[b]App. Info:[/b]     Version: %@     Build: %@  [b]MinimalPairs[/b] %@  [b]Questions and Suggestions:[/b] %@  [b]For more information visit:[/b] http://mobilearninginc.com/minimal-pairs  </string>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5xL-Rh-At1" firstAttribute="top" secondItem="6Az-4j-VR5" secondAttribute="bottom" constant="8" id="Fnu-dW-sWx"/>
                             <constraint firstItem="5xL-Rh-At1" firstAttribute="leading" secondItem="Akq-Rp-Wff" secondAttribute="leading" constant="20" id="LHR-zZ-ebh"/>
@@ -1276,7 +1276,6 @@ Current selection: %@ vs. %@</string>
                             <constraint firstAttribute="trailing" secondItem="5xL-Rh-At1" secondAttribute="trailing" constant="20" id="j56-Tx-VCM"/>
                             <constraint firstItem="sF2-RW-PCG" firstAttribute="leading" secondItem="Akq-Rp-Wff" secondAttribute="leading" constant="20" id="lLE-MJ-B0S"/>
                             <constraint firstItem="6Az-4j-VR5" firstAttribute="top" secondItem="sF2-RW-PCG" secondAttribute="bottom" constant="15" id="sXa-cG-ySR"/>
-                            <constraint firstAttribute="trailing" secondItem="sF2-RW-PCG" secondAttribute="trailing" constant="20" id="ubl-MN-o3G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="INFORMATION" id="jhs-Ja-lz8">
@@ -1430,7 +1429,7 @@ Current selection: %@ vs. %@</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.84313732389999996" green="0.93333339689999995" blue="0.88235300780000003" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1sW-hi-wBl" secondAttribute="trailing" constant="20" id="0TW-qt-mtF"/>
                             <constraint firstItem="935-Vl-RaQ" firstAttribute="top" secondItem="2hv-ZQ-bN7" secondAttribute="bottom" constant="20" id="0Vf-Jt-LL1"/>
@@ -1598,7 +1597,7 @@ Current selection: %@ vs. %@</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86666673419999996" green="0.94117653369999998" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.86666673419999996" green="0.94117653369999998" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
@@ -1868,7 +1867,7 @@ Current selection: %@ vs. %@</string>
                                     <action selector="onAnswerBtn:" destination="CeJ-mv-Dkw" eventType="touchUpInside" id="Eux-Cl-UmJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-l2-gg4">
                                 <rect key="frame" x="20" y="52" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1898,7 +1897,7 @@ Current selection: %@ vs. %@</string>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-WM-MrK">
                                 <rect key="frame" x="0.0" y="20" width="320" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -2146,11 +2145,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="KDw-fn-wD3"/>
+        <segue reference="g9E-Hu-eGC"/>
+        <segue reference="SJc-rc-SHc"/>
+        <segue reference="6iJ-t5-LbI"/>
         <segue reference="mSI-G2-kJF"/>
-        <segue reference="uXz-Mu-If8"/>
-        <segue reference="z8P-3v-4Hr"/>
-        <segue reference="sDC-Eh-Yxn"/>
         <segue reference="ftR-Qk-zmG"/>
-        <segue reference="TyA-nf-f42"/>
     </inferredMetricsTieBreakers>
 </document>

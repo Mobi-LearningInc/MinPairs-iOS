@@ -41,7 +41,7 @@
     NSString* build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
-    NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:self.InfoView.text, version, build, @"Aga Palalas", @"Przemyslaw Pawluk", @"..."]];
+    NSMutableAttributedString* text = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:self.InfoView.text, version, build, @" offers simple activities to help you learn, teach, and perfect English pronunciation and phonetics. Practicing minimal pairs is a proven method to improve your English language proficiency. MinimalPairs provides mobile-assisted language learning activities to help you learn, practice and assess your progress in discriminating English sounds.", @"support@mobilearninginc.com"]];
     
     self.InfoView.attributedText = [MLPlatform parseBBCodes:text withFontSize:self.InfoView.font.pointSize];
     self.InfoView.dataDetectorTypes = UIDataDetectorTypeLink;
