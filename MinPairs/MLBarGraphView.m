@@ -16,16 +16,6 @@
 
 @implementation MLBarGraphView
 
-/** Internal constants for graph scrolling (Compile time constants - Assembly optimisation) **/
-
-const float xMin = 0.0f;
-const float yMin = 0.0f;
-const float xMax = 4.0f;
-const float yMax = 10.0f;
-
-const float barWidth = 0.70f;
-const float barOffset = barWidth / 2.0f;
-
 - (void) setGraphData:(MLMutableSortedDictionary*)data
 {
     _graphData = data;
@@ -39,6 +29,10 @@ const float barOffset = barWidth / 2.0f;
 - (void) reload
 {
     /** Reload graph title & Axis **/
+    
+    const float xMin = 0.0f;
+    const float xMax = 4.0f;
+    const float barWidth = 0.70f;
     
     [[self graph] setTitle: [self title]];
     CPTXYAxisSet* axisSet = (CPTXYAxisSet*)[[self graph] axisSet];
@@ -89,6 +83,14 @@ const float barOffset = barWidth / 2.0f;
    
     
     /** Set graph plot space **/
+    
+    const float xMin = 0.0f;
+    const float yMin = 0.0f;
+    const float xMax = 4.0f;
+    const float yMax = 10.0f;
+    
+    const float barWidth = 0.70f;
+    const float barOffset = barWidth / 2.0f;
     
     CPTXYPlotSpace* plotSpace = (CPTXYPlotSpace*)[[self graph] defaultPlotSpace];
     
