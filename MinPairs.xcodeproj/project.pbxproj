@@ -24,6 +24,7 @@
 		CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343DB191DED0900CAF871 /* MLInfoViewController.m */; };
 		CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */; };
 		CA07712619202369009C1171 /* MLHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07712519202369009C1171 /* MLHelpViewController.m */; };
+		CA10BF5A19558DF200F624B1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA10BF5919558DF200F624B1 /* logo.png */; };
 		CA16BFAB191C72F10000B48E /* Ban.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF30191C72F00000B48E /* Ban.png */; };
 		CA16BFAC191C72F10000B48E /* Bean.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF31191C72F00000B48E /* Bean.png */; };
 		CA16BFAD191C72F10000B48E /* Berry.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF32191C72F00000B48E /* Berry.png */; };
@@ -330,7 +331,6 @@
 		EBE8A4EF193AA00000EC0A4D /* learn.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E5193AA00000EC0A4D /* learn.html */; };
 		EBE8A4F0193AA00000EC0A4D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4E6193AA00000EC0A4D /* index.html */; };
 		EBE8A4F3193B778100EC0A4D /* mFilter.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4F2193B778100EC0A4D /* mFilter.png */; };
-		EBE8A4F7193B842C00EC0A4D /* logo_29pt-2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBE8A4F6193B842C00EC0A4D /* logo_29pt-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,6 +369,7 @@
 		CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInstructionsViewController.m; sourceTree = "<group>"; };
 		CA07712419202369009C1171 /* MLHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHelpViewController.h; sourceTree = "<group>"; };
 		CA07712519202369009C1171 /* MLHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHelpViewController.m; sourceTree = "<group>"; };
+		CA10BF5919558DF200F624B1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		CA16BF30191C72F00000B48E /* Ban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ban.png; sourceTree = "<group>"; };
 		CA16BF31191C72F00000B48E /* Bean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bean.png; sourceTree = "<group>"; };
 		CA16BF32191C72F00000B48E /* Berry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Berry.png; sourceTree = "<group>"; };
@@ -867,7 +868,6 @@
 		EBE8A4E5193AA00000EC0A4D /* learn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = learn.html; sourceTree = "<group>"; };
 		EBE8A4E6193AA00000EC0A4D /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		EBE8A4F2193B778100EC0A4D /* mFilter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mFilter.png; path = Images.xcassets/Main/mFilter.imageset/mFilter.png; sourceTree = "<group>"; };
-		EBE8A4F6193B842C00EC0A4D /* logo_29pt-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_29pt-2.png"; path = "Images.xcassets/AppIcon.appiconset/logo_29pt-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1761,7 +1761,7 @@
 		EBE8A4F1193B70A500EC0A4D /* img */ = {
 			isa = PBXGroup;
 			children = (
-				EBE8A4F6193B842C00EC0A4D /* logo_29pt-2.png */,
+				CA10BF5919558DF200F624B1 /* logo.png */,
 				EBE8A4F2193B778100EC0A4D /* mFilter.png */,
 			);
 			name = img;
@@ -1863,7 +1863,6 @@
 				E1096FB019095C06000C7E11 /* l_lane1.mp3 in Resources */,
 				E1096F7919095C06000C7E11 /* Bored1.mp3 in Resources */,
 				E109701E19095C06000C7E11 /* Walk1.mp3 in Resources */,
-				EBE8A4F7193B842C00EC0A4D /* logo_29pt-2.png in Resources */,
 				EBE8A4E9193AA00000EC0A4D /* overview.html in Resources */,
 				CA16BFF6191C72F10000B48E /* Work.png in Resources */,
 				EBE8A4EE193AA00000EC0A4D /* practice.html in Resources */,
@@ -2100,6 +2099,7 @@
 				E1096FED19095C06000C7E11 /* Shy1.mp3 in Resources */,
 				E1096F6819095C06000C7E11 /* Bale1.mp3 in Resources */,
 				E109702A19095C06000C7E11 /* Zoo1.mp3 in Resources */,
+				CA10BF5A19558DF200F624B1 /* logo.png in Resources */,
 				E1096F9219095C06000C7E11 /* e_bet1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

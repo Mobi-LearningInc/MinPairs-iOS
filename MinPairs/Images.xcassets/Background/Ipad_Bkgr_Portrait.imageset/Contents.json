@@ -1,14 +1,14 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "ipad",
       "scale" : "1x",
-      "filename" : "Mobi_logo_large.png"
+      "filename" : "Ipad_Bkgr_Portrait.png"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "ipad",
       "scale" : "2x",
-      "filename" : "Mobi_logo_large-1.png"
+      "filename" : "Ipad_Bkgr_Portrait@2x.png"
     }
   ],
   "info" : {
