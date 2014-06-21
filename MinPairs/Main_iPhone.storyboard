@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Iphone_Bkgr_PearOnly" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-ms-1hu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtL-Cx-Iuo">
                                 <rect key="frame" x="20" y="94" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -94,7 +98,7 @@
                                     <action selector="onQuizzesClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lI6-3g-wuE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
                                 <rect key="frame" x="20" y="342" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -166,14 +170,17 @@
                             <constraint firstItem="QJM-tU-Zfr" firstAttribute="height" secondItem="jwD-uY-C2T" secondAttribute="height" id="5fQ-cj-vGG"/>
                             <constraint firstAttribute="trailing" secondItem="9La-2G-AgM" secondAttribute="trailing" constant="20" id="6vW-8z-Rkl"/>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="height" secondItem="V2t-de-nij" secondAttribute="height" id="7AX-2N-QVv"/>
+                            <constraint firstItem="zk9-ms-1hu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7VI-wE-FKQ"/>
                             <constraint firstAttribute="trailing" secondItem="PMc-GK-V1o" secondAttribute="trailing" constant="20" id="8PM-Oe-Fyn"/>
                             <constraint firstItem="CtL-Cx-Iuo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="BUE-zQ-K1G"/>
                             <constraint firstAttribute="trailing" secondItem="F4G-hu-XtN" secondAttribute="trailing" constant="20" id="DEm-sB-C1c"/>
                             <constraint firstItem="jwD-uY-C2T" firstAttribute="top" secondItem="F4G-hu-XtN" secondAttribute="bottom" id="DWM-dY-zpn"/>
                             <constraint firstAttribute="trailing" secondItem="jwD-uY-C2T" secondAttribute="trailing" constant="20" id="DYp-vU-vLL"/>
                             <constraint firstItem="q5i-xW-o5w" firstAttribute="top" secondItem="PMc-GK-V1o" secondAttribute="bottom" constant="30" id="E23-xh-COX"/>
+                            <constraint firstItem="zk9-ms-1hu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GGI-YU-c0M"/>
                             <constraint firstAttribute="trailing" secondItem="CtL-Cx-Iuo" secondAttribute="trailing" constant="20" id="GSG-SB-C0V"/>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="height" secondItem="F4G-hu-XtN" secondAttribute="height" id="HLm-sy-G5J"/>
+                            <constraint firstItem="q5i-xW-o5w" firstAttribute="top" secondItem="zk9-ms-1hu" secondAttribute="bottom" id="IBq-MK-XWs"/>
                             <constraint firstItem="h1k-DN-PbN" firstAttribute="top" secondItem="V2t-de-nij" secondAttribute="bottom" id="JNo-sx-6Aw"/>
                             <constraint firstAttribute="trailing" secondItem="QJM-tU-Zfr" secondAttribute="trailing" constant="20" id="LEv-Hy-7u3"/>
                             <constraint firstItem="V2t-de-nij" firstAttribute="top" secondItem="QJM-tU-Zfr" secondAttribute="bottom" id="LnE-PG-DW0"/>
@@ -186,6 +193,7 @@
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="height" secondItem="mSg-24-l2F" secondAttribute="height" id="Zv9-17-mgS"/>
                             <constraint firstAttribute="trailing" secondItem="ZLz-rE-l37" secondAttribute="trailing" constant="20" id="bYR-mt-5JL"/>
                             <constraint firstItem="9La-2G-AgM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="cYQ-3k-wwI"/>
+                            <constraint firstAttribute="trailing" secondItem="zk9-ms-1hu" secondAttribute="trailing" id="dN9-qb-j5c"/>
                             <constraint firstItem="PMc-GK-V1o" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="dcE-95-JlM"/>
                             <constraint firstItem="QJM-tU-Zfr" firstAttribute="width" secondItem="9La-2G-AgM" secondAttribute="width" id="eEV-R6-5bO"/>
                             <constraint firstAttribute="trailing" secondItem="V2t-de-nij" secondAttribute="trailing" constant="20" id="ezl-Qg-Lmb"/>
@@ -2108,6 +2116,7 @@ Current selection: %@ vs. %@</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Iphone_Bkgr_PearOnly" width="320" height="480"/>
         <image name="Logo" width="400" height="400"/>
         <image name="ear.png" width="400" height="400"/>
         <image name="fBars" width="26" height="22"/>
