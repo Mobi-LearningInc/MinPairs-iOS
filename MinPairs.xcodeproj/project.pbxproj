@@ -21,6 +21,7 @@
 		51F874BA190835BE00450DB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F87499190835BE00450DB2 /* UIKit.framework */; };
 		51F874C2190835BE00450DB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51F874C0190835BE00450DB2 /* InfoPlist.strings */; };
 		51F874C4190835BE00450DB2 /* MinPairsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F874C3190835BE00450DB2 /* MinPairsTests.m */; };
+		CA0083A81955987600EB928A /* logo_76pt.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0083A71955987600EB928A /* logo_76pt.png */; };
 		CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343DB191DED0900CAF871 /* MLInfoViewController.m */; };
 		CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */; };
 		CA07712619202369009C1171 /* MLHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07712519202369009C1171 /* MLHelpViewController.m */; };
@@ -363,6 +364,7 @@
 		51F874BF190835BE00450DB2 /* MinPairsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinPairsTests-Info.plist"; sourceTree = "<group>"; };
 		51F874C1190835BE00450DB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51F874C3190835BE00450DB2 /* MinPairsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinPairsTests.m; sourceTree = "<group>"; };
+		CA0083A71955987600EB928A /* logo_76pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_76pt.png; sourceTree = "<group>"; };
 		CA0343DA191DED0900CAF871 /* MLInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInfoViewController.h; sourceTree = "<group>"; };
 		CA0343DB191DED0900CAF871 /* MLInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInfoViewController.m; sourceTree = "<group>"; };
 		CA0343DF191E197300CAF871 /* MLInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLInstructionsViewController.h; sourceTree = "<group>"; };
@@ -1022,6 +1024,7 @@
 				CA16BF2B191C72F00000B48E /* img */,
 				CA16BF8A191C72F10000B48E /* na.jpg */,
 				CA16BF8B191C72F10000B48E /* na1.png */,
+				CA0083A71955987600EB928A /* logo_76pt.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -2075,6 +2078,7 @@
 				E109702419095C06000C7E11 /* Wet1.mp3 in Resources */,
 				E1096FC019095C06000C7E11 /* p_pin1.mp3 in Resources */,
 				E1096F8C19095C06000C7E11 /* Dead1.mp3 in Resources */,
+				CA0083A81955987600EB928A /* logo_76pt.png in Resources */,
 				E1096F9719095C06000C7E11 /* Fair1.mp3 in Resources */,
 				E109702519095C06000C7E11 /* Who'd1.mp3 in Resources */,
 				CA16BFC3191C72F10000B48E /* Fur.png in Resources */,
