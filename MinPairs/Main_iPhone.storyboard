@@ -18,13 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Iphone_Bkgr_PearOnly" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-ms-1hu">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Iphone_Bkgr_PearOnly" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-ms-1hu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtL-Cx-Iuo">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtL-Cx-Iuo">
                                 <rect key="frame" x="20" y="94" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="r14-qE-jkw"/>
                                     <constraint firstAttribute="width" constant="280" id="vmn-0B-hxR"/>
@@ -32,17 +33,18 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sounds" image="mSoundChart_c">
-                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Sounds" image="mSoundChart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="pwU-RH-joz" kind="push" id="DJH-Eo-hnc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9La-2G-AgM">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9La-2G-AgM">
                                 <rect key="frame" x="20" y="156" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="YAY-2S-Vk7"/>
                                     <constraint firstAttribute="width" constant="280" id="xR1-Hh-hIM"/>
@@ -50,17 +52,18 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Learn" image="mLearn_c">
-                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Learn" image="mLearn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="CvA-Qv-OUt" kind="push" id="OrS-5p-c7q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
                                 <rect key="frame" x="20" y="218" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="EiG-FA-7sw"/>
                                     <constraint firstAttribute="width" constant="280" id="LPK-7K-aeT"/>
@@ -68,17 +71,18 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Practice" image="mPractice_c">
-                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Practice" image="mPractice">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onPracticeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uE1-ZA-Ezr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
                                 <rect key="frame" x="20" y="280" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="NYT-Hc-A3k"/>
                                     <constraint firstAttribute="width" constant="280" id="UAN-Ql-qG9"/>
@@ -86,17 +90,18 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Quizzes" image="mQuizzes_c">
-                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Quizzes" image="mQuizzes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onQuizzesClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lI6-3g-wuE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
                                 <rect key="frame" x="20" y="342" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="MtX-j5-6bi"/>
                                     <constraint firstAttribute="width" constant="280" id="THm-xx-KW2"/>
@@ -104,17 +109,18 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Statistics" image="mStatistics_c">
-                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Statistics" image="mStatistics">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="IWa-Q5-03Q" kind="push" identifier="StatisticsSegue" id="J04-tX-Qde"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
                                 <rect key="frame" x="20" y="404" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="CnE-jv-Sty"/>
                                     <constraint firstAttribute="width" constant="280" id="nwR-qh-63E"/>
@@ -122,8 +128,8 @@
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Settings" image="mSettings_c">
-                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Settings" image="mSettings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2129,14 +2135,14 @@ Current selection: %@ vs. %@</string>
         <image name="mFacebook" width="22" height="22"/>
         <image name="mHelp" width="22" height="22"/>
         <image name="mHome" width="22" height="22"/>
-        <image name="mLearn_c" width="27" height="22"/>
+        <image name="mLearn" width="27" height="22"/>
         <image name="mListen" width="22" height="22"/>
-        <image name="mPractice_c" width="22" height="22"/>
-        <image name="mQuizzes_c" width="31" height="22"/>
-        <image name="mSettings_c" width="22" height="22"/>
+        <image name="mPractice" width="22" height="22"/>
+        <image name="mQuizzes" width="31" height="22"/>
+        <image name="mSettings" width="22" height="22"/>
         <image name="mShare" width="22" height="22"/>
-        <image name="mSoundChart_c" width="26" height="22"/>
-        <image name="mStatistics_c" width="28" height="22"/>
+        <image name="mSoundChart" width="26" height="22"/>
+        <image name="mStatistics" width="28" height="22"/>
         <image name="mSubmit" width="25" height="22"/>
         <image name="mTwitter" width="22" height="22"/>
         <image name="mWeibo" width="22" height="22"/>
