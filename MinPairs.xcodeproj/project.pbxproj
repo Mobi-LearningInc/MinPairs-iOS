@@ -24,7 +24,7 @@
 		CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343DB191DED0900CAF871 /* MLInfoViewController.m */; };
 		CA0343E1191E197300CAF871 /* MLInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */; };
 		CA07712619202369009C1171 /* MLHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA07712519202369009C1171 /* MLHelpViewController.m */; };
-		CA10BF5A19558DF200F624B1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA10BF5919558DF200F624B1 /* logo.png */; };
+		CA10BF5C19558EB300F624B1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CA10BF5B19558EB300F624B1 /* logo.png */; };
 		CA16BFAB191C72F10000B48E /* Ban.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF30191C72F00000B48E /* Ban.png */; };
 		CA16BFAC191C72F10000B48E /* Bean.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF31191C72F00000B48E /* Bean.png */; };
 		CA16BFAD191C72F10000B48E /* Berry.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF32191C72F00000B48E /* Berry.png */; };
@@ -369,7 +369,7 @@
 		CA0343E0191E197300CAF871 /* MLInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLInstructionsViewController.m; sourceTree = "<group>"; };
 		CA07712419202369009C1171 /* MLHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHelpViewController.h; sourceTree = "<group>"; };
 		CA07712519202369009C1171 /* MLHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHelpViewController.m; sourceTree = "<group>"; };
-		CA10BF5919558DF200F624B1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		CA10BF5B19558EB300F624B1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		CA16BF30191C72F00000B48E /* Ban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ban.png; sourceTree = "<group>"; };
 		CA16BF31191C72F00000B48E /* Bean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bean.png; sourceTree = "<group>"; };
 		CA16BF32191C72F00000B48E /* Berry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Berry.png; sourceTree = "<group>"; };
@@ -1761,7 +1761,7 @@
 		EBE8A4F1193B70A500EC0A4D /* img */ = {
 			isa = PBXGroup;
 			children = (
-				CA10BF5919558DF200F624B1 /* logo.png */,
+				CA10BF5B19558EB300F624B1 /* logo.png */,
 				EBE8A4F2193B778100EC0A4D /* mFilter.png */,
 			);
 			name = img;
@@ -2099,7 +2099,7 @@
 				E1096FED19095C06000C7E11 /* Shy1.mp3 in Resources */,
 				E1096F6819095C06000C7E11 /* Bale1.mp3 in Resources */,
 				E109702A19095C06000C7E11 /* Zoo1.mp3 in Resources */,
-				CA10BF5A19558DF200F624B1 /* logo.png in Resources */,
+				CA10BF5C19558EB300F624B1 /* logo.png in Resources */,
 				E1096F9219095C06000C7E11 /* e_bet1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
