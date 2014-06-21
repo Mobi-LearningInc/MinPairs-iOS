@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="acm-hs-dtL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="acm-hs-dtL">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -832,7 +832,7 @@ Current selection: %@ vs. %@</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.86666673419999996" green="0.94117653369999998" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Flj-os-6fa">
-                            <size key="itemSize" width="200" height="200"/>
+                            <size key="itemSize" width="134" height="134"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -843,14 +843,14 @@ Current selection: %@ vs. %@</string>
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soundChartCellIdentifier" id="Da5-il-DfG" customClass="MLSoundChartCollectionViewCell">
-                                <rect key="frame" x="10" y="64" width="200" height="200"/>
+                                <rect key="frame" x="10" y="64" width="134" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CzT-Od-tQk">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
@@ -1268,7 +1268,7 @@ Current selection: %@ vs. %@</string>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="HELP" id="Ced-hc-Dh3">
-                        <barButtonItem key="leftBarButtonItem" image="mHome" id="NsO-vy-C6F">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="NsO-vy-C6F">
                             <connections>
                                 <action selector="onHomeClicked:" destination="EBh-OG-Srh" id="u9I-PZ-ktA"/>
                             </connections>
@@ -1635,11 +1635,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Bg3-Pv-czF"/>
-        <segue reference="rvT-PD-IdP"/>
-        <segue reference="DVg-8n-bAH"/>
         <segue reference="gYW-CT-i2W"/>
         <segue reference="m7G-TO-9LE"/>
-        <segue reference="G3k-d4-1WO"/>
+        <segue reference="rvT-PD-IdP"/>
+        <segue reference="Bg3-Pv-czF"/>
+        <segue reference="HMa-4q-YcN"/>
+        <segue reference="sUm-pK-sly"/>
     </inferredMetricsTieBreakers>
 </document>

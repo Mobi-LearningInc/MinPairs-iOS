@@ -345,7 +345,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		51F87492190835BE00450DB2 /* MinPairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinPairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51F87492190835BE00450DB2 /* MinimalPairs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalPairs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F87495190835BE00450DB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		51F87497190835BE00450DB2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		51F87499190835BE00450DB2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -918,7 +918,7 @@
 		51F87493190835BE00450DB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51F87492190835BE00450DB2 /* MinPairs.app */,
+				51F87492190835BE00450DB2 /* MinimalPairs.app */,
 				51F874B6190835BE00450DB2 /* MinPairsTests.xctest */,
 			);
 			name = Products;
@@ -1787,7 +1787,7 @@
 			);
 			name = MinPairs;
 			productName = MinPairs;
-			productReference = 51F87492190835BE00450DB2 /* MinPairs.app */;
+			productReference = 51F87492190835BE00450DB2 /* MinimalPairs.app */;
 			productType = "com.apple.product-type.application";
 		};
 		51F874B5190835BE00450DB2 /* MinPairsTests */ = {
@@ -2320,7 +2320,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MinimalPairs;
 				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -2351,7 +2351,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MinimalPairs;
 				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
