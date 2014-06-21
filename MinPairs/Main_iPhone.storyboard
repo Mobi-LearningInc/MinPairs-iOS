@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="je3-NG-2xN">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -18,141 +18,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Iphone_Bkgr_PearOnly" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-ms-1hu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Iphone_Bkgr_PearOnly" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-ms-1hu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtL-Cx-Iuo">
                                 <rect key="frame" x="20" y="94" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="r14-qE-jkw"/>
                                     <constraint firstAttribute="width" constant="280" id="vmn-0B-hxR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sounds" image="mSoundChart">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sounds" image="mSoundChart_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="pwU-RH-joz" kind="push" id="DJH-Eo-hnc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9La-2G-AgM">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9La-2G-AgM">
                                 <rect key="frame" x="20" y="156" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="YAY-2S-Vk7"/>
                                     <constraint firstAttribute="width" constant="280" id="xR1-Hh-hIM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Learn" image="mLearn">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Learn" image="mLearn_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="CvA-Qv-OUt" kind="push" id="OrS-5p-c7q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-tU-Zfr">
                                 <rect key="frame" x="20" y="218" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="EiG-FA-7sw"/>
                                     <constraint firstAttribute="width" constant="280" id="LPK-7K-aeT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Practice" image="mPractice">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Practice" image="mPractice_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onPracticeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uE1-ZA-Ezr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
                                 <rect key="frame" x="20" y="280" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="NYT-Hc-A3k"/>
                                     <constraint firstAttribute="width" constant="280" id="UAN-Ql-qG9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Quizzes" image="mQuizzes">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Quizzes" image="mQuizzes_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onQuizzesClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lI6-3g-wuE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-uY-C2T">
                                 <rect key="frame" x="20" y="342" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="MtX-j5-6bi"/>
                                     <constraint firstAttribute="width" constant="280" id="THm-xx-KW2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Statistics" image="mStatistics">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Statistics" image="mStatistics_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="IWa-Q5-03Q" kind="push" identifier="StatisticsSegue" id="J04-tX-Qde"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-GK-V1o">
                                 <rect key="frame" x="20" y="404" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="CnE-jv-Sty"/>
                                     <constraint firstAttribute="width" constant="280" id="nwR-qh-63E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Settings" image="mSettings">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Settings" image="mSettings_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="f48-sO-UOp" kind="push" id="xja-86-AEE"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8F-qf-Nqa" userLabel="FirstFiller">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8F-qf-Nqa" userLabel="FirstFiller">
                                 <rect key="frame" x="20" y="140" width="280" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLz-rE-l37" userLabel="SecondFiller">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLz-rE-l37" userLabel="SecondFiller">
                                 <rect key="frame" x="20" y="202" width="280" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2t-de-nij" userLabel="ThirdFiller">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2t-de-nij" userLabel="ThirdFiller">
                                 <rect key="frame" x="20" y="264" width="280" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-24-l2F" userLabel="LastFiller">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-24-l2F" userLabel="LastFiller">
                                 <rect key="frame" x="20" y="388" width="280" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4G-hu-XtN" userLabel="FourthFiller">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4G-hu-XtN" userLabel="FourthFiller">
                                 <rect key="frame" x="20" y="326" width="280" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
@@ -176,11 +170,9 @@
                             <constraint firstAttribute="trailing" secondItem="F4G-hu-XtN" secondAttribute="trailing" constant="20" id="DEm-sB-C1c"/>
                             <constraint firstItem="jwD-uY-C2T" firstAttribute="top" secondItem="F4G-hu-XtN" secondAttribute="bottom" id="DWM-dY-zpn"/>
                             <constraint firstAttribute="trailing" secondItem="jwD-uY-C2T" secondAttribute="trailing" constant="20" id="DYp-vU-vLL"/>
-                            <constraint firstItem="q5i-xW-o5w" firstAttribute="top" secondItem="PMc-GK-V1o" secondAttribute="bottom" constant="30" id="E23-xh-COX"/>
                             <constraint firstItem="zk9-ms-1hu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GGI-YU-c0M"/>
                             <constraint firstAttribute="trailing" secondItem="CtL-Cx-Iuo" secondAttribute="trailing" constant="20" id="GSG-SB-C0V"/>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="height" secondItem="F4G-hu-XtN" secondAttribute="height" id="HLm-sy-G5J"/>
-                            <constraint firstItem="q5i-xW-o5w" firstAttribute="top" secondItem="zk9-ms-1hu" secondAttribute="bottom" id="IBq-MK-XWs"/>
                             <constraint firstItem="h1k-DN-PbN" firstAttribute="top" secondItem="V2t-de-nij" secondAttribute="bottom" id="JNo-sx-6Aw"/>
                             <constraint firstAttribute="trailing" secondItem="QJM-tU-Zfr" secondAttribute="trailing" constant="20" id="LEv-Hy-7u3"/>
                             <constraint firstItem="V2t-de-nij" firstAttribute="top" secondItem="QJM-tU-Zfr" secondAttribute="bottom" id="LnE-PG-DW0"/>
@@ -191,6 +183,7 @@
                             <constraint firstItem="ZLz-rE-l37" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="Yvf-KD-mVU"/>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="width" secondItem="ZLz-rE-l37" secondAttribute="width" id="ZNo-m8-kfE"/>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="height" secondItem="mSg-24-l2F" secondAttribute="height" id="Zv9-17-mgS"/>
+                            <constraint firstItem="q5i-xW-o5w" firstAttribute="top" secondItem="zk9-ms-1hu" secondAttribute="bottom" id="bF4-xd-DLO"/>
                             <constraint firstAttribute="trailing" secondItem="ZLz-rE-l37" secondAttribute="trailing" constant="20" id="bYR-mt-5JL"/>
                             <constraint firstItem="9La-2G-AgM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="cYQ-3k-wwI"/>
                             <constraint firstAttribute="trailing" secondItem="zk9-ms-1hu" secondAttribute="trailing" id="dN9-qb-j5c"/>
@@ -207,7 +200,7 @@
                             <constraint firstItem="jwD-uY-C2T" firstAttribute="top" secondItem="F4G-hu-XtN" secondAttribute="bottom" id="pAo-tw-gsr"/>
                             <constraint firstItem="F4G-hu-XtN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="qQu-Ez-v8n"/>
                             <constraint firstItem="QJM-tU-Zfr" firstAttribute="top" secondItem="ZLz-rE-l37" secondAttribute="bottom" id="qpt-dA-vpe"/>
-                            <constraint firstItem="CtL-Cx-Iuo" firstAttribute="top" secondItem="RxK-WQ-kmN" secondAttribute="bottom" constant="30" id="rOT-vW-QCc"/>
+                            <constraint firstItem="CtL-Cx-Iuo" firstAttribute="top" secondItem="RxK-WQ-kmN" secondAttribute="bottom" constant="30" id="sA3-wi-08D"/>
                             <constraint firstItem="g8F-qf-Nqa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="sTX-HQ-CQl"/>
                             <constraint firstAttribute="trailing" secondItem="h1k-DN-PbN" secondAttribute="trailing" constant="20" id="sXA-vo-nNn"/>
                             <constraint firstItem="F4G-hu-XtN" firstAttribute="top" secondItem="h1k-DN-PbN" secondAttribute="bottom" id="smI-7d-N0m"/>
@@ -219,6 +212,7 @@
                             <constraint firstAttribute="trailing" secondItem="mSg-24-l2F" secondAttribute="trailing" constant="20" id="x93-r0-46s"/>
                             <constraint firstItem="QJM-tU-Zfr" firstAttribute="top" secondItem="ZLz-rE-l37" secondAttribute="bottom" id="xzn-eD-wjm"/>
                             <constraint firstItem="QJM-tU-Zfr" firstAttribute="width" secondItem="h1k-DN-PbN" secondAttribute="width" id="y7t-0d-1gk"/>
+                            <constraint firstItem="q5i-xW-o5w" firstAttribute="top" secondItem="PMc-GK-V1o" secondAttribute="bottom" constant="30" id="z0x-Go-fHM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="HOME" id="iae-qI-ZQr"/>
@@ -2135,14 +2129,14 @@ Current selection: %@ vs. %@</string>
         <image name="mFacebook" width="22" height="22"/>
         <image name="mHelp" width="22" height="22"/>
         <image name="mHome" width="22" height="22"/>
-        <image name="mLearn" width="27" height="22"/>
+        <image name="mLearn_c" width="27" height="22"/>
         <image name="mListen" width="22" height="22"/>
-        <image name="mPractice" width="22" height="22"/>
-        <image name="mQuizzes" width="31" height="22"/>
-        <image name="mSettings" width="22" height="22"/>
+        <image name="mPractice_c" width="22" height="22"/>
+        <image name="mQuizzes_c" width="31" height="22"/>
+        <image name="mSettings_c" width="22" height="22"/>
         <image name="mShare" width="22" height="22"/>
-        <image name="mSoundChart" width="26" height="22"/>
-        <image name="mStatistics" width="28" height="22"/>
+        <image name="mSoundChart_c" width="26" height="22"/>
+        <image name="mStatistics_c" width="28" height="22"/>
         <image name="mSubmit" width="25" height="22"/>
         <image name="mTwitter" width="22" height="22"/>
         <image name="mWeibo" width="22" height="22"/>
@@ -2154,11 +2148,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="ZDa-a6-SnO"/>
+        <segue reference="z8P-3v-4Hr"/>
+        <segue reference="JAT-OG-QHa"/>
         <segue reference="KDw-fn-wD3"/>
         <segue reference="WQr-zY-AR2"/>
         <segue reference="TCs-Uo-9Sq"/>
-        <segue reference="ZDa-a6-SnO"/>
-        <segue reference="JAT-OG-QHa"/>
-        <segue reference="z8P-3v-4Hr"/>
     </inferredMetricsTieBreakers>
 </document>

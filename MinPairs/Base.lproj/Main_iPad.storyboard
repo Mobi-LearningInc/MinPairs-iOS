@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="acm-hs-dtL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="acm-hs-dtL">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -17,15 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ipad_Bkgr_Portrait_PearOnly" translatesAutoresizingMaskIntoConstraints="NO" id="F8e-DN-uHU">
+                                <rect key="frame" x="201" y="242" width="366" height="533"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHw-O7-W2B">
                                 <rect key="frame" x="244" y="312" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sounds" image="mSoundChart">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sounds" image="mSoundChart_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -35,12 +38,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ood-tF-mqj">
                                 <rect key="frame" x="244" y="380" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Learn" image="mLearn">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Learn" image="mLearn_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -50,12 +52,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9F-7l-BED">
                                 <rect key="frame" x="244" y="448" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Practice" image="mPractice">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Practice" image="mPractice_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -65,12 +66,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzq-o3-aeB">
                                 <rect key="frame" x="244" y="516" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Quizzes" image="mQuizzes">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Quizzes" image="mQuizzes_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -80,12 +80,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWz-S4-unO">
                                 <rect key="frame" x="244" y="584" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Statistics" image="mStatistics">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Statistics" image="mStatistics_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -95,12 +94,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sh-6g-xY8">
                                 <rect key="frame" x="244" y="652" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Settings" image="mSettings">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Settings" image="mSettings_c">
+                                    <color key="titleColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -726,7 +724,7 @@ Current selection: %@ vs. %@</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="FE5-pK-fcV">
-                            <rect key="frame" x="0.0" y="64" width="768" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -735,7 +733,7 @@ Current selection: %@ vs. %@</string>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LearnCell" rowHeight="200" id="7wB-Lm-hfl" customClass="MLLearnTableViewCell">
-                                <rect key="frame" x="0.0" y="130" width="768" height="200"/>
+                                <rect key="frame" x="0.0" y="66" width="768" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7wB-Lm-hfl" id="vXE-7B-W1B">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="199"/>
@@ -845,7 +843,7 @@ Current selection: %@ vs. %@</string>
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="soundChartCellIdentifier" id="Da5-il-DfG" customClass="MLSoundChartCollectionViewCell">
-                                <rect key="frame" x="10" y="64" width="200" height="200"/>
+                                <rect key="frame" x="10" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -1599,6 +1597,7 @@ Current selection: %@ vs. %@</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Ipad_Bkgr_Portrait_PearOnly" width="768" height="1024"/>
         <image name="Logo" width="400" height="400"/>
         <image name="ear.png" width="400" height="400"/>
         <image name="fBars" width="26" height="22"/>
@@ -1617,14 +1616,14 @@ Current selection: %@ vs. %@</string>
         <image name="mFilter" width="22" height="22"/>
         <image name="mHelp" width="22" height="22"/>
         <image name="mHome" width="22" height="22"/>
-        <image name="mLearn" width="27" height="22"/>
+        <image name="mLearn_c" width="27" height="22"/>
         <image name="mListen" width="22" height="22"/>
-        <image name="mPractice" width="22" height="22"/>
-        <image name="mQuizzes" width="31" height="22"/>
-        <image name="mSettings" width="22" height="22"/>
+        <image name="mPractice_c" width="22" height="22"/>
+        <image name="mQuizzes_c" width="31" height="22"/>
+        <image name="mSettings_c" width="22" height="22"/>
         <image name="mShare" width="22" height="22"/>
-        <image name="mSoundChart" width="26" height="22"/>
-        <image name="mStatistics" width="28" height="22"/>
+        <image name="mSoundChart_c" width="26" height="22"/>
+        <image name="mStatistics_c" width="28" height="22"/>
         <image name="mSubmit" width="25" height="22"/>
         <image name="mTwitter" width="22" height="22"/>
         <image name="mWeibo" width="22" height="22"/>
@@ -1636,11 +1635,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fWJ-EL-CXD"/>
-        <segue reference="UHH-lO-udT"/>
-        <segue reference="Tck-JC-dcg"/>
-        <segue reference="hgd-lB-z79"/>
-        <segue reference="cFr-fT-inX"/>
-        <segue reference="J3d-gt-un9"/>
+        <segue reference="Bg3-Pv-czF"/>
+        <segue reference="rvT-PD-IdP"/>
+        <segue reference="DVg-8n-bAH"/>
+        <segue reference="gYW-CT-i2W"/>
+        <segue reference="m7G-TO-9LE"/>
+        <segue reference="G3k-d4-1WO"/>
     </inferredMetricsTieBreakers>
 </document>

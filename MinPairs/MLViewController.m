@@ -70,7 +70,7 @@
 
 - (void)viewDidLoad
 {
-    [MLTheme setTheme: self];
+    //[MLTheme setTheme: self];//no need for theme on home page
     [super viewDidLoad];
     [self.tincan saveSampleActivity];
 }
