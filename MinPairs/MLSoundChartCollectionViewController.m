@@ -95,33 +95,40 @@
     {
         if(cell.needsToPlayCategorySound)
         {
-            soundFileName=selectedCategory.categoryAudioFile;
+            soundFileName = selectedCategory.categoryAudioFile;
             cell.needsToPlayCategorySound=false;
             [cell flipAnimate: nil];
         }
         else
         {
             MLCategory* selectedCategory = [self.catArr objectAtIndex:indexPath.row];
-            MLMainDataProvider* provider=[[MLMainDataProvider alloc]initMainProvider];
-            NSArray* catItemPairs =[provider getCategoryItemPairs];
+            MLMainDataProvider* provider = [[MLMainDataProvider alloc]initMainProvider];
+            NSArray* catItemPairs = [provider getCategoryItemPairs];
             NSMutableArray* wordArr = [NSMutableArray array];
-            for(int i=0; i<catItemPairs.count; i++)
+            
+            for(int i = 0; i < catItemPairs.count; i++)
             {
                 MLPair* pair = [catItemPairs objectAtIndex:i];
                 MLCategory* cat = pair.first;
-                if(cat.categoryId==selectedCategory.categoryId)
+                if(cat.categoryId == selectedCategory.categoryId)
                 {
-                    MLItem* word=pair.second;
-                    [wordArr addObject: word];
+                    if (pair.second == nil)
+                    {
+                        NSLog(@"Files are messed up for category: %d; Pair is: %@", [cat categoryId], [pair.second itemDescription]);
+                        continue;
+                    }
                     
+                    MLItem* word = pair.second;
+                    [wordArr addObject: word];
                 }
             }
+            
             int tapCount = cell.tapCount;
-            MLItem* word;
             int index;
-            if(tapCount<wordArr.count)
+            
+            if(tapCount < wordArr.count)
             {
-                index=tapCount;
+                index = tapCount;
             }
             else
             {
@@ -129,16 +136,24 @@
                 int i = (int)(tapCount - t * wordArr.count);
                 index = i;
             }
-            word =[wordArr objectAtIndex:index];
-            soundFileName=word.itemAudioFile;
-            NSLog(@"playing sound for item %@ from %@",word.itemDescription,word.itemAudioFile);
-            NSLog(@"word arr size : %lu get item at index %i",(unsigned long)wordArr.count,index);
-
-            [cell flipAnimate: [word itemImageFile]];
-            cell.needsToPlayCategorySound=true;
-            cell.tapCount++;
             
-            [cell flipAnimate: [word itemImageFile]];
+            if (index < [wordArr count])
+            {
+                MLItem* word = [wordArr objectAtIndex:index];
+                soundFileName = word.itemAudioFile;
+                NSLog(@"playing sound for item %@ from %@", word.itemDescription, word.itemAudioFile);
+                NSLog(@"word arr size : %lu get item at index %i", (unsigned long)wordArr.count,index);
+
+                cell.needsToPlayCategorySound = true;
+                cell.tapCount++;
+                
+                [cell flipAnimate: [word itemImageFile]];
+            }
+            else
+            {
+                soundFileName = selectedCategory.categoryAudioFile;
+                cell.needsToPlayCategorySound = false;
+            }
         }
     }
     [self.audioPlayer loadFileFromResource:soundFileName withExtension: @"mp3"];
