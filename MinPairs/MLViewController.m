@@ -72,7 +72,13 @@
 {
     [MLTheme setTheme: self];
     [super viewDidLoad];
-    [self.tincan saveSampleActivity];
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"TinCanSwitch"] || [[NSUserDefaults standardUserDefaults] boolForKey:@"TinCanSwitch"])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TinCanSwitch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.tincan saveSampleActivity];
+    }
 }
 
 - (void)didReceiveMemoryWarning

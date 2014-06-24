@@ -75,7 +75,10 @@
     [self.audioPlayer loadFileFromResource:item.itemAudioFile withExtension: @"mp3"];
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
+    
+    #ifdef DEBUG
     NSLog(@"Played sound for %@",item.itemDescription);
+    #endif
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

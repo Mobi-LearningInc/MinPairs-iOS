@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MLModalAnimator.h"
 
 @interface MLResultsViewController : UIViewController
 @property (assign, nonatomic) bool mode;

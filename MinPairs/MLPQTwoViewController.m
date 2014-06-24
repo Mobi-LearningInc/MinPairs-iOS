@@ -42,7 +42,9 @@
     MLPair* itemPair =[self pickRandomItemPairPairForCategory:self.filterCatPair];
 
     self.correctItem=(rand==0)?itemPair.first:itemPair.second;
+    #ifdef DEBUG
     NSLog(@"Correct item is %@",self.correctItem.itemDescription);
+    #endif
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:nil event:nil typeLabel:self.typeTimeLabel event:^(void){
         
         [self onAnswerBtn:self.answerBtn];
@@ -58,7 +60,9 @@
 - (IBAction)onPlayBtn:(id)sender
 {
     [self playItem:self.correctItem];
+    #ifdef DEBUG
     NSLog(@"Played sound for %@",self.correctItem.itemDescription);
+    #endif
 }
 - (IBAction)onAnswerBtn:(id)sender
 {
@@ -66,7 +70,9 @@
     NSString* raw = self.textAnswer.text;
     NSString* noWS=[raw stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString* cleanStr=[noWS lowercaseString];
+    #ifdef DEBUG
     NSLog(@"User typed %@",cleanStr);
+    #endif
     int corr;
     int wrong;
     MLDetailsItem* dItem;
@@ -99,17 +105,14 @@
     [sender setHidden: YES];
     [self.checkMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
-    //[self onAnswer:currentResult];
 }
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    //hides keyboard
     [self.view endEditing:YES];
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

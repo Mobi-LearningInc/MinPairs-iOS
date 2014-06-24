@@ -81,7 +81,9 @@
     NSString* errorStr;
     if(![self runQuery:query errorString:&errorStr])
     {
+        #ifdef DEBUG
         NSLog(@"%@",errorStr);
+        #endif
         return NO;
     }
     return YES;

@@ -31,7 +31,6 @@
 @property (copy) void (^onReadEnd)(void);
 
 @property (strong,nonatomic)MLBasicAudioPlayer* audioPlayer;
-@property (nonatomic, strong) MLModalAnimator* animator;
 @end
 
 @implementation MLPQBaseViewController
@@ -182,7 +181,9 @@
     if (buttonIndex == [alertView cancelButtonIndex])//'cancel' button from quit popup or 'ok' button from stat info popup
     {
         self.pauseTimer=false;
+        #ifdef DEBUG
         NSLog(@"btn index %li",(long)buttonIndex );
+        #endif
     }
     if(buttonIndex==1)//ok btn from quit popup
     {
@@ -191,7 +192,9 @@
             [self.timer invalidate];
             self.timer = nil;
         }
-        NSLog(@"btn index %li",(long)buttonIndex );
+        #ifdef DEBUG
+        NSLog(@"btn index %li",(long)buttonIndex);
+        #endif
         [self.navigationController popToRootViewControllerAnimated:YES];
     }    
     
@@ -218,7 +221,9 @@
         [self.timer invalidate];
         self.timer = nil;
     }
+    #ifdef DEBUG
     NSLog(@"status : correct:%i, wrong:%i, time: %i",currentResult.testQuestionsCorrect,currentResult.testQuestionsWrong,self.timeCount);
+    #endif
 
     self.currentResult=currentResult;
 
@@ -228,7 +233,9 @@
     }
     else
     {
+        #ifdef DEBUG
         NSLog(@"will start next question");
+        #endif
         [self pushSequeOnStack: [NSNumber numberWithBool: [self.previousResult.testType isEqualToString:ML_TEST_TYPE_PRACTICE]?true:false]];
     }
 

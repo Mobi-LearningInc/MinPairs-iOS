@@ -9,7 +9,6 @@
 #import "MLPQThreeViewController.h"
 #import "MLPQTwoViewController.h"
 #import "MLPQOneViewController.h"
-#import "MLButtonGroup.h"
 #import "MLItem.h"
 #import "MLCategory.h"
 #import "MLPair.h"
@@ -68,7 +67,9 @@
     MLItem* cor= rand==0?self.itemLeft:self.itemRight;
     self.itemMainLable.text=cor.itemDescription;
     self.correctAnswer=cor;
+    #ifdef DEBUG
     NSLog(@"Correct answer is %@",self.correctAnswer.itemDescription);
+    #endif
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:YES];
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:self.readTimeLabel event:^(void){
@@ -82,7 +83,9 @@
     [self playItem:self.itemLeft];
     [self.leftFingerImg setHidden:NO];
     [self.rightFingerImg setHidden:YES];
+    #ifdef DEBUG
     NSLog(@"Played sound for %@",self.itemLeft.itemDescription);
+    #endif
 }
 - (IBAction)onRightPlayBtnTap:(id)sender
 {
@@ -90,7 +93,9 @@
     
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:NO];
+    #ifdef DEBUG
     NSLog(@"Played sound for %@",self.itemRight.itemDescription);
+    #endif
 }
 
 - (IBAction)onAnswerButton:(id)sender
@@ -107,7 +112,9 @@
     {
         selected=self.itemRight;
     }
+    #ifdef DEBUG
     NSLog(@"User selected %@",selected.itemDescription);
+    #endif
     MLDetailsItem* dItem;
     if(self.correctAnswer==selected)
     {
@@ -133,7 +140,6 @@
     [sender setHidden: YES];
     [self.chekcMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
-    //[self onAnswer:currentResult];
 }
 
 

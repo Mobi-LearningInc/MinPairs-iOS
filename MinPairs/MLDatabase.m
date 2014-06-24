@@ -33,22 +33,12 @@
         appDataDir=[allAppDataDirs lastObject];
         
         self.databasePath=[appDataDir stringByAppendingPathComponent: self.databaseName];
-        //NSLog(@"dbPath is %@",self.databasePath);
         
         NSString * msg;
-        
         [self runQuery:createQueryString errorString:&msg];
+        #ifdef DEBUG
         NSLog(@"%@\n", msg);
-        
-        /*
-         NSFileManager *fileManager = [NSFileManager defaultManager];
-        if ([fileManager fileExistsAtPath:self.databasePath]==NO)
-        {
-         
-        }
-        else
-        {
-        }*/
+        #endif
     }
     return self;
 }

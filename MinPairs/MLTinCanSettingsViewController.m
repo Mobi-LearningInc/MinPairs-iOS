@@ -47,6 +47,9 @@
     self.lrsPasswordTextBox.delegate=self;
     self.lrsUrlTextBox.delegate=self;
     [self loadAndFillPage];
+    
+    self.toggleBtn.selectedSegmentIndex = [[NSUserDefaults standardUserDefaults] boolForKey:@"TinCanSwitch"] ? 0 : 1;
+    [self performSelector:@selector(tinCanToggleBtnTap:) withObject: [self toggleBtn]];
 }
 - (IBAction)onHomeClicked:(UIBarButtonItem *)sender
 {
@@ -74,21 +77,43 @@
 {
     if([sender selectedSegmentIndex]==0)
     {
-        NSLog(@"turning on/off TinCan not yet implemented");
+        #ifdef DEBUG
+        NSLog(@"TinCan Enabled.");
+        #endif
         [self.userNameTextBox setEnabled:YES];
         [self.emailTextBox setEnabled:YES];
         [self.lrsAuthTextBox setEnabled:YES];
         [self.lrsPasswordTextBox setEnabled:YES];
         [self.lrsUrlTextBox setEnabled:YES];
+        
+        [self.userNameTextBox setAlpha:1.0f];
+        [self.emailTextBox setAlpha:1.0f];
+        [self.lrsAuthTextBox setAlpha:1.0f];
+        [self.lrsPasswordTextBox setAlpha:1.0f];
+        [self.lrsUrlTextBox setAlpha:1.0f];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TinCanSwitch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else if([sender selectedSegmentIndex]==1)
     {
-        NSLog(@"turning on/off TinCan not yet implemented");
+        #ifdef DEBUG
+        NSLog(@"TinCan Disabled.");
+        #endif
         [self.userNameTextBox setEnabled:NO];
         [self.emailTextBox setEnabled:NO];
         [self.lrsAuthTextBox setEnabled:NO];
         [self.lrsPasswordTextBox setEnabled:NO];
         [self.lrsUrlTextBox setEnabled:NO];
+        
+        [self.userNameTextBox setAlpha:0.5f];
+        [self.emailTextBox setAlpha:0.5f];
+        [self.lrsAuthTextBox setAlpha:0.5f];
+        [self.lrsPasswordTextBox setAlpha:0.5f];
+        [self.lrsUrlTextBox setAlpha:0.5f];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"TinCanSwitch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
@@ -98,7 +123,11 @@
 }
 - (IBAction)onSaveBtnTap:(id)sender
 {
-    NSLog(@"USERNAME and EMAIL are not saved. Everything else is saved.");//todo save username and email
+    #ifdef DEBUG
+    NSLog(@"USERNAME and EMAIL are not saved. Everything else is saved.");
+    #endif
+    
+    //todo save username and email
     //todo validate LRS credentials before saving
     MLLsrCredentials* newCreds = [[MLLsrCredentials alloc]initCredentialsWithId:1 appName:ML_DB_CREDENTIALS_DEFAULT_APPNAME userName:self.lrsAuthTextBox.text password:self.lrsPasswordTextBox.text address:self.lrsUrlTextBox.text appUserName:self.userNameTextBox.text email:self.emailTextBox.text];
     [self saveTinCanSettingsData:newCreds];
@@ -118,7 +147,6 @@
 }
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    //hides keyboard
     [self.view endEditing:YES];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -126,15 +154,5 @@
     
     return YES;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

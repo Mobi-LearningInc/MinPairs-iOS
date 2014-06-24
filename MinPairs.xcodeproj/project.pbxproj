@@ -51,7 +51,6 @@
 		CA16BFF6191C72F10000B48E /* Work.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF7B191C72F10000B48E /* Work.png */; };
 		CA16C005191C72F10000B48E /* na.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF8A191C72F10000B48E /* na.jpg */; };
 		CA16C006191C72F10000B48E /* na1.png in Resources */ = {isa = PBXBuildFile; fileRef = CA16BF8B191C72F10000B48E /* na1.png */; };
-		CA16C027191C8D020000B48E /* MLModalAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16C026191C8D020000B48E /* MLModalAnimator.m */; };
 		CA16C02A191C8D6D0000B48E /* MLResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA16C029191C8D6D0000B48E /* MLResultsViewController.m */; };
 		CA1C0237190BBACC003C5F90 /* MLPQOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0236190BBACC003C5F90 /* MLPQOneViewController.m */; };
 		CA1C023A190BC38B003C5F90 /* MLSynchronousFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C0239190BC38B003C5F90 /* MLSynchronousFilter.m */; };
@@ -67,7 +66,6 @@
 		CA6BAEE8192B88E900DA1FB4 /* MLLineGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6BAEE7192B88E900DA1FB4 /* MLLineGraphViewController.m */; };
 		CA6BAEEC192B8BFA00DA1FB4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */; };
 		CA6BAEF4192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6BAEF3192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a */; };
-		CA7ED6DE190B70D7009F1BB7 /* MLSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */; };
 		CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */; };
 		CA7ED6E4190B8ADC009F1BB7 /* MLPushUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */; };
 		CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA1B2161911B17C00453852 /* MLPlatform.m */; };
@@ -76,7 +74,6 @@
 		CAAD47F619331E58005F7B66 /* libRSTCAPI-Combined x86_64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAD47F419331E58005F7B66 /* libRSTCAPI-Combined x86_64.a */; };
 		CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */; };
 		CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */; };
-		CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC772A5190A496400CB74A5 /* MLButtonGroup.m */; };
 		E1096F5C19095C06000C7E11 /* )_walk1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E6F19095C04000C7E11 /* )_walk1.mp3 */; };
 		E1096F5D19095C06000C7E11 /* 3_work1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7019095C04000C7E11 /* 3_work1.mp3 */; };
 		E1096F5E19095C06000C7E11 /* ^_cut1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7119095C04000C7E11 /* ^_cut1.mp3 */; };
@@ -397,8 +394,6 @@
 		CA16BF7B191C72F10000B48E /* Work.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Work.png; sourceTree = "<group>"; };
 		CA16BF8A191C72F10000B48E /* na.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = na.jpg; sourceTree = "<group>"; };
 		CA16BF8B191C72F10000B48E /* na1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = na1.png; sourceTree = "<group>"; };
-		CA16C025191C8D020000B48E /* MLModalAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLModalAnimator.h; sourceTree = "<group>"; };
-		CA16C026191C8D020000B48E /* MLModalAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLModalAnimator.m; sourceTree = "<group>"; };
 		CA16C028191C8D6D0000B48E /* MLResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLResultsViewController.h; sourceTree = "<group>"; };
 		CA16C029191C8D6D0000B48E /* MLResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLResultsViewController.m; sourceTree = "<group>"; };
 		CA1C0235190BBACC003C5F90 /* MLPQOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPQOneViewController.h; sourceTree = "<group>"; };
@@ -567,8 +562,6 @@
 		CA6BAEEB192B8BFA00DA1FB4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		CA6BAEF3192B97DA00DA1FB4 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		CA7ED6D1190B4192009F1BB7 /* MLAudioPlayerQueueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueueDelegate.h; sourceTree = "<group>"; };
-		CA7ED6DC190B70D7009F1BB7 /* MLSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettings.h; sourceTree = "<group>"; };
-		CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettings.m; sourceTree = "<group>"; };
 		CA7ED6DF190B8380009F1BB7 /* MLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingsViewController.h; sourceTree = "<group>"; };
 		CA7ED6E0190B8380009F1BB7 /* MLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingsViewController.m; sourceTree = "<group>"; };
 		CA7ED6E2190B8ADC009F1BB7 /* MLPushUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPushUpView.h; sourceTree = "<group>"; };
@@ -585,8 +578,6 @@
 		CAC7728B190A145600CB74A5 /* MLAudioPlayerQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueue.h; sourceTree = "<group>"; };
 		CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAudioPlayerQueue.m; sourceTree = "<group>"; };
 		CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLBaseAudioPlayerDelegate.h; sourceTree = "<group>"; };
-		CAC772A4190A496400CB74A5 /* MLButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLButtonGroup.h; sourceTree = "<group>"; };
-		CAC772A5190A496400CB74A5 /* MLButtonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLButtonGroup.m; sourceTree = "<group>"; };
 		E1096E6F19095C04000C7E11 /* )_walk1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ")_walk1.mp3"; sourceTree = "<group>"; };
 		E1096E7019095C04000C7E11 /* 3_work1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3_work1.mp3; sourceTree = "<group>"; };
 		E1096E7119095C04000C7E11 /* ^_cut1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "^_cut1.mp3"; sourceTree = "<group>"; };
@@ -1118,7 +1109,6 @@
 			children = (
 				E16B4BDC19316A15000C704D /* PQDetailsControllers */,
 				CA16C024191C7E890000B48E /* PQResultsController */,
-				CA16C023191C7E780000B48E /* PQFeedbackController */,
 				CA1C0235190BBACC003C5F90 /* MLPQOneViewController.h */,
 				CA1C0236190BBACC003C5F90 /* MLPQOneViewController.m */,
 				CA1C024C190C193A003C5F90 /* MLPQTwoViewController.h */,
@@ -1144,18 +1134,9 @@
 			name = StatisticsController;
 			sourceTree = "<group>";
 		};
-		CA16C023191C7E780000B48E /* PQFeedbackController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PQFeedbackController;
-			sourceTree = "<group>";
-		};
 		CA16C024191C7E890000B48E /* PQResultsController */ = {
 			isa = PBXGroup;
 			children = (
-				CA16C025191C8D020000B48E /* MLModalAnimator.h */,
-				CA16C026191C8D020000B48E /* MLModalAnimator.m */,
 				CA16C028191C8D6D0000B48E /* MLResultsViewController.h */,
 				CA16C029191C8D6D0000B48E /* MLResultsViewController.m */,
 			);
@@ -1393,8 +1374,6 @@
 		CAC772A3190A3EB000CB74A5 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				CAC772A4190A496400CB74A5 /* MLButtonGroup.h */,
-				CAC772A5190A496400CB74A5 /* MLButtonGroup.m */,
 				CA7ED6E2190B8ADC009F1BB7 /* MLPushUpView.h */,
 				CA7ED6E3190B8ADC009F1BB7 /* MLPushUpView.m */,
 			);
@@ -1720,8 +1699,6 @@
 				E1C248A3190AEDC300F9E8BF /* MLDatabase.m */,
 				E1C248A7190AF67C00F9E8BF /* MLTestResultDatabase.h */,
 				E1C248A8190AF67C00F9E8BF /* MLTestResultDatabase.m */,
-				CA7ED6DC190B70D7009F1BB7 /* MLSettings.h */,
-				CA7ED6DD190B70D7009F1BB7 /* MLSettings.m */,
 				CA1C0238190BC38B003C5F90 /* MLSynchronousFilter.h */,
 				CA1C0239190BC38B003C5F90 /* MLSynchronousFilter.m */,
 				E12E40CD190C878D0002D88C /* MLSettingDatabase.h */,
@@ -1818,6 +1795,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MobiLearning;
 				TargetAttributes = {
+					51F87491190835BE00450DB2 = {
+						DevelopmentTeam = 47AR6RK5PF;
+					};
 					51F874B5190835BE00450DB2 = {
 						TestTargetID = 51F87491190835BE00450DB2;
 					};
@@ -2123,7 +2103,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7ED6DE190B70D7009F1BB7 /* MLSettings.m in Sources */,
 				E12B145F1912BA1D00D697BB /* MLLearnTableViewController.m in Sources */,
 				CAA1B2171911B17C00453852 /* MLPlatform.m in Sources */,
 				E12E40CC190C839E0002D88C /* MLSettingsData.m in Sources */,
@@ -2142,7 +2121,6 @@
 				CA6BAEE5192B88BA00DA1FB4 /* MLBarGraphViewController.m in Sources */,
 				E12B14621912BA8900D697BB /* MLLearnTableViewCell.m in Sources */,
 				E109704C19096027000C7E11 /* MLCategory.m in Sources */,
-				CA16C027191C8D020000B48E /* MLModalAnimator.m in Sources */,
 				E16B4BDF19316A70000C704D /* MLDetailTableCellTypeOne.m in Sources */,
 				E16B4BE219316A8D000C704D /* MLDetailTableCellTypeTwo.m in Sources */,
 				E1C2489F190AC30300F9E8BF /* MLMainDataProvider.m in Sources */,
@@ -2168,7 +2146,6 @@
 				51F874A6190835BE00450DB2 /* MLAppDelegate.m in Sources */,
 				E1C248A4190AEDC300F9E8BF /* MLDatabase.m in Sources */,
 				CA0343DC191DED0900CAF871 /* MLInfoViewController.m in Sources */,
-				CAC772A6190A496400CB74A5 /* MLButtonGroup.m in Sources */,
 				E15B98561937BC52008C4E63 /* MLTinCanSettingsViewController.m in Sources */,
 				E1C248A9190AF67C00F9E8BF /* MLTestResultDatabase.m in Sources */,
 				E109705819097120000C7E11 /* MLFileDataProvider.m in Sources */,
@@ -2301,7 +2278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
@@ -2321,7 +2298,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = MinimalPairs;
-				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2332,7 +2309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinPairs/MinPairs-Prefix.pch";
@@ -2352,7 +2329,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = MinimalPairs;
-				PROVISIONING_PROFILE = "921D8FD8-5FBF-4503-938F-77C3BF54B352";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

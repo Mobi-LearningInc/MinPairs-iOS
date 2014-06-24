@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MLSettings.h"
 
 @interface MLSettingsViewController : UIViewController
 

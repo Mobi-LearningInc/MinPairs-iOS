@@ -55,12 +55,15 @@
     self.scoreInfoLabel.text = [NSString stringWithFormat:@"%@ / %@", [self correct], [self total]];
     self.timeLabel.text = [NSString stringWithFormat:@"Time taken: %@ s", [self time]];
     
-    NSNumber *c = [NSNumber numberWithInt:[[self correct] intValue]];
-    NSNumber *t = [NSNumber numberWithInt:[[self total] intValue]];
-    NSNumber *p = [NSNumber numberWithFloat:([c floatValue]/[t floatValue])];
-    
-    MLTinCanConnector *tincan = [[MLTinCanConnector alloc]initWithCredentials:[[[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase] getLmsCredentials]];
-    [tincan saveQuizResults:p points:c max:t time:[NSString stringWithFormat:@"PT%@.00S", [self time]]];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"TinCanSwitch"])
+    {
+        NSNumber *c = [NSNumber numberWithInt:[[self correct] intValue]];
+        NSNumber *t = [NSNumber numberWithInt:[[self total] intValue]];
+        NSNumber *p = [NSNumber numberWithFloat:([c floatValue]/[t floatValue])];
+        
+        MLTinCanConnector *tincan = [[MLTinCanConnector alloc]initWithCredentials:[[[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase] getLmsCredentials]];
+        [tincan saveQuizResults:p points:c max:t time:[NSString stringWithFormat:@"PT%@.00S", [self time]]];
+    }
 
     
 }

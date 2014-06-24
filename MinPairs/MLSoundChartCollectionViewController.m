@@ -133,8 +133,11 @@
 
             MLItem* word = [wordArr objectAtIndex:index];
             soundFileName = word.itemAudioFile;
+            
+            #ifdef DEBUG
             NSLog(@"playing sound for item %@ from %@", word.itemDescription, word.itemAudioFile);
             NSLog(@"word arr size : %lu get item at index %i", (unsigned long)wordArr.count,index);
+            #endif
 
             cell.needsToPlayCategorySound = true;
             cell.tapCount++;

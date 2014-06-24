@@ -63,14 +63,14 @@
     [statementOptions setValue:@"http://adlnet.gov/expapi/activities/course/" forKey:@"activityType"];
     
     TCStatement *statementToSend = [self createTestStatementWithOptions:statementOptions];
+    #ifdef DEBUG
     NSLog(@"%@\n", statementToSend.JSONString);
+    #endif
     [self.tincan sendStatement:statementToSend withCompletionBlock:^(){
-       // [[TestSemaphor sharedInstance] lift:@"saveStatement"];
     }withErrorBlock:^(TCError *error){
-        
+        #ifdef DEBUG
         NSLog(@"ERROR: %@", error.localizedDescription);
-        //STAssertNil(error, @"There was no error with the request");
-       // [[TestSemaphor sharedInstance] lift:@"saveStatement"];
+        #endif
     }];
 }
 
@@ -122,14 +122,14 @@
                                         withDuration:time
                                           withExtensions:nil];
     statementToSend.result = result;
+    #ifdef DEBUG
     NSLog(@"%@\n", statementToSend.JSONString);
+    #endif
     [self.tincan sendStatement:statementToSend withCompletionBlock:^(){
-        // [[TestSemaphor sharedInstance] lift:@"saveStatement"];
     }withErrorBlock:^(TCError *error){
-        
+        #ifdef DEBUG
         NSLog(@"ERROR: %@", error.localizedDescription);
-        //STAssertNil(error, @"There was no error with the request");
-        // [[TestSemaphor sharedInstance] lift:@"saveStatement"];
+        #endif
     }];
 }
 

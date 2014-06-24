@@ -64,7 +64,9 @@
     int rand = arc4random_uniform(2);
     MLItem* cor= rand==0?self.itemLeft:self.itemRight;
     self.correctItem=cor;
+    #ifdef DEBUG
     NSLog(@"Correct item is %@",self.correctItem.itemDescription);
+    #endif
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:YES];
     [self registerQuizTimeLabelsAndEventSelectLabel:self.selectTimeLabel event:^(void){
@@ -74,7 +76,9 @@
 - (IBAction)onPlayBtn:(id)sender
 {
     [self playItem:self.correctItem];
+    #ifdef DEBUG
     NSLog(@"Played sound for %@",self.correctItem.itemDescription);
+    #endif
 }
 - (IBAction)onLeftImgBtnTap:(id)sender
 {
@@ -108,7 +112,9 @@
     {
         selected=self.itemRight;
     }
+    #ifdef DEBUG
     NSLog(@"User selected %@",selected.itemDescription);
+    #endif
     MLDetailsItem* dItem;
     if(selected==self.correctItem)
     {
@@ -134,7 +140,6 @@
     [sender setHidden: YES];    
     [self.checkMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
-    //[self onAnswer:currentResult];
 }
 
 - (void)didReceiveMemoryWarning

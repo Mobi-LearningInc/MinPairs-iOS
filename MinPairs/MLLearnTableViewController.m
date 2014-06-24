@@ -188,6 +188,9 @@
     //[self.view setNeedsDisplay];
     [self loadData];
     [self.tableView reloadData];
+    
+    #ifdef DEBUG
     NSLog(@"updated view after filter changed");
+    #endif
 }
 @end
