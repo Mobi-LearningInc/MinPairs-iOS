@@ -18,6 +18,7 @@
 #import "MLDetailsItem.h"
 #import "MLResultsViewController.h"
 #import "MLTheme.h"
+#import "GADInterstitial.h"
 
 @interface MLPQBaseViewController ()
 @property NSTimer* timer;
@@ -29,6 +30,10 @@
 @property (copy) void (^onTypeEnd)(void);
 @property (copy) void (^onSelectEnd)(void);
 @property (copy) void (^onReadEnd)(void);
+
+//ad specific
+@property BOOL canShowAd;
+@property (strong,nonatomic) GADInterstitial* bigAdd;
 
 @property (strong,nonatomic)MLBasicAudioPlayer* audioPlayer;
 @end
@@ -88,6 +93,19 @@
     
     self.timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTick) userInfo:nil repeats:YES];
     
+    //ad specific
+    [self prepAd];
+    
+}
+
+//ad specific
+-(void)prepAd
+{
+    self.canShowAd=false;
+    self.bigAdd=[[GADInterstitial alloc]init];
+    self.bigAdd.delegate=self;
+    self.bigAdd.adUnitID=@"ca-app-pub-7358405443490326/2547190894";
+    [self.bigAdd loadRequest:[GADRequest request]];
 }
 -(void)registerQuizTimeLabelsAndEventSelectLabel:(UILabel*)selectTimeLabel event:(void (^)(void))onSelectEnd readLabel: (UILabel*)readTimeLabel event:(void (^)(void))onReadEnd typeLabel: (UILabel*)typeTimeLabel event:(void (^)(void))onTypeEnd
 {
@@ -229,7 +247,7 @@
 
     if (self.questionCount>=ML_MLPQBASE_QUESTION_LIMIT)
     {
-        [self saveResultAndReturnHome];
+        [self saveResultThenShowAd];
     }
     else
     {
@@ -299,11 +317,11 @@
     [self performSegueWithIdentifier:[workArr objectAtIndex:r] sender: mode];
 }
 
--(void)saveResultAndReturnHome
+-(void)saveResultThenShowAd
 {
     MLTestResultDatabase* resultDb = [[MLTestResultDatabase alloc]initTestResultDatabase];
     [resultDb saveTestResult:self.currentResult];
-    [self performSegueWithIdentifier:@"PQResults" sender: [NSNumber numberWithBool: [self practiceMode]]];
+    [self showAd];
 }
 
 #pragma mark - Navigation
@@ -347,5 +365,29 @@
         rvc.detailsArray = self.detailsArray;
     }
 }
+//ad specific
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial
+{
+    self.canShowAd=true;
+    NSLog(@"can show ad");
+}
+- (void)interstitial:(GADInterstitial *)interstitial
+didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    self.canShowAd=false;
+}
 
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
+{
+    [self showResultsPage];
+}
+-(void)showAd
+{
+    self.canShowAd=false;
+    [self.bigAdd presentFromRootViewController:self];
+}
+-(void)showResultsPage
+{
+    [self performSegueWithIdentifier:@"PQResults" sender: [NSNumber numberWithBool: [self practiceMode]]];
+}
 @end

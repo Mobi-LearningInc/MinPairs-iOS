@@ -11,10 +11,11 @@
 #import "MLCategory.h"
 #import "MLItem.h"
 #import "MLPair.h"
+#import "GADInterstitialDelegate.h"
 #define ML_MLPQBASE_QUESTION_LIMIT 10
 /** MLPQBaseViewController is the base class too all Practice/Quiz contollers
  */
-@interface MLPQBaseViewController : UIViewController <UIAlertViewDelegate>
+@interface MLPQBaseViewController : UIViewController <UIAlertViewDelegate,GADInterstitialDelegate>
 @property (nonatomic, assign) bool practiceMode;//set on segue
 @property int questionCount;//set on segue
 @property (strong,nonatomic) MLTestResult* previousResult;//set on segue
