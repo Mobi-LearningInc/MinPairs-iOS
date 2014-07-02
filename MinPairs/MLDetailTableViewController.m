@@ -45,10 +45,7 @@
     for(int i=0; i<self.array.count;i++)
     {
         MLDetailsItem* item = [self.array objectAtIndex:i];
-        if(item.detailCorrect==false)
-        {
-            [self.cellDataArr addObject:item];
-        }
+        [self.cellDataArr addObject:item];//can be filtered by detailCorrect property
     }
 }
 

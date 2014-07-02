@@ -369,7 +369,9 @@
 - (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial
 {
     self.canShowAd=true;
-    NSLog(@"can show ad");
+    #ifdef DEBUG
+        NSLog(@"can show ad");
+    #endif
 }
 - (void)interstitial:(GADInterstitial *)interstitial
 didFailToReceiveAdWithError:(GADRequestError *)error

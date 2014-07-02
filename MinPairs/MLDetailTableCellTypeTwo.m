@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *wordLabelRight;
 @property (strong, nonatomic) MLItem* correctItem;
 @property (strong,nonatomic)MLBasicAudioPlayer* audioPlayer;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+
 @end
 @implementation MLDetailTableCellTypeTwo
 
@@ -29,13 +31,25 @@
 {
     [self playItem:self.correctItem];
 }
--(void)setData:(int)index : (MLItem*)correctItem : (MLItem*) wrongItem
+-(void)setData:(int)index : (MLItem*)correctItem : (MLItem*) userChoiceItem
 {
     self.audioPlayer=[[MLBasicAudioPlayer alloc]init];
     self.indexLabel.text=[NSString stringWithFormat:@"#%i",index];
     self.wordLabelLeft.text=correctItem.itemDescription;
-    self.wordLabelRight.text=wrongItem.itemDescription;
+    self.wordLabelRight.text=userChoiceItem.itemDescription;
     self.correctItem=correctItem;
+    NSString* cleanCorrect =[correctItem.itemDescription lowercaseString] ;
+    NSString* cleanUserChoice=[userChoiceItem.itemDescription lowercaseString];
+    if([cleanCorrect isEqualToString: cleanUserChoice ])
+    {
+        [self.wordLabelRight setHidden:true];
+        self.bgView.backgroundColor=[UIColor colorWithRed:158.0f/255.0f green:255.0f/255.0f blue:177.0f/255.0f alpha:1.0f];
+    }
+    else
+    {
+        self.bgView.backgroundColor=[UIColor colorWithRed:255.0f/255.0f green:177.0f/255.0f blue:158.0f/255.0f alpha:1.0f];
+    }
+    
 }
 -(void)playItem:(MLItem*)item
 {

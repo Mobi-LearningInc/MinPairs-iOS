@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIView *viewToShare;
 
 @end
 
@@ -103,7 +104,7 @@
     MLShareViewController* msvc=[self.storyboard instantiateViewControllerWithIdentifier: @"ShareViewController"];
     msvc.socialMessage=[NSString stringWithFormat:@"I am using MinPairs app to improve my english."];
     msvc.isModal=true;
-    msvc.socialImage = [self captureScreen:self.view];
+    msvc.socialImage = [self captureScreen:self.viewToShare];
     [self presentViewController:msvc animated:YES completion:nil];
 }
 -(UIImage*)captureScreen:(UIView*) viewToCapture
