@@ -37,7 +37,7 @@
     self.title=@"Share";
     if(_socialMessage==NULL)
     {
-        self.socialMessage=@"Improve your english with MinPairs app.";
+        self.socialMessage=@"Improve your English with the MinPairs app.";
     }
     if(_socialImage==NULL)
     {

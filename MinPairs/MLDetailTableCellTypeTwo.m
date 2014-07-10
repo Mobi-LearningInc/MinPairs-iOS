@@ -35,12 +35,12 @@
 {
     self.audioPlayer=[[MLBasicAudioPlayer alloc]init];
     self.indexLabel.text=[NSString stringWithFormat:@"#%i",index];
-    self.wordLabelLeft.text=correctItem.itemDescription;
-    self.wordLabelRight.text=userChoiceItem.itemDescription;
+    self.wordLabelLeft.text= [correctItem.itemDescription capitalizedString];
+    self.wordLabelRight.text= [userChoiceItem.itemDescription capitalizedString];
     self.correctItem=correctItem;
-    NSString* cleanCorrect =[correctItem.itemDescription lowercaseString] ;
-    NSString* cleanUserChoice=[userChoiceItem.itemDescription lowercaseString];
-    if([cleanCorrect isEqualToString: cleanUserChoice ])
+    NSString* cleanCorrect = [correctItem.itemDescription lowercaseString];
+    NSString* cleanUserChoice = [userChoiceItem.itemDescription lowercaseString];
+    if([cleanCorrect isEqualToString: cleanUserChoice])
     {
         [self.wordLabelRight setHidden:true];
         self.bgView.backgroundColor=[UIColor colorWithRed:158.0f/255.0f green:255.0f/255.0f blue:177.0f/255.0f alpha:1.0f];

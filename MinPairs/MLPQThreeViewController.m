@@ -16,13 +16,17 @@
 #import "MLBasicAudioPlayer.h"
 #import "MLTestResult.h"
 #import "MLDetailsItem.h"
+#import "MLTheme.h"
+#import "MLPlatform.h"
+
+
 @interface MLPQThreeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftPlayBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rightPlayBtn;
 
 @property (strong,nonatomic) MLItem* itemLeft;
 @property (strong,nonatomic) MLItem* itemRight;
-@property (weak, nonatomic) IBOutlet UILabel *itemMainLable;
+@property (weak, nonatomic) IBOutlet UILabel *itemMainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *readTimeLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
@@ -49,6 +53,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[self leftPlayBtn] setBackgroundColor:[UIColor whiteColor]];
+    [[self rightPlayBtn] setBackgroundColor:[UIColor whiteColor]];
+    [MLPlatform setButtonRound:[self leftPlayBtn] withRadius:15.0f];
+    [MLPlatform setButtonRound:[self rightPlayBtn] withRadius:15.0f];
+    [MLPlatform setButtonBorder:[self leftPlayBtn] withBorderWidth:2.0f withColour: [MLTheme navButtonColour] withMask:true];
+    [MLPlatform setButtonBorder:[self rightPlayBtn] withBorderWidth:2.0f withColour: [MLTheme navButtonColour] withMask:true];
+    
     self.sequeName=@"PQThree";
     int rSwap = arc4random_uniform(2);
     if (rSwap==0)
@@ -65,10 +77,10 @@
     }
     int rand = arc4random_uniform(2);
     MLItem* cor= rand==0?self.itemLeft:self.itemRight;
-    self.itemMainLable.text=cor.itemDescription;
+    self.itemMainLabel.text= [cor.itemDescription capitalizedString];
     self.correctAnswer=cor;
     #ifdef DEBUG
-    NSLog(@"Correct answer is %@",self.correctAnswer.itemDescription);
+    NSLog(@"Correct answer is %@", [self.correctAnswer.itemDescription capitalizedString]);
     #endif
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:YES];
@@ -84,7 +96,7 @@
     [self.leftFingerImg setHidden:NO];
     [self.rightFingerImg setHidden:YES];
     #ifdef DEBUG
-    NSLog(@"Played sound for %@",self.itemLeft.itemDescription);
+    NSLog(@"Played sound for %@", [self.itemLeft.itemDescription capitalizedString]);
     #endif
 }
 - (IBAction)onRightPlayBtnTap:(id)sender
@@ -94,7 +106,7 @@
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:NO];
     #ifdef DEBUG
-    NSLog(@"Played sound for %@",self.itemRight.itemDescription);
+    NSLog(@"Played sound for %@", [self.itemRight.itemDescription capitalizedString]);
     #endif
 }
 
@@ -113,7 +125,7 @@
         selected=self.itemRight;
     }
     #ifdef DEBUG
-    NSLog(@"User selected %@",selected.itemDescription);
+    NSLog(@"User selected %@", [selected.itemDescription capitalizedString]);
     #endif
     MLDetailsItem* dItem;
     if(self.correctAnswer==selected)

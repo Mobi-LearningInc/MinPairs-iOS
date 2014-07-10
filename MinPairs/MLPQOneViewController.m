@@ -10,6 +10,9 @@
 #import "MLPQTwoViewController.h"
 #import "MLPQThreeViewController.h"
 #import "MLDetailsItem.h"
+#import "MLTheme.h"
+#import "MLPlatform.h"
+
 @interface MLPQOneViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftImgBtn;
 @property (weak, nonatomic) IBOutlet UIButton *rightImgBtn;
@@ -41,8 +44,15 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
+    
+    [[self leftImgBtn] setBackgroundColor:[UIColor whiteColor]];
+    [[self rightImgBtn] setBackgroundColor:[UIColor whiteColor]];
+    [MLPlatform setButtonRound:[self leftImgBtn] withRadius:15.0f];
+    [MLPlatform setButtonRound:[self rightImgBtn] withRadius:15.0f];
+    [MLPlatform setButtonBorder:[self leftImgBtn] withBorderWidth:2.0f withColour: [MLTheme navButtonColour] withMask:true];
+    [MLPlatform setButtonBorder:[self rightImgBtn] withBorderWidth:2.0f withColour: [MLTheme navButtonColour] withMask:true];
+    
     self.sequeName=@"PQOne";
     int rSwap = arc4random_uniform(2);
     if (rSwap==0)
@@ -65,7 +75,7 @@
     MLItem* cor= rand==0?self.itemLeft:self.itemRight;
     self.correctItem=cor;
     #ifdef DEBUG
-    NSLog(@"Correct item is %@",self.correctItem.itemDescription);
+    NSLog(@"Correct item is %@", [self.correctItem.itemDescription capitalizedString]);
     #endif
     [self.leftFingerImg setHidden:YES];
     [self.rightFingerImg setHidden:YES];
@@ -77,7 +87,7 @@
 {
     [self playItem:self.correctItem];
     #ifdef DEBUG
-    NSLog(@"Played sound for %@",self.correctItem.itemDescription);
+    NSLog(@"Played sound for %@", [self.correctItem.itemDescription capitalizedString]);
     #endif
 }
 - (IBAction)onLeftImgBtnTap:(id)sender
@@ -113,7 +123,7 @@
         selected=self.itemRight;
     }
     #ifdef DEBUG
-    NSLog(@"User selected %@",selected.itemDescription);
+    NSLog(@"User selected %@", [selected.itemDescription capitalizedString]);
     #endif
     MLDetailsItem* dItem;
     if(selected==self.correctItem)

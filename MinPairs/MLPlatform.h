@@ -19,8 +19,8 @@
 +(NSString*) getSystemVersion;
 +(void) setButtonRound:(UIButton*)button withRadius:(float)radius;
 +(void) setButtonsRound:(UIView*)view withRadius:(float)radius;
-+(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour;
-+(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour;
++(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour withMask:(bool)mask;
++(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour withMask:(bool)mask;
 +(UIImage*)imageWithColor:(UIImage*)img withColour:(UIColor*)colour;
 +(NSMutableAttributedString*)parseColourBBCodes:(NSMutableAttributedString*)text;
 +(NSMutableAttributedString*)parseUnderlineBBCodes:(NSMutableAttributedString*)text;

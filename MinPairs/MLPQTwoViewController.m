@@ -43,7 +43,7 @@
 
     self.correctItem=(rand==0)?itemPair.first:itemPair.second;
     #ifdef DEBUG
-    NSLog(@"Correct item is %@",self.correctItem.itemDescription);
+    NSLog(@"Correct item is %@", [self.correctItem.itemDescription capitalizedString]);
     #endif
     [self registerQuizTimeLabelsAndEventSelectLabel:nil event:nil readLabel:nil event:nil typeLabel:self.typeTimeLabel event:^(void){
         
@@ -61,7 +61,7 @@
 {
     [self playItem:self.correctItem];
     #ifdef DEBUG
-    NSLog(@"Played sound for %@",self.correctItem.itemDescription);
+    NSLog(@"Played sound for %@", [self.correctItem.itemDescription capitalizedString]);
     #endif
 }
 - (IBAction)onAnswerBtn:(id)sender
@@ -76,7 +76,7 @@
     int corr;
     int wrong;
     MLDetailsItem* dItem;
-    if([cleanStr isEqualToString: [self.correctItem.itemDescription lowercaseString] ])
+    if([cleanStr isEqualToString: [self.correctItem.itemDescription lowercaseString]])
     {
         corr=1;
         wrong=0;
@@ -87,7 +87,7 @@
     {
         corr=0;
         wrong=1;
-        self.correctTextLabel.text=self.correctItem.itemDescription;
+        self.correctTextLabel.text= [self.correctItem.itemDescription capitalizedString];
         self.statusImg.image=[UIImage imageNamed:@"fIncorrect"];
         dItem=[[MLDetailsItem alloc]initDetailsItemWithType:DETAIL_TYPE_TWO correctItem:self.correctItem userItem:[[MLItem alloc]initItemWithId:-1 description:cleanStr audioPath:NULL imagePath:NULL seperator:NULL] status:false index:self.questionCount];
     }

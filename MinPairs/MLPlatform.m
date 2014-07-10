@@ -52,13 +52,14 @@
     }
 }
 
-+(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour
++(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour withMask:(bool)mask
 {
     button.layer.borderWidth = borderWidth;
     button.layer.borderColor = [colour CGColor];
+    button.layer.masksToBounds = mask;
 }
 
-+(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour
++(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour withMask:(bool)mask
 {
     for (UIView* v in [view subviews])
     {
@@ -66,6 +67,7 @@
         {
             ((UIButton*)v).layer.borderWidth = borderWidth;
             ((UIButton*)v).layer.borderColor = [colour CGColor];
+            ((UIButton*)v).layer.masksToBounds = mask;
         }
     }
 }

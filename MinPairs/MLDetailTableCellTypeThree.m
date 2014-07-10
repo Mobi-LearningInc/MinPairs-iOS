@@ -44,7 +44,7 @@
     self.indexLabel.text=[NSString stringWithFormat:@"#%i",index];
     self.correctItem=correctItem;
     self.userChoiceItem=userChoiceItem;
-    self.readLabel.text=correctItem.itemDescription;
+    self.readLabel.text=[correctItem.itemDescription capitalizedString];
     if(correctItem==userChoiceItem)
     {
         [self.rightBtn setHidden:YES];
