@@ -32,7 +32,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 @property (weak, nonatomic) IBOutlet UIImageView *leftFingerImg;
 @property (weak, nonatomic) IBOutlet UIImageView *rightFingerImg;
-@property (weak, nonatomic) IBOutlet UIImageView *chekcMarkImg;
 @property (weak, nonatomic) IBOutlet UIButton *submitBtn;
 
 
@@ -150,7 +149,7 @@
     [self.detailsArray addObject:dItem];
     MLTestResult* currentResult =[[MLTestResult alloc]initTestResultWithCorrect:corr+self.previousResult.testQuestionsCorrect wrong:wrong+self.previousResult.testQuestionsWrong type:self.previousResult.testType date:self.previousResult.testDate timeInSec:self.timeCount+self.previousResult.testTime extraInfo:self.previousResult.testExtra];
     [sender setHidden: YES];
-    [self.chekcMarkImg setHidden:YES];
+    //[self.chekcMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
 }
 

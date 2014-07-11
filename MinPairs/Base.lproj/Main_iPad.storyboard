@@ -335,13 +335,13 @@
                                             <rect key="frame" x="569" y="-2" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-9I-3Bw">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-9I-3Bw">
                                             <rect key="frame" x="309" y="39" width="90" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejY-UY-IXd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejY-UY-IXd">
                                             <rect key="frame" x="569" y="39" width="93" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
@@ -1332,6 +1332,9 @@ Current selection: %@ vs. %@</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAnswerButton:" destination="raE-Nn-s8T" eventType="touchUpInside" id="jV6-I6-JZc"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RH2-8n-JuK" userLabel="Invisible Inner View">
                                 <rect key="frame" x="244" y="362" width="280" height="291"/>
@@ -1343,6 +1346,9 @@ Current selection: %@ vs. %@</string>
                                         <state key="normal" title="Play" image="fEar">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onLeftPlayBtnTap:" destination="raE-Nn-s8T" eventType="touchUpInside" id="l05-2N-Y9o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Q-Wz-VnA" userLabel="RightButton">
                                         <rect key="frame" x="177" y="94" width="103" height="103"/>
@@ -1350,6 +1356,9 @@ Current selection: %@ vs. %@</string>
                                         <state key="normal" title="Play" image="fEar">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onRightPlayBtnTap:" destination="raE-Nn-s8T" eventType="touchUpInside" id="dWq-PY-vi1"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fSelector" translatesAutoresizingMaskIntoConstraints="NO" id="qKI-8l-mwo" userLabel="LeftSelector">
                                         <rect key="frame" x="36" y="190" width="42" height="61"/>
@@ -1359,6 +1368,13 @@ Current selection: %@ vs. %@</string>
                                         <rect key="frame" x="215" y="190" width="42" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vh-TT-dsH">
+                                        <rect key="frame" x="119" y="135" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-C3-qLk">
@@ -1372,8 +1388,8 @@ Current selection: %@ vs. %@</string>
                                 <rect key="frame" x="459" y="682" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                         </subviews>
@@ -1382,7 +1398,15 @@ Current selection: %@ vs. %@</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UOq-gG-U4e"/>
                     <connections>
-                        <outlet property="progressBar" destination="JXR-y1-i3a" id="azP-P7-iNQ"/>
+                        <outlet property="itemMainLabel" destination="yKY-C3-qLk" id="Fp3-8O-lSH"/>
+                        <outlet property="leftFingerImg" destination="qKI-8l-mwo" id="5LR-Qt-OBe"/>
+                        <outlet property="leftPlayBtn" destination="f3U-xp-gII" id="7fr-rW-1fN"/>
+                        <outlet property="progressBar" destination="JXR-y1-i3a" id="aca-ue-vQY"/>
+                        <outlet property="readTimeLabel" destination="Okc-OH-4fS" id="hx1-F5-xBm"/>
+                        <outlet property="rightFingerImg" destination="fqj-za-3Ji" id="eeI-4U-W57"/>
+                        <outlet property="rightPlayBtn" destination="Z5Q-Wz-VnA" id="tfK-Em-mBZ"/>
+                        <outlet property="statusImg" destination="YjZ-YP-cUg" id="33r-5W-xIt"/>
+                        <outlet property="submitBtn" destination="DoJ-4f-ZvQ" id="fQv-4k-iUN"/>
                         <segue destination="6SN-0h-VKl" kind="push" identifier="PQTwo" id="8np-cD-iS6"/>
                         <segue destination="PPI-GX-k9K" kind="push" identifier="PQOne" id="DGm-pH-8ov"/>
                         <segue destination="6D0-g6-ApR" kind="push" identifier="PQResults" id="65h-gS-jy0"/>
@@ -1413,7 +1437,7 @@ Current selection: %@ vs. %@</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ECu-b0-tdt">
-                                <rect key="frame" x="285" y="471" width="239" height="40"/>
+                                <rect key="frame" x="285" y="471" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
@@ -1428,6 +1452,9 @@ Current selection: %@ vs. %@</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAnswerBtn:" destination="6SN-0h-VKl" eventType="touchUpInside" id="XGZ-eX-Dcy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axV-9V-EGe">
                                 <rect key="frame" x="244" y="303" width="280" height="46"/>
@@ -1439,13 +1466,16 @@ Current selection: %@ vs. %@</string>
                                 <state key="normal" title="Listen" image="mListen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onPlayBtn:" destination="6SN-0h-VKl" eventType="touchUpInside" id="dEo-0e-HBA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcd-cr-WAR">
                                 <rect key="frame" x="459" y="663" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fRightSelector" translatesAutoresizingMaskIntoConstraints="NO" id="5i5-nq-XX4">
@@ -1453,7 +1483,7 @@ Current selection: %@ vs. %@</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuZ-V8-VCl">
-                                <rect key="frame" x="244" y="563" width="166" height="41"/>
+                                <rect key="frame" x="244" y="563" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1464,7 +1494,12 @@ Current selection: %@ vs. %@</string>
                     </view>
                     <navigationItem key="navigationItem" id="r45-XT-8W3"/>
                     <connections>
-                        <outlet property="progressBar" destination="6KE-4H-Toq" id="WUo-EE-Bhl"/>
+                        <outlet property="answerBtn" destination="y9o-4c-JWe" id="806-cH-zdn"/>
+                        <outlet property="correctTextLabel" destination="KuZ-V8-VCl" id="zec-31-dl9"/>
+                        <outlet property="progressBar" destination="6KE-4H-Toq" id="k2W-YX-wjV"/>
+                        <outlet property="statusImg" destination="SDZ-Xg-pVO" id="mbu-Wf-8AF"/>
+                        <outlet property="textAnswer" destination="ECu-b0-tdt" id="JH0-NR-sde"/>
+                        <outlet property="typeTimeLabel" destination="kcd-cr-WAR" id="3TA-nh-adC"/>
                         <segue destination="PPI-GX-k9K" kind="push" identifier="PQOne" id="hgd-lB-z79"/>
                         <segue destination="raE-Nn-s8T" kind="push" identifier="PQThree" id="SRo-9O-LoJ"/>
                         <segue destination="6D0-g6-ApR" kind="push" identifier="PQResults" id="cIg-oa-tnK"/>
@@ -1504,6 +1539,9 @@ Current selection: %@ vs. %@</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAnswerBtn:" destination="PPI-GX-k9K" eventType="touchUpInside" id="Cnb-P0-wms"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O3-Mg-M3t">
                                 <rect key="frame" x="233" y="303" width="280" height="46"/>
@@ -1515,13 +1553,16 @@ Current selection: %@ vs. %@</string>
                                 <state key="normal" title="Listen" image="mListen">
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onPlayBtn:" destination="PPI-GX-k9K" eventType="touchUpInside" id="0ID-3u-lrL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN1-iv-Ghv">
                                 <rect key="frame" x="448" y="663" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nn6-Qp-hcY" userLabel="Invisible Inner View">
@@ -1534,22 +1575,34 @@ Current selection: %@ vs. %@</string>
                                         <state key="normal" image="na1.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onLeftImgBtnTap:" destination="PPI-GX-k9K" eventType="touchUpInside" id="pN7-6j-kpM"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fSelector" translatesAutoresizingMaskIntoConstraints="NO" id="b9W-xp-2qj" userLabel="LeftSelector">
                                         <rect key="frame" x="36" y="197" width="42" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-9O-8nH" userLabel="RightView">
-                                        <rect key="frame" x="157" y="101" width="103" height="103"/>
+                                        <rect key="frame" x="177" y="101" width="103" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="na1.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onRightImgBtnTap:" destination="PPI-GX-k9K" eventType="touchUpInside" id="Kan-Ej-HZF"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fSelector" translatesAutoresizingMaskIntoConstraints="NO" id="lFB-wn-tDf" userLabel="RightSelector">
-                                        <rect key="frame" x="195" y="197" width="42" height="60"/>
+                                        <rect key="frame" x="215" y="197" width="42" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-gU-T6O">
+                                        <rect key="frame" x="119" y="142" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </view>
                         </subviews>
@@ -1557,7 +1610,14 @@ Current selection: %@ vs. %@</string>
                     </view>
                     <navigationItem key="navigationItem" id="vbT-tF-Jvv"/>
                     <connections>
-                        <outlet property="progressBar" destination="fww-cU-8Yu" id="rxA-Qt-3qx"/>
+                        <outlet property="leftFingerImg" destination="b9W-xp-2qj" id="2eR-zS-VCq"/>
+                        <outlet property="leftImgBtn" destination="llu-K4-zOR" id="Xxk-eZ-V7z"/>
+                        <outlet property="progressBar" destination="fww-cU-8Yu" id="nGg-0n-waw"/>
+                        <outlet property="rightFingerImg" destination="lFB-wn-tDf" id="aN6-0C-DEc"/>
+                        <outlet property="rightImgBtn" destination="nBe-9O-8nH" id="1hM-YH-VOs"/>
+                        <outlet property="selectTimeLabel" destination="HN1-iv-Ghv" id="Ril-tP-w2E"/>
+                        <outlet property="statusImg" destination="FOB-FL-clI" id="zP8-xn-ibm"/>
+                        <outlet property="submitBtn" destination="utB-91-oP9" id="fmt-lE-umb"/>
                         <segue destination="6SN-0h-VKl" kind="push" identifier="PQTwo" id="cFr-fT-inX"/>
                         <segue destination="raE-Nn-s8T" kind="push" identifier="PQThree" id="J3d-gt-un9"/>
                         <segue destination="6D0-g6-ApR" kind="push" identifier="PQResults" id="Tck-JC-dcg"/>
@@ -1606,11 +1666,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="65h-gS-jy0"/>
-        <segue reference="J3d-gt-un9"/>
-        <segue reference="DGm-pH-8ov"/>
-        <segue reference="8np-cD-iS6"/>
         <segue reference="G3k-d4-1WO"/>
         <segue reference="Otj-fG-roc"/>
+        <segue reference="J3d-gt-un9"/>
+        <segue reference="DGm-pH-8ov"/>
+        <segue reference="65h-gS-jy0"/>
+        <segue reference="8np-cD-iS6"/>
     </inferredMetricsTieBreakers>
 </document>

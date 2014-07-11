@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImg;
 @property (strong,nonatomic)MLItem* correctItem;
-@property (weak, nonatomic) IBOutlet UIImageView *checkMarkImg;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn;
 @property (weak, nonatomic) IBOutlet UILabel *correctTextLabel;
 
@@ -103,7 +102,6 @@
         timeInSec:self.timeCount+self.previousResult.testTime
         extraInfo:self.previousResult.testExtra];
     [sender setHidden: YES];
-    [self.checkMarkImg setHidden:YES];
     [self performSelector:@selector(onAnswer:) withObject:currentResult afterDelay:2.0];
 }
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event

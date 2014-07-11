@@ -88,6 +88,14 @@
     return newImage;
 }
 
++(UIImage*)imageWithInversion:(UIImage*)img
+{
+    CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
+    [filter setDefaults];
+    [filter setValue:img.CIImage forKey:@"inputImage"];
+    return [[UIImage alloc] initWithCIImage:filter.outputImage];
+}
+
 +(NSMutableAttributedString*)parseBBCodes:(NSMutableAttributedString*)text withFontSize:(CGFloat)fontSize
 {
     [MLPlatform parseColourBBCodes:text];

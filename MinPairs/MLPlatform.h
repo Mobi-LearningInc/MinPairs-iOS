@@ -22,6 +22,7 @@
 +(void) setButtonBorder:(UIButton*)button withBorderWidth:(float)borderWidth withColour:(UIColor*)colour withMask:(bool)mask;
 +(void) setButtonsBorder:(UIView*)view withBorderWidth:(float)borderWidth withColour:(UIColor*)colour withMask:(bool)mask;
 +(UIImage*)imageWithColor:(UIImage*)img withColour:(UIColor*)colour;
++(UIImage*)imageWithInversion:(UIImage*)img;
 +(NSMutableAttributedString*)parseColourBBCodes:(NSMutableAttributedString*)text;
 +(NSMutableAttributedString*)parseUnderlineBBCodes:(NSMutableAttributedString*)text;
 +(NSMutableAttributedString*)parseBoldBBCodes:(NSMutableAttributedString*)text withFontSize:(CGFloat)fontSize;
