@@ -83,6 +83,7 @@
     if(!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: @"cell"];
+        cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:22];
     }
     
     if (tableView == [self leftView])
@@ -142,7 +143,7 @@
         [settingDb saveSetting:currentSetting];
         if(self.listener)
         {
-            [self.listener onFilterSelectionChange:catPair ];
+            [self.listener onFilterSelectionChange:catPair];
         }
         [self returnBack];
     }
