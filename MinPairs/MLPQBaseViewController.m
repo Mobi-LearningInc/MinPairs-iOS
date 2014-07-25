@@ -144,6 +144,7 @@
             }
             else
             {
+                self.selectTimeLabel.text=@"";
                 if(self.onSelectEnd)//run once
                 {
                     self.onSelectEnd();
@@ -159,6 +160,7 @@
             }
             else
             {
+                self.readTimeLabel.text=@"";
                 if(self.onReadEnd)//run once
                 {
                     self.onReadEnd();
@@ -174,6 +176,7 @@
             }
             else
             {
+                self.typeTimeLabel.text=@"";
                 if(self.onTypeEnd)//run once
                 {
                     self.onTypeEnd();
@@ -386,7 +389,14 @@ didFailToReceiveAdWithError:(GADRequestError *)error
 -(void)showAd
 {
     self.canShowAd=false;
-    [self.bigAdd presentFromRootViewController:self];
+    if(self.bigAdd.isReady)//check if ready before presenting
+    {
+        [self.bigAdd presentFromRootViewController:self];
+    }
+    else
+    {
+        [self showResultsPage];
+    }
 }
 -(void)showResultsPage
 {
