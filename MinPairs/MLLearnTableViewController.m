@@ -16,7 +16,9 @@
 
 @interface MLLearnTableViewController() <UISearchDisplayDelegate, UISearchBarDelegate>
 @property NSArray* learnPairsArr;
+@property NSArray* learnCatArr;
 @property (strong, nonatomic) NSArray* searchResults;
+//@property MLPair* filterCategoryPair;
 @end
 
 @implementation MLLearnTableViewController
@@ -60,11 +62,13 @@
     MLSettingDatabase* settingDb=[[MLSettingDatabase alloc]initSettingDatabase];
     MLSettingsData* setting=[settingDb getSetting];
     MLPair* filterCatPair =setting.settingFilterCatPair;
+    //self.filterCategoryPair=filterCatPair;
     MLCategory* filterCatLeft=filterCatPair.first;
     MLCategory* filterCatRight=filterCatPair.second;
     self.title =[NSString stringWithFormat:@"Learn %@ vs %@",filterCatLeft.categoryDescription,filterCatRight.categoryDescription];
     NSArray* pairPairArr = [dataPro getPairs];
     NSMutableArray* filteredArr = [NSMutableArray array];
+    NSMutableArray* filteredCatArr= [NSMutableArray array];
     for (int i=0; i<pairPairArr.count; i++)
     {
         MLPair* p=[pairPairArr objectAtIndex:i];
@@ -74,20 +78,25 @@
         MLItem* il = pl.second;
         MLCategory * cr=pr.first;
         MLItem* ir=pr.second;
+        
+        
         if (filterCatLeft.categoryId==0)//filter is set to 'all'
         {
             [filteredArr addObject:[[MLPair alloc]initPairWithFirstObject:il secondObject:ir]];
+            [filteredCatArr addObject:[[MLPair alloc]initPairWithFirstObject:cl secondObject:cr]];
         }
         else
         {
             if ((filterCatLeft.categoryId==cl.categoryId&&filterCatRight.categoryId==cr.categoryId)||(filterCatLeft.categoryId==cr.categoryId&&filterCatRight.categoryId==cl.categoryId))
             {
                 [filteredArr addObject:[[MLPair alloc]initPairWithFirstObject:il secondObject:ir]];
+                [filteredCatArr addObject:[[MLPair alloc]initPairWithFirstObject:cl secondObject:cr]];
             }
         }
     }
     
     self.learnPairsArr = filteredArr;
+    self.learnCatArr = filteredCatArr;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -154,12 +163,14 @@
     if (tableView == self.searchDisplayController.searchResultsTableView)
     {
         MLPair* itemPair = [self.searchResults objectAtIndex:indexPath.row];
-        [cell setCellItemPair: itemPair];
+        MLPair* catPair = [self.learnCatArr objectAtIndex:indexPath.row];
+        [cell setCellItemPair: itemPair categoryPair:catPair];
     }
     else
     {
         MLPair* itemPair = [self.learnPairsArr objectAtIndex:indexPath.row];
-        [cell setCellItemPair:itemPair];
+        MLPair* catPair = [self.learnCatArr objectAtIndex:indexPath.row];
+        [cell setCellItemPair:itemPair categoryPair:catPair];
     }
     
     return cell;
@@ -193,4 +204,5 @@
     NSLog(@"updated view after filter changed");
     #endif
 }
+
 @end

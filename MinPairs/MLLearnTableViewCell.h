@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MLPair.h"
-@interface MLLearnTableViewCell : UITableViewCell
--(void)setCellItemPair:(MLPair*)itemPair;
+#import "MLFlipButtonOnFlipProtocol.h"
+@interface MLLearnTableViewCell : UITableViewCell <MLFlipButtonOnFlipProtocol>
+
+-(void)setCellItemPair:(MLPair*)itemPair categoryPair:(MLPair*)catPair;
 @end

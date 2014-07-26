@@ -762,7 +762,7 @@ Current selection: %@ vs. %@</string>
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="199"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-I4-TKy">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-I4-TKy" customClass="MLFlipButton">
                                                     <rect key="frame" x="141" y="16" width="134" height="134"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="na1.png">
@@ -772,7 +772,7 @@ Current selection: %@ vs. %@</string>
                                                         <action selector="onLeftBtnTap:" destination="7wB-Lm-hfl" eventType="touchUpInside" id="hwF-b8-ZQ3"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-Rs-OEK">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-Rs-OEK" customClass="MLFlipButton">
                                                     <rect key="frame" x="493" y="16" width="134" height="134"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="na1.png">
@@ -1666,11 +1666,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="G3k-d4-1WO"/>
-        <segue reference="Otj-fG-roc"/>
+        <segue reference="HMa-4q-YcN"/>
+        <segue reference="wU7-ig-dFW"/>
+        <segue reference="65h-gS-jy0"/>
         <segue reference="J3d-gt-un9"/>
         <segue reference="DGm-pH-8ov"/>
-        <segue reference="65h-gS-jy0"/>
         <segue reference="8np-cD-iS6"/>
     </inferredMetricsTieBreakers>
 </document>
