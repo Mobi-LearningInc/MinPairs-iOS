@@ -27,11 +27,19 @@
 
 - (void)removeTokenFromKeychain;
 
+- (void)saveConsumer:(OAConsumer *)consumer;
+
+- (OAConsumer *)getConsumer;
+
+- (void)clearAllCookies;
+
+- (void)clearDomainCookies:(NSString *)domain;
+
 
 
 /** Workflow utilities **/
 
-- (MLOAuthWebView *)startWorkflow:(NSString *)consumer_key withSecret:(NSString *)consumer_secret;
+- (MLOAuthWebView *)startWorkflow:(NSString *)URL withKey:(NSString *)consumer_key withSecret:(NSString *)consumer_secret;
 
 
 

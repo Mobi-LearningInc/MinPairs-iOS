@@ -99,6 +99,7 @@
 		CAAB4DFC1932CA01004CC2E3 /* MLStatsTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAB4DFB1932CA01004CC2E3 /* MLStatsTabBarViewController.m */; };
 		CAC7728A190A13C100CB74A5 /* MLBasicAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC77289190A13C100CB74A5 /* MLBasicAudioPlayer.m */; };
 		CAC7728D190A145600CB74A5 /* MLAudioPlayerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */; };
+		CAF5F75B1996B16900C43EC4 /* MLAuthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF5F75A1996B16900C43EC4 /* MLAuthWebViewController.m */; };
 		E1096F5C19095C06000C7E11 /* )_walk1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E6F19095C04000C7E11 /* )_walk1.mp3 */; };
 		E1096F5D19095C06000C7E11 /* 3_work1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7019095C04000C7E11 /* 3_work1.mp3 */; };
 		E1096F5E19095C06000C7E11 /* ^_cut1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1096E7119095C04000C7E11 /* ^_cut1.mp3 */; };
@@ -669,6 +670,8 @@
 		CAC7728B190A145600CB74A5 /* MLAudioPlayerQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAudioPlayerQueue.h; sourceTree = "<group>"; };
 		CAC7728C190A145600CB74A5 /* MLAudioPlayerQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAudioPlayerQueue.m; sourceTree = "<group>"; };
 		CAC7728E190A194C00CB74A5 /* MLBaseAudioPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLBaseAudioPlayerDelegate.h; sourceTree = "<group>"; };
+		CAF5F7591996B16900C43EC4 /* MLAuthWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAuthWebViewController.h; sourceTree = "<group>"; };
+		CAF5F75A1996B16900C43EC4 /* MLAuthWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAuthWebViewController.m; sourceTree = "<group>"; };
 		E1096E6F19095C04000C7E11 /* )_walk1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ")_walk1.mp3"; sourceTree = "<group>"; };
 		E1096E7019095C04000C7E11 /* 3_work1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3_work1.mp3; sourceTree = "<group>"; };
 		E1096E7119095C04000C7E11 /* ^_cut1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "^_cut1.mp3"; sourceTree = "<group>"; };
@@ -1420,6 +1423,8 @@
 			children = (
 				CA13C518198A010700521FFA /* MLOAuthTincanViewController.h */,
 				CA13C519198A010700521FFA /* MLOAuthTincanViewController.m */,
+				CAF5F7591996B16900C43EC4 /* MLAuthWebViewController.h */,
+				CAF5F75A1996B16900C43EC4 /* MLAuthWebViewController.m */,
 			);
 			name = OAuthTincanController;
 			sourceTree = "<group>";
@@ -2387,6 +2392,7 @@
 				CA13C5051989EEFC00521FFA /* OAMutableURLRequest.m in Sources */,
 				E16B4BE519316AA8000C704D /* MLDetailTableCellTypeThree.m in Sources */,
 				CA13C4FA1989EEFC00521FFA /* NSMutableURLRequest+Parameters.m in Sources */,
+				CAF5F75B1996B16900C43EC4 /* MLAuthWebViewController.m in Sources */,
 				CA7ED6E1190B8380009F1BB7 /* MLSettingsViewController.m in Sources */,
 				CA16C02A191C8D6D0000B48E /* MLResultsViewController.m in Sources */,
 				CA13C5081989EEFC00521FFA /* OARequestParameter.m in Sources */,

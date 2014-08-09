@@ -52,7 +52,44 @@
     [OAToken removeFromUserDefaultsWithServiceProviderName:@"oauth_access_token" prefix:[[NSBundle mainBundle] bundleIdentifier]];
 }
 
-- (MLOAuthWebView *)startWorkflow:(NSString *)consumer_key withSecret:(NSString *)consumer_secret
+- (void)saveConsumer:(OAConsumer *)consumer
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[consumer key] forKey:@"oauth_consumer_key"];
+    [[NSUserDefaults standardUserDefaults] setObject:[consumer secret] forKey:@"oauth_consumer_secret"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (OAConsumer *)getConsumer
+{
+    NSString* key = [[NSUserDefaults standardUserDefaults] objectForKey:@"oauth_consumer_key"];
+    NSString* secret = [[NSUserDefaults standardUserDefaults] objectForKey:@"oauth_consumer_secret"];
+    return key && secret ? [[OAConsumer alloc] initWithKey:key secret:secret] : nil;
+}
+
+- (void)clearAllCookies
+{
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in [storage cookies])
+    {
+        [storage deleteCookie:cookie];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)clearDomainCookies:(NSString *)domain
+{
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in [storage cookies])
+    {
+        if ([[cookie domain] rangeOfString:domain].location != NSNotFound)
+        {
+            [storage deleteCookie:cookie];
+        }
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (MLOAuthWebView *)startWorkflow:(NSString *)URL withKey:(NSString *)consumer_key withSecret:(NSString *)consumer_secret
 {
     OAToken* accessToken = [self getTokenFromKeychain];
     
@@ -70,9 +107,9 @@
     MLOAuthWebView* wv = [[MLOAuthWebView alloc] init];
     
     NSString* callback_url = @"minimalpairs://oauth_callback_v1";
-    NSURL* initURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/OAuth/initiate", nil]];
-    NSURL* authURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/OAuth/authorize", nil]];
-    NSURL* tokenURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/OAuth/token", nil]];
+    NSURL* initURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/OAuth/initiate", URL]];
+    NSURL* authURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/OAuth/authorize", URL]];
+    NSURL* tokenURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/OAuth/token", URL]];
 
     [wv setOnErrorCallback:[self onErrorOccurred]];
     [wv setOnLoginReadyCallback:[self onLoginReady]];

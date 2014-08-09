@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSURL* tokenURL;
 @property (nonatomic, strong) NSString* callback;
 @property (nonatomic, strong) NSString* verifier;
+@property (nonatomic, strong) UIActivityIndicatorView* indicator;
 
 @property (nonatomic, assign) bool loaded;
 @property (nonatomic, assign) bool loginReady;
@@ -34,6 +35,11 @@
         [self setHidden:true];
     }
     return self;
+}
+
+- (void)setActivityIndicator:(UIActivityIndicatorView *)indicator
+{
+    _indicator = indicator;
 }
 
 - (void)setOnErrorCallback:(void (^)(NSError *error))onErrorOccurred
@@ -153,13 +159,35 @@
             OADataFetcher* dataFetcher = [[OADataFetcher alloc] init];
             [dataFetcher fetchDataWithRequest:access delegate:self didFinishSelector:@selector(onAccessTokenSuccess:withData:) didFailSelector:@selector(onAccessTokenFail:withError:)];
         }
+        else
+        {
+            NSDictionary *user_info = [NSDictionary dictionaryWithObjectsAndKeys:@"Failed to retrieve AccessToken Verifier.", NSLocalizedDescriptionKey, @"Invalid Verifier.", NSLocalizedFailureReasonErrorKey, @"The operation couldn't be completed.", NSUnderlyingErrorKey, nil, NSURLErrorKey, nil];
+            
+            NSError *error = [NSError errorWithDomain:@"CustomError" code:-1 userInfo:user_info];
+            self.onErrorOccurred(error);
+        }
         return NO;
     }
     return YES;
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    if ([self indicator])
+    {
+        [[self indicator] setHidden: false];
+        [[self indicator] startAnimating];
+    }
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    if ([self indicator])
+    {
+        [[self indicator] stopAnimating];
+        [[self indicator] setHidden: true];
+    }
+    
     if (![self loginReady])
     {
         _loginReady = true;
@@ -170,6 +198,20 @@
         }
         self.onLoginReady(self);
     }
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    if ([self indicator])
+    {
+        [[self indicator] stopAnimating];
+        [[self indicator] setHidden: true];
+    }
+    
+    if (error.code == NSURLErrorCancelled) return;
+    if (error.code == 102 && [error.domain isEqual:@"WebKitErrorDomain"]) return;
+    
+    self.onErrorOccurred(error);
 }
 
 - (NSDictionary *)parseQueryString:(NSString *)query

@@ -11,6 +11,10 @@
 
 @interface MLOAuthWebView : UIWebView
 
+/**
+    OPTIONALLY set an indicator for the WebView to indicate when a request is showing.
+ **/
+- (void)setActivityIndicator:(UIActivityIndicatorView *)indicator;
 
 /**
     This callback MUST be set BEFORE calling "start".
