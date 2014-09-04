@@ -77,7 +77,7 @@
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TinCanSwitch"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.tincan saveSampleActivity];
+        //[self.tincan saveSampleActivity];
     }
 }
 

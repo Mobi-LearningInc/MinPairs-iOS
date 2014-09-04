@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "51F87491190835BE00450DB2"
-               BuildableName = "MinPairs.app"
+               BuildableName = "MinimalPairs.app"
                BlueprintName = "MinPairs"
                ReferencedContainer = "container:MinPairs.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51F87491190835BE00450DB2"
-            BuildableName = "MinPairs.app"
+            BuildableName = "MinimalPairs.app"
             BlueprintName = "MinPairs"
             ReferencedContainer = "container:MinPairs.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51F87491190835BE00450DB2"
-            BuildableName = "MinPairs.app"
+            BuildableName = "MinimalPairs.app"
             BlueprintName = "MinPairs"
             ReferencedContainer = "container:MinPairs.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "51F87491190835BE00450DB2"
-            BuildableName = "MinPairs.app"
+            BuildableName = "MinimalPairs.app"
             BlueprintName = "MinPairs"
             ReferencedContainer = "container:MinPairs.xcodeproj">
          </BuildableReference>
