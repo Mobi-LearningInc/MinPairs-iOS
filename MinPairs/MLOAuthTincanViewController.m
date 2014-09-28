@@ -10,6 +10,8 @@
 #import "MLOAuthWebView.h"
 #import "MLXAPIOAuth.h"
 #import "MLAuthWebViewController.h"
+#import "MLLrsCredentialsDatabase.h"
+#import "MLTheme.h"
 
 @interface MLOAuthTincanViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
@@ -20,6 +22,10 @@
 @property (strong, nonatomic) MLXAPIOAuth* api;
 @property (strong, nonatomic) MLOAuthWebView* webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *toggleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *resetBtn;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+
 @property (assign, nonatomic) bool webViewShown;
 @property (strong, atomic) UIColor* btnColour;
 @property (assign, nonatomic) bool cancel;
@@ -47,7 +53,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [MLTheme setTheme: self];
     [[self indicator] setHidden: true];
+    
+    self.userName.delegate=self;
+    self.email.delegate=self;
+    self.lrsKey.delegate=self;
+    self.lrsSecret.delegate=self;
+    self.lrsURL.delegate=self;
+    [self loadAndFillPage];
+    
+    self.toggleBtn.selectedSegmentIndex = [[NSUserDefaults standardUserDefaults] boolForKey:@"TinCanSwitch"] ? 0 : 1;
+    [self performSelector:@selector(tinCanToggleBtnTap:) withObject: [self toggleBtn]];
+}
+
+-(void)loadAndFillPage
+{
+    MLLrsCredentialsDatabase* credDb =[[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase];
+    MLLsrCredentials* loadedCreds = [credDb getLmsCredentials];
+    self.userName.text = loadedCreds.name;
+    self.email.text = loadedCreds.email;
+    self.lrsKey.text=loadedCreds.key;
+    self.lrsSecret.text=loadedCreds.secret;
+    self.lrsURL.text=loadedCreds.address;
+    
+    //todo create ways of enabling/disabling tincan
+    self.toggleBtn.selectedSegmentIndex=0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,12 +108,28 @@
     [sender setBackgroundColor:_btnColour];
 }
 
+- (void)saveValues{
+    MLLrsCredentialsDatabase* credDb =[[MLLrsCredentialsDatabase alloc]initLmsCredentialsDatabase];
+    MLLsrCredentials* loadedCreds = [credDb getLmsCredentials];
+    loadedCreds.name = self.userName.text;
+    loadedCreds.email = self.email.text;
+    loadedCreds.key = self.lrsKey.text;
+    loadedCreds.secret = self.lrsSecret.text;
+    loadedCreds.address = self.lrsURL.text;
+    
+    [credDb saveLmsCredentials:loadedCreds];
+    
+    //[[self navigationController] popViewControllerAnimated:true];
+    
+}
+
 - (void)doLogin:(UIButton* )loginBtn
 {
+    [self saveValues];
     [[self indicator] setHidesWhenStopped:true];
     [[self indicator] setHidden:false];
     [[self indicator] startAnimating];
-    
+
     [[self api] setOnErrorCallback:^(NSError *error) {
         NSLog(@"Error %d: %@", [error code], [error localizedDescription]);
         
@@ -97,7 +144,7 @@
         }
         
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Error: %d.", [error code]] message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [message show];
+        //[message show];
     }];
     
     [[self api] setOnLoginReadyCallback:^(MLOAuthWebView *webView) {
@@ -178,5 +225,58 @@
         [[segue destinationViewController] setView: sender];
     }
 }
+
+- (IBAction)tinCanToggleBtnTap:(id)sender
+{
+    if([sender selectedSegmentIndex]==0)
+    {
+#ifdef DEBUG
+        NSLog(@"TinCan Enabled.");
+#endif
+        [self.userName setEnabled:YES];
+        [self.email setEnabled:YES];
+        [self.lrsKey setEnabled:YES];
+        [self.lrsSecret setEnabled:YES];
+        [self.lrsURL setEnabled:YES];
+        [self.resetBtn setEnabled:YES];
+        [self.saveBtn setEnabled:YES];
+        
+        [self.userName setAlpha:1.0f];
+        [self.email setAlpha:1.0f];
+        [self.lrsKey setAlpha:1.0f];
+        [self.lrsSecret setAlpha:1.0f];
+        [self.lrsURL setAlpha:1.0f];
+        [self.resetBtn setAlpha:1.0f];
+        [self.saveBtn setAlpha:1.0f];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TinCanSwitch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else if([sender selectedSegmentIndex]==1)
+    {
+#ifdef DEBUG
+        NSLog(@"TinCan Disabled.");
+#endif
+        [self.userName setEnabled:NO];
+        [self.email setEnabled:NO];
+        [self.lrsKey setEnabled:NO];
+        [self.lrsSecret setEnabled:NO];
+        [self.lrsURL setEnabled:NO];
+        [self.resetBtn setEnabled:NO];
+        [self.saveBtn setEnabled:NO];
+        
+        [self.userName setAlpha:0.5f];
+        [self.email setAlpha:0.5f];
+        [self.lrsKey setAlpha:0.5f];
+        [self.lrsSecret setAlpha:0.5f];
+        [self.lrsURL setAlpha:0.5f];
+        [self.resetBtn setAlpha:0.5f];
+        [self.saveBtn setAlpha:0.5f];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"TinCanSwitch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 
 @end

@@ -51,6 +51,7 @@
     self.toggleBtn.selectedSegmentIndex = [[NSUserDefaults standardUserDefaults] boolForKey:@"TinCanSwitch"] ? 0 : 1;
     [self performSelector:@selector(tinCanToggleBtnTap:) withObject: [self toggleBtn]];
 }
+
 - (IBAction)onHomeClicked:(UIBarButtonItem *)sender
 {
     [[self navigationController] popViewControllerAnimated:true];

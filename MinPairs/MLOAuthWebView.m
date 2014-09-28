@@ -99,7 +99,7 @@
     }
     else
     {
-        NSDictionary *user_info = [NSDictionary dictionaryWithObjectsAndKeys:@"Failed to retrieved request token.", NSLocalizedDescriptionKey, @"Invalid Credentials.", NSLocalizedFailureReasonErrorKey, @"The operation couldn't be completed.", NSUnderlyingErrorKey, nil, NSURLErrorKey, nil];
+        NSDictionary *user_info = [NSDictionary dictionaryWithObjectsAndKeys:@"Failed to retrieve request token.", NSLocalizedDescriptionKey, @"Invalid Credentials.", NSLocalizedFailureReasonErrorKey, @"The operation couldn't be completed.", NSUnderlyingErrorKey, nil, NSURLErrorKey, nil];
         
         NSError *error = [NSError errorWithDomain:@"CustomError" code:-1 userInfo:user_info];
         self.onErrorOccurred(error);

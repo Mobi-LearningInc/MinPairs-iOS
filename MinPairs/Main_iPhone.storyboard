@@ -79,7 +79,7 @@
                                     <action selector="onPracticeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uE1-ZA-Ezr"/>
                                 </connections>
                             </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
+                            <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-DN-PbN">
                                 <rect key="frame" x="20" y="280" width="280" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1215686351" green="0.56078433989999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
@@ -1503,7 +1503,7 @@ Current selection: %@ vs. %@</string>
                     <webView key="view" contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" id="egT-10-Fid" customClass="MLOAuthWebView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.93725490199999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                     </webView>
                 </viewController>
@@ -1530,7 +1530,7 @@ Current selection: %@ vs. %@</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Brandon" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttY-aT-3lW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttY-aT-3lW">
                                 <rect key="frame" x="20" y="117" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1542,7 +1542,7 @@ Current selection: %@ vs. %@</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="JustBrandonT@gmail.com" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-yT-uiI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user@example.com" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-yT-uiI">
                                 <rect key="frame" x="167" y="117" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1603,7 +1603,7 @@ Current selection: %@ vs. %@</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.5568627451" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1620,13 +1620,35 @@ Current selection: %@ vs. %@</string>
                         <color key="backgroundColor" red="0.86666673419999996" green="0.94117653369999998" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="xAPI" id="vma-Sd-vTR"/>
+                    <navigationItem key="navigationItem" title="xAPI" id="8To-Le-zMt">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="GDv-3T-bOa">
+                            <connections>
+                                <action selector="onHomeClicked:" destination="DSe-hr-GPb" id="OL9-iQ-5QK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="o14-T3-DuZ">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="Cqj-VH-yQ1">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="On"/>
+                                    <segment title="Off"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tinCanToggleBtnTap:" destination="DSe-hr-GPb" eventType="valueChanged" id="k4r-Jx-al1"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="email" destination="Vhp-yT-uiI" id="xDf-lY-BAs"/>
                         <outlet property="indicator" destination="uKt-pu-7Dr" id="Ocd-nD-Xka"/>
                         <outlet property="lrsKey" destination="Lx7-OP-NRj" id="RNg-mi-CW9"/>
                         <outlet property="lrsSecret" destination="DIj-dS-oUV" id="lfF-nP-NFE"/>
                         <outlet property="lrsURL" destination="Ll9-wg-EfZ" id="eco-wq-ouO"/>
+                        <outlet property="resetBtn" destination="xaF-On-R9n" id="OUg-9P-fql"/>
+                        <outlet property="saveBtn" destination="SVV-HM-pjt" id="55l-zg-44k"/>
+                        <outlet property="toggleBtn" destination="Cqj-VH-yQ1" id="SkW-WP-ITF"/>
                         <outlet property="userName" destination="ttY-aT-3lW" id="2Qy-UJ-2kH"/>
                         <segue destination="dVU-0E-3DL" kind="modal" identifier="AuthWeb" id="xvO-XD-wyM"/>
                     </connections>
@@ -1872,6 +1894,7 @@ Current selection: %@ vs. %@</string>
                                             <constraint firstAttribute="height" constant="103" id="4cg-FP-g01"/>
                                             <constraint firstAttribute="width" constant="103" id="tBi-q0-zEH"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Play" image="fEar">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -2360,11 +2383,11 @@ Current selection: %@ vs. %@</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sDC-Eh-Yxn"/>
         <segue reference="g9E-Hu-eGC"/>
-        <segue reference="Nd2-aZ-hCp"/>
         <segue reference="uXz-Mu-If8"/>
-        <segue reference="LKQ-GX-APY"/>
-        <segue reference="H8M-Yu-SQn"/>
+        <segue reference="mSI-G2-kJF"/>
+        <segue reference="6iJ-t5-LbI"/>
+        <segue reference="ftR-Qk-zmG"/>
+        <segue reference="K8X-AH-X2a"/>
     </inferredMetricsTieBreakers>
 </document>
